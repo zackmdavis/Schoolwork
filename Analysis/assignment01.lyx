@@ -239,21 +239,15 @@ d
 \end_inset
 
 , respectively.
- So I'd think the value should be 
-\begin_inset Formula $\frac{5}{49}\cdot\frac{7}{2}+\frac{7}{10}\approx1.057$
+ The value is 
+\begin_inset Formula 
+\[
+\frac{5}{49}\cdot\frac{1}{1-\frac{5}{7}}+\frac{1}{49}\cdot\frac{1}{1+\frac{3}{7}}=\frac{5}{14}+\frac{1}{70}=\frac{13}{35}
+\]
+
 \end_inset
 
-.
- But this disagrees with the 
-\begin_inset Quotes eld
-\end_inset
 
-Answers and Hints to Selected Exercises
-\begin_inset Quotes erd
-\end_inset
-
- in the back of the book.
- Not sure what I did wrong here.
 \end_layout
 
 \begin_layout Standard
@@ -267,10 +261,194 @@ Answers and Hints to Selected Exercises
 a
 \series default
 .
- At first glance, I'm pretty confused about how this could possibly telescope:
- there's no negative sign! Claude suggests partial fraction decomposition,
- which I need to re-review.
- [TODO finish]
+ At first glance, I was confused about how this could possibly telescope:
+ there's no negative sign! After discussing with the Claude LLM and with
+ fellow students at office hours, I now understand that partial fraction
+ decomposition is the method of choice here: we decompose 
+\begin_inset Formula $\frac{1}{k(k+1)}$
+\end_inset
+
+ to 
+\begin_inset Formula $\frac{A}{k}+\frac{B}{k+1},$
+\end_inset
+
+ infer that 
+\begin_inset Formula $A(k+1)+Bk=1$
+\end_inset
+
+, and conclude via substitution that 
+\begin_inset Formula $A=1$
+\end_inset
+
+ and 
+\begin_inset Formula $B=-1$
+\end_inset
+
+: our sum is equivalent to 
+\begin_inset Formula $\sum_{k=1}^{\infty}\frac{1}{k}-\frac{1}{k-1}$
+\end_inset
+
+, which telescopes down to 1.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ Again by the method of partial fractions, we consider 
+\begin_inset Formula $A(k+3)+B(k+2)=12$
+\end_inset
+
+, and discover that our summand is equal to 
+\begin_inset Formula $\frac{12}{k+2}-\frac{12}{k+3}$
+\end_inset
+
+, which telescopes down to 
+\begin_inset Formula $\frac{12}{3}=4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ I was having trouble seeing how this telescopes: obviously the logarithm
+ of a quotient is the quotient of the logarithms, but I was getting 
+\begin_inset Formula $\log(k^{2}+2k)-\log(k^{2}+2k+1)=\log8-\log9+\log15-\log16...$
+\end_inset
+
+, which does not visibly telescope.
+ What I didn't realize until I turned to Claude for a hint but is obvious
+ after it's pointed out, is that we can keep reducing: the logarithm of
+ a product is the sum of the logarithms, so we have 
+\begin_inset Formula $\sum_{k}\log(k)-2\log(k+1)+\log(k+2)$
+\end_inset
+
+.
+ But then consider the following terms: 
+\begin_inset Formula $\log(k+1)-2\log(k+2)+\log(k+3)$
+\end_inset
+
+, and 
+\begin_inset Formula $\log(k+2)-2\log(k+3)+\log(k+4)$
+\end_inset
+
+: we can see that terms beyond the first get canceled out (being added twice
+ and subtracted with a coefficient of 2).
+ But that would seem to suggest that the value is 
+\begin_inset Formula $\log2$
+\end_inset
+
+, which disagrees with the 
+\begin_inset Quotes eld
+\end_inset
+
+Hints and Answers to Selected Exercises
+\begin_inset Quotes erd
+\end_inset
+
+ in the back of the book, which claims that the value is 
+\begin_inset Formula $\log\frac{2}{3}$
+\end_inset
+
+.
+ Where does the extra 
+\begin_inset Formula $-\log3$
+\end_inset
+
+ come from? Prompting Claude for another hint, I see it: the first 
+\begin_inset Formula $-2\log(k+1)$
+\end_inset
+
+ term (when 
+\begin_inset Formula $k=2$
+\end_inset
+
+) only partially cancels (it only has one positive counterpart instead of
+ two).
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\begin_inset Formula $\sum_{k}2\sin(\frac{1}{k}-\frac{1}{k+1})\cos(\frac{1}{k}+\frac{1}{k+1})=2\sin(1-\frac{1}{2})\cos(1+\frac{1}{2})+2\sin(\frac{1}{2}-\frac{1}{3})\cos(1+\frac{1}{3})...$
+\end_inset
+
+.
+ There's probably some trigonometric identity that could help with this.
+ Doing a web search for 
+\begin_inset Quotes eld
+\end_inset
+
+sine as a difference
+\begin_inset Quotes erd
+\end_inset
+
+, I come across the formulas 
+\begin_inset Formula $\sin(A-B)=\sin A\cos B-\cos A\sin B$
+\end_inset
+
+ and 
+\begin_inset Formula $\cos(A+B)=\cos A\cos B-\sin A\sin B$
+\end_inset
+
+, which seem like just what we need ...
+ but the computation is quite tedious.
+ Abbreviating 
+\begin_inset Formula $\sin(\frac{1}{k})$
+\end_inset
+
+ and 
+\begin_inset Formula $\cos(\frac{1}{k})$
+\end_inset
+
+ as 
+\begin_inset Formula $s(k)$
+\end_inset
+
+ and 
+\begin_inset Formula $c(k)$
+\end_inset
+
+, respectively (to save myself pencil strokes), I'm getting 
+\begin_inset Formula $(s(k)-s(k+1))(c(k)c^{2}(k+1))-s^{2}(k)s(k+1)c(k+1)+s(k)s^{2}(k+1)c(k)$
+\end_inset
+
+.
+ The first part looks telescopey, but the remaining two terms don't quite.
+\end_layout
+
+\begin_layout Standard
+At this point, out of frustration and despair, I type the summand into WolframAl
+pha, which claims that the whole thing is equal to 
+\begin_inset Formula $\sin(\frac{2}{k})-\sin(\frac{2}{k+1})$
+\end_inset
+
+, which would imply that our sum telescopes to 
+\begin_inset Formula $\sin2$
+\end_inset
+
+ (which is also what the 
+\begin_inset Quotes eld
+\end_inset
+
+Hints and Answers
+\begin_inset Quotes erd
+\end_inset
+
+ in the back of the book says).
+ I regret being unable to reach this conclusion without tool assistance.
 \end_layout
 
 \begin_layout Standard
@@ -284,7 +462,36 @@ a
 a
 \series default
 .
- [TODO finish]
+ The cosine of zero is one, so the cosine of increasingly small terms is
+ going to increasingly resemble the divergent 
+\begin_inset Formula $1+1+1+1$
+\end_inset
+
+...
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ The terms converge to 
+\begin_inset Formula $\frac{1}{e}$
+\end_inset
+
+, which is not zero.
+ The series diverges by the divergence test.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ With a linear term in the numerator and a quadratic in the denominator,
+ this is asymptotically equivalent to the harmonic series, which diverges.
 \end_layout
 
 \begin_layout Standard
