@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-2 September 2024
+8 September 2024
 \end_layout
 
 \begin_layout Subsection*
@@ -513,7 +513,35 @@ a
  Each of these possibilities has a probability which is the product of 13
  factors, each of which is the quotient of the number of balls of the type
  drawn that were available to draw, over the number of balls remaining.
- So the total probability of X=14 is 
+\end_layout
+
+\begin_layout Standard
+For example, if the sequence drawn is 
+\begin_inset Formula $RRRRRRRBBBBBBR$
+\end_inset
+
+, the probability associated with that outcome is the product of 
+\begin_inset Formula $(\frac{8}{20}\cdot\frac{7}{19}\cdot...\frac{3}{15}\cdot\frac{2}{14})$
+\end_inset
+
+ (for the initial run of red balls) and 
+\begin_inset Formula $(\frac{12}{13}\cdot\frac{11}{12}\cdot...\cdot\frac{7}{8})$
+\end_inset
+
+ (for the subsequent run of blue balls) and 
+\begin_inset Formula $\frac{1}{7}$
+\end_inset
+
+ (for the remaining red ball).
+ But the order of the sequence doesn't matter: regardless of the exact sequence,
+ there are going to be factors in the denominator counting down from 20
+ to 7 (the number of remaining balls on each draw) and counting down from
+ 8 in the numerator (for the red balls remaining) and from 12 to 7 (for
+ the blue balls remaining).
+\end_layout
+
+\begin_layout Standard
+So the total probability of X=14 is 
 \begin_inset Formula 
 \[
 \binom{13}{7}\frac{8!\frac{12!}{6!}}{\frac{20!}{6!}}\approx0.0136
@@ -529,19 +557,54 @@ a
 \series bold
 b
 \series default
-.
- There are six blue balls remaining at the end of the process, and 12 at
- the start.
- So the probability of any one blue ball remaining is 0.5.
-\end_layout
-
-\begin_layout Standard
-
+–
 \series bold
 c
 \series default
 .
- [TODO, going to ask at office hours is the answer is really that brute-forcey]
+ Generalizing the reasoning above,
+\begin_inset Formula 
+\[
+P(X=x)=\binom{x-1}{7}\frac{8!\frac{12!}{(x-8)!}}{\frac{20!}{(20-x)!}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then the probability that a given blue ball remains will be
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{x=8}^{20}\frac{x-8}{12}P(X=x)=\sum_{x=8}^{20}\frac{x-8}{12}\frac{8!\frac{12!}{(x-8)!}}{\frac{20!}{(20-x)!}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula $E[X]$
+\end_inset
+
+ will be
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{x=8}^{20}xP(X=x)=\sum_{x=8}^{20}x\frac{8!\frac{12!}{(x-8)!}}{\frac{20!}{(20-x)!}}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -550,7 +613,56 @@ c
 46
 \series default
 .
- [TODO finish typing]
+ 
+\series bold
+a
+\series default
+.
+ Following the hint, we define 
+\begin_inset Formula $I_{n}$
+\end_inset
+
+ as 1 if 
+\begin_inset Formula $n\le X$
+\end_inset
+
+ and zero otherwise: 
+\begin_inset Formula $X=\sum_{n}X_{n}$
+\end_inset
+
+.
+ But then by the linearity of expectation, 
+\begin_inset Formula $E[X]=\sum_{n}E[I_{n}]$
+\end_inset
+
+.
+ But the expectation of a random variable that's one if a proposition is
+ true and zero otherwise is the probability of the proposition being true.
+ 
+\emph on
+Quod erat demonstrandum!
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ Same idea with an extra dimension.
+ 
+\begin_inset Formula $I_{n,m}=\begin{cases}
+1 & X\ge n,Y\ge m\\
+0 & \mathrm{otherwise}
+\end{cases}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E[X\&Y]=\sum_{n}\sum_{m}E[I_{n,m}]$
+\end_inset
+
+.
 \end_layout
 
 \end_body
