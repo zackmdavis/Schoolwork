@@ -94,6 +94,19 @@ Zack M.
 13 September 2024
 \end_layout
 
+\begin_layout Abstract
+Homework solutions for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Real Analysis II
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
 \begin_layout Standard
 
 \series bold
@@ -158,11 +171,36 @@ c
 
 .
  (This is cited as fact on p.
- 195 of the Wade text.) So 
-\begin_inset Formula $\frac{\log k}{k^{p}}\le\frac{k^{p-1}}{}$
+ 195 of the Wade text.) Since 
+\begin_inset Formula $p$
 \end_inset
 
- [TODO: this argument is bogus; what was I thinking here??]
+ is strictly greater than 1, 
+\begin_inset Formula $p-1$
+\end_inset
+
+ is strictly greater than zero, and we can consider a number slightly smaller
+ than that to use an exponent in an upper bound on the terms of our sequence.
+ For large 
+\begin_inset Formula $k$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+\frac{\log k}{k^{p}}<\frac{k^{p-1-\varepsilon}}{k^{p}}=k^{p-1-p-\varepsilon}=k^{-1-\varepsilon}=\frac{1}{k^{p+\varepsilon}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Comparison test.
+ (I was already on the right track but feeling uncertain, so I ended up
+ chatting to OpenAI o1-preview while working on this; I should have had
+ more courage in my convictions.)
 \end_layout
 
 \begin_layout Standard
@@ -196,11 +234,19 @@ a
 b
 \series default
 .
- 
-\begin_inset Formula $\frac{^{k}\sqrt{k}}{k}=\frac{k^{\nicefrac{1}{k}}}{k^{1}}=k^{-1+\nicefrac{1}{k}}$
+ For large 
+\begin_inset Formula $k$
 \end_inset
 
-[TODO: where was I going with this?]
+,
+\begin_inset Formula $^{k}\sqrt{k}$
+\end_inset
+
+ approaches 1 from above, so 
+\begin_inset Formula $\frac{^{k}\sqrt{k}}{k}$
+\end_inset
+
+ diverges by comparison test to the harmonic series.
 \end_layout
 
 \begin_layout Standard
@@ -278,7 +324,70 @@ Quod erat demonstrandum!
 6.2.4
 \series default
 .
- [TODO]
+ I got this one wrong.
+ Not sure how to correctly manipulate the 
+\begin_inset Formula $\log^{p}$
+\end_inset
+
+ factor, I had informally reasoned that the answer should be 
+\begin_inset Formula $p>0$
+\end_inset
+
+, because the logarithm is eventually dominated by any polynomial and the
+ factor of 
+\begin_inset Formula $k$
+\end_inset
+
+ in the denominator is 
+\begin_inset Formula $k^{1}$
+\end_inset
+
+, so we should only need any positive amount of 
+\begin_inset Quotes eld
+\end_inset
+
+power of 
+\begin_inset Formula $k$
+\end_inset
+
+-ness
+\begin_inset Quotes erd
+\end_inset
+
+ to push it over the threshold of the 
+\begin_inset Formula $p$
+\end_inset
+
+-series test, if that makes sense.
+ But the 
+\begin_inset Quotes eld
+\end_inset
+
+Answers and Hints to Selected Exercises
+\begin_inset Quotes erd
+\end_inset
+
+ section in the back of the book disagrees and says 
+\begin_inset Formula $p>1$
+\end_inset
+
+.
+ Seeking guidance about where my informal reasoning had gone wrong, I asked
+ OpenAI o1-preview, and it points out that we need to do an integral test,
+ where a 
+\begin_inset Formula $u:=\log x$
+\end_inset
+
+ substitution ends up turning this into a 
+\begin_inset Formula $p$
+\end_inset
+
+-series-test-like 
+\begin_inset Formula $\int\frac{1}{u^{p}}$
+\end_inset
+
+.
+ I regret my incompetence.
 \end_layout
 
 \begin_layout Standard
