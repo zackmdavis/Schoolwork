@@ -110,6 +110,86 @@ Real Analysis II
 \begin_layout Standard
 
 \series bold
+6.3.2
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ [TODO]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ Convergent, because the root test gives us
+\begin_inset Formula 
+\[
+\limsup_{k\rightarrow\infty}\left|\left(\frac{k+1}{2k+3}\right)^{k}\right|^{\nicefrac{1}{k}}=\limsup\left|\frac{k+1}{2k+3}\right|<1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+f
+\series default
+.
+ Convergent, because the root test gives us
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\limsup_{k\rightarrow\infty}\left|\left(\frac{3+(-1)^{k}}{5}\right)^{k}\right|^{\nicefrac{1}{k}}=\limsup\left|\frac{3+(-1)^{k}}{5}\right|<1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+6.3.4
+\series default
+.
+ The idea here is that if 
+\begin_inset Formula $0<|x|<\nicefrac{1}{a}$
+\end_inset
+
+, then we pass the root test, because
+\begin_inset Formula 
+\[
+\limsup_{k\rightarrow\infty}|a_{k}x^{k}|^{\nicefrac{1}{k}}=\limsup_{k\rightarrow\infty}|a_{k}|^{\nicefrac{1}{k}}\cdot|x^{k}|^{\nicefrac{1}{k}}=\limsup_{k\rightarrow\infty}a|x|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Whereas if 
+\begin_inset Formula $x=0$
+\end_inset
+
+, the series is just zero.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 6.3.7
 \series default
 .
@@ -146,6 +226,151 @@ a
 \end_inset
 
 -series test).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ [TODO]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+6.4.1.
+ a
+\series default
+.
+ 
+\begin_inset Formula $\sum\frac{(-1)^{k}}{k^{p}}$
+\end_inset
+
+ passes the Dirichlet test (with 
+\begin_inset Formula $(-1)^{k}$
+\end_inset
+
+ as the bounded sequence and 
+\begin_inset Formula $\frac{1}{k^{p}}$
+\end_inset
+
+ as the sequence monotonically decreasing to zero) and thus converges.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\begin_inset Formula $\sum\frac{\sin kx}{k^{p}}$
+\end_inset
+
+ passes the Dirichlet test (with 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\sin kx$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ as the bounded sequence and 
+\begin_inset Formula $\frac{1}{k^{p}}$
+\end_inset
+
+ as the sequence monotonically decreasing to zero) and thus converges.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+6.4.3.
+ a
+\series default
+.
+ 
+\begin_inset Formula $\sum\frac{(-1)^{k}k^{3}}{(k+1)!}$
+\end_inset
+
+ passes the Dirichlet test (with 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $(-1)^{k}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ as the bounded sequence and 
+\begin_inset Formula $\frac{k^{3}}{(k+1)!}$
+\end_inset
+
+ sequence monotonically decreasing to zero because the factorial denominator
+ asymptotically dominantes the cubic numerator) and thus converges.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ [TODO]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+6.4.4
+\series default
+.
+ [TODO]
 \end_layout
 
 \end_body
