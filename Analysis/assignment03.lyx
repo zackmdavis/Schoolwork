@@ -118,7 +118,55 @@ Real Analysis II
 a
 \series default
 .
- [TODO]
+ At first, I was intimiated by the 
+\begin_inset Formula $\log$
+\end_inset
+
+ in the denominator.
+ After discussion with Prof.
+ Schuster at office hours on 19 September, I noticed that 
+\begin_inset Formula $O(k^{\log k})>O(k^{c})$
+\end_inset
+
+ for any fixed 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ (
+\emph on
+E.g
+\emph default
+., if 
+\begin_inset Formula $c$
+\end_inset
+
+ were 
+\begin_inset Formula $2$
+\end_inset
+
+ and the logarithm were base 10, then 
+\begin_inset Formula $k^{\log k}$
+\end_inset
+
+ would asymptotically dominate after 
+\begin_inset Formula $k=100$
+\end_inset
+
+.) So the series goes to zero faster than, e.g., 
+\begin_inset Formula $\frac{k^{3}}{k^{5}}$
+\end_inset
+
+, which converges by the 
+\begin_inset Formula $p$
+\end_inset
+
+-series test.
+ So this is 
+\color teal
+convergent
+\color inherit
+.
 \end_layout
 
 \begin_layout Standard
@@ -127,7 +175,11 @@ a
 c
 \series default
 .
- Convergent, because the root test gives us
+ 
+\color teal
+Convergent
+\color inherit
+, because the root test gives us
 \begin_inset Formula 
 \[
 \limsup_{k\rightarrow\infty}\left|\left(\frac{k+1}{2k+3}\right)^{k}\right|^{\nicefrac{1}{k}}=\limsup\left|\frac{k+1}{2k+3}\right|<1
@@ -144,7 +196,11 @@ c
 f
 \series default
 .
- Convergent, because the root test gives us
+ 
+\color teal
+Convergent
+\color inherit
+, because the root test gives us
 \end_layout
 
 \begin_layout Standard
@@ -234,7 +290,123 @@ a
 b
 \series default
 .
- [TODO]
+ I had trouble with this one.
+ At first, I suspected this was going to be about the ratio test (a complement
+ to part a.
+ being about the root test, with some property of conditional convergence
+ interacting with the absolute value in the test, some reason that conditional
+ convergence meant that the 
+\begin_inset Formula $a_{k}$
+\end_inset
+
+ couldn't go to zero fast enough to offset the 
+\begin_inset Formula $k^{p}$
+\end_inset
+
+ factor), but after discussion at Prof.
+ Schuster's office hours on 19 September, it was concluded that the ratio
+ test is no help here (as the ratio can easily be one).
+ Then I talked through the problem at length with the Claude LLM (
+\emph on
+claude.ai
+\emph default
+), and I think I understand now? In order for 
+\begin_inset Formula $\sum_{k}k^{p}a_{k}$
+\end_inset
+
+ to converge, the terms have to go to zero, which means that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists an 
+\begin_inset Formula $N_{1}$
+\end_inset
+
+ such that 
+\begin_inset Formula $k>N_{1}$
+\end_inset
+
+ implies 
+\begin_inset Formula $|k^{p}a_{k}|<\varepsilon$
+\end_inset
+
+.
+ Now 
+\begin_inset Formula $k^{p}$
+\end_inset
+
+ is always positive, so that's 
+\begin_inset Formula $k^{p}|a_{k}|<\varepsilon$
+\end_inset
+
+.
+ We need to show that 
+\begin_inset Formula $k^{p}$
+\end_inset
+
+ grows 
+\begin_inset Quotes eld
+\end_inset
+
+too fast
+\begin_inset Quotes erd
+\end_inset
+
+ for 
+\begin_inset Formula $|a_{k}|$
+\end_inset
+
+ to keep it in check.
+ We know that 
+\begin_inset Formula $k^{p}$
+\end_inset
+
+ will grow beyond any potential bound 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ But because 
+\begin_inset Formula $\sum_{k}|a_{k}|$
+\end_inset
+
+ diverges, then there exists an 
+\begin_inset Formula $N_{2}$
+\end_inset
+
+ such that 
+\begin_inset Formula $k_{1},k_{2}\ge N_{2}$
+\end_inset
+
+ implies 
+\begin_inset Formula $\sum_{k=k_{1}}^{k_{2}}|a_{k}|\ge\frac{\varepsilon}{B}$
+\end_inset
+
+ (by the failure of the Cauchy convergence criterion).
+ So there exists a 
+\begin_inset Formula $k_{3}$
+\end_inset
+
+ such that 
+\begin_inset Formula $|a_{k_{3}}|\ge\frac{\varepsilon}{B(k_{2}-k_{1})}$
+\end_inset
+
+ (because a sum must contain a term greater or equal to its average).
+ Then 
+\begin_inset Formula $k_{3}^{p}|a_{k_{3}}|\ge B\frac{\varepsilon}{B(k_{2}-k_{1})}=\frac{\varepsilon}{(k_{2}-k_{1})}$
+\end_inset
+
+.
+ But actually, we could have chosen 
+\begin_inset Formula $k_{2}=k_{1}+1$
+\end_inset
+
+, so really 
+\begin_inset Formula $k_{3}^{p}|a_{k_{3}}|>\varepsilon$
+\end_inset
+
+.
+ Contradiction!
 \end_layout
 
 \begin_layout Standard
@@ -309,6 +481,78 @@ b
 \begin_layout Standard
 
 \series bold
+6.4.2.
+ a
+\series default
+.
+ I wasn't sure how to find radiuses of convergence, but I pulled out my
+ old copy of Stewart 
+\emph on
+Calculus: Early Transcendentals 
+\emph default
+(5th edition), and it says that you can use the ratio test, which I guess
+ makes sense.
+ (The values of 
+\begin_inset Formula $x$
+\end_inset
+
+ that make the ratio less than one pass the test.)
+\begin_inset Formula 
+\[
+\left|\frac{\frac{x^{k+1}}{k+1}}{\frac{x^{k}}{k}}\right|=|\frac{k}{k+1}x|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Implying 
+\color teal
+
+\begin_inset Formula $|x|<1$
+\end_inset
+
+
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ The ratio test gives
+\begin_inset Formula 
+\[
+\left|\frac{x^{3(k+1)}}{2^{(k+1)}}\cdot\frac{2^{k}}{x^{3k}}\right|=\left|\frac{x^{3}}{2}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Requring the ratio to be less than one gives 
+\begin_inset Formula $x^{3}<2\rightarrow$
+\end_inset
+
+ 
+\color teal
+
+\begin_inset Formula $x<\sqrt[3]{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 6.4.3.
  a
 \series default
@@ -361,7 +605,58 @@ b
 c
 \series default
 .
- [TODO]
+ We consider the series 
+\begin_inset Formula $\sum_{k=1}^{\infty}\frac{(k+1)^{k}}{p^{k}k!}$
+\end_inset
+
+ for 
+\begin_inset Formula $p>e$
+\end_inset
+
+.
+ The presence of the factorial and 
+\begin_inset Formula $e$
+\end_inset
+
+ is a clue that this is going to use Stirling's approximation: the terms
+ are asymptotically equal to 
+\begin_inset Formula 
+\[
+\frac{(k+1)^{k}}{p^{k}\sqrt{2\pi k}\frac{k^{k}}{e^{k}}}=\frac{(k+1)^{k}e^{k}}{p^{k}\sqrt{2\pi k}k^{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $p>e$
+\end_inset
+
+, then I want to say that this should converge because the 
+\begin_inset Formula $p^{k}$
+\end_inset
+
+in the denominator dominates the 
+\begin_inset Formula $e^{k}$
+\end_inset
+
+ in the numerator (whereas the 
+\begin_inset Formula $(k+1)^{k}$
+\end_inset
+
+ and constant factor of 
+\begin_inset Formula $k^{k}$
+\end_inset
+
+ are asymptotically equivalent).
+ The Claude LLM points out that we can do better: 
+\begin_inset Formula $\frac{e^{k}}{p^{k}}=\left(\frac{e}{p}\right)^{k}$
+\end_inset
+
+ is a geometric series with ratio less than one.
 \end_layout
 
 \begin_layout Standard
@@ -370,7 +665,65 @@ c
 6.4.4
 \series default
 .
- [TODO]
+ First thought: isn't this a trivial corollary of Dirchlet's test?? If 
+\begin_inset Formula $\sum a_{k}$
+\end_inset
+
+ converges, then it's bounded, and the rest of the statement is th—no, OK,
+ there's another difference in the hypotheses: in Dirchlet's test, 
+\begin_inset Formula $b_{k}\downarrow0$
+\end_inset
+
+, whereas here 
+\begin_inset Formula $b_{k}\downarrow b$
+\end_inset
+
+.
+ We can use a similar proof strategy, though.
+ Let 
+\begin_inset Formula $A:=\sum_{k}a_{k}$
+\end_inset
+
+.
+ Choose 
+\begin_inset Formula $N$
+\end_inset
+
+ such that 
+\begin_inset Formula $k\ge N$
+\end_inset
+
+ implies 
+\begin_inset Formula $b_{k}<\frac{\varepsilon}{2A}.$
+\end_inset
+
+ Then for 
+\begin_inset Formula $m,n\ge N$
+\end_inset
+
+, Abel's formula gives us
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\sum_{k=m}^{n}a_{k}b_{k}\right|\le|A_{n,m}|\cdot|b_{n}|+\sum_{k=m}^{n-1}|A_{k,m}|(b_{k+1}-b_{k})\le A|b_{n}|+\sum_{k=m}^{n-1}A(b_{k+1}-b_{k})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=A(|b_{n}|+\sum_{k=m}^{n-1}(b_{k+1}-b_{k}))=A(|b_{n}|+b_{m}-b_{n})\le A(\frac{\varepsilon}{2A}+\frac{\varepsilon}{2A}-\frac{\varepsilon}{2A})=\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
