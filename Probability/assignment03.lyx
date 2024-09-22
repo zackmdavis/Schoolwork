@@ -1,0 +1,750 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #3
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+20 September 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Mujamdar's 
+\begin_inset Quotes eld
+\end_inset
+
+Probability Models
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+8
+\series default
+.
+ We are told that 
+\begin_inset Formula $X$
+\end_inset
+
+ is the number of rolls of a standard die to get a six, 
+\begin_inset Formula $Y$
+\end_inset
+
+ a five.
+ We are asked to find:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $E[X]$
+\end_inset
+
+.
+ The mean of the geometric distribution is 
+\begin_inset Formula $\nicefrac{1}{p}$
+\end_inset
+
+.
+ Here, 
+\begin_inset Formula $p=\nicefrac{1}{6}$
+\end_inset
+
+, so 
+\color teal
+
+\begin_inset Formula $E[X]=6$
+\end_inset
+
+
+\color inherit
+.
+ This accords nicely with intution.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\begin_inset Formula $E[X|Y=1]$
+\end_inset
+
+.
+ We know that the first roll was a five, therefore it wasn't a six.
+ Having no information about the second and subsequent rolls, our information
+ about them is again represented by a geometric distribution.
+ 
+\begin_inset Formula $E[X|Y=1]=1+E[X]$
+\end_inset
+
+ 
+\color teal
+
+\begin_inset Formula $=7$
+\end_inset
+
+
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\begin_inset Formula $E[X|Y=5].$
+\end_inset
+
+ We know that the fifth roll was a five, and therefore not a six.
+ But we also know that the first through fourth rolls were 
+\emph on
+not 
+\emph default
+five (else 
+\begin_inset Formula $Y$
+\end_inset
+
+ would be smaller).
+ So 
+\color teal
+
+\begin_inset Formula 
+\[
+E[X|Y=5]=\sum_{k=1}^{4}k\left(\frac{1}{5}\right)\left(\frac{4}{5}\right)^{k-1}+\left(\frac{4}{5}\right)^{4}\sum_{k=6}^{\infty}k\left(\frac{5}{6}\right)^{k-6}\left(\frac{1}{6}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Originally, I had answered 
+\begin_inset Formula $E[X|Y=5]=\sum_{k=1}^{4}k\left(\frac{1}{5}\right)\left(\frac{4}{5}\right)^{k-1}+\left(\frac{4}{5}\right)^{4}\sum_{k=6}^{\infty}k\left(\frac{5}{6}\right)^{k}\left(\frac{1}{6}\right)$
+\end_inset
+
+, but when I consulted OpenAI o1-preview about my full write-up before submittin
+g it, it alerted me to my having neglected to adjust the exponent on the
+ second term given that the series is starting at 
+\begin_inset Formula $k=6$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+12
+\series default
+.
+ We are told that 
+\begin_inset Formula $f(x,y)=\frac{\exp(\frac{-x}{y})\exp(-y)}{y}$
+\end_inset
+
+ (with both variables having domain from 0 to 
+\begin_inset Formula $\infty$
+\end_inset
+
+).
+ We are asked to confirm that 
+\begin_inset Formula $E[X|Y=y]=y$
+\end_inset
+
+.
+ That will be computed as 
+\begin_inset Formula $\int_{0}^{\infty}xf_{X|Y}(x|y)\ dx$
+\end_inset
+
+.
+ For that, we need to compute the conditional distribution 
+\begin_inset Formula $f_{X|Y}(x|y):=\frac{f(x,y)}{f_{Y}(y)}$
+\end_inset
+
+, and for that, we need to compute the marginal distribution for 
+\begin_inset Formula $Y$
+\end_inset
+
+, 
+\begin_inset Formula $f_{Y}(y):=\int_{0}^{\infty}f(x,y)\ dx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+So we proceed 
+\begin_inset Formula 
+\[
+f_{Y}=\int_{0}^{\infty}\frac{\exp(\frac{-x}{y})\exp(-y)}{y}\ dx=\frac{\exp(-y)}{y}\cdot-y\exp(\frac{-x}{y})|_{x=0}^{\infty}=-\exp(-y)\exp(\frac{-x}{y})|_{0}^{\infty}=--\exp(-y)\exp(\frac{0}{y})=\exp(-y)
+\]
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula 
+\[
+f_{X|Y}=\frac{\frac{\exp(\frac{-x}{y})\exp(-y)}{y}}{\exp(-y)}=\frac{1}{y}\exp\left(\frac{-x}{y}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So it would seem that
+\begin_inset Formula 
+\[
+E[X|Y=y]=\int_{0}^{\infty}x\cdot f_{X|Y}(x|y)\ dx=\int_{0}^{\infty}\frac{x}{y}\exp\left(\frac{-x}{y}\right)\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At this point, I was confused and felt stuck, because this didn't seem easily
+ integrable to me.
+ When I asked the Claude LLM (
+\emph on
+claude.ai
+\emph default
+) about it, it claimed that we can apply integration by parts.
+ (It would appear that I'm a little rusty on my integration techniques.)
+ So let 
+\begin_inset Formula $u:=x$
+\end_inset
+
+ and 
+\begin_inset Formula $dv:=\frac{1}{y}\exp(\frac{x}{y})\ dx$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $du=dx$
+\end_inset
+
+ and 
+\begin_inset Formula $v=-\exp(\frac{-x}{y})$
+\end_inset
+
+.
+ Then we apply the integration by parts formula 
+\begin_inset Formula $\int_{a}^{b}u\ dv=uv|_{a}^{b}-\int_{a}^{b}v\ du$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x\exp\left(\frac{-x}{y}\right)\rvert_{0}^{\infty}-\int_{0}^{\infty}-\exp\left(\frac{-x}{y}\right)\ dx=\int_{0}^{\infty}\exp\left(\frac{-x}{y}\right)\ dx=-y\exp\left(\frac{-x}{y}\right)|_{0}^{\infty}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\begin_inset Formula 
+\[
+=0--y(1)=y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+as expected.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+40
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ By the law of total expectation we have
+\begin_inset Formula 
+\[
+E[X]=\frac{1}{2}(2+E[X])+\frac{3}{10}(3+E[X])+0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=1+\frac{9}{10}+(\frac{1}{2}+\frac{3}{10})E[X]=\frac{19}{10}+\frac{8}{10}E[X]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{2}{10}E[X]=\frac{19}{10}\rightarrow E[X]=\frac{19}{10}\cdot\frac{10}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\begin_inset Formula 
+\[
+=\frac{19}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ On the other hand, if we choose doors/paths without replacement (and the
+ initial choices are equally likely), using the random variable 
+\begin_inset Formula $Y$
+\end_inset
+
+ to denote the path choices, then we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[X]=\sum_{j=1}^{3}E[X|Y=j]\cdot P(Y=j)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $E[X|Y=1]=0.5(3)+0=\frac{3}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $E[X|Y=2]=0.5(2)+0=\frac{1}{2}$
+\end_inset
+
+, so that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[X]=\frac{1}{3}\cdot\frac{3}{2}+\frac{1}{3}\cdot\frac{2}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\begin_inset Formula 
+\[
+=\frac{5}{6}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ Now we are asked of the variance for the scenarios in parts a.
+ and b.
+ We know that 
+\begin_inset Formula $\mathrm{Var}(X)=E[X^{2}]-E[X]^{2}$
+\end_inset
+
+.
+ We can also decompose 
+\begin_inset Formula $E[X^{2}]=\sum_{y}E[X^{2}|Y=y]\cdot P(Y=y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+For the scenario in part a.
+\emph default
+, 
+\begin_inset Formula $E[X^{2}|Y=1]=4+E[X^{2}]$
+\end_inset
+
+, and 
+\begin_inset Formula $E[X^{2}|Y=2]=9+E[X^{2}]$
+\end_inset
+
+.
+ (
+\emph on
+I.e.,
+\emph default
+ if the first door is chosen, we travel for 
+\begin_inset Formula $2^{2}=4$
+\end_inset
+
+ days, and then return to the initial scenario but where we're tracking
+ the squared time rather than the time, 
+\emph on
+&c
+\emph default
+.) so
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[X^{2}]=\frac{1}{2}(4+E[X^{2}])+\frac{3}{10}(9+E[X^{2}])\rightarrow\frac{2}{10}E[X^{2}]=\frac{47}{10}\rightarrow E[X^{2}]=\frac{47}{10}\cdot\frac{10}{2}=\frac{47}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathrm{Var}(X)=\frac{47}{2}-\left(\frac{19}{2}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\begin_inset Formula 
+\[
+=\frac{267}{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+For the scenario in part b.
+\emph default
+, 
+\begin_inset Formula $E[X^{2}|Y=1]=0.5\cdot3^{2}+0=\frac{9}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $E[X^{2}|Y=2]=0.5\cdot2^{2}+0=2$
+\end_inset
+
+, so 
+\begin_inset Formula $E[X^{2}]=\frac{1}{3}\cdot\frac{9}{2}+\frac{1}{3}\cdot2=\frac{3}{2}+\frac{2}{3}=\frac{13}{6}$
+\end_inset
+
+, so 
+\begin_inset Formula 
+\[
+\mathrm{Var}(X)=E[X^{2}]-E[X]^{2}=\frac{13}{6}-\left(\frac{5}{6}\right)^{2}
+\]
+
+\end_inset
+
+
+\color teal
+
+\begin_inset Formula 
+\[
+=\frac{53}{36}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+44
+\series default
+.
+ Let revenue be 
+\begin_inset Formula $\$$
+\end_inset
+
+, the number of customers be 
+\begin_inset Formula $C$
+\end_inset
+
+, and the revenue collected from the 
+\begin_inset Formula $i$
+\end_inset
+
+th customer be 
+\begin_inset Formula $\$/C_{i}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E[C]=10$
+\end_inset
+
+ (it's a Poisson with 
+\begin_inset Formula $\lambda=10$
+\end_inset
+
+).
+ 
+\begin_inset Formula $E[\$/C_{i}]=50$
+\end_inset
+
+ (the mean of the uniform distribution on 
+\begin_inset Formula $(0,100)$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Thus our mean revenue is 
+\color teal
+
+\begin_inset Formula $E[\$]=E[C]E[\$/C_{i}]=10\cdot50=500$
+\end_inset
+
+
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Standard
+For the variance, our class notes for 19 September on conditional variance
+ derived a relevant formula, which, applied to our variables here, would
+ be 
+\begin_inset Formula 
+\[
+\mathrm{Var}(\$)=\mathrm{Var}(\$/C_{i})E[C]+E(\$/C_{i})^{2}\mathrm{Var}(C)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The variance of a uniform distribution is 
+\begin_inset Formula $\frac{1}{12}(b-a)^{2}$
+\end_inset
+
+, so 
+\begin_inset Formula $\mathrm{Var}(\$/C_{i})=\frac{1}{12}100^{2}=\frac{2500}{3}$
+\end_inset
+
+.
+ So the variance in revenue would be 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{2500}{3}\cdot10+50^{2}\cdot10
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\begin_inset Formula 
+\[
+\approx33333.33
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+dollars squared.
+ (Originally, I had erroneously forgotten the square in the formula and
+ had computed 
+\begin_inset Formula $\frac{2500}{3}\cdot10+50\cdot10\approx8833.33$
+\end_inset
+
+, but when I consulted OpenAI o1-preview about my full write-up before submittin
+g it, it alerted me to the error.)
+\end_layout
+
+\end_body
+\end_document
