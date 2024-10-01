@@ -1,0 +1,283 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #5
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+3 October 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Real Analysis II
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7.2.1
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $\sin(\frac{x}{k^{2}})\le\frac{x}{k^{2}}$
+\end_inset
+
+ because 
+\begin_inset Formula $\sin(x)\le x$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $\sum_{k}\frac{x}{k^{2}}$
+\end_inset
+
+ converges, so we can use 
+\begin_inset Formula $M_{k}=\frac{x}{k^{2}}$
+\end_inset
+
+ in the 
+\begin_inset Formula $M$
+\end_inset
+
+-test and conclude that 
+\begin_inset Formula $\sum_{k}\sin(\frac{x}{k^{2}})$
+\end_inset
+
+ converges uniformly.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\begin_inset Formula $e^{-kx}=\frac{1}{e^{kx}}$
+\end_inset
+
+ goes to zero faster than our standard 
+\begin_inset Formula $p$
+\end_inset
+
+-series 
+\begin_inset Formula $\frac{1}{k^{p}}$
+\end_inset
+
+ (because exponentials dominate polynomials).
+ [TODO: need to be a little more fomal; 
+\begin_inset Quotes eld
+\end_inset
+
+on any subinterval
+\begin_inset Quotes erd
+\end_inset
+
+ is probably significant]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7.3.2
+\series default
+.
+ For any 
+\begin_inset Formula $[a,b]\subset(0,1)$
+\end_inset
+
+, let 
+\begin_inset Formula $\varepsilon:=\frac{1-b}{2}$
+\end_inset
+
+.
+ Then let 
+\begin_inset Formula $M_{k}:=(b+\varepsilon)^{k}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $M_{k}$
+\end_inset
+
+ converges because it's a geometric series with ratio 
+\begin_inset Formula $b+\varepsilon<1$
+\end_inset
+
+.
+ (It's not circular to invoke the fact that the geometric series converges
+ while proving that it converges 
+\emph on
+uniformly
+\emph default
+.) 
+\begin_inset Formula $M$
+\end_inset
+
+-test.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7.2.4
+\series default
+.
+ 
+\begin_inset Formula $\frac{\cos kx}{k^{2}}\le\frac{1}{k^{2}}$
+\end_inset
+
+, because cosines are at most 1, so 
+\begin_inset Formula $\sum_{k}\frac{\cos kx}{k^{2}}$
+\end_inset
+
+ converges uniformly.
+ But then because of that and 
+\begin_inset Formula $\frac{\cos kx}{k^{2}}$
+\end_inset
+
+ being integrable for all 
+\begin_inset Formula $k$
+\end_inset
+
+, Wade's Theorem 7.14.ii says that we can integrate term-by-term (
+\emph on
+i.e.
+\emph default
+, switch the summation and integral signs).
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=1}^{\infty}\int_{0}^{\frac{\pi}{2}}\frac{\cos kx}{k^{2}}=\left.\sum_{k=1}^{\infty}\frac{1}{k}\cdot\frac{\sin kx}{k^{2}}\right|_{x=0}^{\frac{\pi}{2}}=\sum_{k=1}^{\infty}\frac{\sin k(\frac{\pi}{2})-\sin k(0)}{k^{3}}=\sum_{k=1}^{\infty}\frac{\sin k(\frac{\pi}{2})}{k^{3}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But then every other term vanishes (because 
+\begin_inset Formula $\sin\pi=\sin0=0$
+\end_inset
+
+) and half of the remaining terms are negative.
+ [TODO: be a little more precise here]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7.2.5
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7.2.6
+\series default
+.
+\end_layout
+
+\end_body
+\end_document
