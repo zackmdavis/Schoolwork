@@ -29,9 +29,10 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -44,6 +45,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -55,6 +57,10 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -112,12 +118,16 @@ Real Analysis II
 a
 \series default
 .
- 
-\begin_inset Formula $\sin(\frac{x}{k^{2}})\le\frac{x}{k^{2}}$
+ For all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $|\sin(\frac{x}{k^{2}})|\le|\frac{x}{k^{2}}|$
 \end_inset
 
  because 
-\begin_inset Formula $\sin(x)\le x$
+\begin_inset Formula $|\sin(x)|\le|x|$
 \end_inset
 
 .
@@ -125,8 +135,12 @@ a
 \begin_inset Formula $\sum_{k}\frac{x}{k^{2}}$
 \end_inset
 
- converges, so we can use 
-\begin_inset Formula $M_{k}=\frac{x}{k^{2}}$
+ converges, so for any bounded interval 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+, we can use 
+\begin_inset Formula $M_{k}:=\frac{b}{k^{2}}$
 \end_inset
 
  in the 
@@ -138,6 +152,20 @@ a
 \end_inset
 
  converges uniformly.
+ (I had originally written 
+\begin_inset Formula $M_{k}:=\frac{x}{k^{2}}$
+\end_inset
+
+, but before submitting this assignment, I ran it by OpenAI o1-preview,
+ and it pointed out that 
+\begin_inset Formula $M_{k}$
+\end_inset
+
+ isn't allowed to depend on 
+\begin_inset Formula $x$
+\end_inset
+
+.)
 \end_layout
 
 \begin_layout Standard
@@ -147,6 +175,10 @@ b
 \series default
 .
  
+\begin_inset Formula $e^{-kx}<\frac{1}{k}$
+\end_inset
+
+ because 
 \begin_inset Formula $e^{-kx}=\frac{1}{e^{kx}}$
 \end_inset
 
@@ -159,15 +191,12 @@ b
 \end_inset
 
  (because exponentials dominate polynomials).
- [TODO: need to be a little more fomal; 
-\begin_inset Quotes eld
+ 
+\begin_inset Formula $M$
 \end_inset
 
-on any subinterval
-\begin_inset Quotes erd
-\end_inset
-
- is probably significant]
+-test.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -219,7 +248,7 @@ uniformly
 \series default
 .
  
-\begin_inset Formula $\frac{\cos kx}{k^{2}}\le\frac{1}{k^{2}}$
+\begin_inset Formula $|\frac{\cos kx}{k^{2}}|\le\frac{1}{k^{2}}$
 \end_inset
 
 , because cosines are at most 1, so 
@@ -255,12 +284,23 @@ i.e.
 \end_layout
 
 \begin_layout Standard
-But then every other term vanishes (because 
+But then every other term starting from 
+\begin_inset Formula $k=2$
+\end_inset
+
+ vanishes (because 
 \begin_inset Formula $\sin\pi=\sin0=0$
 \end_inset
 
-) and half of the remaining terms are negative.
- [TODO: be a little more precise here]
+) and half of the remaining terms (starting with 
+\begin_inset Formula $k=3$
+\end_inset
+
+) are negative, so we can reïndex to the desired 
+\begin_inset Formula $\sum_{k=0}^{\infty}\frac{(-1)^{k}}{(2k+1)^{3}}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -269,6 +309,75 @@ But then every other term vanishes (because
 7.2.5
 \series default
 .
+ This was discussed at office hours on 1 October.
+ 
+\begin_inset Formula $\sum_{k}\frac{1}{k}\sin\frac{x}{k+1}$
+\end_inset
+
+ converges at at least one point (
+\emph on
+e.g., 
+\emph default
+
+\begin_inset Formula $x=0$
+\end_inset
+
+), and the series of derivatives 
+\begin_inset Formula $\sum_{k}\frac{1}{k(k+1)}\cos\frac{x}{k+1}$
+\end_inset
+
+ converges uniformly on any bounded interval 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ according to the 
+\begin_inset Formula $M$
+\end_inset
+
+-test with 
+\begin_inset Formula $M_{k}=\frac{1}{k^{2}+k}$
+\end_inset
+
+, so we can invoke Theorem 7.14.iii.
+ But then 
+\begin_inset Formula $\sum_{k}\frac{1}{k(k+1)}\cos\frac{x}{k+1}<\sum_{k}\frac{1}{k(k+1)}$
+\end_inset
+
+ (because cosines are 
+\begin_inset Formula $\le1$
+\end_inset
+
+; multiplying by a cosine can't make something bigger).
+ Then by partial fraction decomposition, 
+\begin_inset Formula $\frac{1}{k(k+1)}=\frac{1}{k}-\frac{1}{k+1}$
+\end_inset
+
+.
+ So we have a telescoping sum: only the first and last terms of any partial
+ sum remain.
+ But the first term is 
+\begin_inset Formula $\frac{1}{1}\cos\frac{x}{2}=\cos\frac{x}{2}$
+\end_inset
+
+, which is 
+\begin_inset Formula $\le1$
+\end_inset
+
+.
+ But if 
+\begin_inset Formula $|f\prime(x)|\le1$
+\end_inset
+
+, then 
+\begin_inset Formula $f(x)\le|x|$
+\end_inset
+
+ by the mean value theorem.
+ (In order to exceed 
+\begin_inset Formula $|x|$
+\end_inset
+
+, then it has to increase faster than that somewhere.)
 \end_layout
 
 \begin_layout Standard
@@ -276,6 +385,72 @@ But then every other term vanishes (because
 \series bold
 7.2.6
 \series default
+.
+ This was discussed at office hours on 3 October (after I failed to understand
+ how to apply the hint in the back of the book and I didn't see what a hint
+ from Discord user FullyAutomaticTheoremProver and clarified by the Claude
+ LLM had to do with uniform convergence).
+ Consider 
+\begin_inset Formula $f(x)=\sum_{k=1}^{\infty}\frac{\sin\frac{x}{k}}{k}$
+\end_inset
+
+.
+ We know that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=1}^{\infty}|\frac{\sin\frac{x}{k}}{k}|\le\frac{\frac{x}{k}}{k}=\frac{x}{k^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so on the interval 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ we can use the 
+\begin_inset Formula $M$
+\end_inset
+
+-test with 
+\begin_inset Formula $M_{k}=\frac{1}{k^{2}}$
+\end_inset
+
+ to show uniform convergence.
+ Then we can invoke Theorem 7.14.ii on term-by-term integration:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{1}f(x)\ dx=\int_{0}^{1}\sum_{k=1}^{\infty}\frac{\sin\frac{x}{k}}{k}=\sum_{k=1}^{\infty}\int_{0}^{1}\frac{\sin\frac{x}{k}}{k}=\sum_{k=1}^{\infty}\left.-\cos\frac{x}{k}\right|_{0}^{1}=\sum_{k=1}^{\infty}-\cos\frac{1}{k}+\cos\frac{0}{k}=\sum_{k=1}^{\infty}1-\cos\frac{1}{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Which is, significantly, the function we are trying to bound.
+ Florence Lam explained how the bound can be achieved: 
+\begin_inset Formula $\int_{0}^{1}\frac{\sin\frac{x}{k}}{k}\le\int_{0}^{1}\frac{x}{k^{2}}\ dx=\frac{1}{2k^{2}}$
+\end_inset
+
+, but 
+\begin_inset Formula $\frac{1}{2}\sum_{k}\frac{1}{k^{2}}=\frac{1}{2}\cdot\frac{\pi}{6}=\frac{\pi}{12}$
+\end_inset
+
+ (by the famous Basel problem), and 
+\begin_inset Formula $\frac{\pi}{12}<2$
+\end_inset
+
 .
 \end_layout
 
