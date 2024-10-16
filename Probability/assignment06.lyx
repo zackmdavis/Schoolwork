@@ -1,0 +1,527 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #6
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+16 October 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Mujamdar's 
+\begin_inset Quotes eld
+\end_inset
+
+Probability Models
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Subsection*
+Ch.
+ 4
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+14
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ I figured these out by drawing the transition graphs on paper and eyeballing
+ them.
+ (Graphs not shown.) For all of these, I'm numbering the states sequentially
+ from 1.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{P}_{1}$
+\end_inset
+
+ represents an irreducible Markov chain with one recurrent class 
+\begin_inset Formula $\{1,2,3\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{P}_{2}$
+\end_inset
+
+ also represents an irreducible chain, with one reccurent class 
+\begin_inset Formula $\{1,2,3,4\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{P}_{3}$
+\end_inset
+
+ represents a Markov chain with three classes: a recurrent class 
+\begin_inset Formula $\{1,3\}$
+\end_inset
+
+, a recurent class 
+\begin_inset Formula $\{4,5\}$
+\end_inset
+
+, and a transient class 
+\begin_inset Formula $\{2\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boldsymbol{P}_{4}$
+\end_inset
+
+ represents a Markov chain wiht four classes: a recurrent class 
+\begin_inset Formula $\{1,2\}$
+\end_inset
+
+, a recurrent class 
+\begin_inset Formula $\{3\}$
+\end_inset
+
+, a transient class 
+\begin_inset Formula $\{4\}$
+\end_inset
+
+, and a transient class 
+\begin_inset Formula $\{5\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+15
+\series default
+.
+ Suppose not.
+ Then the shortest path from 
+\begin_inset Formula $i$
+\end_inset
+
+ to 
+\begin_inset Formula $j$
+\end_inset
+
+ must must repeat states, by the pigeonhole principle.
+ (The putative path would be of length greater than 
+\begin_inset Formula $M$
+\end_inset
+
+, but there are only 
+\begin_inset Formula $M$
+\end_inset
+
+ states.) Suppose 
+\begin_inset Formula $S$
+\end_inset
+
+ is a state that is repeated twice in the shortest path.
+ But then we can construct a shorter path by 
+\begin_inset Quotes eld
+\end_inset
+
+clipping out
+\begin_inset Quotes erd
+\end_inset
+
+ all the transitions between the first appearance of S and the second.
+ Contradiction!
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+18
+\series default
+.
+ Consider a Markov chain with the states 1H, 1T, 2H, and 2T (where the first
+ character indicates the number of the coin that was flipped, and the second
+ character represents the outcome).
+ Then our sequence of flips has the transition matix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[\begin{array}{cccc}
+0.6 & 0.4 & 0 & 0\\
+0.6 & 0 & 0.2 & 0.2\\
+0 & 0 & 0.5 & 0.5\\
+0.3 & 0.2 & 0.5 & 0
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To find the stationary distribution, we need to solve the system 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\pi_{1H}=0.6\pi_{1H}+0.6\pi_{1T}+0.3\pi_{2T}\\
+\pi_{1T}=0.4\pi_{1H}+0.2\pi_{2T}\\
+\pi_{2H}=0.2\pi_{1T}+0.5\pi_{2H}+0.5\pi_{2T}\\
+\pi_{2T}=0.2\pi_{1T}+0.5\pi_{2H}\\
+\sum_{i\in\{1H,1T,2H,2T\}}\pi_{i}=1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can solve the system by taking the reduced row eschalon form of the following
+ matrix (where one of the equations has been dropped because 
+\begin_inset Formula $(P^{\intercal}-I)\vec{\pi}$
+\end_inset
+
+ is singular; we want exactly 
+\begin_inset Formula $n$
+\end_inset
+
+ rows to solve for our 
+\begin_inset Formula $n$
+\end_inset
+
+ unknowns):
+\begin_inset Formula 
+\[
+\left[\begin{array}{cccc|c}
+-0.4 & 0.6 & 0 & 0.3 & 0\\
+0.4 & -1 & 0 & 0.2 & 0\\
+0 & 0.2 & -0.5 & 0.5 & 0\\
+1 & 1 & 1 & 1 & 1
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solving this with SymPy (code not shown; I tried writing it myself first,
+ but I had a bug, and ended up using code generated by OpenAI o1-preview
+ rather than taking the time to debug my own version), we get 
+\begin_inset Formula 
+\[
+\left[\begin{array}{c}
+\pi_{1H}\\
+\pi_{1T}\\
+\pi_{2H}\\
+\pi_{2T}
+\end{array}\right]\approx\left[\begin{array}{c}
+0.41176\\
+0.19607\\
+0.2352\\
+0.1568
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And that will help us answer what is asked of us.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ The proportion of flips that use coin 1 is about 
+\begin_inset Formula $0.412+0.196=0.608$
+\end_inset
+
+.
+ (Which passes sanity checks: the first coin is Heads-weighted and we switch
+ coins on Tails, so the first coin is more likely to lead to itself being
+ flipped again than the fair coin.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ To find the probabiliy of using coin 2 after 5 flips starting from coin
+ 1, we're summing the second two components of 
+\begin_inset Formula $\left(P^{\intercal}\right)^{5}\cdot\vec{\boldsymbol{e}}_{1}$
+\end_inset
+
+, for which I'm getting 
+\begin_inset Formula $\approx0.308$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ The proporition of flips that land Heads is about 
+\begin_inset Formula $0.412+0.235=0.647$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+19
+\series default
+.
+ For a {rain both days, rain today but not yesterday, rain yesterday but
+ not today, both sunny} Markov chain, we have the transition matrix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[\begin{array}{cccc}
+0.7 & 0 & 0.3 & 0\\
+0.5 & 0 & 0.5 & 0\\
+0 & 0.4 & 0 & 0.6\\
+0 & 0.2 & 0 & 0.8
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Turning to SymPy again, we compute the stationary probabilities 
+\begin_inset Formula $\vec{\pi}=[0.25,0.15,0.15,0.45]$
+\end_inset
+
+.
+ But remember, these states represent two-day windows; the middle two states
+ represent 
+\begin_inset Quotes eld
+\end_inset
+
+half as much
+\begin_inset Quotes erd
+\end_inset
+
+ rain as the both-rain state.
+ So one would presume that the proportion of rainy days is 
+\begin_inset Formula $0.25+2(\frac{0.15}{2})=0.4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+24
+\series default
+.
+ We consider states 
+\color red
+RR
+\color inherit
+, 
+\color red
+R
+\color blue
+B
+\color inherit
+, W
+\color red
+R
+\color inherit
+, WW, W
+\color blue
+B
+\color inherit
+, 
+\color blue
+B
+\color red
+R
+\color inherit
+, 
+\color blue
+B
+\color inherit
+W, 
+\color blue
+BB
+\color inherit
+, where the first letter represents the urn color and the second later represent
+s the ball color.
+ We have the transition matrix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[\begin{array}{cccccccc}
+\frac{1}{5} & \frac{4}{5} & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & \frac{1}{3} & \frac{4}{9} & \frac{2}{9}\\
+\frac{1}{5} & \frac{4}{5} & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & \frac{2}{7} & \frac{3}{7} & \frac{2}{7} & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & \frac{1}{3} & \frac{4}{9} & \frac{2}{9}\\
+\frac{1}{5} & \frac{4}{5} & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & \frac{2}{7} & \frac{3}{7} & \frac{2}{7} & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & \frac{1}{3} & \frac{4}{9} & \frac{2}{9}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Calling on SymPy again, we compute the approximate stationary distribution
+ RR = 0.05617, RB = 0.2247, WR = 0.08988, WW = 0.13483, WB = 0.08988, BR = 0.13483,
+ BW = 0.17977, BB = 0.08988.
+ Thus, the proportion of red balls is 
+\begin_inset Formula $0.05617+0.08988+0.13483=0.28088$
+\end_inset
+
+, the proportion of blue balls is 
+\begin_inset Formula $0.2247+0.08988+0.08988=0.4044$
+\end_inset
+
+ and the proportion of white balls is 
+\begin_inset Formula $0.13483+0.17977=0.3146$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
