@@ -1,0 +1,272 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #8
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+31 October 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Mujamdar's 
+\begin_inset Quotes eld
+\end_inset
+
+Probability Models
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Subsection*
+Ch.
+ 4
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+52
+\series default
+.
+ The Zone 
+\begin_inset Formula $A$
+\end_inset
+
+–Zone 
+\begin_inset Formula $B$
+\end_inset
+
+ transition matrix is 
+\begin_inset Formula 
+\[
+\left[\begin{array}{cc}
+0.6 & 0.4\\
+0.3 & 0.7
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The average profit for a trip will be 
+\begin_inset Formula $6P(X_{i+1}=A|X_{i}=A)P(X_{i}=A)+12P(X_{i+1}=B|X_{i}=A)P(X_{i}=A)+12P(X_{i+1}=A|X_{i}=B)P(X_{i}=B)+8P(X_{i+1}=B|X_{i}=B)P(X_{i}=B)$
+\end_inset
+
+, which is 
+\begin_inset Formula 
+\[
+=6(0.6)P(X_{i}=A)+12(0.4)P(X_{i}=A)+12(0.3)P(X_{i}=B)+8(0.7)P(X_{i}=B)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=3.6\cdot P(X_{i}=A)+4.8\cdot P(X_{i}=A)+3.6\cdot P(X_{i}=B)+5.6\cdot P(X_{i}=B)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To finish the computation, we need the probability of an average trip starting
+ in Zone 
+\begin_inset Formula $A$
+\end_inset
+
+ or 
+\begin_inset Formula $B$
+\end_inset
+
+ (
+\begin_inset Formula $X_{i}=A$
+\end_inset
+
+ or 
+\begin_inset Formula $B$
+\end_inset
+
+ in the notation used above), which comes from the stationary distribution,
+ which is the solution of the linear system
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\pi_{A}=0.6\pi_{A}+0.3\pi_{B}\\
+\pi_{B}=0.4\pi_{A}+0.7\pi_{B}\\
+\pi_{A}+\pi_{B}=1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With only two unknowns, I'm willing to do this manually (to prove that my
+ computation skills haven't totally atrophied or failed to develop) instead
+ of delegating all the work to the computer.
+ 
+\begin_inset Formula $(0.6-1)\pi_{A}+0.3\pi_{B}=0\Rightarrow0.3\pi_{B}=0.4\pi_{A}\Rightarrow\pi_{A}=\frac{3}{4}\pi_{B}$
+\end_inset
+
+, and then 
+\begin_inset Formula $\frac{3}{4}\pi_{B}+\pi_{B}=1\Rightarrow\frac{7}{4}\pi_{B}=1\Rightarrow\pi_{B}=\frac{4}{7}$
+\end_inset
+
+.
+ So the average profit would be
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+3.6\cdot\frac{3}{7}+4.8\cdot\frac{3}{7}+3.6\cdot\frac{4}{7}+5.6\cdot\frac{4}{7}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\begin_inset Formula 
+\[
+\approx8.857
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+53
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+61
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+63
+\series default
+.
+\end_layout
+
+\end_body
+\end_document

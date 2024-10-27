@@ -1,0 +1,865 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #7
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+19 October 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Real Analysis II
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.1.1
+\series default
+.
+ If 
+\begin_inset Formula $d(x,y)<\varepsilon$
+\end_inset
+
+ for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, then 
+\begin_inset Formula $d(x,y)=0$
+\end_inset
+
+, which means that 
+\begin_inset Formula $x=y$
+\end_inset
+
+ according to the positive definiteness axiom.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.1.2
+\series default
+.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) If for all 
+\begin_inset Formula $a$
+\end_inset
+
+, 
+\begin_inset Formula $\sup_{k\in\mathbb{N}}d(x_{k},a)<\infty$
+\end_inset
+
+, then for any particular 
+\begin_inset Formula $b$
+\end_inset
+
+, designate 
+\begin_inset Formula $M:=\sup_{k\in\mathbb{N}}d(x_{k},b)$
+\end_inset
+
+ and for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $d(x_{k},b)\le M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose we have some 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $d(x_{k},b)\le M$
+\end_inset
+
+.
+ But the distance between 
+\begin_inset Formula $b$
+\end_inset
+
+ and any 
+\emph on
+particular
+\emph default
+ arbitrary point 
+\begin_inset Formula $a$
+\end_inset
+
+ is finite.
+ So 
+\begin_inset Formula $\sup_{k\in\mathbb{N}}d(x_{k},a)\le d(x_{k},b)+d(b,a)\le M+d(b,a)$
+\end_inset
+
+, which is finite.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.1.4.a
+\series default
+.
+ If 
+\begin_inset Formula $x_{n}$
+\end_inset
+
+ is always a, then it converges to 
+\begin_inset Formula $a$
+\end_inset
+
+ because for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists an 
+\begin_inset Formula $N$
+\end_inset
+
+ (in fact, any 
+\begin_inset Formula $N$
+\end_inset
+
+ will do) such that 
+\begin_inset Formula $d(x_{n},a)=d(a,a)=0<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) If there exists an 
+\begin_inset Formula $N$
+\end_inset
+
+ such that 
+\begin_inset Formula $n\ge N$
+\end_inset
+
+ implies 
+\begin_inset Formula $x_{n}=a$
+\end_inset
+
+, then for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, if 
+\begin_inset Formula $n\ge N$
+\end_inset
+
+, 
+\begin_inset Formula $d(x_{n},a)=d(a,a)=0<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) In the discrete metric, 
+\begin_inset Formula $d(a,b)<1$
+\end_inset
+
+ implies 
+\begin_inset Formula $a=b$
+\end_inset
+
+.
+ So consider 
+\begin_inset Formula $\varepsilon:=1$
+\end_inset
+
+.
+ If there exists 
+\begin_inset Formula $N$
+\end_inset
+
+ such that 
+\begin_inset Formula $n\ge N$
+\end_inset
+
+ implies 
+\begin_inset Formula $d(x_{n},a)<1$
+\end_inset
+
+, then 
+\begin_inset Formula $n\ge N$
+\end_inset
+
+ also implies 
+\begin_inset Formula $x_{n}=a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.1.5
+\series default
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ There exists 
+\begin_inset Formula $N_{x}$
+\end_inset
+
+ such that 
+\begin_inset Formula $k\ge N_{x}$
+\end_inset
+
+ implies 
+\begin_inset Formula $d(x_{k},a)<\frac{\varepsilon}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{y}$
+\end_inset
+
+ such that 
+\begin_inset Formula $k\ge N_{y}$
+\end_inset
+
+ implies 
+\begin_inset Formula $d(y_{k},a)<\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ Take 
+\begin_inset Formula $N:=\max(N_{x},N_{y})$
+\end_inset
+
+.
+ Then if 
+\begin_inset Formula $k\ge N$
+\end_inset
+
+, 
+\begin_inset Formula $d(x_{k},y_{k})\le d(x_{k},a)+d(x_{y},a)<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ This was discussed at office hours on 17 October.
+ I was having trouble seeing any possible example where the converse could
+ be false.
+ Prof.
+ Schuster asked, 
+\begin_inset Quotes eld
+\end_inset
+
+Do we know the sequences converge?
+\begin_inset Quotes erd
+\end_inset
+
+ That was a pretty good hint.
+ Take 
+\begin_inset Formula $x_{k}=y_{k}=k$
+\end_inset
+
+ on 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ with the standard metric.
+ Then 
+\begin_inset Formula $d(x_{k},y_{k})=0$
+\end_inset
+
+, but 
+\begin_inset Formula $\{x_{k}\}$
+\end_inset
+
+ and 
+\begin_inset Formula $\{y_{k}\}$
+\end_inset
+
+ don't converge to the same point because they don't converge at all.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.1.6
+\series default
+.
+ 
+\begin_inset Formula $(\Rightarrow)$
+\end_inset
+
+ is trivial: if the sequence converges, then it has a convergent subsequence,
+ namely, itself.
+\end_layout
+
+\begin_layout Standard
+For (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+), the subsequence converging to some limit 
+\begin_inset Formula $L$
+\end_inset
+
+ means that any elements sufficiently far in the sequence are close to 
+\begin_inset Formula $L$
+\end_inset
+
+, but the sequence being Cauchy means that elements sufficiently far in
+ the sequence are close to 
+\emph on
+each other
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+That is, fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Because the subsequence converges, there exists 
+\begin_inset Formula $N_{sub}$
+\end_inset
+
+ such that 
+\begin_inset Formula $k\ge N_{sub}$
+\end_inset
+
+ implies 
+\begin_inset Formula $d(x_{k},L)<\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ Because the sequence is Cauchy, there exists 
+\begin_inset Formula $N_{Cauch}$
+\end_inset
+
+ such that 
+\begin_inset Formula $k,m\ge N_{Cauch}$
+\end_inset
+
+ implies 
+\begin_inset Formula $d(x_{k},x_{m})<\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $N:=\max(N_{sub},N_{Cauch})$
+\end_inset
+
+.
+ Suppose 
+\begin_inset Formula $n\ge N$
+\end_inset
+
+, and suppose 
+\begin_inset Formula $m$
+\end_inset
+
+ is some index that belongs to the subsequence.
+ Then 
+\begin_inset Formula $d(x_{n},L)\le d(x_{n},x_{m})+d(x_{m},L)<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.1.7
+\series default
+.
+ In discrete space, the only Cauchy sequences are constant.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.1.8
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ Bernd S.
+ W.
+ Schröder's 
+\emph on
+Mathematical Analysis: A Concise Introduction
+\emph default
+ contains a similar exercise 16-13, which includes a hint on how to proceed.
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $\{f_{k}\}$
+\end_inset
+
+ is Cauchy: for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists an 
+\begin_inset Formula $N$
+\end_inset
+
+ such that if 
+\begin_inset Formula $m,n\ge N$
+\end_inset
+
+, 
+\begin_inset Formula $\left\Vert f_{m}-f_{n}\right\Vert =\sup_{x\in[a,b]}|f_{m}(x)-f_{n}(x)|<\varepsilon$
+\end_inset
+
+.
+ That implies that for any particular 
+\begin_inset Formula $x_{0}\in[a,b]$
+\end_inset
+
+, 
+\begin_inset Formula $\{f_{k}(x_{0})\}$
+\end_inset
+
+ is a Cauchy sequence in the reals (because if the 
+\begin_inset Formula $x$
+\end_inset
+
+ with the 
+\emph on
+largest
+\emph default
+ 
+\begin_inset Quotes eld
+\end_inset
+
+gap
+\begin_inset Quotes erd
+\end_inset
+
+ between 
+\begin_inset Formula $f_{m}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{n}$
+\end_inset
+
+ is smaller than 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, that's all the more true of any other 
+\begin_inset Formula $x$
+\end_inset
+
+).
+ For the same reason, it's actually a uniform limit: the 
+\begin_inset Formula $\sup$
+\end_inset
+
+ norm focuses on the worst case.
+ The uniform limit of continuous functions is continuous, so it follows
+ that the limit is indeed in 
+\begin_inset Formula $C[a,b]$
+\end_inset
+
+, as desired.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ We need to check that
+\begin_inset Formula $\left\Vert \cdot\right\Vert _{1}=\int_{a}^{b}|\cdot|\ dx$
+\end_inset
+
+ defines a metric.
+ Positive definiteness is satisfied because 
+\begin_inset Formula $\int_{a}^{b}|\cdot|\ dx$
+\end_inset
+
+ is always 
+\begin_inset Formula $\ge0$
+\end_inset
+
+, and is zero only when given the zero function.
+ Symmetry is satisfied because 
+\begin_inset Formula $\int_{a}^{b}|f-g|\ dx=\int_{a}^{b}|g-f|\ dx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+What remains is the triangle inequality, 
+\begin_inset Formula $\int_{a}^{b}|f(x)-g(x)|\ dx\le\int_{a}^{b}|f(x)-h(x)|\ dx+\int_{a}^{b}|g(x)-h(x)|\ dx$
+\end_inset
+
+.
+ That this is true for any given 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ (
+\emph on
+i.e.
+\emph default
+, 
+\begin_inset Formula $|f(x_{0})-g(x_{0})|\le|f(x_{0})-h(x_{0})|+|g(x_{0})-h(x_{0})|$
+\end_inset
+
+) is inherited from the triangle inequality for real numbers, and is not
+ in doubt.
+ We need to show that integrating doesn't mess it up.
+\end_layout
+
+\begin_layout Standard
+But 
+\begin_inset Formula $\int_{b}^{a}f(x)-g(x)\ dx$
+\end_inset
+
+ is the limit of a Reimann/Darboux sum, 
+\begin_inset Formula $\lim_{n\rightarrow\infty}\sum_{i=1}^{n}f(c_{i})-g(c_{i})\Delta x_{i}$
+\end_inset
+
+.
+ Taking the sum doesn't invalidate the inequality, and taking this limit
+ doesn't either.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ I'm given to understand that one of the classic examples here is 
+\begin_inset Formula $f_{n}=x^{n}$
+\end_inset
+
+ on 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+ It's a Cauchy sequence: for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists an 
+\begin_inset Formula $N$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $m,n\ge N$
+\end_inset
+
+, 
+\begin_inset Formula $\int_{0}^{1}x^{m}-x^{n}\ dx=\left.\frac{1}{m+1}x^{m+1}-\frac{1}{n+1}x^{n+1}\right|_{0}^{1}=\frac{1}{m+1}-\frac{1}{n+1}<\varepsilon$
+\end_inset
+
+.
+ But the limiting function is 
+\begin_inset Formula $\begin{cases}
+0 & x<1\\
+1 & x=1
+\end{cases}$
+\end_inset
+
+, which is not continous, and therefore prevents 
+\begin_inset Formula $C[a,b]$
+\end_inset
+
+ from being complete under the 1-norm.
+ (But it is Lebesgue-integrable, so 
+\begin_inset Formula $L^{1}$
+\end_inset
+
+ is complete.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.1.9
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ Choose 
+\begin_inset Formula $\varepsilon<r-d(x,a)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\overline{B_{\varepsilon}(x)}\subset B_{r}(a)$
+\end_inset
+
+, because if 
+\begin_inset Formula $y\in\overline{B_{\varepsilon}(x)}$
+\end_inset
+
+, then 
+\begin_inset Formula $d(y,a)<r-d(x,a)+d(x,a)=r$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ This would seem to be equivalent to the 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+ Hausdorff condition.
+ Take 
+\begin_inset Formula $r:=\frac{d(a,b)}{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ We want to show that there's a ball (hereafter 
+\begin_inset Quotes eld
+\end_inset
+
+the small one
+\begin_inset Quotes erd
+\end_inset
+
+) at 
+\begin_inset Formula $x$
+\end_inset
+
+ contained in the intersection of 
+\begin_inset Formula $B_{r}(a)$
+\end_inset
+
+ and 
+\begin_inset Formula $B_{s}(b)$
+\end_inset
+
+, and another (hereafter 
+\begin_inset Quotes eld
+\end_inset
+
+the big one
+\begin_inset Quotes erd
+\end_inset
+
+) containing the union of 
+\begin_inset Formula $B_{r}(a)$
+\end_inset
+
+ and 
+\begin_inset Formula $B_{s}(b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The small one exists because the finite intersection of open sets is open:
+ there's some distance we can move away from 
+\begin_inset Formula $x$
+\end_inset
+
+ without leaving 
+\begin_inset Formula $B_{r}(a)$
+\end_inset
+
+, and some distance we can move away from 
+\begin_inset Formula $x$
+\end_inset
+
+ without leaving 
+\begin_inset Formula $B_{s}(b)$
+\end_inset
+
+, and any point whose distance from 
+\begin_inset Formula $x$
+\end_inset
+
+ is not larger than either of those is in the small ball.
+\end_layout
+
+\begin_layout Standard
+The big one exists because 
+\begin_inset Formula $B_{r}(a)\cup B_{s}(b)$
+\end_inset
+
+ is a bounded set (with a maximum possible distance between points in the
+ set).
+ Just choose a radius bigger than that.
+ (Which is overkill, but the big ball doesn't need to be a supremum-like
+ smallest possible big ball; it just has to contain the union.)
+\end_layout
+
+\end_body
+\end_document

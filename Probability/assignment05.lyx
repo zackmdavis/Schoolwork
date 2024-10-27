@@ -1,0 +1,518 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #5
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+7 October 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Mujamdar's 
+\begin_inset Quotes eld
+\end_inset
+
+Probability Models
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Subsection*
+Ch.
+ 4
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ If 
+\begin_inset Formula $P(X_{0}=0)=P(X_{0}=1)=\frac{1}{4}$
+\end_inset
+
+, then we can infer that 
+\begin_inset Formula $P(X_{0}=2)=\frac{1}{2}$
+\end_inset
+
+.
+ I then calculate 
+\begin_inset Formula $E[X_{3}]$
+\end_inset
+
+ using the following Python code using the SymPy library (
+\emph on
+sympy.org
+\emph default
+).
+ (
+\begin_inset Quotes eld
+\end_inset
+
+m
+\begin_inset Quotes erd
+\end_inset
+
+ is the transition matrix given in the text; I take the transpose 
+\begin_inset Quotes eld
+\end_inset
+
+m.T
+\begin_inset Quotes erd
+\end_inset
+
+ because Ross is using a row-vector convention and SymPy defaults to column
+ vectors, which I prefer anyway.)
+\end_layout
+
+\begin_layout LyX-Code
+from statistics import mean
+\end_layout
+
+\begin_layout LyX-Code
+from fractions import Fraction
+\end_layout
+
+\begin_layout LyX-Code
+import sympy
+\end_layout
+
+\begin_layout LyX-Code
+m = sympy.Matrix([[Fraction(1, 2), Fraction(1, 3), Fraction(1, 6)],
+\end_layout
+
+\begin_layout LyX-Code
+                  [Fraction(0,1), Fraction(1, 3), Fraction(2, 3)],
+\end_layout
+
+\begin_layout LyX-Code
+                  [Fraction(1, 2), Fraction(0, 2), Fraction(1, 2)]])
+\end_layout
+
+\begin_layout LyX-Code
+v = sympy.Matrix([Fraction(1, 4), Fraction(1, 4), Fraction(1, 2)])
+\end_layout
+
+\begin_layout LyX-Code
+after_three_transitions = (m.T)**3 * v
+\end_layout
+
+\begin_layout LyX-Code
+expectation_after_three_transitions = mean(after_three_transitions)
+\end_layout
+
+\begin_layout LyX-Code
+print(expectation_after_three_transitions) 
+\end_layout
+
+\begin_layout Standard
+which prints 
+\color teal
+
+\begin_inset Formula $\frac{1}{3}$
+\end_inset
+
+
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+6
+\series default
+.
+ For the base case, 
+\begin_inset Formula $\frac{1}{2}+\frac{1}{2}(2p-1)^{n}$
+\end_inset
+
+ with 
+\begin_inset Formula $n:=1$
+\end_inset
+
+ becomes 
+\begin_inset Formula $\frac{1}{2}+\frac{1}{2}(2p-1)=\frac{1}{2}+p-\frac{1}{2}=p$
+\end_inset
+
+.
+ Similarly, 
+\begin_inset Formula $\frac{1}{2}-\frac{1}{2}(2p-1)=\frac{1}{2}-p+\frac{1}{2}=1-p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For the induction step, we want to show that 
+\begin_inset Formula 
+\[
+\left[\begin{array}{cc}
+\frac{1}{2}+\frac{1}{2}(2p-1)^{n} & \frac{1}{2}-\frac{1}{2}(2p-1)^{n}\\
+\frac{1}{2}-\frac{1}{2}(2p-1)^{n} & \frac{1}{2}+\frac{1}{2}(2p-1)^{n}
+\end{array}\right]\left[\begin{array}{cc}
+p & 1-p\\
+1-p & p
+\end{array}\right]=\left[\begin{array}{cc}
+\frac{1}{2}+\frac{1}{2}(2p-1)^{n+1} & \frac{1}{2}-\frac{1}{2}(2p-1)^{n+1}\\
+\frac{1}{2}-\frac{1}{2}(2p-1)^{n+1} & \frac{1}{2}+\frac{1}{2}(2p-1)^{n+1}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So we calculate the matrix product 
+\begin_inset Formula $\left[\begin{array}{cc}
+\frac{1}{2}+\frac{1}{2}(2p-1)^{n} & \frac{1}{2}-\frac{1}{2}(2p-1)^{n}\\
+\frac{1}{2}-\frac{1}{2}(2p-1)^{n} & \frac{1}{2}+\frac{1}{2}(2p-1)^{n}
+\end{array}\right]\left[\begin{array}{cc}
+p & 1-p\\
+1-p & p
+\end{array}\right]$
+\end_inset
+
+.
+ The first and fourth entries are calculated as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p\left(\frac{1}{2}+\frac{1}{2}(2p-1)^{n}\right)+(1-p)\left(\frac{1}{2}-\frac{1}{2}(2p-1)^{n}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{1}{2}p+\frac{1}{2}p(2p-1)^{n}+\frac{1}{2}-\frac{1}{2}(2p-1)^{n}-\frac{1}{2}p+\frac{1}{2}p(2p-1)^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{1}{2}-\frac{1}{2}(2p-1)^{n}+p(2p-1)^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(The following lines were obtained by working the algebra backwards from
+ the desired result and 
+\begin_inset Quotes eld
+\end_inset
+
+meeting in the middle
+\begin_inset Quotes erd
+\end_inset
+
+ with the algebra above; otherwise, it would not have occured to me to try
+ using 
+\begin_inset Formula $p=\frac{2p}{2}$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{1}{2}-\frac{1}{2}(2p-1)^{n}+\frac{2p}{2}(2p-1)^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{1}{2}+\frac{1}{2}\left(2p(2p-1)^{n}-(2p-1)^{n}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{1}{2}+\frac{1}{2}\left((2p-1)^{n}(2p-1)\right)=\frac{1}{2}+\frac{1}{2}\left((2p-1)^{n+1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+as desired.
+ The calculation for the second and third entries will be very similar.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10
+\series default
+.
+ The probability that Gary is not in a glum mood on any of the following
+ three days is given by 
+\begin_inset Formula $P(X_{1}\neq\mathrm{glum})P(X_{2}\neq\mathrm{glum}|X_{1}\neq\mathrm{glum})P(X_{3}\neq\mathrm{glum}|X_{1}\neq\mathrm{glum},\ X_{2}\neq\mathrm{glum})$
+\end_inset
+
+, according to the law of conditional probability.
+\end_layout
+
+\begin_layout Standard
+I calculate this using the following Python (with SymPy) code.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+import sympy
+\end_layout
+
+\begin_layout LyX-Code
+m = sympy.Matrix([[0.5, 0.4, 0.1],
+\end_layout
+
+\begin_layout LyX-Code
+                  [0.3, 0.4, 0.3],
+\end_layout
+
+\begin_layout LyX-Code
+                  [0.2, 0.3, 0.5]])
+\end_layout
+
+\begin_layout LyX-Code
+x0 = sympy.Matrix([1., 0., 0.])
+\end_layout
+
+\begin_layout LyX-Code
+x1 = m.T * x0
+\end_layout
+
+\begin_layout LyX-Code
+x1_not_glum = sum(x1[:2])
+\end_layout
+
+\begin_layout LyX-Code
+x2_given_x1_not_glum = m.T * sympy.Matrix(x1[:2] + [0])/ sum(x1[:2])
+\end_layout
+
+\begin_layout LyX-Code
+x2_not_glum_given_x1_not_glum = sum(x2_given_x1_not_glum[:2])
+\end_layout
+
+\begin_layout LyX-Code
+x3_given_etc = m.T * sympy.Matrix(x2_given_x1_not_glum[:2] + [0]) / sum(x2_given_x
+1_not_glum[:2])
+\end_layout
+
+\begin_layout LyX-Code
+x3_not_glum_given_etc = sum(x3_given_etc[:2]) 
+\end_layout
+
+\begin_layout LyX-Code
+print(x3_not_glum_given_etc) 
+\end_layout
+
+\begin_layout Standard
+which yields 
+\color teal
+
+\begin_inset Formula $\approx0.80137$
+\end_inset
+
+
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+11
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 4-13-state-graph.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{1,2}=P_{1,2};Q_{2,3}=P_{2,1};Q_{3,4}=P_{1,2};Q_{1,6}=P_{1,0};Q_{1,7}=P_{1,3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{1,1}=P_{1,1};Q_{2,5}=P_{2,2};Q_{2,6}=P_{2,0};Q_{2,7}=P_{2,3};Q_{3,1}=P_{1,1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{3,6}=P_{1,0};Q_{3,7}=P_{1,3};Q_{5,1}=P_{2,1};Q_{5,5}=P_{2,2};Q_{5,6}=P_{2,0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{5,7}=P_{2,3};Q_{6,1}=P_{0,1};Q_{6,5}=P_{0,2};Q_{6,6}=P_{0,0};Q_{6,7}=P_{0,3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{7,1}=P_{3,1};Q_{7,5}=P_{3,2};Q_{7,6}=P_{3,0};Q_{7,7}=P_{3,3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

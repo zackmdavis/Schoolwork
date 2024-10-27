@@ -1,0 +1,660 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #8
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+26 October 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Real Analysis II
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.2.1
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $\mathbb{R}\backslash\mathbb{Q}$
+\end_inset
+
+ (
+\emph on
+i.e.
+\emph default
+, all of them)
+\series bold
+ b
+\series default
+.
+ 
+\begin_inset Formula $[a,b)$
+\end_inset
+
+ (all of them)
+\series bold
+ c
+\series default
+.
+ 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+
+\series bold
+ d
+\series default
+.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+
+\series bold
+ e
+\series default
+.
+ 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.2.2
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $a$
+\end_inset
+
+ is not a cluster point.
+ It's not the case that for all 
+\begin_inset Formula $\delta$
+\end_inset
+
+, 
+\begin_inset Formula $B_{\delta}(a)$
+\end_inset
+
+ contains infinitely many points of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ So there exists a 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that 
+\begin_inset Formula $B_{\delta}(a)$
+\end_inset
+
+ contains finitely many points of x.
+ Let 
+\begin_inset Formula $b$
+\end_inset
+
+ be the closest such point to 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $B_{d(a,b)}=\{a\}$
+\end_inset
+
+, so 
+\begin_inset Formula $a$
+\end_inset
+
+ is isolated.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $a$
+\end_inset
+
+ is isolated.
+ The fact that 
+\begin_inset Formula $B_{r}(a)=\{a\}$
+\end_inset
+
+ means that not every 
+\begin_inset Formula $B_{\delta}(a)$
+\end_inset
+
+ contains infinitely many points.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ For every point 
+\begin_inset Formula $x$
+\end_inset
+
+ in discrete space, 
+\begin_inset Formula $B_{1}(x)=\{x\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.2.3
+\series default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $a$
+\end_inset
+
+ is a cluster point.
+ For all 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $B_{\frac{1}{n}}(a)$
+\end_inset
+
+ contains a point in 
+\begin_inset Formula $E\backslash\{a\}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $x_{n}$
+\end_inset
+
+ be any point in 
+\begin_inset Formula $B_{\frac{1}{n}}(a)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\{x_{n}\}$
+\end_inset
+
+ makes a sequence converging to 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Why? Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $N:=\left\lceil \frac{1}{\varepsilon}\right\rceil $
+\end_inset
+
+.
+ Then for 
+\begin_inset Formula $k\ge N$
+\end_inset
+
+, 
+\begin_inset Formula $d(x_{n},a)<\frac{1}{\left\lceil \frac{1}{\varepsilon}\right\rceil }<\varepsilon$
+\end_inset
+
+.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose we have a sequence converging to 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ But the definition of convergence says that for any 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ we might pick, there exists an 
+\begin_inset Formula $N$
+\end_inset
+
+ such that all further (infinitely many) 
+\begin_inset Formula $x_{k}$
+\end_inset
+
+ in the sequence are 
+\begin_inset Formula $d(x_{k},a)<\varepsilon$
+\end_inset
+
+, 
+\emph on
+i.e
+\emph default
+., are in 
+\begin_inset Formula $B_{\varepsilon}(a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.2.4
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) If every ball around 
+\begin_inset Formula $a$
+\end_inset
+
+ in 
+\begin_inset Formula $E$
+\end_inset
+
+ has infinitely many points, then 
+\begin_inset Formula $E\cap B_{r}(a)\backslash\{a\}$
+\end_inset
+
+ is nonempty, because it's just the ball in 
+\begin_inset Formula $E$
+\end_inset
+
+ with the center removed: 
+\begin_inset Quotes eld
+\end_inset
+
+infinity minus one
+\begin_inset Quotes erd
+\end_inset
+
+ is still infinity—or at any rate, it isn't zero.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose that the nonempty 
+\begin_inset Formula $E\cap B_{r}(a)\backslash\{a\}$
+\end_inset
+
+ has finitely many points.
+ Let 
+\begin_inset Formula $b$
+\end_inset
+
+ be the closest such point to 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $E\cap B_{d(a,b)}(a)$
+\end_inset
+
+ would be empty.
+ Contradiction!
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ Suppose without loss of generality that our bounded set is a subset of
+ 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+ (Any other interval can be re-metrized; any union of intervals is just
+ an interval with some subintervals excluded.) We can try placing the points
+ of a sequence 
+\begin_inset Formula $\{x_{n}\}$
+\end_inset
+
+ as far away from each other as possible to avoid creating a cluster point.
+ If we end up creating a cluster point anyway, then it's inevitable.
+ Start with 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+, 
+\begin_inset Formula $x_{1}=1$
+\end_inset
+
+, 
+\begin_inset Formula $x_{2}=\frac{1}{2}$
+\end_inset
+
+.
+ That's only three points, with infinity more to go.
+ The most breathing room we can possibly give 
+\begin_inset Formula $x_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{4}$
+\end_inset
+
+ is to put them at 
+\begin_inset Formula $\frac{1}{4}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{3}{4}$
+\end_inset
+
+, respectively.
+ You see where this is going: the set is 
+\begin_inset Formula $\{\frac{i}{2^{n}}\}_{0\le i\le n,\ n\in\mathbb{N}}$
+\end_inset
+
+, whose points are all cluster points.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.2.9
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ If 
+\begin_inset Formula $E$
+\end_inset
+
+ is bounded, then any sequence in 
+\begin_inset Formula $E$
+\end_inset
+
+ is bounded.
+ By the Bolzano–Weierstrass property, 
+\begin_inset Formula $x_{n}$
+\end_inset
+
+ has a convergent subsequence, whose limit we can take to be the desired
+ 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ The hints at the back of the book advise us that this is similar to the
+ proof of Theorem 3.26, the extreme value theorem.
+ Consider any sequence 
+\begin_inset Formula $\{x_{n}\}$
+\end_inset
+
+ in 
+\begin_inset Formula $E$
+\end_inset
+
+, which is bounded because 
+\begin_inset Formula $E$
+\end_inset
+
+ is bounded.
+ By the Bolzano–Wierstrass property, the sequence has a convergent subsequence
+ 
+\begin_inset Formula $\{x_{n(k)}\}$
+\end_inset
+
+.
+ Because 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous and continuous functions preserve limits of sequences, 
+\begin_inset Formula $f(x_{n(k)})$
+\end_inset
+
+ has to converge, too.
+ But if 
+\begin_inset Formula $f(x_{n(k)})$
+\end_inset
+
+ always converges in 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ (not the extended reals, but plain 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ in which any 
+\emph on
+particular
+\emph default
+ number a sequence might converge to is finite) for any 
+\begin_inset Formula $\{x_{n(k)}\}$
+\end_inset
+
+, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is bounded.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ Again, this is the extreme value theorem (trivially generalized to metric
+ spaces).
+ I consulted 
+\emph on
+Wikipedia
+\emph default
+ here for insight (https://en.wikipedia.org/wiki/Extreme_value_theorem#Proofs_of_t
+he_extreme_value_theorem).
+ Because f is continuous, for large 
+\begin_inset Formula $n$
+\end_inset
+
+, there exists an 
+\begin_inset Formula $x_{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $f(x_{n})>\sup f(x)-\frac{1}{n}$
+\end_inset
+
+.
+ (The function has to at least 
+\emph on
+approach
+\emph default
+ its least upper bound.) The sequence 
+\begin_inset Formula $\{f(x_{n})\}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $\sup f(x).$
+\end_inset
+
+ The Bolzano–Wierstrass property ensures that 
+\begin_inset Formula $\{x_{n}\}$
+\end_inset
+
+ has a convergent subsequence 
+\begin_inset Formula $\{x_{n(k)}\}$
+\end_inset
+
+.
+ Because contunity preserves convergent sequences, 
+\begin_inset Formula $\{f(x_{n(k)})\}$
+\end_inset
+
+ converges, too—and it converges to 
+\begin_inset Formula $\sup f(x)$
+\end_inset
+
+, because 
+\begin_inset Formula $\{f(x_{n(k)})\}$
+\end_inset
+
+ needs to have the same limit as its supersequence 
+\begin_inset Formula $\{f(x_{n})\}$
+\end_inset
+
+.
+ So the function attains its maximum at 
+\begin_inset Formula $\lim_{k\rightarrow\infty}x_{n(k)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_body
+\end_document
