@@ -436,8 +436,9 @@ infinity minus one
 b
 \series default
 .
- Suppose without loss of generality that our bounded set is a subset of
- 
+ I initially came up with this argument, which is too handwavy and probably
+ does not suffice as a proof of the desired proposition: suppose without
+ loss of generality that our bounded set is a subset of 
 \begin_inset Formula $[0,1]$
 \end_inset
 
@@ -486,6 +487,29 @@ b
 \end_inset
 
 , whose points are all cluster points.
+\end_layout
+
+\begin_layout Standard
+Then the other night I ran the draft of this submission by OpenAI o1-preview
+ (remarking that I wasn't confident that my 10.2.4.b.
+ answer was rigorous enough), and it explained the right way to do it, which
+ I now reconstruct in my own words: the closure of our subset of 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ is closed and bounded, so any sequence in it has a Bolzano–Wierstrass-conformin
+g convergent subsequence, and the limit of sequence is a cluster point (of
+ the set of sequence points, and thus, of the set containing them).
+ Further chat with o1-preview clarified that a cluster point of a set need
+ not be in the set itself (
+\emph on
+e.g
+\emph default
+., 0 is a cluster point of 
+\begin_inset Formula $\{\frac{1}{n}\}$
+\end_inset
+
+), which is why it's OK that we took the closure.
 \end_layout
 
 \begin_layout Standard

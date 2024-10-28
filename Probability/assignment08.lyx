@@ -236,7 +236,7 @@ With only two unknowns, I'm willing to do this manually (to prove that my
 \color teal
 \begin_inset Formula 
 \[
-\approx8.857
+\approx8.857\Rightarrow\$8.86
 \]
 
 \end_inset
@@ -250,6 +250,185 @@ With only two unknowns, I'm willing to do this manually (to prove that my
 53
 \series default
 .
+ We are asked to compute the average premium per policyholder of the insurance
+ company in Ross's example 4.29, which uses the 
+\emph on
+bonus–malus 
+\emph default
+system from example 4.7, supposing that one-third of insureds' claims-per-year
+ distribution in Poisson with 
+\begin_inset Formula $\lambda=\frac{1}{4}$
+\end_inset
+
+, and two-thirds 
+\begin_inset Formula $\lambda=\frac{1}{2}$
+\end_inset
+
+.
+ (I used to work for an insurance company, and we said 
+\begin_inset Quotes eld
+\end_inset
+
+insured
+\begin_inset Quotes erd
+\end_inset
+
+, not 
+\begin_inset Quotes eld
+\end_inset
+
+client.
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+For the 
+\begin_inset Formula $\lambda=\frac{1}{4}$
+\end_inset
+
+ insureds, the transition matrix is
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+arraystretch}{1.2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[\begin{array}{cccc}
+\exp(-\frac{1}{4}) & \frac{1}{4}\exp(-\frac{1}{4}) & \frac{1}{32}\exp(-\frac{1}{4}) & 1-\frac{41}{32}\exp(-\frac{1}{4})\\
+\exp(-\frac{1}{4}) & 0 & \frac{1}{4}\exp(-\frac{1}{4}) & 1-\frac{5}{4}\exp(-\frac{1}{4})\\
+0 & \exp(-\frac{1}{4}) & 0 & 1-\exp(-\frac{1}{4})\\
+0 & 0 & \exp(-\frac{1}{4}) & 1-\exp(-\frac{1}{4})
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\approx\left[\begin{array}{cccc}
+0.7788 & 0.1947 & 0.0243 & 0.0022\\
+0.7788 & 0 & 0.1947 & 0.0265\\
+0 & 0.7788 & 0 & 0.2212\\
+0 & 0 & 0.7788 & 0.2212
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the 
+\begin_inset Formula $\lambda=\frac{1}{2}$
+\end_inset
+
+ insureds, the transition matrix is as given in Example 4.29.
+\end_layout
+
+\begin_layout Standard
+If we denote by 
+\begin_inset Formula $\pi_{\lambda,i}$
+\end_inset
+
+ the stationary probability of being in state 
+\begin_inset Formula $i$
+\end_inset
+
+ when the claims per year are given by a Poisson with parameter 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, then the average profit is going to be 
+\begin_inset Formula $\frac{1}{3}(200\pi_{\frac{1}{4},1}+250\pi_{\frac{1}{4},2}+400\pi_{\frac{1}{4},3}+600\pi_{\frac{1}{4},3})+\frac{2}{3}(200\pi_{\frac{1}{2},1}+250\pi_{\frac{1}{2},2}+400\pi_{\frac{1}{2},3}+600\pi_{\frac{1}{2},3})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Finding the stationary probabilities (by solving 
+\begin_inset Formula $(P^{\intercal}-I)\vec{\pi}=\vec{\pi}$
+\end_inset
+
+) is computationally intensive enough that I'm not going to do it by hand
+ and will instead delegate to the Python/SymPy code that I also used in
+ Assignments #6 and #7.
+\end_layout
+
+\begin_layout Standard
+We get 
+\begin_inset Formula $\vec{\pi_{\frac{1}{4}}}\approx\left[\begin{array}{c}
+0.6926\\
+0.1967\\
+0.07944\\
+0.03118
+\end{array}\right]$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{\pi_{\frac{1}{2}}}\approx\left[\begin{array}{c}
+0.3693\\
+0.2396\\
+0.2103\\
+0.1808
+\end{array}\right]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(Notably, the latter agrees with the values given on Ross p.
+ 231 in Example 4.29 
+\emph on
+modulo
+\emph default
+ round-off errors in the ten-thousandths place, which gives me confidence
+ that I haven't made some egregious error the likes of which I would never
+ live down.)
+\end_layout
+
+\begin_layout Standard
+So the average premium is 
+\begin_inset Formula $\frac{1}{3}(200\cdot0.6926+250\cdot0.1967+400\cdot0.07944+600\cdot0.03118)+\frac{2}{3}(200\cdot0.3693+250\cdot0.2396+400\cdot0.2103+600\cdot0.1808)$
+\end_inset
+
+ 
+\color teal
+
+\begin_inset Formula $\approx296.9663\Rightarrow\$296.96$
+\end_inset
+
+
+\color inherit
+.
 \end_layout
 
 \begin_layout Standard
@@ -258,6 +437,86 @@ With only two unknowns, I'm willing to do this manually (to prove that my
 61
 \series default
 .
+ 
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $P(i)=\alpha_{i}P(i+1)+(1-\alpha_{i})P(i-1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ We are directed to use the same approach as Ross p.
+ 234, but it presumably can't be exactly the same, because 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+ isn't constant?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha_{i}P(i)+(1-\alpha_{i})P(i)=\alpha_{i}P(i+1)+(1-\alpha_{i})P(i-1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha_{i}\left(P(i)-P(i+1)\right)=(1-\alpha_{i})\left(P(i-1)-P(i)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(i)-P(i+1)=\frac{(1-\alpha_{i})}{\alpha_{i}}\left(P(i-1)-P(i)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(i+1)-P(i)=\frac{(1-\alpha_{i})}{\alpha_{i}}\left(P(i)-P(i-1)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And then we get 
+\begin_inset Formula $P(2)-P(1)=\frac{(1-\alpha_{1})}{\alpha_{1}}\left(P(1)-P(0)\right)=\frac{(1-\alpha_{1})}{\alpha_{1}}P(1)$
+\end_inset
+
+, and 
+\begin_inset Formula $P(3)-P(2)=\frac{(1-\alpha_{2})}{\alpha_{2}}\left(P(2)-P(1)\right)$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
