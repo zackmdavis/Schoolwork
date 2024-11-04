@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-31 October 2024
+2 November 2024
 \end_layout
 
 \begin_layout Abstract
@@ -456,7 +456,7 @@ b
 \series default
 .
  We are directed to use the same approach as Ross p.
- 234, but it presumably can't be exactly the same, because 
+ 234 (§4.5.1), but it presumably can't be exactly the same, because 
 \begin_inset Formula $\alpha_{i}$
 \end_inset
 
@@ -508,15 +508,264 @@ P(i+1)-P(i)=\frac{(1-\alpha_{i})}{\alpha_{i}}\left(P(i)-P(i-1)\right)
 \end_layout
 
 \begin_layout Standard
-And then we get 
+So 
 \begin_inset Formula $P(2)-P(1)=\frac{(1-\alpha_{1})}{\alpha_{1}}\left(P(1)-P(0)\right)=\frac{(1-\alpha_{1})}{\alpha_{1}}P(1)$
 \end_inset
 
-, and 
-\begin_inset Formula $P(3)-P(2)=\frac{(1-\alpha_{2})}{\alpha_{2}}\left(P(2)-P(1)\right)$
+.
+\end_layout
+
+\begin_layout Standard
+And 
+\begin_inset Formula $P(3)-P(2)=\frac{(1-\alpha_{2})}{\alpha_{2}}\left(P(2)-P(1)\right)=\frac{(1-\alpha_{2})}{\alpha_{2}}\frac{(1-\alpha_{1})}{\alpha_{1}}P(1)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+And 
+\begin_inset Formula $P(4)-P(3)=\frac{(1-\alpha_{3})}{\alpha_{3}}\left(P(3)-P(2)\right)=\frac{(1-\alpha_{3})}{\alpha_{3}}\frac{(1-\alpha_{2})}{\alpha_{2}}\frac{(1-\alpha_{1})}{\alpha_{1}}P(1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The pattern is apparent.
+ The sum of these equations will 
+\begin_inset Quotes eld
+\end_inset
+
+telescope down
+\begin_inset Quotes erd
+\end_inset
+
+ to 
+\begin_inset Formula 
+\[
+P(i)-P(1)=P(1)\left(\sum_{j=1}^{i-1}\prod_{k=1}^{j}\frac{(1-\alpha_{j})}{\alpha_{j}}\right)
+\]
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+In the §4.5.1 discussion of the gambler's ruin problem, Ross used a standard
+ formula on finite geometric series to evaluate the sum, but we can't do
+ that here because the 
+\begin_inset Formula $\alpha_{j}$
+\end_inset
+
+ are variable.
+ But as in §4.5.1, we should be able to use the fact that 
+\begin_inset Formula $P(N)=1$
+\end_inset
+
+ to solve for 
+\begin_inset Formula $P(1)$
+\end_inset
+
+ and use that to acquire a formula not dependent on 
+\begin_inset Formula $P(1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1-P(1)=P(1)\left(\sum_{j=1}^{i-1}\prod_{k=1}^{j}\frac{(1-\alpha_{j})}{\alpha_{j}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1=P(1)+P(1)\left(\sum_{j=1}^{i-1}\prod_{k=1}^{j}\frac{(1-\alpha_{j})}{\alpha_{j}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1=P(1)\left(1+\left(\sum_{j=1}^{i-1}\prod_{k=1}^{j}\frac{(1-\alpha_{j})}{\alpha_{j}}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(1)=\frac{1}{1+\left(\sum_{j=1}^{i-1}\prod_{k=1}^{j}\frac{(1-\alpha_{j})}{\alpha_{j}}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which would seem to give us
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(i)=\frac{1}{\left(\sum_{j=1}^{i-1}\prod_{k=1}^{j}\frac{(1-\alpha_{j})}{\alpha_{j}}\right)+1}+\frac{\left(\sum_{j=1}^{i-1}\prod_{k=1}^{j}\frac{(1-\alpha_{j})}{\alpha_{j}}\right)}{\left(\sum_{j=1}^{i-1}\prod_{k=1}^{j}\frac{(1-\alpha_{j})}{\alpha_{j}}\right)+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we let 
+\begin_inset Formula $A:=\sum_{j=1}^{i-1}\prod_{k=1}^{j}\frac{(1-\alpha_{j})}{\alpha_{j}}$
+\end_inset
+
+, we can write this shorter as 
+\begin_inset Formula 
+\[
+P(i)=\frac{1}{1+A}+\frac{A}{1+A}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Teaching assistant Daniil Matveev has advised me to check my answers with
+ the solutions manual, which can be found online (
+\emph on
+https://www.studocu.com/en-us/document/harvey-mudd-college/introduction-to-probabi
+lity-and-statistics/sheldon-m-ross-introduction-to-probability-models-twelfth-ed
+ition-12th-ed-instructors-solution-manual-solutions-academic-press-2019/32069620
+\emph default
+).
+\end_layout
+
+\begin_layout Standard
+The solutions manual claims that we have (adapting into my notation; the
+ manual defined intermediate shorthands 
+\begin_inset Formula $C_{j}$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{i}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(i)=\frac{1+\sum_{j=1}^{i-1}\prod_{k=1}^{j}\frac{(1-\alpha_{i})}{\alpha_{i}}}{1+\sum_{j=1}^{N-1}\prod_{k=1}^{j}\frac{(1-\alpha_{i})}{\alpha_{i}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which looks 
+\emph on
+almost 
+\emph default
+the same as my answer above (I had neglected to simplify by unifying fractions
+ with the same denominator), except for the upper limit of the summation
+ in the denominator: I had 
+\begin_inset Formula $i-1$
+\end_inset
+
+, whereas the solutions give 
+\begin_inset Formula $N-1$
+\end_inset
+
+ ...
+ ah, and I see the step where I went wrong: when substituting 
+\begin_inset Formula $P(N)=1$
+\end_inset
+
+ in my expression for 
+\begin_inset Formula $P(i)-P(1)$
+\end_inset
+
+, I forgot that the substitution also entails the 
+\begin_inset Formula $i-1$
+\end_inset
+
+ upper limit of summation becoming 
+\begin_inset Formula $N-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ We are asked to suppose that 
+\begin_inset Formula $i$
+\end_inset
+
+ balls are initially in urn #1 and 
+\begin_inset Formula $N-i$
+\end_inset
+
+ in urn #2, and to imagine a process in which one of the 
+\begin_inset Formula $N$
+\end_inset
+
+ balls is successively chosen and placed in the other urn, and to calculate
+ the probability that the first urn becomes empty before the second.
+ This is like a version of the gambler's ruin problem with variable transition
+ probabilities, as in part b: identify the state of the system with the
+ number of balls in the second urn, and then we can use the formula from
+ part b.
+ I would say that the probability 
+\begin_inset Formula $\alpha_{j}$
+\end_inset
+
+ of transitioning to the next higher state is 
+\begin_inset Formula $\frac{j}{N}$
+\end_inset
+
+—but the solutions manual seems to have this reversed, claiming that 
+\begin_inset Formula $\alpha_{i}=\frac{N-i}{N}$
+\end_inset
+
+.
+ I guess Ross made the other convention choice, identifying the state of
+ the system with the number of balls in the 
+\emph on
+first
+\emph default
+ urn.
+ (The choice is arbitrary; there's nothing in the problem statement that
+ functionally distinguishes the roles of the urns.)
 \end_layout
 
 \begin_layout Standard
@@ -525,6 +774,144 @@ And then we get
 63
 \series default
 .
+ We have the transition matrix
+\begin_inset Formula 
+\[
+P=\left[\begin{array}{cccc}
+0.4 & 0.2 & 0.1 & 0.3\\
+0.1 & 0.5 & 0.2 & 0.2\\
+0.3 & 0.4 & 0.2 & 0.1\\
+0 & 0 & 0 & 1
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and are asked to find 
+\begin_inset Formula $f_{i3}$
+\end_inset
+
+ (the expected number of periods spent in transient state 
+\begin_inset Formula $i$
+\end_inset
+
+ if started in state 3) and 
+\begin_inset Formula $s_{i3}$
+\end_inset
+
+ (the probability of ever entering state 3 if started in state 
+\begin_inset Formula $i$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+We take the submatrix of transient states 
+\begin_inset Formula 
+\[
+P_{T}=\left[\begin{array}{ccc}
+0.4 & 0.2 & 0.1\\
+0.1 & 0.5 & 0.2\\
+0.3 & 0.4 & 0.2
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and compute 
+\begin_inset Formula $\left(I-P_{T}\right)^{-1}$
+\end_inset
+
+ using SymPy:
+\end_layout
+
+\begin_layout LyX-Code
+import sympy
+\end_layout
+
+\begin_layout LyX-Code
+P_T = sympy.Matrix([
+\end_layout
+
+\begin_layout LyX-Code
+    [0.4, 0.2, 0.1],
+\end_layout
+
+\begin_layout LyX-Code
+    [0.1, 0.5, 0.2],
+\end_layout
+
+\begin_layout LyX-Code
+    [0.3, 0.4, 0.2]
+\end_layout
+
+\begin_layout LyX-Code
+])
+\end_layout
+
+\begin_layout LyX-Code
+(sympy.eye(3) - P_T).inv() 
+\end_layout
+
+\begin_layout Standard
+We get
+\begin_inset Formula 
+\[
+\left(I-P_{T}\right)^{-1}\approx\left[\begin{array}{ccc}
+2.20689 & 1.379310 & 0.6206896\\
+0.965517 & 3.103448 & 0.89655172\\
+1.31034 & 2.06896 & 1.931034
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $s_{13}\approx0.6206896$
+\end_inset
+
+, 
+\begin_inset Formula $s_{23}\approx0.896551$
+\end_inset
+
+, and 
+\begin_inset Formula $s_{33}\approx1.931034$
+\end_inset
+
+.
+ We then use the formula 
+\begin_inset Formula $f_{ij}=\frac{s_{ij}-\delta_{ij}}{s_{jj}}$
+\end_inset
+
+ (Ross p.
+ 246, §4.6) to deduce that 
+\begin_inset Formula $f_{13}\approx\frac{0.6206896}{1.931034}\approx0.321428$
+\end_inset
+
+, 
+\begin_inset Formula $f_{23}\approx\frac{0.896551}{1.931034}\approx0.4642$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{33}\approx\frac{0.931034}{1.931034}\approx0.482142$
+\end_inset
+
+.
+ (Curiously, the solutions manual seems to omit #63, but it seems reasonable
+ to hope that I didn't make a boneheaded mistake here.)
 \end_layout
 
 \end_body
