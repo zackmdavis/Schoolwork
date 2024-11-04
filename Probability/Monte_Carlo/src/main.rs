@@ -1,6 +1,8 @@
 use rand::distributions::{Distribution, Uniform};
 use rand_distr::Gamma;
 
+mod rare_events;
+
 fn my_first_integrand(x: f64) -> f64 {
      x * (4. - x.powi(2)).powf(-0.5)
 }
@@ -138,8 +140,7 @@ fn exercise_4_naïve() {
 // Uh, what baby example?! I watched the importance sampling lecture, and I did
 // not see anything about babies.
 
-
-fn main() {
+fn worksheet_attempt() {
     // WolframAlpha says int_0^2 x * (4 - x**2)**(-1/2) dx = 2.
     // My code gives answers like 2.0004, 1.99172, 2.000, 2.0604, 1.9506
     // Checks out! ✓
@@ -182,4 +183,10 @@ fn main() {
     // Example runs:
     // `finished with 38021344 samples; implied probability 0.00000005260203321586949`
     // `finished with 265294612 samples; implied probability 0.000000007538788612864855`
+}
+
+
+fn main() {
+    rare_events::naïve_sample();
+    println!("{}", rare_events::savvy_sample(10000));
 }
