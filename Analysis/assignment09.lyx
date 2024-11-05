@@ -113,11 +113,87 @@ Real Analysis II
 10.3.1
 \series default
 .
- a.
- b.
- c.
- d.
- [TODO]
+ 
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $E^{\circ}=\emptyset,\ \overline{E}=E\cup\{0\}$
+\end_inset
+
+ (here I had initially said just 
+\begin_inset Formula $\overline{E}=E$
+\end_inset
+
+, but the 
+\begin_inset Quotes eld
+\end_inset
+
+Answers and Hints to Selected Exercises
+\begin_inset Quotes erd
+\end_inset
+
+ in the back of the book point out that 0 is also a limit point), 
+\begin_inset Formula $\partial E=E$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\begin_inset Formula $E^{\circ}=E,\ \overline{E}=\bigcup_{n=1}^{\infty}[\frac{1}{n+1},\frac{1}{n}]\ $
+\end_inset
+
+ (actually, the 
+\begin_inset Quotes eld
+\end_inset
+
+Answers and Hints
+\begin_inset Quotes erd
+\end_inset
+
+ point out that this is just 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+), 
+\begin_inset Formula $\partial E=\{\frac{1}{n}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\begin_inset Formula $E^{\circ}=\mathbb{R},\ \overline{E}=\mathbb{R},\ \partial E=\emptyset$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\begin_inset Formula $E^{\circ}=\emptyset,\ \overline{E}=\mathbb{R},\ \partial E=\mathbb{R}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -295,7 +371,46 @@ b
 c
 \series default
 .
+ Consider 
+\begin_inset Formula $A=(0,1]$
+\end_inset
+
+ and 
+\begin_inset Formula $B=(1,2)$
+\end_inset
+
+.
  
+\begin_inset Formula $\partial(A\cup B)=\{0,2\}$
+\end_inset
+
+, but 
+\begin_inset Formula $\partial A\cup\partial B=\{0,1,2\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $A=(0,1)$
+\end_inset
+
+ and 
+\begin_inset Formula $B=(1,2)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\partial(A\cap B)=\emptyset$
+\end_inset
+
+, but 
+\begin_inset Formula $(A\cap\partial B)\cup(B\cap\partial A)\cup(\partial A\cap\partial B)=\{1\}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -309,11 +424,50 @@ c
 a
 \series default
 .
- 
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $V$
+\end_inset
+
+ is open in 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ [TODO]
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $U$
+\end_inset
+
+ is open in 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $V=U\cap Y$
+\end_inset
+
+.
+ [TODO]
+\end_layout
+
+\begin_layout Standard
+
 \series bold
 b
 \series default
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -327,11 +481,64 @@ b
 a
 \series default
 .
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $V$
+\end_inset
+
+ is the union of a collection of open balls.
+ The union of open sets is open, so 
+\begin_inset Formula $V$
+\end_inset
+
+ is open.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Because 
+\begin_inset Formula $V$
+\end_inset
+
+ is open, every point of 
+\begin_inset Formula $V$
+\end_inset
+
+ is the center of an open ball contained entirely within 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ The union of all such balls contain every point in 
+\begin_inset Formula $V$
+\end_inset
+
+ (and no points outside 
+\begin_inset Formula $V$
+\end_inset
+
+).
  
+\end_layout
+
+\begin_layout Standard
+
 \series bold
 b
 \series default
 .
+ Substituting 
+\emph on
+closed
+\emph default
+ makes it false.
+ [TODO]
 \end_layout
 
 \begin_layout Standard
@@ -346,11 +553,18 @@ a
 \series default
 .
  
+\end_layout
+
+\begin_layout Standard
+
 \series bold
 b
 \series default
 .
- 
+\end_layout
+
+\begin_layout Standard
+
 \series bold
 c
 \series default
