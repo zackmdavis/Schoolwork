@@ -95,7 +95,7 @@ December 2024–January 2025
 \end_layout
 
 \begin_layout Abstract
-Exercises following Bernd S.
+Exercises from Bernd S.
  W.
  Schröder, 
 \emph on
@@ -1092,7 +1092,11 @@ Theorem
 \begin_inset Formula $\mu$
 \end_inset
 
--measurable, then 
+-measurable for outer measure 
+\begin_inset Formula $\mu$
+\end_inset
+
+, then 
 \begin_inset Formula $A\cap$
 \end_inset
 
@@ -1111,10 +1115,551 @@ Proof
 
 .
  
-\begin_inset Formula $\mu((A\cap B)\cap T))+\mu((A\cap B)^{\complement}\cap T))=$
+\begin_inset Formula $\mu((A\cap B)\cap T)+\mu((A\cap B)^{\complement}\cap T)=\mu(A\cap B\cap T)+\mu((A^{\complement}\cup B^{\complement})\cap T)$
 \end_inset
 
- [TODO finish]
+.
+ Then (as in the proof of Lemma 9.8), we use 
+\begin_inset Formula $(A^{\complement}\cup B^{\complement})\cap T)$
+\end_inset
+
+ itself as a test set against 
+\begin_inset Formula $A$
+\end_inset
+
+, to get 
+\begin_inset Formula $\mu(A\cap B\cap T)+\mu(A\cap(A^{\complement}\cup B^{\complement})\cap T)+\mu(A^{\complement}\cap(A^{\complement}\cup B^{\complement})\cap T)$
+\end_inset
+
+.
+ Then the intersection of a set and the union of its complement with anything
+ is the intersection of the set and the thing, and the intersection of a
+ set with the union of itself and anything is just the set (because any
+ points in the thing not already in the set get shaved away by the intersection)
+, so we have 
+\begin_inset Formula $\mu(A\cap B\cap T)+\mu(A\cap B^{\complement}\cap T)+\mu(A^{\complement}\cap T)$
+\end_inset
+
+.
+ By the measurability of 
+\begin_inset Formula $B$
+\end_inset
+
+ and 
+\begin_inset Formula $A$
+\end_inset
+
+, respectively, we can 
+\begin_inset Quotes eld
+\end_inset
+
+un-test
+\begin_inset Quotes erd
+\end_inset
+
+ to 
+\begin_inset Formula $\mu(A\cap T)+\mu(A^{\complement}\cap T)$
+\end_inset
+
+ and again to 
+\begin_inset Formula $\mu(T)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+14-15
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ For a sequence of disjoint 
+\begin_inset Formula $\mu$
+\end_inset
+
+-measurable sets 
+\begin_inset Formula $\{A_{j}\}_{j=1}^{\infty}$
+\end_inset
+
+ for outer measure 
+\begin_inset Formula $\mu$
+\end_inset
+
+, 
+\begin_inset Formula $\bigcup_{j}A_{j}$
+\end_inset
+
+ is 
+\begin_inset Formula $\mu$
+\end_inset
+
+-measurable, and for test set 
+\begin_inset Formula $T$
+\end_inset
+
+, we have 
+\begin_inset Formula $\mu(T)=\sum_{j=1}^{\infty}\mu(A_{j}\cap T)+\mu\left(\left(\bigcup_{j=1}^{\infty}A_{j}\right)^{\complement}\cap T\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We know that the individual 
+\begin_inset Formula $A_{j}$
+\end_inset
+
+ are 
+\begin_inset Formula $\mu$
+\end_inset
+
+-measurable, 
+\emph on
+i.e
+\emph default
+., that 
+\begin_inset Formula $\forall j\ \mu(T)=\mu(T\cap A_{j})+\mu(T\cap A_{j}^{\complement})$
+\end_inset
+
+.
+ To extend that to 
+\begin_inset Formula $\mu$
+\end_inset
+
+-measurability of the union, we probably need to invoke countable subadditivity
+ somehow? 
+\begin_inset Formula $\bigcup_{j}A_{j}$
+\end_inset
+
+ will be 
+\begin_inset Formula $\mu$
+\end_inset
+
+-measurable if 
+\begin_inset Formula $\mu(T)=\mu(T\cap(\bigcup_{j}A_{j}))+\mu(T\cap(\bigcup_{j}A_{j})^{\complement})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mu(T\cap(\bigcup_{j}A_{j}))=\text{\ensuremath{\mu(\bigcup_{j}(T\cap A_{j}))}}\le\sum_{j=1}^{\infty}\mu(T\cap A_{j})$
+\end_inset
+
+ by countable subadditivity.
+ ...
+ okay, I don't see where to take this; let's look at the hinted Lemma 9.9.
+ It's mostly an induction.
+\end_layout
+
+\begin_layout Standard
+(Base.) 
+\begin_inset Formula $\mu(T)=\mu(A_{1}\cap T)+\mu(A_{1}^{\complement}\cap T)$
+\end_inset
+
+ by the measurability of 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Induction.) Suppose 
+\begin_inset Formula $\mu(T)=\sum_{j=1}^{n}\mu(A_{j}\cap T)+\mu(\left(\bigcup_{j=1}^{n}A_{j}\right)^{\complement}\cap T)$
+\end_inset
+
+.
+ We want to push this to 
+\begin_inset Formula $n+1$
+\end_inset
+
+.
+ As in Lemma 9.9, we 
+\begin_inset Quotes eld
+\end_inset
+
+push in
+\begin_inset Quotes erd
+\end_inset
+
+ the complement with De Morgan's law (
+\begin_inset Formula $\mu(\left(\bigcup_{j=1}^{n}A_{j}\right)^{\complement}\cap T)=\mu(\left(\bigcap_{j=1}^{n}A_{j}^{\complement}\right)\cap T)$
+\end_inset
+
+) and use the fact that 
+\begin_inset Formula $A_{n+1}$
+\end_inset
+
+ is measurable (
+\begin_inset Formula $\mu(\left(\bigcap_{j=1}^{n}A_{j}^{\complement}\right)\cap T)=\mu(A_{n+1}\cap\left(\bigcap_{j=1}^{n}A_{j}^{\complement}\right)\cap T)+\mu(A_{n+1}^{\complement}\cap\left(\bigcap_{j=1}^{n}A_{j}^{\complement}\right)\cap T)$
+\end_inset
+
+, where the intersection of complements is going to have empty intersection
+ with disjoint 
+\begin_inset Formula $A_{n+1}$
+\end_inset
+
+ in the first term and the grand intersection in the second term is going
+ to go to 
+\begin_inset Formula $n+1$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+But then we can unify that 
+\begin_inset Formula $\mu(A_{n+1}\cap T)$
+\end_inset
+
+ with the earlier sum, so we have 
+\begin_inset Formula $\mu(T)=\sum_{j=1}^{n+1}\mu(A_{j}\cap T)+\mu(\bigcap_{j=1}^{n+1}A_{j}^{\complement}\cap T)$
+\end_inset
+
+, induction complete.
+\end_layout
+
+\begin_layout Standard
+At this point I was confused why Lemma 9.9 didn't end there.
+ Talking to OpenAI o1, it seems that the issue is that the induction established
+ an equality for any finite 
+\begin_inset Formula $n$
+\end_inset
+
+, but we need to do a little more work to secure the infinite union? Maybe
+ I can move on for now and hope to understand this better later.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+14-16
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Consider 
+\begin_inset Formula $M$
+\end_inset
+
+ a set, 
+\begin_inset Formula $\mu:\mathcal{P}(M)\rightarrow[0,\infty]$
+\end_inset
+
+ an outer measure, and 
+\begin_inset Formula $\Sigma_{\mu}$
+\end_inset
+
+ the set of 
+\begin_inset Formula $\mu$
+\end_inset
+
+-measurable sets.
+ 
+\begin_inset Formula $(M,\ \Sigma_{\mu},\ \mu)$
+\end_inset
+
+ is a measure space.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (We are hinted to mimic Theorem 9.10 to show that 
+\begin_inset Formula $\Sigma_{\mu}$
+\end_inset
+
+ is a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra and mimic 9.11 to show that 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is countably additive on 
+\begin_inset Formula $\Sigma_{\mu}$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+(Empty set.) 
+\begin_inset Formula $\emptyset\in\Sigma_{\mu}$
+\end_inset
+
+ because 
+\begin_inset Formula $\mu(\emptyset)=0$
+\end_inset
+
+ by the empty-set axiom for outer measure, and we showed above that sets
+ with null outer measure are measurable.
+\end_layout
+
+\begin_layout Standard
+(Complement closure.) Suppose that 
+\begin_inset Formula $S$
+\end_inset
+
+ is 
+\begin_inset Formula $\mu$
+\end_inset
+
+-measurable.
+ We want to show that 
+\begin_inset Formula $S^{\complement}=M\backslash S$
+\end_inset
+
+ is 
+\begin_inset Formula $\mu$
+\end_inset
+
+-measurable.
+ What it means for 
+\begin_inset Formula $S$
+\end_inset
+
+ to be measurable is that for any 
+\begin_inset Formula $T\subseteq M$
+\end_inset
+
+, 
+\begin_inset Formula $\mu(T)=\mu(S\cap T)+\mu(S^{\complement}\cap T)$
+\end_inset
+
+.
+ But this is saying the same thing about 
+\begin_inset Formula $S^{\complement}$
+\end_inset
+
+ (swapping the roles of 
+\begin_inset Formula $S$
+\end_inset
+
+ and 
+\begin_inset Formula $S^{\complement}$
+\end_inset
+
+; it's the same statement).
+\end_layout
+
+\begin_layout Standard
+(Countable union closure.) We want to show that the countable union of 
+\begin_inset Formula $\mu$
+\end_inset
+
+-measurable sets is 
+\begin_inset Formula $\mu$
+\end_inset
+
+-measurable.
+ Lemma 14.24 (which we tried to prove above in 14-15) shows that this is
+ true for the countable union of disjoint sets.
+ But we can 
+\begin_inset Quotes eld
+\end_inset
+
+disjointify
+\begin_inset Quotes erd
+\end_inset
+
+ an arbitrary countable union (compare 14-6 above) by inductively defining
+ 
+\begin_inset Formula $B_{i}$
+\end_inset
+
+ as the points of 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ that haven't already appeared in 
+\begin_inset Formula $\bigcup_{j<i}A_{j}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(Countable additivity of the measure.) We have a lemma above that says 
+\begin_inset Formula $\mu(T)=\sum_{j=1}^{\infty}\mu(A_{j}\cap T)+\mu\left(\left(\bigcup_{j=1}^{\infty}A_{j}\right)^{\complement}\cap T\right)$
+\end_inset
+
+.
+ The proof of Theorem 9.11 is saying that we're going to use the union 
+\emph on
+as the test set
+\emph default
+: 
+\begin_inset Formula $\mu(\bigcup_{j=1}^{\infty}A_{j})=\sum_{k=1}^{\infty}\mu(A_{k}\cap\left(\bigcup_{j=1}^{\infty}A_{j}\right))+\mu\left(\left(\bigcup_{k=1}^{\infty}A_{k}\right)^{\complement}\cap\left(\bigcup_{j=1}^{\infty}A_{j}\right)\right)$
+\end_inset
+
+.
+ Then the summands become 
+\begin_inset Formula $A_{k}$
+\end_inset
+
+ (because intersecting with the union of the other 
+\begin_inset Formula $A_{j}$
+\end_inset
+
+ does nothing) and the second term vanishes (because the intersection of
+ a set and its complement is empty), leaving us with 
+\begin_inset Formula $\mu(\bigcup_{j=1}^{\infty}A_{j})=\sum_{j=1}^{\infty}\mu(A_{j})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+14-17
+\series default
+.
+ We want to show that outer Lebesgue measure is the same if you use dyadic
+ rational (
+\begin_inset Formula $\frac{n}{2^{k}}$
+\end_inset
+
+, 
+\begin_inset Formula $n,k\in\mathbb{Z}$
+\end_inset
+
+) open boxes rather than generic open boxes.
+\end_layout
+
+\begin_layout Standard
+Intuitively, our proof is going to rely on the product of dyadic rationals
+ 
+\begin_inset Formula $\{\frac{k}{2^{n}}:n,k\in\mathbb{Z}\}^{n}$
+\end_inset
+
+ being dense in 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+: anything you can do with open boxes, you can get arbitrarily close to
+ with dyadic open boxes.
+\end_layout
+
+\begin_layout Standard
+Suppose not: 
+\begin_inset Formula $\lambda(S)=\inf\left\{ \sum_{j=1}^{\infty}|B_{j}|:S\subseteq\bigcup_{j=1}^{\infty}B_{j},\ B_{j}\ \text{open box}\right\} \ne\inf\left\{ \sum_{j=1}^{\infty}|B_{j}|:S\subseteq\bigcup_{j=1}^{\infty}B_{j}\ ,B_{j}\ \text{open dyadic box}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ We know that for a measurable set 
+\begin_inset Formula $S$
+\end_inset
+
+, there exist open boxes 
+\begin_inset Formula $B_{j}$
+\end_inset
+
+ that cover 
+\begin_inset Formula $S$
+\end_inset
+
+ such that 
+\begin_inset Formula $|\lambda(S)-\sum_{j}|B_{j}||<\frac{\varepsilon}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then we want to cover those boxes with dyadic open boxes 
+\begin_inset Formula $D_{j}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|\sum_{j}|B_{j}|-|D_{j}|\right|<\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ The thing that makes this tricky is that there can be countably many boxes,
+ so to calculate how to share our 
+\begin_inset Formula $\frac{\varepsilon}{2}$
+\end_inset
+
+ margin over 
+\begin_inset Formula $n$
+\end_inset
+
+ dimensions of countably rather than finitely many boxes, we're going to
+ need some kind of 
+\begin_inset Quotes eld
+\end_inset
+
+series trick
+\begin_inset Quotes erd
+\end_inset
+
+: say, allocate 
+\begin_inset Formula $\frac{1}{2^{j}}$
+\end_inset
+
+ of our 
+\begin_inset Formula $\frac{\varepsilon}{2}$
+\end_inset
+
+ error budget to the 
+\begin_inset Formula $j$
+\end_inset
+
+th box, where it will be shared among the 
+\begin_inset Formula $n$
+\end_inset
+
+ dimensions of the box—but we need to take into account that the errors
+ along different dimensions combine multiplicatively.
+ For example, if 
+\begin_inset Formula $B_{i}=(0,1)\times(0,1)$
+\end_inset
+
+ and we approximate it with 
+\begin_inset Formula $D_{i}=(-\frac{1}{2^{10}},1+\frac{1}{2^{10}})\times(-\frac{1}{2^{10}},1+\frac{1}{2^{10}})$
+\end_inset
+
+, the error 
+\begin_inset Formula $|D_{i}-B_{i}|=(1+\frac{2}{2^{10}})^{2}-1^{2}=(1+\frac{1}{2^{9}})^{2}-1$
+\end_inset
+
+.
+ The algebra here is quickly getting messy, though: the difference of 
+\begin_inset Formula $n$
+\end_inset
+
+th powers formula involves a summation.
+ (OpenAI o1 is agreeing that this is the right idea, and claims that there's
+ a mean-value-theorem/partial-derivatives approach to nailing down the inequalit
+y, which I'm not going to allocate time to now.)
 \end_layout
 
 \end_body
