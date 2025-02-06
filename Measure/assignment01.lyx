@@ -1,0 +1,454 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #1
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+5 February 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Measure and Integration
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $|tA|=|t||A|$
+\end_inset
+
+ (where 
+\begin_inset Formula $|tA|=\{ta:a\in A\}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $I_{k}$
+\end_inset
+
+ cover 
+\begin_inset Formula $A$
+\end_inset
+
+ with 
+\begin_inset Formula $\sum_{k}\ell(I_{k})<|A|+\frac{\varepsilon}{t}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\{tI_{k}\}$
+\end_inset
+
+ covers 
+\begin_inset Formula $tA$
+\end_inset
+
+ with 
+\begin_inset Formula $\sum_{k}\ell(tI_{k})<|t||A|+\varepsilon$
+\end_inset
+
+, so 
+\begin_inset Formula $|tA|\le|t||A|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $A,\,B\in\mathbb{R},\,|A|<\infty$
+\end_inset
+
+, 
+\begin_inset Formula $|B\backslash A|\ge|B|-|A|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Intuitively, we have equality when 
+\begin_inset Formula $A$
+\end_inset
+
+ is contained in 
+\begin_inset Formula $B$
+\end_inset
+
+; otherwise, 
+\begin_inset Formula $A\backslash B$
+\end_inset
+
+ has more outer measure because the right-hand side is also subtracting
+ the measure of 
+\begin_inset Formula $A\backslash B$
+\end_inset
+
+, not just 
+\begin_inset Formula $A\cap B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $|A|=\inf\left\{ \sum_{j}\ell(I_{j}):A\subseteq\bigcup_{j}I_{j}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $|B|=\inf\left\{ \sum_{j}\ell(I_{j}):B\subseteq\bigcup_{j}I_{j}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|B\backslash A|=\inf\left\{ \sum_{j}\ell(I_{j}):B\backslash A\subseteq\bigcup_{j}I_{j}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+6
+\series default
+.
+ [TODO: recapitulate the book]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+8
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10
+\series default
+.
+ We want to show that 
+\begin_inset Formula $\left|[0,1]\backslash\mathbb{Q}\right|=1$
+\end_inset
+
+.
+ It's immediately clear that 
+\begin_inset Formula $\left|[0,1]\backslash\mathbb{Q}\right|\le1$
+\end_inset
+
+, because 
+\begin_inset Formula $\left|[0,1]\right|=1$
+\end_inset
+
+ as the outer measure of a closed bounded interval; we need to show that
+ excluding the rationals doesn't 
+\begin_inset Quotes eld
+\end_inset
+
+save
+\begin_inset Quotes erd
+\end_inset
+
+ any measure, that
+\begin_inset Formula $\left|[0,1]\backslash\mathbb{Q}\right|\ge1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose not, that there exists a cover 
+\begin_inset Formula $\{I_{k}\}$
+\end_inset
+
+ such that 
+\begin_inset Formula $[0,1]\backslash\mathbb{Q}\subseteq\bigcup_{k}I_{k}$
+\end_inset
+
+ with 
+\begin_inset Formula $\sum_{k}\ell(I_{k})<1$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\bigcup_{k}I_{k}\ne[0,1]$
+\end_inset
+
+, then there exists some interval 
+\begin_inset Formula $(a,b)\subseteq[0,1]\backslash\bigcup_{k}I_{k}$
+\end_inset
+
+.
+ But every open interval contains an irrational number, so 
+\begin_inset Formula $[0,1]\backslash\mathbb{Q}\not\subseteq\bigcup_{k}I_{k}$
+\end_inset
+
+.
+ Contradiction!
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+11
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $I_{k}$
+\end_inset
+
+ is a disjoint sequence of open intervals, then 
+\begin_inset Formula $\left|\bigcup_{k}I_{k}\right|=\sum_{k}\ell(I_{k})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\left|\bigcup_{k}I_{k}\right|:=\inf\left\{ \sum\ell(J_{k}):\bigcup_{k}I_{k}\subseteq J_{k}\right\} $
+\end_inset
+
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, and let 
+\begin_inset Formula $J_{k}:=(\inf I_{k}-\frac{\varepsilon}{2^{k+1}},\ \sup I_{k}+\frac{\varepsilon}{2^{k+1}})$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\sum_{k}\ell(J_{k})=\sum_{k=1}^{\infty}I_{k}+\frac{2\varepsilon}{2^{k+1}}=\sum_{k=1}^{\infty}\ell(I_{k})+\sum_{k=1}^{\infty}\frac{\varepsilon}{2^{k}}=\sum_{k=1}^{\infty}\ell(I_{k})+\varepsilon$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula $\left|\bigcup_{k}I_{k}\right|\le\sum_{k}\ell(I_{k})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+But it's also the case that
+\begin_inset Formula $\left|\bigcup_{k}I_{k}\right|\ge\sum_{k}\ell(I_{k})$
+\end_inset
+
+.
+ Suppose it weren't: that we had a cover 
+\begin_inset Formula $\{J_{k}\}$
+\end_inset
+
+ of 
+\begin_inset Formula $\bigcup_{k}I_{k}$
+\end_inset
+
+ where 
+\begin_inset Formula $\sum_{k}\ell(J_{k})<\sum_{k}\ell(I_{k})$
+\end_inset
+
+.
+ Consider an arbitrary 
+\begin_inset Formula $I_{k}$
+\end_inset
+
+.
+ There must be some 
+\begin_inset Formula $A\subseteq\mathbb{N}$
+\end_inset
+
+ such that 
+\begin_inset Formula $(\inf I_{k},\ \sup I_{k})\subseteq\bigcup_{\alpha\in A}J_{\alpha}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $\bigcup_{\alpha\in A}J_{\alpha}$
+\end_inset
+
+ is open, so there exists 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ such that 
+\begin_inset Formula $(\inf I_{k}-\varepsilon,\ \sup I_{k}+\varepsilon)\subseteq\bigcup_{\alpha\in A}J_{\alpha}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\ell(\bigcup_{\alpha\in A}J_{\alpha})\ge\ell(I_{k})$
+\end_inset
+
+, and (following the same reasoning for the other disjoint intervals, and
+ summing) 
+\begin_inset Formula $\sum_{k}\ell(J_{k})\ge\sum_{k}\ell(I_{k})$
+\end_inset
+
+.
+ Contradiction!
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,374 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #1
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+30 January 2025
+\end_layout
+
+\begin_layout Abstract
+Homework exercises for Prof.
+ Lai's 
+\begin_inset Quotes eld
+\end_inset
+
+Theory of Functions of a Complex Variable.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $|z-z_{1}|=|z-z_{2}|$
+\end_inset
+
+ describes a line perpendicular to the line between 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\begin_inset Formula $\frac{1}{z}=\overline{z}$
+\end_inset
+
+ can also be written as 
+\begin_inset Formula $\frac{1}{x+iy}=x-iy$
+\end_inset
+
+.
+ Multiplying the left side by 
+\begin_inset Quotes eld
+\end_inset
+
+fancy one
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\frac{x-iy}{x-iy}$
+\end_inset
+
+, we get 
+\begin_inset Formula $\frac{x-iy}{(x+iy)(x-iy)}=x-iy$
+\end_inset
+
+, which is 
+\begin_inset Formula $\frac{x-iy}{x^{2}+y^{2}}=x-iy$
+\end_inset
+
+ (applying the difference of squares formula and 
+\begin_inset Formula $i^{2}=-1$
+\end_inset
+
+ to the denominator on the left).
+ Then we can cancel and reärrange to get 
+\begin_inset Formula $x^{2}+y^{2}=1$
+\end_inset
+
+, the unit circle?! I find this result somewhat counterintuitive, but it
+ survives spot checks: 
+\emph on
+e.g
+\emph default
+., 
+\begin_inset Formula $\frac{1}{i}=i^{-1}=-i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\begin_inset Formula $\text{Re}z=3$
+\end_inset
+
+ is a vertical line 
+\begin_inset Formula $x=3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\begin_inset Formula $\text{Re}z>c$
+\end_inset
+
+ (respectively 
+\begin_inset Formula $\ge c$
+\end_inset
+
+) is an open (respectively closed) half-plane.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+e
+\series default
+.
+ 
+\begin_inset Formula $\text{Re}az+b>0$
+\end_inset
+
+ is an open half-plane above the indicated line.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+f
+\series default
+.
+ 
+\begin_inset Formula $|z|=\text{Re}z+1$
+\end_inset
+
+ amounts to 
+\begin_inset Formula $\sqrt{x^{2}+y^{2}}=x+1$
+\end_inset
+
+, from which we get 
+\begin_inset Formula $x^{2}+y^{2}=(x+1)^{2}$
+\end_inset
+
+ and then 
+\begin_inset Formula $y^{2}=x^{2}+2x+1-x^{2}=2x+1$
+\end_inset
+
+, so 
+\begin_inset Formula $y=\pm\sqrt{2x+1}$
+\end_inset
+
+, suggesting a right-facing parabola.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+g
+\series default
+.
+ 
+\begin_inset Formula $\text{Im}z=c$
+\end_inset
+
+ is a horizontal line 
+\begin_inset Formula $y=c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ There is no total ordering on 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose there were.
+ 
+\end_layout
+
+\begin_layout Standard
+Following the hint, furthermore suppose that 
+\begin_inset Formula $i\succ0$
+\end_inset
+
+.
+ From multiplication compatibility (iii), we also have 
+\begin_inset Formula $i^{2}=-1\succ0$
+\end_inset
+
+, 
+\begin_inset Formula $i^{3}=-i\succ0$
+\end_inset
+
+, and 
+\begin_inset Formula $i^{4}=1\succ0$
+\end_inset
+
+ (successively multiplying both sides of the relation by 
+\begin_inset Formula $i$
+\end_inset
+
+).
+ But the conjunction of 
+\begin_inset Formula $1\succ0$
+\end_inset
+
+ and 
+\begin_inset Formula $-1\succ0$
+\end_inset
+
+ violates translation invariance (ii): subtracting 
+\begin_inset Formula $1$
+\end_inset
+
+ from both sides of 
+\begin_inset Formula $1\succ0$
+\end_inset
+
+ yields 
+\begin_inset Formula $0\succ-1$
+\end_inset
+
+.
+ Contradiction!
+\end_layout
+
+\begin_layout Standard
+On the other hand, if we suppose that 
+\begin_inset Formula $0\succ i$
+\end_inset
+
+, then translation invariance yields 
+\begin_inset Formula $-i\succ0$
+\end_inset
+
+, and the same argument as above applies without loss of generality.
+\end_layout
+
+\end_body
+\end_document
