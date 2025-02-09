@@ -1,0 +1,380 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #2
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+8 February 2025
+\end_layout
+
+\begin_layout Abstract
+Homework exercises for Prof.
+ Lai's 
+\begin_inset Quotes eld
+\end_inset
+
+Theory of Functions of a Complex Variable.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1 (Ch 1.
+ #9)
+\series default
+.
+ Our Cartesian Cauchy–Reimann equations are 
+\begin_inset Formula $\begin{cases}
+\frac{\partial u(x,y)}{\partial x}=\frac{\partial v(x,y)}{\partial y}\\
+\frac{\partial u(x,y)}{\partial y}=-\frac{\partial v(x,y)}{\partial x}
+\end{cases}$
+\end_inset
+
+.
+ We want to show that the polar form will be 
+\begin_inset Formula $\begin{cases}
+\frac{\partial u}{\partial r}=\frac{1}{r}\frac{\partial v}{\partial\theta}\\
+\frac{1}{r}\frac{\partial u}{\partial\theta}=-\frac{\partial v}{\partial r}
+\end{cases}$
+\end_inset
+
+.
+ We know that polar coördinates amount to 
+\begin_inset Formula $\begin{cases}
+x=r\cos\theta\\
+y=r\sin\theta
+\end{cases}$
+\end_inset
+
+.
+ Differentiating with respect to 
+\begin_inset Formula $r$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta$
+\end_inset
+
+, we have 
+\begin_inset Formula $\frac{\partial x}{\partial r}=\cos\theta$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\partial y}{\partial r}=\sin\theta$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\partial x}{\partial\theta}=-r\sin\theta$
+\end_inset
+
+, and 
+\begin_inset Formula $\frac{\partial y}{\partial\theta}=r\cos\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+By the chain rule, 
+\begin_inset Formula $\frac{\partial u(x,y)}{\partial r}=\frac{\partial u}{\partial x}\cdot\frac{\partial x}{\partial r}+\frac{\partial u}{\partial y}\cdot\frac{\partial y}{\partial r}=\frac{\partial u}{\partial x}\cos\theta+\frac{\partial u}{\partial y}\sin\theta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Meanwhile, 
+\begin_inset Formula $\frac{\partial u(x,y)}{\partial\theta}=\frac{\partial u}{\partial x}\cdot\frac{\partial x}{\partial\theta}+\frac{\partial u}{\partial y}\cdot\frac{\partial y}{\partial\theta}=-r\frac{\partial u}{\partial x}\sin\theta+r\frac{\partial u}{\partial y}\cos\theta=r\left(\frac{\partial u}{\partial y}\cos\theta-\frac{\partial u}{\partial x}\sin\theta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+And 
+\begin_inset Formula $\frac{\partial v(x,y)}{\partial r}=\frac{\partial v}{\partial x}\cdot\frac{\partial x}{\partial r}+\frac{\partial v}{\partial y}\cdot\frac{\partial y}{\partial r}=\frac{\partial v}{\partial x}\cdot\cos\theta+\frac{\partial v}{\partial y}\cdot\sin\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And 
+\begin_inset Formula $\frac{\partial v(x,y)}{\partial\theta}=\frac{\partial v}{\partial x}\cdot\frac{\partial x}{\partial\theta}+\frac{\partial v}{\partial y}\cdot\frac{\partial y}{\partial\theta}=-\frac{\partial v}{\partial x}\cdot r\sin\theta+\frac{\partial v}{\partial y}\cdot r\cos\theta=r\left(\frac{\partial v}{\partial y}\cos\theta-\frac{\partial v}{\partial x}\sin\theta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Indeed, we see that 
+\begin_inset Formula $\frac{1}{r}\cdot\frac{\partial v}{\partial\theta}=\frac{\partial v}{\partial y}\cos\theta-\frac{\partial v}{\partial x}\sin\theta=\frac{\partial u}{\partial x}\cos\theta+\frac{\partial u}{\partial y}\sin\theta=\frac{\partial u}{\partial r}\ \checkmark$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+And 
+\begin_inset Formula $\frac{1}{r}\cdot\frac{\partial u}{\partial\theta}=\frac{\partial u}{\partial y}\cos\theta-\frac{\partial u}{\partial x}\sin\theta=-\frac{\partial v}{\partial x}\cdot\cos\theta-\frac{\partial v}{\partial y}\cdot\sin\theta=-\frac{\partial v}{\partial r}\ \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then we want to show that 
+\begin_inset Formula $f:=\underbrace{\log r}_{u}+\underbrace{i\theta}_{iv}$
+\end_inset
+
+ is holomorphic with 
+\begin_inset Formula $r>0$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta\in(-\pi,\pi)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We have 
+\begin_inset Formula $\frac{\partial u}{\partial r}=\frac{1}{r}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{\partial v}{\partial\theta}=1\rightarrow\frac{1}{r}\cdot\frac{\partial v}{\partial\theta}=\frac{1}{r}\ \checkmark$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+And 
+\begin_inset Formula $\frac{\partial u}{\partial\theta}=0$
+\end_inset
+
+ while 
+\begin_inset Formula $-\frac{\partial v}{\partial r}=0\ \checkmark$
+\end_inset
+
+ Thus 
+\begin_inset Formula $f$
+\end_inset
+
+ satisfies the (polar) Cauchy–Reimann equations.
+ Furthermore, 
+\begin_inset Formula $u$
+\end_inset
+
+ (the reciprocal) is continuously differentiable for 
+\begin_inset Formula $r>0$
+\end_inset
+
+, and 
+\begin_inset Formula $v$
+\end_inset
+
+ (linear) is continuously differentiable, so we conclude (by Theorem 2.4)
+ that the function is holomorphic on the given domain.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ddz}{\frac{\partial}{\partial z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ddbarz}{\frac{\partial}{\partial\overline{z}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ddx}{\frac{\partial}{\partial x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ddy}{\frac{\partial}{\partial y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2 (Ch.
+ 1 #10)
+\series default
+.
+ We know that 
+\begin_inset Formula $\frac{\partial}{\partial z}:=\frac{1}{2}(\ddx+\frac{1}{i}\ddy)$
+\end_inset
+
+ and 
+\begin_inset Formula $\ddbarz=\frac{1}{2}(\ddx-\frac{1}{i}\ddy).$
+\end_inset
+
+ We compute that 
+\begin_inset Formula 
+\[
+4\ddz\ddbarz=4\frac{1}{2}(\ddx+\frac{1}{i}\ddy)\frac{1}{2}(\ddx-\frac{1}{i}\ddy)=(\ddx+\frac{1}{i}\ddy)(\ddx-\frac{1}{i}\ddy)=\ddx^{2}+\cancel{\frac{1}{i}\ddx\ddy-\frac{1}{i}\ddx\ddy}-\frac{1}{i^{2}}\ddy^{2}=\ddx^{2}+\ddy^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+as expected.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3 (Ch.
+ 1 #11)
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4 (Ch.
+ 1 #12)
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5 (Ch.
+ 1 #13)
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+6
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7 (Ch.
+ 1 #19).
+\end_layout
+
+\end_body
+\end_document
