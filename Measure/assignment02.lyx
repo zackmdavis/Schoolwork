@@ -191,6 +191,10 @@ Proof
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -336,6 +340,10 @@ quod erat demonstrandum
 \emph default
 .
  
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -345,6 +353,100 @@ quod erat demonstrandum
 \series default
 .
  
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $\Sigma=\{\emptyset,\mathbb{R}\}$
+\end_inset
+
+, then 
+\begin_inset Formula $f(x):\mathbb{R}\rightarrow\mathbb{R}=\begin{cases}
+-1 & x\in(-\infty,0)\\
+1 & x\in[0,\infty)
+\end{cases}$
+\end_inset
+
+ is not 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable, but 
+\begin_inset Formula $|f|$
+\end_inset
+
+ is.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ As pointed out in Axler's Example 2.36, for 
+\begin_inset Formula $\Sigma=\{\emptyset,\mathbb{R}\}$
+\end_inset
+
+, the 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable functions are the constant functions: the inverse image of a
+ point 
+\begin_inset Formula $y$
+\end_inset
+
+ in the codomain is either 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ (if 
+\begin_inset Formula $y$
+\end_inset
+
+ is the value of the constant function) or 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+ (otherwise).
+ Let 
+\begin_inset Formula $B:=[\frac{1}{2},\frac{3}{2}]$
+\end_inset
+
+, which is a Borel set.
+ Then 
+\begin_inset Formula $f^{-1}(B)=[0,\infty)\not\in\Sigma$
+\end_inset
+
+.
+ Then let 
+\begin_inset Formula $C$
+\end_inset
+
+ be a Borel set.
+ If 
+\begin_inset Formula $1\in C$
+\end_inset
+
+, then 
+\begin_inset Formula $|f|^{-1}(C)=\mathbb{R}\in\Sigma$
+\end_inset
+
+, but if 
+\begin_inset Formula $1\notin C$
+\end_inset
+
+, then 
+\begin_inset Formula $|f|^{-1}(C)=\emptyset\in\Sigma$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -353,6 +455,239 @@ quod erat demonstrandum
 11
 \series default
 .
+ 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ is a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra on set 
+\begin_inset Formula $Y$
+\end_inset
+
+ and 
+\begin_inset Formula $\Omega\in\Sigma$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\Sigma^{\Omega}=\{E\in\Sigma:E\subseteq\Omega\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\Sigma^{\Omega}=\{F\cap\Omega:F\in\Sigma\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We want to show that taking sets in 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ and filtering those for the ones that are a subset of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, is the same thing taking intersections with 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and filtering them for being in 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $E_{0}\in\{E\in\Sigma:E\subseteq\Omega\}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E_{0}\subseteq\Omega$
+\end_inset
+
+ implies that 
+\begin_inset Formula $E_{0}\cap\Omega=E_{0}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $E_{0}=E_{0}\cap\Omega\in\{F\cap\Omega:F\in\Sigma\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then consider 
+\begin_inset Formula $F_{0}\in\{F\cap\Omega:F\in\Sigma\}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $F_{0}\cap\Omega\subseteq\Omega$
+\end_inset
+
+, so 
+\begin_inset Formula $F_{0}\in\{E\in\Sigma:E\subseteq\Omega\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\Sigma^{\Omega}$
+\end_inset
+
+ is a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra on 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Empty set.) 
+\begin_inset Formula $\emptyset\in\Sigma^{\Omega}$
+\end_inset
+
+ because 
+\begin_inset Formula $\emptyset\in\Sigma$
+\end_inset
+
+ (inherited from 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ being a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra and satisfying the empty-set axiom) and 
+\begin_inset Formula $\emptyset\subseteq\Omega$
+\end_inset
+
+ (vacuously).
+\end_layout
+
+\begin_layout Standard
+(Complements.) Suppose 
+\begin_inset Formula $E\in\Sigma^{\Omega}$
+\end_inset
+
+.
+ Because 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebras are closed under complementation and 
+\begin_inset Formula $E\in\Sigma$
+\end_inset
+
+, 
+\begin_inset Formula $Y\backslash E\in\Sigma$
+\end_inset
+
+.
+ From closure under (finite) intersection, 
+\begin_inset Formula $Y\backslash E\cap\Omega\in\Sigma$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\Omega\backslash E\in\Sigma$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\Omega\backslash E\subseteq\Omega$
+\end_inset
+
+ (trivially).
+ So 
+\begin_inset Formula $\Omega\backslash E\in\Sigma^{\Omega}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(Countable union.) Suppose 
+\begin_inset Formula $\forall j\ E_{j}\in\Sigma^{\Omega}$
+\end_inset
+
+.
+ We know that 
+\begin_inset Formula $\bigcup_{j}E_{j}\in\Sigma$
+\end_inset
+
+ by countable union closure for 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $\bigcup_{j}E_{j}\subseteq\Omega$
+\end_inset
+
+ because 
+\begin_inset Formula $\forall j\ E_{j}\subseteq\Omega$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -361,6 +696,272 @@ quod erat demonstrandum
 12
 \series default
 .
+ We have 
+\begin_inset Formula $f:\mathbb{R}\rightarrow\mathbb{R}$
+\end_inset
+
+, and for 
+\begin_inset Formula $k\in\mathbb{Z}$
+\end_inset
+
+ let 
+\begin_inset Formula $G_{k}:=\{a\in\mathbb{R}:\exists\delta\forall b,c\in(a-\delta,a+\delta)\ |f(b)-f(c)|<\frac{1}{k}\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $G_{k}$
+\end_inset
+
+ is open.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Thanks to Claude Sonnet 3.5 for a small hint to get me unstuck here.) Consider
+ 
+\begin_inset Formula $a\in G_{k}$
+\end_inset
+
+.
+ We know that there exists 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that the function doesn't vary more than 
+\begin_inset Formula $\frac{1}{k}$
+\end_inset
+
+ inside 
+\begin_inset Formula $(a-\delta,a+\delta)$
+\end_inset
+
+.
+ Pick 
+\begin_inset Formula $b\in(a-\delta,a+\delta)$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\delta_{b}:=\min(|b-a-\delta|,|b-a+\delta|).$
+\end_inset
+
+ Because 
+\begin_inset Formula $(b-\delta_{b},b+\delta_{b})\subset(a-\delta,a+\delta)$
+\end_inset
+
+, the function doesn't vary more than 
+\begin_inset Formula $\frac{1}{k}$
+\end_inset
+
+ in 
+\begin_inset Formula $(b-\delta_{b},b+\delta_{b})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Lemma
+\emph default
+.
+ The set of points at which 
+\begin_inset Formula $f$
+\end_inset
+
+ is continous is 
+\begin_inset Formula $\bigcap_{k=1}^{\infty}G_{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Recall that 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous if for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ there exists 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that 
+\begin_inset Formula $|x-x_{0}|<\delta$
+\end_inset
+
+ implies 
+\begin_inset Formula $|f(x)-f(x_{0})|<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous at 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ We need to show that 
+\begin_inset Formula $a\in G_{k}$
+\end_inset
+
+ for any 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ But the fact that 
+\begin_inset Formula $f$
+\end_inset
+
+ fulfills the continuity condition at 
+\begin_inset Formula $a$
+\end_inset
+
+ for 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, implies that for 
+\begin_inset Formula $n>\left\lfloor \frac{1}{\varepsilon}\right\rfloor $
+\end_inset
+
+, 
+\begin_inset Formula $a\in G_{n}$
+\end_inset
+
+.
+ (Because 
+\begin_inset Formula $\frac{1}{k}<\varepsilon$
+\end_inset
+
+ implies 
+\begin_inset Formula $\frac{1}{\varepsilon}<k$
+\end_inset
+
+.) A sufficiently small 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ guarantees membership in any 
+\begin_inset Formula $G_{k}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $a\in G_{k}$
+\end_inset
+
+ for any 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ This immediately gives us the continuity criterion for 
+\begin_inset Formula $\varepsilon:=\frac{1}{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ The set of points at which 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous is a Borel set.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ For any 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $G_{k}$
+\end_inset
+
+ is Borel because open sets are Borel.
+ The lemma shows that the set of points where 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous is a countable intersection of the 
+\begin_inset Formula $G_{k}$
+\end_inset
+
+.
+ But the countable intersection of Borel sets is Borel by Axler's Theorem
+ 2.25.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -369,6 +970,135 @@ quod erat demonstrandum
 13
 \series default
 .
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $(X,\Sigma)$
+\end_inset
+
+ is a measurable space.
+ 
+\begin_inset Formula $\{E_{j}\}$
+\end_inset
+
+ are disjoint subsets of 
+\begin_inset Formula $X$
+\end_inset
+
+, and 
+\begin_inset Formula $\{c_{j}\}$
+\end_inset
+
+ are distinct real numbers.
+ 
+\begin_inset Formula $\sum_{j}c_{j}\boldsymbol{1}_{E_{j}}$
+\end_inset
+
+ is 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable iff 
+\begin_inset Formula $\forall j\ E_{j}\in\Sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Recall that a function is 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable iff the inverse image of any Borel set is in 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $\forall j\ E_{j}\in\Sigma$
+\end_inset
+
+.
+ Then for any Borel set 
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula $(\sum_{j}c_{j}\boldsymbol{1}_{E_{j}})^{-1}(B)$
+\end_inset
+
+ is the subset of 
+\begin_inset Formula $E_{j}$
+\end_inset
+
+ corresponding by index to which 
+\begin_inset Formula $\{c_{j}\}\subseteq B$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $\sigma$
+\end_inset
+
+–algebras are closed under finite unions, so any subset 
+\begin_inset Formula $\{E_{j}\}_{j\in J}\in\Sigma$
+\end_inset
+
+ for some indexing set 
+\begin_inset Formula $J$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose that for any Borel set 
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula $(\sum_{j}c_{j}\boldsymbol{1}_{E_{j}})^{-1}(B)\in\Sigma$
+\end_inset
+
+.
+ For all 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $\{c_{j}\}$
+\end_inset
+
+ is closed, thus Borel.
+ Then 
+\begin_inset Formula $(\sum_{j}c_{j}\boldsymbol{1}_{E_{j}})^{-1}(B)=E_{j}\in\Sigma$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -377,6 +1107,284 @@ quod erat demonstrandum
 15
 \series default
 .
+ Let 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ be a disjoint sequence of subsets of 
+\begin_inset Formula $X$
+\end_inset
+
+ with 
+\begin_inset Formula $\bigcup_{k}E_{k}=X$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition.
+
+\emph default
+ 
+\begin_inset Formula $\Sigma=\{\bigcup_{k\in K}E_{k}:K\subseteq\mathbb{Z}^{+}\}$
+\end_inset
+
+ is a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra on 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Comment
+\emph default
+.
+ This seems to be a trivial generalization of exercise 1 (which used 
+\begin_inset Formula $(n,n+1]$
+\end_inset
+
+ as the 
+\begin_inset Formula $E_{n}$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Empty set.) 
+\begin_inset Formula $\emptyset\in\Sigma$
+\end_inset
+
+ because 
+\begin_inset Formula $\emptyset\subseteq\mathbb{Z}^{+}$
+\end_inset
+
+ and the empty union is the empty set.
+\end_layout
+
+\begin_layout Standard
+(Complements.) If 
+\begin_inset Formula $\bigcup_{k\in K}E_{k}\in\Sigma$
+\end_inset
+
+ for 
+\begin_inset Formula $K\subseteq\mathbb{Z}^{+}$
+\end_inset
+
+, well, 
+\begin_inset Formula $\mathbb{Z}^{+}\backslash K\subseteq\mathbb{Z}^{+}$
+\end_inset
+
+, too, so 
+\begin_inset Formula $\bigcup_{k\in\mathbb{Z}^{+}\backslash K}E_{k}\in\Sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Countable union.) Again, the countable union of a set of integers is a set
+ of integers.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ A function 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable iff it's constant on 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ for all 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable, that for any Borel set 
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula $f^{-1}(B)\in\Sigma$
+\end_inset
+
+.
+ Suppose for a contradiction that 
+\begin_inset Formula $f$
+\end_inset
+
+ is not constant on some 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ (without loss of generality 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+): say, 
+\begin_inset Formula $x,y\in E_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $f(x)\ne f(y)$
+\end_inset
+
+.
+ The set 
+\begin_inset Formula $\{y\}$
+\end_inset
+
+ is closed, thus Borel, and 
+\begin_inset Formula $y\in f^{-1}(\{y\})$
+\end_inset
+
+ but 
+\begin_inset Formula $x\notin f^{-1}(\{y\})$
+\end_inset
+
+.
+ A set that includes 
+\begin_inset Formula $y$
+\end_inset
+
+ but not 
+\begin_inset Formula $x$
+\end_inset
+
+ cannot be in 
+\begin_inset Formula $\{\bigcup_{k\in K}E_{k}:K\subseteq\mathbb{Z}^{+}\}$
+\end_inset
+
+, whose members only include all the points in any particular 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ or none of them.
+ Contradiction!
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is constant on all 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+.
+ The image of 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\begin_inset Formula $\{f(E_{k})\}_{k}$
+\end_inset
+
+.
+ For Borel set 
+\begin_inset Formula $B$
+\end_inset
+
+ and for all 
+\begin_inset Formula $k$
+\end_inset
+
+, if 
+\begin_inset Formula $f(E_{k})\in B$
+\end_inset
+
+ , then 
+\begin_inset Formula $E_{k}\subseteq f^{-1}(B)$
+\end_inset
+
+; 
+\emph on
+i.e
+\emph default
+., the inverse image is a union of some 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+.
+ But for all 
+\begin_inset Formula $k$
+\end_inset
+
+,
+\begin_inset Formula $E_{k}\in\Sigma$
+\end_inset
+
+, and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebras are closed under countable unions.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -385,6 +1393,19 @@ quod erat demonstrandum
 16
 \series default
 .
+ 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ being a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra on 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
 \end_layout
 
 \end_body
