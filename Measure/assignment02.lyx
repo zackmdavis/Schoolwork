@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-8 February 2024
+10 February 2024
 \end_layout
 
 \begin_layout Abstract
@@ -1406,6 +1406,356 @@ i.e
 \end_inset
 
  and 
+\begin_inset Formula $A\subseteq X$
+\end_inset
+
+, let 
+\begin_inset Formula $\Sigma_{A}:=\{E\in\Sigma:A\subseteq E\ \text{or}\ A\cap E=\emptyset\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\Sigma_{A}$
+\end_inset
+
+ is a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra on 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Empty set.) 
+\begin_inset Formula $\emptyset\in\Sigma_{A}$
+\end_inset
+
+ because 
+\begin_inset Formula $\emptyset\in\Sigma$
+\end_inset
+
+ and 
+\begin_inset Formula $A\cap\emptyset=\emptyset$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Complements.) Suppose 
+\begin_inset Formula $E\in\Sigma_{A}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Either 
+\begin_inset Formula $A\subseteq E$
+\end_inset
+
+ or 
+\begin_inset Formula $A\cap E=\emptyset$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $A\subseteq E$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $X\backslash E\cap A=\emptyset$
+\end_inset
+
+, which in conjunction with 
+\begin_inset Formula $E\in\Sigma$
+\end_inset
+
+ implies 
+\begin_inset Formula $X\backslash E\in\Sigma_{A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Alternatively, the same logic proceeds 
+\begin_inset Quotes eld
+\end_inset
+
+in a mirror
+\begin_inset Quotes erd
+\end_inset
+
+: suppose 
+\begin_inset Formula $A\cap E=\emptyset$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $A\subseteq X\backslash E$
+\end_inset
+
+, which in conjunction with 
+\begin_inset Formula $E\in\Sigma$
+\end_inset
+
+ implies 
+\begin_inset Formula $X\backslash E\in\Sigma_{A}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(Countable union.) Suppose 
+\begin_inset Formula $\{E_{k}\}\subseteq\Sigma_{A}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\bigcup_{k}E_{k}\in\Sigma_{A}$
+\end_inset
+
+ because 
+\begin_inset Formula $\bigcup_{k}E_{k}\in\Sigma$
+\end_inset
+
+ (by the countable union axiom for 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+) and the disjunction 
+\begin_inset Formula $A\subseteq E\ \text{or}\ A\cap E=\emptyset$
+\end_inset
+
+ being preserved by unions (if there exists 
+\begin_inset Formula $k$
+\end_inset
+
+ for which 
+\begin_inset Formula $A\in E_{k}$
+\end_inset
+
+, the first disjunct holds, else the second).
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $f:X\rightarrow\mathbb{R}$
+\end_inset
+
+ is 
+\begin_inset Formula $\Sigma_{A}$
+\end_inset
+
+-measurable iff 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable and 
+\begin_inset Formula $f$
+\end_inset
+
+ is constant on 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose by way of contraposition that 
+\begin_inset Formula $f$
+\end_inset
+
+ is not 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable or 
+\begin_inset Formula $f$
+\end_inset
+
+ is not constant on 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $f$
+\end_inset
+
+ is not 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable, there exists a Borel set 
+\begin_inset Formula $B$
+\end_inset
+
+ such that 
+\begin_inset Formula $f^{-1}(B)\notin\Sigma$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $f^{-1}(B)\notin\Sigma_{A}$
+\end_inset
+
+, either.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $f$
+\end_inset
+
+ is not constant on 
+\begin_inset Formula $A$
+\end_inset
+
+, there exist 
+\begin_inset Formula $x,y\in A$
+\end_inset
+
+ such that 
+\begin_inset Formula $f(x)\ne f(y)$
+\end_inset
+
+.
+ As we observed in #15b above, 
+\begin_inset Formula $\{y\}$
+\end_inset
+
+ is closed, thus Borel.
+ But 
+\begin_inset Formula $A\not\subseteq f^{-1}(\{y\})$
+\end_inset
+
+ because 
+\begin_inset Formula $x\notin f^{-1}(\{y\})$
+\end_inset
+
+ and 
+\begin_inset Formula $A\cap f^{-1}(\{y\})\ne\emptyset$
+\end_inset
+
+ because 
+\begin_inset Formula $y\in f^{-1}(\{y\})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable and 
+\begin_inset Formula $f$
+\end_inset
+
+ is constant on 
+\begin_inset Formula $A$
+\end_inset
+
+: for all 
+\begin_inset Formula $x\in A$
+\end_inset
+
+, 
+\begin_inset Formula $f(x)=c$
+\end_inset
+
+.
+ Consider a Borel set 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $c\in B$
+\end_inset
+
+, then 
+\begin_inset Formula $A\subseteq f^{-1}(B)$
+\end_inset
+
+, but if 
+\begin_inset Formula $c\notin B$
+\end_inset
+
+, then 
+\begin_inset Formula $A\cap f^{-1}(B)=\emptyset$
+\end_inset
+
+.
 \end_layout
 
 \end_body
