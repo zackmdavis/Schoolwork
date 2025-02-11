@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-5 February 2024
+7 February 2024
 \end_layout
 
 \begin_layout Abstract
@@ -105,6 +105,7 @@ Measure and Integration
 \end_inset
 
  class.
+ Not my best work (I intend to do better next week).
 \end_layout
 
 \begin_layout Standard
@@ -168,6 +169,38 @@ Proof
 \end_layout
 
 \begin_layout Standard
+To show equality, we need to prove the other direction, 
+\begin_inset Formula $|tA|\ge|t||A|$
+\end_inset
+
+.
+ At office hours on 4 February, Prof.
+ Schuster said it was analogous to Axler's proof for translation-invariance,
+ but when I tried the analogous manipulation (swapping in 
+\begin_inset Formula $\frac{1}{t}$
+\end_inset
+
+ instead of 
+\begin_inset Formula $-t$
+\end_inset
+
+, 
+\emph on
+&c
+\emph default
+.), I thought I was just getting 
+\begin_inset Formula $|A|\ge|A|$
+\end_inset
+
+ and unfortunately needed another hint from Claude Sonnet 3.5 to push it
+ over the line: 
+\begin_inset Formula $|\frac{1}{t}tA|\le|\frac{1}{t}||tA|\rightarrow|A|\le|\frac{1}{t}||tA|\rightarrow|A|\le\frac{1}{|t|}|tA|\rightarrow|t||A|\le|tA|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 3
@@ -190,7 +223,12 @@ Theorem
 \end_layout
 
 \begin_layout Standard
-Intuitively, we have equality when 
+
+\emph on
+Intuition
+\emph default
+.
+ Intuitively, we have equality when 
 \begin_inset Formula $A$
 \end_inset
 
@@ -220,36 +258,69 @@ Intuitively, we have equality when
 Proof
 \emph default
 .
- 
+ (My attempt.) Fix 
+\begin_inset Formula $\varepsilon_{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\varepsilon_{B}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $I_{j}$
+\end_inset
+
+ cover 
+\begin_inset Formula $A$
+\end_inset
+
+ with 
+\begin_inset Formula $\sum_{j}\ell(I_{j})=|A|+\varepsilon_{A}$
+\end_inset
+
+, and let 
+\begin_inset Formula $J_{j}$
+\end_inset
+
+ cover 
 \begin_inset Formula $B$
 \end_inset
 
+ with 
+\begin_inset Formula $\sum_{j}\ell(J_{j})=|B|+\varepsilon_{B}$
+\end_inset
 
+.
+ Then 
+\begin_inset Formula $\bigcup_{j}J_{j}\backslash(\bigcup_{k}I_{k})$
+\end_inset
+
+ covers 
+\begin_inset Formula $B\backslash A$
+\end_inset
+
+, and 
+\begin_inset Formula $\sum_{j}\ell(\bigcup_{j}J_{j}\backslash(\bigcup_{k}I_{k}))=\sum_{j}\ell(\bigcup_{j}J_{j}\backslash(J_{j}\cap\bigcup_{k}I_{k}))\ge|B|+\varepsilon_{B}-|A|-\varepsilon_{B}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $|A|=\inf\left\{ \sum_{j}\ell(I_{j}):A\subseteq\bigcup_{j}I_{j}\right\} $
+Claude Sonnet 3.5 isn't having it.
+ (I'm finding it really hard to not implicitly appeal to a purported additivity
+ of outer measure!) And ...
+ I'm being given to understand that 
+\begin_inset Formula $B\backslash A\subseteq B$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $|B|=\inf\left\{ \sum_{j}\ell(I_{j}):B\subseteq\bigcup_{j}I_{j}\right\} $
+ means that 
+\begin_inset Formula $|B\backslash A|\ge|B|$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-|B\backslash A|=\inf\left\{ \sum_{j}\ell(I_{j}):B\backslash A\subseteq\bigcup_{j}I_{j}\right\} 
-\]
-
-\end_inset
-
-
+ by monotonicity of outer measure.
+ Has it really been that simple this whole time?! Motherfucker!
 \end_layout
 
 \begin_layout Standard
@@ -258,7 +329,14 @@ Proof
 6
 \series default
 .
- [TODO: recapitulate the book]
+ Axler's proof of the outer measure of a closed interval applies without
+ loss of generality.
+ (The idea of using compactness to get a finite subcover and doing induction
+ to show that the cover lengths are greater than 
+\begin_inset Formula $b-a$
+\end_inset
+
+, doesn't depend on whether the endpoints are included.)
 \end_layout
 
 \begin_layout Standard
@@ -268,6 +346,78 @@ Proof
 \series default
 .
  
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $|A|=|A\cap(-t,t)|+|A\cap(\mathbb{R}\backslash(-t,t))|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ This is Carathéodory's criterion with 
+\begin_inset Formula $(-t,t)$
+\end_inset
+
+ as the test set.
+ Following hints from Claude Sonnet 3.5, fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and let 
+\begin_inset Formula $I_{j}$
+\end_inset
+
+ cover 
+\begin_inset Formula $|A\cap(-t,t)|$
+\end_inset
+
+ with 
+\begin_inset Formula $\sum_{j}\ell(I_{j})<|A\cap(-t,t)|+\frac{\varepsilon}{2}$
+\end_inset
+
+, and similarly for 
+\begin_inset Formula $|A\cap\mathbb{R}\backslash(-t,t)|$
+\end_inset
+
+, so we have 
+\begin_inset Formula $|A|\le|A\cap(-t,t)|+|A\cap(\mathbb{R}\backslash(-t,t))|+\varepsilon$
+\end_inset
+
+.
+ But also, 
+\begin_inset Formula $|A|\ge|A\cap(-t,t)|+|A\cap(\mathbb{R}\backslash(-t,t))|$
+\end_inset
+
+, because if we have a cover of 
+\begin_inset Formula $A$
+\end_inset
+
+ (with 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ extra padding), we can split it to cover both 
+\begin_inset Formula $|A\cap(-t,t)|$
+\end_inset
+
+ and 
+\begin_inset Formula $|A\cap(\mathbb{R}\backslash(-t,t))|$
+\end_inset
+
+ (the cover of 
+\begin_inset Formula $A$
+\end_inset
+
+ needs to be at least as big as the sum of the parts).
 \end_layout
 
 \begin_layout Standard
@@ -365,7 +515,7 @@ Theorem
 Proof
 \emph default
 .
- 
+ Recall that
 \begin_inset Formula $\left|\bigcup_{k}I_{k}\right|:=\inf\left\{ \sum\ell(J_{k}):\bigcup_{k}I_{k}\subseteq J_{k}\right\} $
 \end_inset
 
