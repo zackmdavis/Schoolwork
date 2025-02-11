@@ -202,11 +202,59 @@ d
 10.3.2
 \series default
 .
- a.
- b.
- c.
- d.
- [TODO]
+ 
+\series bold
+a
+\series default
+.
+ closed, 
+\begin_inset Formula $E^{\circ}=x^{2}+4y^{2}<1$
+\end_inset
+
+, 
+\begin_inset Formula $\overline{E}=E$
+\end_inset
+
+, 
+\begin_inset Formula $\partial E=x^{2}+4y^{2}=1$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ closed, 
+\begin_inset Formula $E^{\circ}=\emptyset,\overline{E}=E$
+\end_inset
+
+, 
+\begin_inset Formula $\partial E=E$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ neither
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ open
 \end_layout
 
 \begin_layout Standard
@@ -215,30 +263,47 @@ d
 10.3.4
 \series default
 .
- 
-\begin_inset Formula 
-\[
-\overline{A}=\bigcap_{V\ \mathrm{closed,\ A\subseteq V}}V
-\]
-
+ Regarding the interior, consider 
+\begin_inset Formula $x\in A^{\circ}$
 \end_inset
 
+.
+ Then there exists 
+\begin_inset Formula $\varepsilon$
+\end_inset
 
+ such 
+\begin_inset Formula $B_{\varepsilon}(x)\subseteq A\subseteq B$
+\end_inset
+
+.
+ But
+\begin_inset Formula $B_{\varepsilon}(x)\subseteq B$
+\end_inset
+
+ implies 
+\begin_inset Formula $x\in B^{\circ}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-\overline{B}=\bigcap_{V\ \mathrm{closed,\ B\subseteq V}}V
-\]
-
+Regarding the closure, Allie Bartas of TASC directed me to Wade's Theorem
+ 10.34.iii.
+ We know that 
+\begin_inset Formula $\overline{A}$
 \end_inset
 
+ is closed, and 
+\begin_inset Formula $\overline{A}\subseteq B$
+\end_inset
 
-\end_layout
+, so Theorem 10.34.iii says that 
+\begin_inset Formula $\overline{A}\subseteq\overline{B}$
+\end_inset
 
-\begin_layout Standard
-[TODO: these definitions are so hard to reason about]
+.
 \end_layout
 
 \begin_layout Standard
@@ -437,7 +502,23 @@ a
 \end_inset
 
 .
- [TODO]
+ We know that there exists an open set 
+\begin_inset Formula $U$
+\end_inset
+
+ in 
+\begin_inset Formula $X$
+\end_inset
+
+ such that such that 
+\begin_inset Formula $V=U\cap Y$
+\end_inset
+
+ because we can just use 
+\begin_inset Formula $U:=V$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -445,20 +526,25 @@ a
 \begin_inset Formula $\Leftarrow$
 \end_inset
 
-) Suppose 
+) Suppose there exists an open set 
 \begin_inset Formula $U$
 \end_inset
 
- is open in 
+ in 
 \begin_inset Formula $X$
 \end_inset
 
- and 
+ such that 
 \begin_inset Formula $V=U\cap Y$
 \end_inset
 
 .
- [TODO]
+ But the finite intersection of open sets is open.
+ (
+\begin_inset Formula $Y$
+\end_inset
+
+ is open in itself.)
 \end_layout
 
 \begin_layout Standard
@@ -468,6 +554,10 @@ b
 \series default
 .
  
+\begin_inset Formula $\uparrow$
+\end_inset
+
+ Ditto.
 \end_layout
 
 \begin_layout Standard
@@ -533,12 +623,17 @@ a
 b
 \series default
 .
- Substituting 
-\emph on
-closed
-\emph default
- makes it false.
- [TODO]
+ It would be false, because the arbitrary union of closed sets need not
+ be closed.
+ (To see this, consider that 
+\begin_inset Formula $\bigcap_{n}B_{\frac{1}{n}}(x)^{\complement}$
+\end_inset
+
+ does not contain the limit point 
+\begin_inset Formula $x$
+\end_inset
+
+.)
 \end_layout
 
 \begin_layout Standard
@@ -552,7 +647,55 @@ closed
 a
 \series default
 .
- 
+ Let 
+\begin_inset Formula $x\in\partial E$
+\end_inset
+
+, and suppose for a contradiction that 
+\begin_inset Formula $x\notin E$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $x\in E^{\complement}$
+\end_inset
+
+, which is open because 
+\begin_inset Formula $E$
+\end_inset
+
+ is closed.
+ So there exists 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ such that 
+\begin_inset Formula $B_{\varepsilon}(x)$
+\end_inset
+
+ is entirely contained within 
+\begin_inset Formula $E^{\complement}$
+\end_inset
+
+.
+ But if 
+\begin_inset Formula $B_{\varepsilon}(x)$
+\end_inset
+
+ is entirely in 
+\begin_inset Formula $E^{\complement}$
+\end_inset
+
+, then 
+\begin_inset Formula $x$
+\end_inset
+
+ can't be in 
+\begin_inset Formula $\partial E$
+\end_inset
+
+.
+ Contradiction!
 \end_layout
 
 \begin_layout Standard
@@ -560,6 +703,71 @@ a
 \series bold
 b
 \series default
+.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) If 
+\begin_inset Formula $E^{\circ}$
+\end_inset
+
+ is empty, then for arbitrary 
+\begin_inset Formula $x\in E$
+\end_inset
+
+, no open ball around 
+\begin_inset Formula $x$
+\end_inset
+
+ is entirely contained in 
+\begin_inset Formula $E$
+\end_inset
+
+, and thus every open ball contains points of 
+\begin_inset Formula $E^{\complement}$
+\end_inset
+
+, as well as a point in 
+\begin_inset Formula $E$
+\end_inset
+
+ (
+\emph on
+viz
+\emph default
+., 
+\begin_inset Formula $x$
+\end_inset
+
+ itself).
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) If every open ball around every point in 
+\begin_inset Formula $E$
+\end_inset
+
+ contains points in 
+\begin_inset Formula $E^{\complement}$
+\end_inset
+
+, then 
+\begin_inset Formula $E^{\circ}$
+\end_inset
+
+ is empty, because 
+\begin_inset Formula $E^{\circ}$
+\end_inset
+
+ is the points that have an open ball entirely within 
+\begin_inset Formula $E$
+\end_inset
+
 .
 \end_layout
 
@@ -569,6 +777,25 @@ b
 c
 \series default
 .
+ I discussed this with Allie Bartas of TASC.
+ Consider an open interval of 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ construed as a set in 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+: a line segment 
+\begin_inset Quotes eld
+\end_inset
+
+without the endpoints
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The interior is empty, but the endpoints are on the boundary.
 \end_layout
 
 \end_body

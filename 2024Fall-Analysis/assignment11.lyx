@@ -1,0 +1,803 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #11
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+26 November 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Real Analysis II
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.5.3
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ Wade's Theorem 10.16 says that connected sets in 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ are intervals.
+ Then the intersection of two intervals 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ and 
+\begin_inset Formula $[c,d]$
+\end_inset
+
+ is an interval, because 
+\begin_inset Formula $[a,b]:=\{x\in\mathbb{R}:x\ge a,\ x\le b\}$
+\end_inset
+
+ and 
+\begin_inset Formula $[c,d]:=\{x\in\mathbb{R}:x\ge c,\ x\le d\}$
+\end_inset
+
+, so 
+\begin_inset Formula $[a,b]\cap[c,d]=\{x\in\mathbb{R}:x\ge a,\ x\ge c,\ x\le b,\ x\le d\}=[\max(a,c),\ \min(b,d)]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ counterexample was discussed in class: I drew an example on the board of
+ two 
+\series bold
+C
+\series default
+-shaped regions facing each other that intersect at the ends, where the
+ two regions of intersection are disjoint.
+ Prof.
+ Schuster mentioned an example that's easier to precisely, concisely describe:
+ the intersection of the unit circle and the x-axis is 
+\begin_inset Formula $\{(-1,0),(1,0)\}$
+\end_inset
+
+, which is not connected.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.5.4
+\series default
+.
+ Again, connected sets in 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ are intervals.
+ The interior of an interval is an interval.
+ In 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+, two circles that meet at a single point are connected, but their interior
+ is not.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.5.6
+\series default
+.
+ We are asked to show that if 
+\begin_inset Formula $X$
+\end_inset
+
+ is compact and connected, and if for every 
+\begin_inset Formula $x\in X$
+\end_inset
+
+, there exists an open ball 
+\begin_inset Formula $B_{x}$
+\end_inset
+
+ such that 
+\begin_inset Formula $x\in B_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $f(x)=f(y)$
+\end_inset
+
+ for every 
+\begin_inset Formula $y\in B_{x}$
+\end_inset
+
+, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is constant on 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It's tempting to argue as follows: suppose not.
+ Then there would have to be 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ and 
+\begin_inset Formula $z\in X$
+\end_inset
+
+ such that 
+\begin_inset Formula $f(x)\ne f(z)$
+\end_inset
+
+.
+ But consider a path 
+\begin_inset Formula $P$
+\end_inset
+
+ (a mapping from 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ to 
+\begin_inset Formula $X$
+\end_inset
+
+) between 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $y_{1}\in B_{x}\cap P$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $f(y)=f(x)$
+\end_inset
+
+.
+ Then let 
+\begin_inset Formula $y_{2}=B_{y_{1}}\cap P$
+\end_inset
+
+.
+ It is also the case that 
+\begin_inset Formula $f(y_{2})=f(x)$
+\end_inset
+
+.
+ Continue in this way until we get to 
+\begin_inset Formula $z$
+\end_inset
+
+, implying 
+\begin_inset Formula $f(x)=f(z)$
+\end_inset
+
+.
+ Contradiction!
+\end_layout
+
+\begin_layout Standard
+But that doesn't work, because it's assuming path-connectedness, which is
+ stronger than connectedness.
+ It also wasn't clear to me why compactness is relevant.
+\end_layout
+
+\begin_layout Standard
+Posing the problem to the Claude LLM (
+\emph on
+claude.ai
+\emph default
+) gave me the hint I needed to finish the proof in my own words.
+ Consider some 
+\begin_inset Formula $x_{0}\in X$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{0}\in X$
+\end_inset
+
+ where 
+\begin_inset Formula $f(x)\ne f(z)$
+\end_inset
+
+.
+ Then consider the set 
+\begin_inset Formula $U=\{x\in X:f(x)=f(x_{0})\}$
+\end_inset
+
+, which is open, because it's the union of open balls.
+ Same deal with 
+\begin_inset Formula $\{x\in X:f(x)=f(z_{0})\}$
+\end_inset
+
+—or indeed, for any value of the function, the set where 
+\begin_inset Formula $f$
+\end_inset
+
+ takes that value is open.
+ But then 
+\begin_inset Formula $U\cap U^{\complement}=\emptyset$
+\end_inset
+
+ and 
+\begin_inset Formula $U\cup U^{\complement}=X$
+\end_inset
+
+ and 
+\begin_inset Formula $U^{\complement}$
+\end_inset
+
+ is open (because it's a union of open sets), which is a disconnection.
+ Contradiction! 
+\end_layout
+
+\begin_layout Standard
+I'm still not sure why compactness is relevant; it seems like the proof
+ goes through without it.
+ (Claude and OpenAI o1-preview don't know, either.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.5.7
+\series default
+.
+ We can appeal to exercise 10.3.8, which established that a set 
+\begin_inset Formula $V$
+\end_inset
+
+ is open (respectively closed) in a subspace 
+\begin_inset Formula $E$
+\end_inset
+
+ iff there is an open (respectively closed) set 
+\begin_inset Formula $W$
+\end_inset
+
+ in the superspace such that 
+\begin_inset Formula $V=W\cap E$
+\end_inset
+
+.
+ This establishes a correspondence between open covers and relatively open
+ covers of 
+\begin_inset Formula $H$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.5.8
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+ and the space itself are clopen.
+ This is one of the topology axioms.
+ But the topology axioms are themselves generalizations of what can be seen
+ of metric spaces on their own terms: 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+ is vacuously open.
+ (All conditional statements of the form 
+\begin_inset Quotes eld
+\end_inset
+
+If a point is in 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+, [...]
+\begin_inset Quotes erd
+\end_inset
+
+ are true because no points are in 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+, including the has-an-open-ball-around-it-contained-in-the-set criterion
+ for openness.) But 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+ is also closed, because its complement is the whole space, which is open,
+ because every ball around every point is entirely contained in the space.
+ But the entire space is also closed, because its complement 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+ is open.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ Suppose we have a third clopen set 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ 
+\begin_inset Formula $L\cup L^{\complement}$
+\end_inset
+
+ is a disconnection: the union comprises the entire space, 
+\begin_inset Formula $L$
+\end_inset
+
+ is open (because it's clopen), and 
+\begin_inset Formula $L^{\complement}$
+\end_inset
+
+ is open because its complement 
+\begin_inset Formula $L$
+\end_inset
+
+ is closed (because it's clopen).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.5.9
+\series default
+.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) We want to show that every nonempty 
+\begin_inset Formula $E\subseteq X$
+\end_inset
+
+ having nonempty boundary implies 
+\begin_inset Formula $X$
+\end_inset
+
+ is connected.
+ Suppose by contraposition that 
+\begin_inset Formula $X$
+\end_inset
+
+ is not connected, being the disjoint union of nonempty open sets 
+\begin_inset Formula $U$
+\end_inset
+
+ and 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ Then we need to show that there exists an 
+\begin_inset Formula $E\subseteq X$
+\end_inset
+
+ with empty boundary.
+ Consider 
+\begin_inset Formula $x\in\partial U$
+\end_inset
+
+.
+ Because 
+\begin_inset Formula $U$
+\end_inset
+
+ is open, there exists an open ball around 
+\begin_inset Formula $x$
+\end_inset
+
+ entirely contained within 
+\begin_inset Formula $U$
+\end_inset
+
+, which implies that it's not the case that every open ball around 
+\begin_inset Formula $x$
+\end_inset
+
+ intersects 
+\begin_inset Formula $U^{\complement}=V$
+\end_inset
+
+, which contradicts the claim that 
+\begin_inset Formula $x\in\partial U$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\partial U$
+\end_inset
+
+ is empty.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) We want to show that 
+\begin_inset Formula $X$
+\end_inset
+
+ being connected implies every nonempty 
+\begin_inset Formula $E\subseteq X$
+\end_inset
+
+ has nonempty boundary.
+ Suppose by contraposition that we have a nonempty 
+\begin_inset Formula $E\subseteq X$
+\end_inset
+
+ with empty boundary.
+ So there are no points around which every ball intersects both 
+\begin_inset Formula $E$
+\end_inset
+
+ and 
+\begin_inset Formula $E^{\complement}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E$
+\end_inset
+
+ is open, because around every point, we can draw a ball entirely within
+ 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ (If we couldn't, then there would be a point in 
+\begin_inset Formula $E$
+\end_inset
+
+ around which every ball intersects 
+\begin_inset Formula $E^{\complement}$
+\end_inset
+
+, which would be on the boundary.) But you could apply that same reasoning
+ with the roles of 
+\begin_inset Formula $E$
+\end_inset
+
+ and 
+\begin_inset Formula $E^{\complement}$
+\end_inset
+
+ reversed, which implies 
+\begin_inset Formula $E^{\complement}$
+\end_inset
+
+ is also open, which implies 
+\begin_inset Formula $E$
+\end_inset
+
+ is also closed.
+ But if 
+\begin_inset Formula $E$
+\end_inset
+
+ is closed and open, then 
+\begin_inset Formula $X$
+\end_inset
+
+ is not connected by exercise 10.5.8b above.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.5.10
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ Polygonal connectedness implies path-connectedness (because a polygonal
+ path is a path).
+ Path-connectedness implies connectedness, as was discussed in class.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ Consider 
+\begin_inset Formula $x\in U$
+\end_inset
+
+.
+ Because 
+\begin_inset Formula $U\subseteq E$
+\end_inset
+
+ and 
+\begin_inset Formula $E$
+\end_inset
+
+ is open, there exists an open ball around 
+\begin_inset Formula $x$
+\end_inset
+
+ contained entirely within 
+\begin_inset Formula $E$
+\end_inset
+
+ (if not necessarily 
+\begin_inset Formula $U$
+\end_inset
+
+ as far as we know yet).
+ But then any point 
+\begin_inset Formula $y$
+\end_inset
+
+ in that ball can be polygonally connected to 
+\begin_inset Formula $x$
+\end_inset
+
+ and thus to 
+\begin_inset Formula $x_{0}.$
+\end_inset
+
+ So the ball is contained in 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ But if a generic point in 
+\begin_inset Formula $U$
+\end_inset
+
+ has an open ball around it contained within 
+\begin_inset Formula $U$
+\end_inset
+
+, then 
+\begin_inset Formula $U$
+\end_inset
+
+ is open.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ Suppose not.
+ Then there would be two points 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ in our open connected set which are not polygonally connected.
+ Let 
+\begin_inset Formula $U$
+\end_inset
+
+ be the set of points that are polygonally connected to 
+\begin_inset Formula $x$
+\end_inset
+
+, and 
+\begin_inset Formula $V$
+\end_inset
+
+ be the set of points polygonally connected to 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ By part b, 
+\begin_inset Formula $U$
+\end_inset
+
+ and 
+\begin_inset Formula $V$
+\end_inset
+
+ are open.
+ Also, 
+\begin_inset Formula $U\cap V=\emptyset$
+\end_inset
+
+, because if they weren't, the intersection would contain points that are
+ polygonally connected to both 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ (such that 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ would be polygonally connected to each other).
+ If 
+\begin_inset Formula $U\cup V$
+\end_inset
+
+ is our entire set, then we have a disconnection, a contradiction.
+ If not, then take a point 
+\begin_inset Formula $z\notin U$
+\end_inset
+
+ and 
+\begin_inset Formula $\notin V$
+\end_inset
+
+, and form the set of points polygonally connected to it, 
+\begin_inset Formula $W$
+\end_inset
+
+.
+ 
+\begin_inset Formula $W$
+\end_inset
+
+ is open, so the union of open sets 
+\begin_inset Formula $(W\cup V)$
+\end_inset
+
+ is open, so 
+\begin_inset Formula $U\cup(V\cup W)$
+\end_inset
+
+ is also a disconnection.
+ Repeat as necessary.
+\end_layout
+
+\end_body
+\end_document

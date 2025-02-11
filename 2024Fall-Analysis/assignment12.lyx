@@ -1,0 +1,606 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #12
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+12 December 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Real Analysis II
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.6.3
+\series default
+.
+ We want to show that 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous iff 
+\begin_inset Formula $f^{-1}(V)$
+\end_inset
+
+ is closed for closed 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ Consider 
+\begin_inset Formula $V$
+\end_inset
+
+ closed.
+ Then 
+\begin_inset Formula $V^{\complement}$
+\end_inset
+
+ is open.
+ So 
+\begin_inset Formula $f^{-1}(V^{\complement})$
+\end_inset
+
+ is open.
+ So 
+\begin_inset Formula $f^{-1}(V^{\complement})^{\complement}$
+\end_inset
+
+ is closed.
+ So we'd be done if the 
+\begin_inset Formula $^{\complement}$
+\end_inset
+
+'s cancel.
+ Do they? I didn't feel too confident about this.
+ (I don't have a lot of practice reasoning about inverse-images, which is
+ a subtler concept than it appears: 
+\emph on
+e.g.
+\emph default
+, non-invertible functions still have an inverse image.) When I mentioned
+ this at office hours on 10 December, Prof.
+ Schuster urged me to look at the definition.
+ And yeah, it works: 
+\begin_inset Formula $f^{-1}(V^{\complement})^{\complement}=\{x\in X:f(x)\notin V^{\complement}\}=\{x\in X:f(x)\in V\}=f^{-1}(V)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.6.6
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ This is analogous to Wade's Theorem 10.63, the extreme value theorem.
+ 
+\begin_inset Formula $f(H)$
+\end_inset
+
+ is compact, thus, closed and bounded.
+ Boundedness implies that 
+\begin_inset Formula $\sup||f(x)||_{Y}$
+\end_inset
+
+ exists.
+ Closedness implies that the 
+\begin_inset Formula $\sup$
+\end_inset
+
+ is indeed attained as a max, because closed sets contain their limit points.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Suppose that there exists 
+\begin_inset Formula $N$
+\end_inset
+
+ such that 
+\begin_inset Formula $k\ge N$
+\end_inset
+
+ and 
+\begin_inset Formula $x\in H$
+\end_inset
+
+ implies 
+\begin_inset Formula $\left\Vert f_{k}(x)-f(x)\right\Vert _{Y}<\varepsilon$
+\end_inset
+
+.
+ Then
+\begin_inset Formula $\left\Vert f_{k}-f\right\Vert =\sup_{x\in H}\left\Vert (f_{k}-f)(x)\right\Vert $
+\end_inset
+
+ converges to zero: with the same 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $N$
+\end_inset
+
+, 
+\begin_inset Formula $\sup_{x\in H}\left\Vert (f_{k}-f)(x)\right\Vert =|\sup_{x\in H}\left\Vert f_{k}(x)-f(x)\right\Vert -0|=\sup_{x\in H}\left\Vert f_{k}(x)-f(x)\right\Vert <\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose that there exists 
+\begin_inset Formula $N$
+\end_inset
+
+ such that 
+\begin_inset Formula $k\ge N$
+\end_inset
+
+ implies 
+\begin_inset Formula $\sup_{x\in H}\left\Vert f_{k}(x)-f(x)\right\Vert <\varepsilon$
+\end_inset
+
+.
+ The supremum is an upper bound: if 
+\begin_inset Formula $\left\Vert f_{k}(x)-f(x)\right\Vert <\varepsilon$
+\end_inset
+
+ is true for the largest value it could be for 
+\begin_inset Formula $x\in H$
+\end_inset
+
+, then it's true for all 
+\begin_inset Formula $x\in H$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ This is analogous to the Cauchy criterion.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.6.7
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+ are uniformly continuous, then so is 
+\begin_inset Formula $f+g$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Then there exists 
+\begin_inset Formula $\delta_{f}$
+\end_inset
+
+ and 
+\begin_inset Formula $\delta_{g}$
+\end_inset
+
+ such that for 
+\begin_inset Formula $i\in\{f,g\}$
+\end_inset
+
+, 
+\begin_inset Formula $d(z,x)<\delta_{i}$
+\end_inset
+
+ implies 
+\begin_inset Formula $d(i(z)-i(x))<\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\delta:=\min(\delta_{f},\delta_{g})$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $|f(z)+g(z)-f(x)-g(x)|=|f(z)-f(x)+g(z)-g(x)|\le|f(z)-f(x)|+|g(z)-g(x)|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Remark
+\emph default
+.
+ We didn't need the domain to be compact.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+ are uniformly continuous, then so is 
+\begin_inset Formula $fg$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (I was stuck here, so I asked the Claude LLM (claude.ai) for a small hint,
+ and it said to use the triangle inequality with the boundedness of continuous
+ functions on a compact domain, so I tried adding-and-subtracting 
+\begin_inset Formula $+f(z)g(x)-f(z)g(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $+f(x)g(z)-f(x)g(z)$
+\end_inset
+
+, but that left me with an extra term I didn't know what to do with, then
+ Claude pointed out that it's simpler to use 
+\begin_inset Formula $+f(z)g(x)-f(z)g(x)$
+\end_inset
+
+ as the 
+\begin_inset Quotes eld
+\end_inset
+
+fancy zero
+\begin_inset Quotes erd
+\end_inset
+
+ to add.)
+\end_layout
+
+\begin_layout Standard
+Continuous functions on a compact domain are bounded.
+ Let 
+\begin_inset Formula $B$
+\end_inset
+
+ be a bound of the magnitude of 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+ on 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Choose 
+\begin_inset Formula $\delta_{f}$
+\end_inset
+
+ and 
+\begin_inset Formula $\delta_{g}$
+\end_inset
+
+ such that for 
+\begin_inset Formula $i\in\{f,g\}$
+\end_inset
+
+, 
+\begin_inset Formula $|z-x|<\delta_{i}$
+\end_inset
+
+ implies 
+\begin_inset Formula $|i(z)-i(x)|<\frac{\varepsilon}{2B}.$
+\end_inset
+
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|f(z)g(z)-f(x)g(x)|=|f(z)g(z)-f(x)g(x)+f(z)g(x)-f(z)g(x)|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\le|f(z)g(z)-f(z)g(x)|+|f(z)g(x)-f(x)g(x)|=|f(z)||g(z)-g(x)|+|g(x)||f(z)-f(x)|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+<B\frac{\varepsilon}{2B}+B\frac{\varepsilon}{2B}=\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Remark
+\emph default
+.
+ It was discussed at office hours on 12 December that we do need compact
+ domain, because with 
+\begin_inset Formula $f:=x$
+\end_inset
+
+ and 
+\begin_inset Formula $g:=x$
+\end_inset
+
+, then 
+\begin_inset Formula $fg=x^{2}$
+\end_inset
+
+, which isn't uniformly continuous on 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ A continuous function on a compact domain attains its extrema: so if 
+\begin_inset Formula $g(x)\ne0$
+\end_inset
+
+, we also know that it never approaches 
+\begin_inset Formula $0$
+\end_inset
+
+, which keeps it bounded.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ This follows immediately from parts a.
+ and b.
+ (If uniform continuity is preserved by taking products and reciprocals,
+ well, the quotient is just a product in which one of the factors is a reciproca
+l.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10.6.9
+\series default
+.
+ This was discussed at office hours on 12 December.
+ Suppose not: that 
+\begin_inset Formula $X$
+\end_inset
+
+ is countable.
+ Then 
+\begin_inset Formula $f(X)$
+\end_inset
+
+ is countable.
+ (A function can't map its domain to a larger-cardinality range.) Because
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ is non-constant, it has distinct points.
+ But in a Hausdorff space, distinct points can be separated by open sets,
+ so 
+\begin_inset Formula $f(X)$
+\end_inset
+
+ is disconnected.
+ But Wade's Theorem 10.62 says continuous functions map connected sets to
+ connected sets, so 
+\begin_inset Formula $f(X)$
+\end_inset
+
+ must be connected.
+ Contradiction!
+\end_layout
+
+\end_body
+\end_document
