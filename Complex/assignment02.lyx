@@ -341,6 +341,94 @@ as expected.
  1 #11)
 \series default
 .
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $f=u(x,y)+iv(x,y)$
+\end_inset
+
+ is holomorphic on open 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, then 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+ are harmonic.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ The Cauchy–Reimann equations 
+\begin_inset Formula $\frac{\partial u(x,y)}{\partial x}=\frac{\partial v(x,y)}{\partial y}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{\partial u(x,y)}{\partial y}=-\frac{\partial v(x,y)}{\partial x}$
+\end_inset
+
+ hold where 
+\begin_inset Formula $f$
+\end_inset
+
+ is holomorphic.
+ Take 
+\begin_inset Formula $\ddx$
+\end_inset
+
+ of the first equation and 
+\begin_inset Formula $\ddy$
+\end_inset
+
+ of the second to get 
+\begin_inset Formula $\frac{\partial^{2}u}{\partial x^{2}}=\frac{\partial^{2}v}{\partial x\partial y}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{\partial^{2}u}{\partial y^{2}}=-\frac{\partial^{2}v}{\partial y\partial x}$
+\end_inset
+
+.
+ The mixed partials are equal by Clairaut's theorem, so we have 
+\begin_inset Formula $\frac{\partial^{2}u}{\partial x^{2}}=-\frac{\partial^{2}u}{\partial y^{2}}\Rightarrow\frac{\partial^{2}u}{\partial x^{2}}+\frac{\partial^{2}u}{\partial y^{2}}=0$
+\end_inset
+
+.
+ Similarly, take 
+\begin_inset Formula $\ddy$
+\end_inset
+
+ of the first 
+\emph on
+&c
+\emph default
+.
+ to get 
+\begin_inset Formula $\frac{\partial^{2}u}{\partial y\partial x}=\frac{\partial^{2}v}{\partial^{2}y}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{\partial^{2}u}{\partial x\partial y}=-\frac{\partial^{2}v}{\partial^{2}x}$
+\end_inset
+
+ implying 
+\begin_inset Formula $\frac{\partial^{2}v}{\partial^{2}y}=-\frac{\partial^{2}v}{\partial^{2}x}\Rightarrow\frac{\partial^{2}v}{\partial^{2}y}+\frac{\partial^{2}v}{\partial^{2}x}=0$
+\end_inset
+
+.
+ (Thanks to Claude Sonnet 3.5 for a hint to get me unstuck.)
 \end_layout
 
 \begin_layout Standard
