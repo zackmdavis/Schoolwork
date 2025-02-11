@@ -190,3 +190,8 @@ fn main() {
     rare_events::naïve_sample();
     println!("{}", rare_events::savvy_sample(10000));
 }
+
+
+
+
+0.000000006006 in 24 seconds, 0.000000004019 in 7 seconds, 0.000000004701 in 19 seconds

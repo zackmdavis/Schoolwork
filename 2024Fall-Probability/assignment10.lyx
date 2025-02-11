@@ -1,0 +1,765 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #10 (Computer)
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+13 November 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Mujamdar's 
+\begin_inset Quotes eld
+\end_inset
+
+Probability Models
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\begin_inset Formula 
+\[
+\int_{0}^{1}(1-x^{2})^{\frac{3}{2}}\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Writing a Rust function to approximate the integral using the Monte Carlo
+ method:
+\end_layout
+
+\begin_layout LyX-Code
+fn hw_integral_1a(n: usize) -> f64 {
+\end_layout
+
+\begin_layout LyX-Code
+    let mut rng = rand::thread_rng();
+\end_layout
+
+\begin_layout LyX-Code
+    let integrand = |x: f64| -> f64 {
+\end_layout
+
+\begin_layout LyX-Code
+        (1.
+ - x.powi(2)).powf(1.5)
+\end_layout
+
+\begin_layout LyX-Code
+    };
+\end_layout
+
+\begin_layout LyX-Code
+    (0..n).map(|_| integrand(rng.gen())).sum::<f64>() / n as f64
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Standard
+Simulating with 
+\begin_inset Formula $n:=100,\ 1000,\ 10000$
+\end_inset
+
+, we get (representative output) 
+\color teal
+0.60104, 0.5974, and 0.5875
+\color inherit
+, respectively.
+\end_layout
+
+\begin_layout Standard
+According to WolframAlpha, the value is 
+\begin_inset Formula $\frac{3\pi}{16}\approx0.58905$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}x(1+x^{2})^{-2}\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have a power of 
+\begin_inset Formula $x$
+\end_inset
+
+ in the numerator and four (two to the two) in the denominator, so the tail
+ should decay like 
+\begin_inset Formula $x^{-3}$
+\end_inset
+
+.
+ We'll try to match that tail behavior with a Pareto distribution with 
+\begin_inset Formula $\alpha=2$
+\end_inset
+
+, but our domain of integration starts at 0 and a Pareto distribution's
+ scale parameter 
+\begin_inset Formula $x_{m}$
+\end_inset
+
+ must be greater than 0, so we need to shift it.
+ Let's use 
+\begin_inset Formula $Y\sim\mathrm{Pareto}(x_{m}=1,\ \alpha=2)=\frac{2}{y^{3}}$
+\end_inset
+
+ as our proposal distribution.
+ The proposal distribution starts at 1 while the original 
+\begin_inset Formula $x$
+\end_inset
+
+ starts at zero so we need to shift left: 
+\begin_inset Formula $y:=x+1$
+\end_inset
+
+ implies 
+\begin_inset Formula $x=y-1$
+\end_inset
+
+.
+ So transforming and multiplying by 
+\begin_inset Quotes eld
+\end_inset
+
+fancy one
+\begin_inset Quotes erd
+\end_inset
+
+ in the form of our proposal distribution yields:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(y-1)(1+(y-1)^{2})^{-2}\cdot\frac{\frac{2}{y^{3}}}{\frac{2}{y^{3}}}=\underbrace{\frac{1}{2}y^{3}(y-1)(1+(y-1)^{2})^{-2}}_{\text{importance weight}}\ \ \times\underbrace{\frac{2}{y^{3}}}_{\text{proposal\ PDF}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can code this as:
+\end_layout
+
+\begin_layout LyX-Code
+use rand_distr::Pareto;
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+fn hw_integral_1b(n: usize) -> f64 {
+\end_layout
+
+\begin_layout LyX-Code
+    let mut rng = rand::thread_rng();
+\end_layout
+
+\begin_layout LyX-Code
+    let proposal_distribution = Pareto::new(1., 2.).expect("valid Pareto distributi
+on");
+\end_layout
+
+\begin_layout LyX-Code
+    let importance_weight =
+\end_layout
+
+\begin_layout LyX-Code
+        |y: f64| -> f64 { 0.5 * y.powi(3) * (y - 1.) * (1.
+ + (y - 1.).powi(2)).powi(-2) };
+\end_layout
+
+\begin_layout LyX-Code
+    (0..n)
+\end_layout
+
+\begin_layout LyX-Code
+        .map(|_| importance_weight(proposal_distribution.sample(&mut rng)))
+\end_layout
+
+\begin_layout LyX-Code
+        .sum::<f64>()
+\end_layout
+
+\begin_layout LyX-Code
+        / n as f64
+\end_layout
+
+\begin_layout LyX-Code
+}  
+\end_layout
+
+\begin_layout Standard
+Simulating with 
+\begin_inset Formula $n:=100,\ 1000,\ 10000$
+\end_inset
+
+, we get (representative output) 
+\color teal
+0.51779, 0.487389, and 0.503379
+\color inherit
+, respectively, which approximately agrees with WolframAlpha's evaluation
+ of the integral as 0.5.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}\exp(-x^{4}+2)\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Honestly, the quartic exponential tails on this shrink so fast that I think
+ any sampling strategy would be pretty good (even just uniform over a domain
+ like 
+\begin_inset Formula $[-5,5]$
+\end_inset
+
+), but I think the pedagogical intent here is for us to use a normal (which
+ matches the 
+\begin_inset Formula $[-\infty,\infty]$
+\end_inset
+
+ domain).
+ So let's do
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\exp(-x^{4}+2)\cdot\frac{\frac{1}{\sqrt{2\pi}}\exp(-\frac{1}{2}x^{2})}{\frac{1}{\sqrt{2\pi}}\exp(-\frac{1}{2}x^{2})}=\underbrace{\sqrt{2\pi}\exp(-x^{4}+\frac{1}{2}x^{2}+2)}_{\text{importance weight}}\times\underbrace{\frac{1}{\sqrt{2\pi}}\exp(-\frac{1}{2}x^{2})}_{\text{proposal PDF}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which codes as
+\end_layout
+
+\begin_layout LyX-Code
+use rand_distr::StandardNormal;
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+fn hw_integral_1c(n: usize) -> f64 {
+\end_layout
+
+\begin_layout LyX-Code
+    let mut rng = rand::thread_rng();
+\end_layout
+
+\begin_layout LyX-Code
+    let importance_weight = |x: f64| -> f64 {
+\end_layout
+
+\begin_layout LyX-Code
+        (2.
+ * std::f64::consts::PI).sqrt() * (-x.powi(4) + 0.5 * x.powi(2) + 2.).exp()
+\end_layout
+
+\begin_layout LyX-Code
+    };
+\end_layout
+
+\begin_layout LyX-Code
+    (0..n)
+\end_layout
+
+\begin_layout LyX-Code
+        .map(|_| importance_weight(rng.sample(StandardNormal)))
+\end_layout
+
+\begin_layout LyX-Code
+        .sum::<f64>()
+\end_layout
+
+\begin_layout LyX-Code
+        / n as f64
+\end_layout
+
+\begin_layout LyX-Code
+} 
+\end_layout
+
+\begin_layout Standard
+Our 
+\begin_inset Formula $n:=100,\ 1000,\ 10000$
+\end_inset
+
+ respective representative outputs are 
+\color teal
+13.77, 13.5789, 13.4031
+\color inherit
+, which agrees with WolframAlpha's computation of 13.3949.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+ The chi-squared distribution with 
+\begin_inset Formula $k$
+\end_inset
+
+ degrees of freedom is 
+\begin_inset Formula $\frac{1}{2^{\frac{k}{2}}\Gamma(\frac{k}{2})}x^{\frac{k}{2}-1}\exp(-\frac{x}{2})$
+\end_inset
+
+.
+ With 
+\begin_inset Formula $k:=3$
+\end_inset
+
+, this becomes 
+\begin_inset Formula $\frac{1}{2\sqrt{2}\Gamma(\frac{3}{2})}x^{\frac{1}{2}}\exp(-\frac{x}{2})$
+\end_inset
+
+.
+ We'll match the tail with 
+\begin_inset Formula $Y\sim\mathrm{Exp(\frac{1}{2})}$
+\end_inset
+
+ and shift by 25.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{2\sqrt{2}\Gamma(\frac{3}{2})}(x+25)^{\frac{1}{2}}\exp(-\frac{1}{2}(x+25))\cdot\frac{\frac{1}{2}\exp(-\frac{1}{2}x)}{\frac{1}{2}\exp(-\frac{1}{2}x)}=\underbrace{\frac{(x+25)^{\frac{1}{2}}}{\sqrt{2}\Gamma(\frac{3}{2})}\exp(-\frac{25}{2})}_{\text{importance weight}}\times\underbrace{\frac{1}{2}\exp(-\frac{1}{2}x)}_{\text{proposal PDF}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+use rand_distr::Exp;
+\end_layout
+
+\begin_layout LyX-Code
+use statrs::function::gamma::gamma;
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+fn hw_integral_2(n: usize) -> f64 {
+\end_layout
+
+\begin_layout LyX-Code
+    let mut rng = rand::thread_rng();
+\end_layout
+
+\begin_layout LyX-Code
+    let proposal_distribution = Exp::new(0.5).expect("valid exponential distributi
+on");
+\end_layout
+
+\begin_layout LyX-Code
+    let importance_weight = |x: f64| -> f64 {
+\end_layout
+
+\begin_layout LyX-Code
+        (-12.5_f64).exp() * (x + 25.).sqrt() / (2_f64.sqrt() * gamma(1.5))
+\end_layout
+
+\begin_layout LyX-Code
+    };
+\end_layout
+
+\begin_layout LyX-Code
+    (0..n)
+\end_layout
+
+\begin_layout LyX-Code
+        .map(|_| importance_weight(proposal_distribution.sample(&mut rng)))
+\end_layout
+
+\begin_layout LyX-Code
+        .sum::<f64>()
+\end_layout
+
+\begin_layout LyX-Code
+        / n as f64
+\end_layout
+
+\begin_layout LyX-Code
+} 
+\end_layout
+
+\begin_layout Standard
+yields about 
+\color teal
+0.0000154423
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ We sample and plot the histogram with Python and Matplotlib as below.
+ (Switching to Python for this one because I tried using plotters-rs on
+ the relevant worksheet and it was a pain; it turns out that nothing beats
+ Matplotlib.)
+\end_layout
+
+\begin_layout LyX-Code
+import random
+\end_layout
+
+\begin_layout LyX-Code
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+def x():
+\end_layout
+
+\begin_layout LyX-Code
+    r = random.random()
+\end_layout
+
+\begin_layout LyX-Code
+    if r < 0.2:
+\end_layout
+
+\begin_layout LyX-Code
+        return 1
+\end_layout
+
+\begin_layout LyX-Code
+    elif r < 0.6:
+\end_layout
+
+\begin_layout LyX-Code
+        return 2
+\end_layout
+
+\begin_layout LyX-Code
+    elif r < 0.9:
+\end_layout
+
+\begin_layout LyX-Code
+        return 3
+\end_layout
+
+\begin_layout LyX-Code
+    else:
+\end_layout
+
+\begin_layout LyX-Code
+        return 4
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+samples = [x() for _ in range(1000)]
+\end_layout
+
+\begin_layout LyX-Code
+plt.hist(samples, bins=[1, 2, 3, 4, 5])
+\end_layout
+
+\begin_layout LyX-Code
+# hack to center labels
+\end_layout
+
+\begin_layout LyX-Code
+plt.xticks([1.5, 2.5, 3.5, 4.5], ['1', '2', '3', '4'])
+\end_layout
+
+\begin_layout LyX-Code
+plt.show() 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename hw10_no3_histogram.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ We simulate and plot the histogram in Python as below.
+\end_layout
+
+\begin_layout LyX-Code
+import random
+\end_layout
+
+\begin_layout LyX-Code
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout LyX-Code
+import numpy as np
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+def gibbsy(n):
+\end_layout
+
+\begin_layout LyX-Code
+    rng = np.random.default_rng()
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+    rates = [1, 2, 3, 4, 5]
+\end_layout
+
+\begin_layout LyX-Code
+    c = 3
+\end_layout
+
+\begin_layout LyX-Code
+    xs = [1, 1, 1, 1, 1]
+\end_layout
+
+\begin_layout LyX-Code
+    assert sum(xs) > c
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+    samples = []
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+    for trial in range(n):
+\end_layout
+
+\begin_layout LyX-Code
+        i = random.randint(0, 4)
+\end_layout
+
+\begin_layout LyX-Code
+        y = rng.exponential(1/rates[i])
+\end_layout
+
+\begin_layout LyX-Code
+        excess = c - sum(x_j for j, x_j in enumerate(xs) if j != i)
+\end_layout
+
+\begin_layout LyX-Code
+        if excess < 0:
+\end_layout
+
+\begin_layout LyX-Code
+            excess = 0
+\end_layout
+
+\begin_layout LyX-Code
+        new_x = y + excess
+\end_layout
+
+\begin_layout LyX-Code
+        xs[i] = new_x
+\end_layout
+
+\begin_layout LyX-Code
+        # `[:]` reslice is important so that we're not storing 1000 references
+ to the same list
+\end_layout
+
+\begin_layout LyX-Code
+        samples.append(xs[:])
+\end_layout
+
+\begin_layout LyX-Code
+    return samples
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+if __name__ == "__main__":
+\end_layout
+
+\begin_layout LyX-Code
+    plt.hist([sum(x) for x in gibbsy(1000)])
+\end_layout
+
+\begin_layout LyX-Code
+    plt.show() 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename hw10_no4_histogram.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

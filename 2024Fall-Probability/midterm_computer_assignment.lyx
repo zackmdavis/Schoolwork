@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-19 November 2024
+13 November 2024
 \end_layout
 
 \begin_layout Standard
@@ -100,7 +100,311 @@ Zack M.
 1
 \series default
 .
- [TODO]
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{1}(3-x^{7})^{\frac{3}{2}}\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Simulating in Rust using the Monte Carlo method with a uniform proposal
+ distribution:
+\end_layout
+
+\begin_layout LyX-Code
+fn integral_1a(n: usize) -> f64 {
+\end_layout
+
+\begin_layout LyX-Code
+    let mut rng = rand::thread_rng();
+\end_layout
+
+\begin_layout LyX-Code
+    let integrand = |x: f64| -> f64 { (3.
+ - x.powi(7)).powf(1.5) };
+\end_layout
+
+\begin_layout LyX-Code
+    (0..n).map(|_| integrand(rng.gen())).sum::<f64>() / n as f64
+\end_layout
+
+\begin_layout LyX-Code
+} 
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $n:=100,\ 1000,\ 10000$
+\end_inset
+
+, we get 
+\color teal
+4.8564, 4.9158, 4.894423
+\color inherit
+, respectively, which approximately agrees with WolframAlpha's evaluation
+ as 4.88643.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}x(2+x^{5})^{-4}\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's use ...
+ say, Pareto(
+\begin_inset Formula $x_{m}=1$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha=5$
+\end_inset
+
+) shifted by 1? (Eyeballing the graph from WolframAlpha, I think I want
+ my proposal distribution to be a little thicker than the actual tail.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(y-1)(2+(y-1)^{5})^{-4}\cdot\frac{\frac{5}{y^{6}}}{\frac{5}{y^{6}}}=\underbrace{\frac{1}{5}y^{6}(y-1)(2+(y-1)^{5})^{-4}}_{\text{importance weight}}\ \times\underbrace{\frac{5}{y^{6}}}_{\text{proposal PDF}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have the code:
+\end_layout
+
+\begin_layout LyX-Code
+fn integral_1b(n: usize) -> f64 {
+\end_layout
+
+\begin_layout LyX-Code
+    let mut rng = rand::thread_rng();
+\end_layout
+
+\begin_layout LyX-Code
+    let proposal_distribution = Pareto::new(1., 5.).expect("valid Pareto distributi
+on");
+\end_layout
+
+\begin_layout LyX-Code
+    let importance_weight =
+\end_layout
+
+\begin_layout LyX-Code
+        |y: f64| -> f64 { 0.2 * y.powi(6) * (y - 1.) * (2.
+ + (y - 1.).powi(5)).powi(-4) };
+\end_layout
+
+\begin_layout LyX-Code
+    (0..n)
+\end_layout
+
+\begin_layout LyX-Code
+        .map(|_| importance_weight(proposal_distribution.sample(&mut rng)))
+\end_layout
+
+\begin_layout LyX-Code
+        .sum::<f64>()
+\end_layout
+
+\begin_layout LyX-Code
+        / n as f64
+\end_layout
+
+\begin_layout LyX-Code
+} 
+\end_layout
+
+\begin_layout Standard
+Our 
+\begin_inset Formula $n:=100,\ 1000,\ 10000$
+\end_inset
+
+ estimates are 
+\color teal
+0.03287, 0.0204, 0.022726
+\color inherit
+, respectively.
+\end_layout
+
+\begin_layout Standard
+Oddly, WolframAlpha claims 
+\begin_inset Quotes eld
+\end_inset
+
+(integral does not converge)
+\begin_inset Quotes erd
+\end_inset
+
+, but I think that might be a bug on their part.
+ (It also says 
+\begin_inset Quotes eld
+\end_inset
+
+Standard computation time exceeded
+\begin_inset Quotes erd
+\end_inset
+
+, so maybe it's a timeout rather than the integral really being crazy.) Let's
+ switch to SciPy:
+\end_layout
+
+\begin_layout LyX-Code
+ In [1]: import scipy.integrate
+\end_layout
+
+\begin_layout LyX-Code
+   ...:
+\end_layout
+
+\begin_layout LyX-Code
+   ...: def f(x):
+\end_layout
+
+\begin_layout LyX-Code
+   ...:     return x * (2 + x**5)**-4
+\end_layout
+
+\begin_layout LyX-Code
+   ...:
+\end_layout
+
+\begin_layout LyX-Code
+   ...: scipy.integrate.quad(f, 0, 5)
+\end_layout
+
+\begin_layout LyX-Code
+Out[1]: (0.02266516521006867, 1.803236715980025e-09) 
+\end_layout
+
+\begin_layout Standard
+So SciPy thinks I'm right.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0.5}^{\infty}4x(2+2x^{3})^{-4}\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's go with Pareto(
+\begin_inset Formula $x_{m}=0.5$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha=5$
+\end_inset
+
+) for our proposal distribution.
+ (It's nice that the lower limit of integration isn't zero, so that we don't
+ have to transform-shift to use the polynomial-tailed Pareto distribution,
+ which demands a positive shape parameter.) That's 
+\begin_inset Formula $\frac{\alpha x_{m}^{\alpha}}{x^{\alpha+1}}=\frac{5\cdot(0.5)^{5}}{x^{6}}=\frac{5}{32}x^{-6}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+4x(2+2x^{3})^{-4}\cdot\frac{\frac{5}{32}x^{-6}}{\frac{5}{32}x^{-6}}=\frac{32\cdot4}{5}x^{7}(2+2x^{3})^{-4}=\underbrace{\frac{128}{5}x^{7}(2+2x^{3})^{-4}}_{\text{importance weight}}\times\underbrace{\frac{5}{32}x^{-6}}_{\text{proposal PDF}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And then the inevitable code (between homework #10 and this, I'm starting
+ to get bored, and I bet the grader is, too; hi, Daniil) is:
+\end_layout
+
+\begin_layout LyX-Code
+fn integral_1c(n: usize) -> f64 {
+\end_layout
+
+\begin_layout LyX-Code
+    let mut rng = rand::thread_rng();
+\end_layout
+
+\begin_layout LyX-Code
+    let proposal_distribution = Pareto::new(0.5, 5.).expect("valid Pareto distribut
+ion");
+\end_layout
+
+\begin_layout LyX-Code
+    let importance_weight = |x: f64| -> f64 {
+\end_layout
+
+\begin_layout LyX-Code
+        (128./5.) * x.powi(7) * (2.
+ + 2.
+ * x.powi(3)).powi(-4)
+\end_layout
+
+\begin_layout LyX-Code
+    };
+\end_layout
+
+\begin_layout LyX-Code
+    (0..n)
+\end_layout
+
+\begin_layout LyX-Code
+        .map(|_| importance_weight(proposal_distribution.sample(&mut rng)))
+\end_layout
+
+\begin_layout LyX-Code
+        .sum::<f64>()
+\end_layout
+
+\begin_layout LyX-Code
+        / n as f64
+\end_layout
+
+\begin_layout LyX-Code
+} 
+\end_layout
+
+\begin_layout Standard
+which gives us 
+\color teal
+0.02606, 0.02596, 0.026225
+\color inherit
+ for our 
+\begin_inset Formula $n:=100,\ 1000,\ 10000$
+\end_inset
+
+, respectively.
+ And SciPy says it's 0.02621, so we're good.
 \end_layout
 
 \begin_layout Standard

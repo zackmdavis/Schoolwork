@@ -1,0 +1,478 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #12
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+12 December 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Mujamdar's 
+\begin_inset Quotes eld
+\end_inset
+
+Probability Models
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Subsection*
+Ch.
+ 5
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+39
+\series default
+.
+ The interarrival times of a Poisson process are i.i.d.
+ exponential variables, so the total time to the 
+\emph on
+n
+\emph default
+th event is the sum of 
+\begin_inset Formula $n$
+\end_inset
+
+ independent exponential random variables, which therefore has a 
+\begin_inset Formula $\mathrm{Gamma}(n,\lambda)$
+\end_inset
+
+ distribution.
+ (I talked to ChatGPT 4o while thinking about this.) Thus—
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $\frac{n}{\lambda}=\frac{196}{2.5}=78.4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\begin_inset Formula $\frac{n}{\lambda^{2}}=\frac{196}{6.25}=31.36$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\begin_inset Formula $P(X<67.2)\approx0.018765$
+\end_inset
+
+ (for gamma with shape=196 and scale=
+\begin_inset Formula $\frac{1}{2.5}$
+\end_inset
+
+ less than 67.2 according to WolframAlpha)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\begin_inset Formula $P(X>90)\approx0.022707$
+\end_inset
+
+ (source of computation, ditto)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+e
+\series default
+.
+ 
+\begin_inset Formula $P(X>100)\approx0.000176$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+43
+\series default
+.
+ Ross §5.3.3 (p.
+ 320) informs us that for a Poisson process with rate 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ in which events are classified into two types with probabilities 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $1-p$
+\end_inset
+
+, the events of each type are Poisson processes with rates 
+\begin_inset Formula $\lambda p$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda(1-p)$
+\end_inset
+
+.
+ At first I reasoned: this exercise seems to be asking us to invert this
+ logic: given the rates of the Poisson sub-processes, what is the proportion
+ of event types? We have 
+\begin_inset Formula $\begin{cases}
+\lambda p=\mu_{1}\\
+\lambda(1-p)=\mu_{2}
+\end{cases}$
+\end_inset
+
+, implying 
+\begin_inset Formula $p=\frac{\mu_{1}}{\lambda}$
+\end_inset
+
+.
+ But adding the equations, we also have 
+\begin_inset Formula $\lambda=\mu_{1}+\mu_{2}$
+\end_inset
+
+.
+ So we would seem to have the boring, 
+\begin_inset Quotes eld
+\end_inset
+
+obvious
+\begin_inset Quotes erd
+\end_inset
+
+ answer 
+\begin_inset Formula $p=\frac{\mu_{1}}{\mu_{1}+\mu_{2}}$
+\end_inset
+
+ ...
+\end_layout
+
+\begin_layout Standard
+But then I looked at the solutions manual, which says something different
+ that makes me realize that I misread the problem.
+ (I argue that it was worded confusingly.) Now I see that it seems like the
+ idea is that a single customer visits both servers in sequence (but gets
+ booted out by the next arrival for some reason, which seems kind of contrived).
+ Following the solution, we want the probability that the next arrival takes
+ longer than the sum of 
+\begin_inset Formula $\mathrm{Exp(\mu_{1})}$
+\end_inset
+
+and 
+\begin_inset Formula $\mathrm{Exp(\mu_{2})}$
+\end_inset
+
+, so we apply the minimum-of-exponentials property twice, 
+\begin_inset Formula $\frac{\mu_{1}}{\mu_{1}+\lambda}+\frac{\mu_{2}}{\mu_{2}+\lambda}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+50
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ The number of events by time 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $N(t)$
+\end_inset
+
+, has a Poisson distribution with rate 
+\begin_inset Formula $\lambda t$
+\end_inset
+
+: 
+\begin_inset Formula $\frac{(\lambda t)^{k}}{k!}\exp(-\lambda t)$
+\end_inset
+
+.
+ For any given 
+\begin_inset Formula $t$
+\end_inset
+
+, its mean is 
+\begin_inset Formula $\lambda t$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $E_{t}[X]=\int_{0}^{1}\lambda t\ dt=\left.\frac{1}{2}\lambda t^{2}\right|_{t=0}^{1}=\frac{1}{2}\lambda-0=\frac{7}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ The variance of the Poisson distribution is also equal to the rate parameter.
+ Here I was tempted to pattern-match and say that 
+\begin_inset Formula $\mathrm{Var}(X)=\frac{7}{2}$
+\end_inset
+
+ as well, but the solutions manual set me straight; we need to use the condition
+al variance formula: 
+\begin_inset Formula $\mathrm{Var}(X)=E_{T}[\mathrm{Var}(X|T)]+\mathrm{Var}_{T}(E_{X}[X|T])=E[\lambda t]+\mathrm{Var}(\lambda t)=E[\lambda t]+E[\lambda^{2}t^{2}]-E[\lambda t]^{2}=\frac{7}{2}-\frac{49}{4}+49\int_{0}^{1}t^{2}\ dt=\frac{7}{2}-\frac{49}{4}+\frac{49}{3}=\frac{91}{12}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+53
+\series default
+.
+ We have 5000-unit rainfalls happening at rate 
+\begin_inset Formula $0.2\cdot0.8=0.16$
+\end_inset
+
+ and 8000-unit rainfalls happening at rate 
+\begin_inset Formula $0.2\cdot0.2=0.04$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ After five days, then in the absence of rain, the current 5000 units would
+ be depleted, so we just need at least one rainfall of any sort to avoid
+ that.
+ The probability of no rain is 
+\begin_inset Formula $\frac{(0.2\cdot5)^{0}}{0!}\exp(-0.2\cdot5)=\exp(-1)\approx0.367$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ Um, isn't it the same? If there's no rain in five days, the reservoir will
+ be empty.
+ But if there is rain in the first five days, a normal 5000-unit rain is
+ enough to last out the remainder of the ten days.
+ (
+\emph on
+E.g
+\emph default
+., if it rains after three days, the reservoir gets filled to 
+\begin_inset Formula $5000-3000+5000=7000$
+\end_inset
+
+ units, enough to last the remaining time.) I'm suspicious of this answer,
+ because we haven't used the normal (5000) 
+\emph on
+vs
+\emph default
+.
+ heavy (8000) rain distinction at all (and I don't expect Ross to throw
+ irrelevant information into the problem statement just to mess with us).
+\end_layout
+
+\begin_layout Standard
+I asked OpenAI o1 for help, but before reading all the way through its solution,
+ I understand the issue: the starting level is 
+\begin_inset Quotes eld
+\end_inset
+
+slightly below
+\begin_inset Quotes erd
+\end_inset
+
+ 5000 units, so a normal rain in the first five days 
+\emph on
+doesn't
+\emph default
+ save us from emptiness, but a heavy rain does.
+ So the reservoir can also be empty if there's a normal rain within the
+ first five days (which happens with 
+\begin_inset Formula $\mathrm{Poisson(0.2\cdot0.8\cdot5)}=\frac{0.8^{1}}{1!}\exp(-1)$
+\end_inset
+
+) 
+\emph on
+and
+\emph default
+ no rain for the rest of the period (which happens when the interarrival
+ time to the next rainfall 
+\begin_inset Formula $\mathrm{Exp}(0.2)$
+\end_inset
+
+ is greater than 5).
+ Using the exponential cdf, 
+\begin_inset Formula $P(\mathrm{Exp(0.2)>5})=1-(1-\exp(-0.2\cdot5)$
+\end_inset
+
+.
+ So our answer (per the solution manual) is evidently 
+\begin_inset Formula $\exp(-1)+0.8\exp(-1)\exp(-1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(I'm feeling confused because it seems to me that Ross's proposition 5.5
+ should imply that the second term is 
+\begin_inset Formula $0.8\exp(-0.8)\exp(-1)$
+\end_inset
+
+ ...
+ I suspect I'm mixing up the rate of the Poisson 
+\emph on
+process 
+\emph default
+and the parameter of the Poisson 
+\emph on
+distribution
+\emph default
+? I'm not feeling confident here yet.)
+\end_layout
+
+\end_body
+\end_document

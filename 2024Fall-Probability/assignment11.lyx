@@ -1,0 +1,745 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #11
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+4 December 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Mujamdar's 
+\begin_inset Quotes eld
+\end_inset
+
+Probability Models
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Subsection*
+Ch.
+ 5
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+ 
+\color teal
+
+\begin_inset Formula $\frac{6}{\mu}$
+\end_inset
+
+
+\color inherit
+.
+ The expected service time for the five other customers is 
+\begin_inset Formula $\frac{1}{\mu}$
+\end_inset
+
+, and so is mine.
+ The memorylessness property implies that the fact that one customer is
+ already being served doesn't change anything.
+ (I had originally written 
+\begin_inset Formula $6\mu$
+\end_inset
+
+, but realized my error immediately upon glancing at the solutions manual:
+ 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+rate
+\begin_inset Quotes erd
+\end_inset
+
+, not 
+\begin_inset Quotes eld
+\end_inset
+
+scale
+\begin_inset Quotes erd
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+8
+\series default
+.
+\begin_inset Formula 
+\[
+P(X=x|X<Y)=\frac{P(X=x\ \&\ X<Y)}{P(X<Y)}=\frac{P(X=x\ \&\ x<Y)}{P(X<Y)}=\frac{P(X=x)P(x<Y)}{P(X<Y)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{\lambda\exp(-\lambda x)\exp(-\mu x)}{\frac{\lambda}{\lambda+\mu}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\begin_inset Formula 
+\[
+=(\lambda+\mu)\exp(-(\mu+\lambda)x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+12
+\series default
+.
+
+\series bold
+ a
+\series default
+.
+ Taking some inspiration from the derivation of equation 3.5 on Ross p.
+ 303, we get
+\begin_inset Formula 
+\[
+P(X_{1}<X_{2}<X_{3})=P(X_{2}<X_{3}\ \&\ X_{1}<X_{2})=P(X_{2}<X_{3}|X_{1}<X_{2})P(X_{1}<X_{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\int_{0}^{\infty}P(X_{2}<X_{3}|\ x<X_{2})P(x<X_{2}|X_{1}=x)P(X_{1}=x)\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\int_{0}^{\infty}P(X_{2}<X_{3}|\ x<X_{2})P(x<X_{2})\lambda_{1}\exp(-\lambda_{1}x)\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\int_{0}^{\infty}P(X_{2}<X_{3}|\ x<X_{2})\lambda_{1}\exp(-(\lambda_{1}+\lambda_{2})x)\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And then at this point, I felt confused about how to proceed: I felt like
+ the next step should have to do with integrating 
+\begin_inset Formula $P(X_{2}=y)$
+\end_inset
+
+ over 
+\begin_inset Formula $y\in[0,\infty)$
+\end_inset
+
+ (doing for the second variable, 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+, what we already did for the first, 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+), but I wasn't sure how to break down the conditional probability 
+\begin_inset Formula $P(X_{2}<X_{3}|\ x<X_{2})$
+\end_inset
+
+, so I ended up asking for extensive help from OpenAI o1-preview.
+ We express 
+\begin_inset Formula $P(X_{2}<X_{3}|\ x<X_{2})$
+\end_inset
+
+ as the integral of 
+\begin_inset Formula $P(X_{3}>y)$
+\end_inset
+
+ times the conditional density of 
+\begin_inset Formula $X_{2}=y$
+\end_inset
+
+ given 
+\begin_inset Formula $X_{2}>x$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}\int_{x}^{\infty}P(X_{3}>y)\frac{f_{X_{2}(y)}}{P(X_{2}>x)}\lambda_{1}\exp(-(\lambda_{1}+\lambda_{2})x)\ dy\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And we can get expressions for 
+\begin_inset Formula $P(X_{3}>y)$
+\end_inset
+
+ and 
+\begin_inset Formula $P(X_{2}>x)$
+\end_inset
+
+—the probability of a random variable being greater
+\emph on
+ 
+\emph default
+than a given value is one minus the (known) cdf—and 
+\begin_inset Formula $f_{X_{2}(y)}$
+\end_inset
+
+ (the exponential pdf), giving us 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}\int_{x}^{\infty}\exp(-\lambda_{3}y)\frac{\lambda_{2}\exp(-\lambda_{2}y)}{\exp(-\lambda_{2}x)}\lambda_{1}\exp(-(\lambda_{1}+\lambda_{2})x)\ dy\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\lambda_{1}\lambda_{2}\int_{0}^{\infty}\int_{x}^{\infty}\exp(-\lambda_{3}y-\lambda_{2}(y-x)-(\lambda_{1}+\lambda_{2})x)\ dy\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\lambda_{1}\lambda_{2}\int_{0}^{\infty}\int_{x}^{\infty}\exp(-(\lambda_{2}+\lambda_{3})y-\lambda_{1}x)\ dy\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\lambda_{1}\lambda_{2}\frac{1}{-(\lambda_{2}+\lambda_{3})}\int_{0}^{\infty}\left.\exp(-(\lambda_{2}+\lambda_{3})y-\lambda_{1}x)\right|_{y=x}^{\infty}\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\lambda_{1}\lambda_{2}\frac{1}{\lambda_{2}+\lambda_{3}}\int_{0}^{\infty}\exp(-(\lambda_{2}+\lambda_{3})x-\lambda_{1}x)\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\begin_inset Formula 
+\[
+\frac{\lambda_{1}\lambda_{2}}{(\lambda_{2}+\lambda_{3})(\lambda_{1}+\lambda_{2}+\lambda_{3})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+That was a doozy! After reading more of the textbook carefully and chatting
+ with the Claude LLM (
+\emph on
+claude.ai
+\emph default
+), I'm given to understand that there's a simpler way to think about it
+ just using the minimum-of-exponentials property (Proposition 5.2, Ross p.
+ 306) rather than doing the integrals from first principles, because the
+ rank order is independent: 
+\begin_inset Formula $P(X_{1}<X_{2}<X_{3})$
+\end_inset
+
+ is the probability that 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ is the smallest (which is 
+\begin_inset Formula $\frac{\lambda_{1}}{\lambda_{1}+\lambda_{2}+\lambda_{3}}$
+\end_inset
+
+), times the probability that 
+\begin_inset Formula $P(X_{2}<X_{3})$
+\end_inset
+
+ (which is 
+\begin_inset Formula $\frac{\lambda_{2}}{\lambda_{2}+\lambda_{3}}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+For whatever reason, I am continuing to find this exercise series (#12)
+ difficult and am consulting the solution manual while working out the correct
+ reasoning for parts b.–d.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ Given that 
+\begin_inset Formula $X_{3}$
+\end_inset
+
+ is the max, we're looking for the proportion in which 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ is less, out of that and the other possible ordering:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{P(X_{1}<X_{2}<X_{3})}{P(X_{1}<X_{2}<X_{3})+P(X_{2}<X_{1}<X_{3})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\begin_inset Formula 
+\[
+=\frac{\frac{\lambda_{1}\lambda_{2}}{(\lambda_{2}+\lambda_{3})(\lambda_{1}+\lambda_{2}+\lambda_{3})}}{\frac{\lambda_{1}\lambda_{2}}{(\lambda_{2}+\lambda_{3})(\lambda_{1}+\lambda_{2}+\lambda_{3})}+\frac{\lambda_{2}}{\lambda_{1}+\lambda_{2}+\lambda_{3}}\cdot\frac{\lambda_{1}}{\lambda_{1}+\lambda_{3}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\begin_inset Formula 
+\[
+E[\max_{i}X_{i}|X_{1}<X_{2}<X_{3}]=E[X_{3}|X_{1}<X_{2}<X_{3}]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Quotes eld
+\end_inset
+
+the time it takes for 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ to happen
+\begin_inset Quotes erd
+\end_inset
+
+ is 
+\begin_inset Formula $\frac{1}{\lambda_{1}+\lambda_{2}+\lambda_{3}}$
+\end_inset
+
+ by the minimum-of-exponentials fact.
+ Then by memorylessness, the 
+\emph on
+additional 
+\emph default
+time for 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ is the same as how much 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ would take 
+\begin_inset Quotes eld
+\end_inset
+
+from zero
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\emph on
+&c
+\emph default
+.
+ So we have
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\begin_inset Formula 
+\[
+\frac{1}{\lambda_{1}+\lambda_{2}+\lambda_{3}}+\frac{1}{\lambda_{2}+\lambda_{3}}+\frac{1}{\lambda_{3}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ We have to average over the different possible orderings:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[\max_{i}X_{i}]=E[\max_{i}X_{i}|X_{1}<X_{2}<X_{3}]P(X_{1}<X_{2}<X_{3})+E[\max_{i}X_{i}|X_{1}<X_{3}<X_{2}]P(X_{1}<X_{3}<X_{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
++E[\max_{i}X_{i}|X_{2}<X_{1}<X_{3}]P(X_{2}<X_{1}<X_{3})+E[\max_{i}X_{i}|X_{2}<X_{3}<X_{1}]P(X_{2}<X_{3}<X_{1})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
++E[\max_{i}X_{i}|X_{3}<X_{2}<X_{1}]P(X_{3}<X_{2}<X_{1})+E[\max_{i}X_{i}|X_{3}<X_{1}<X_{2}]P(X_{3}<X_{1}<X_{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituting in the results from parts a.
+ and c.
+ should simplify the algebra.
+ (The solutions manual says it will end up being 
+\begin_inset Formula $\sum_{i\ne j\ne k}\frac{1}{\lambda_{1}+\lambda_{2}+\lambda_{3}}\frac{\lambda_{j}}{\lambda_{j}+\lambda_{k}}\left(\frac{1}{\lambda_{1}+\lambda_{2}+\lambda_{3}}+\frac{1}{\lambda_{j}+\lambda_{k}}+\frac{1}{\lambda_{k}}\right)$
+\end_inset
+
+.) I'm not going to do the algebra myself to verify it because I'm trying
+ to finish up this homework assignment in a hurry so I can prepare more
+ for the Putnam competition on Saturday the 7th.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+14
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula 
+\[
+P(A_{\text{arrival}}<B_{\text{arrival}}\ \&\ A_{\text{depart}}>B_{\text{depart}})=P(A_{\text{arrival}}<B_{\text{arrival}})P(A_{\text{depart}}>B_{\text{depart}}|A_{\text{arrival}}<B_{\text{arrival}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Given that 
+\begin_inset Formula $A$
+\end_inset
+
+ arrived first, in order for 
+\begin_inset Formula $A$
+\end_inset
+
+ to depart later, then 
+\begin_inset Formula $A$
+\end_inset
+
+'s stay needs to be longer than the sum of 
+\begin_inset Formula $B$
+\end_inset
+
+'s stay and the difference between 
+\begin_inset Formula $B$
+\end_inset
+
+'s arrival and 
+\begin_inset Formula $A$
+\end_inset
+
+'s arrival: but by the memorylessness property, that difference is in expectatio
+n 
+\begin_inset Formula $B$
+\end_inset
+
+'s time to arrive.
+ So we have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(A_{\text{arrival}}<B_{\text{arrival}})P(A_{\text{stay}}>B_{\text{arrival}}+B_{\text{stay}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We know that 
+\begin_inset Formula $P(A_{\text{arrival}}<B_{\text{arrival}})=\frac{\lambda_{a}}{\lambda_{a}+\lambda_{b}}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $B_{\text{arrival}}+B_{\text{stay}}$
+\end_inset
+
+ is the sum of exponential random variables with different rates (
+\begin_inset Formula $\lambda_{b}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu_{b}$
+\end_inset
+
+, respectively).
+ According to Ross p.
+ 309–310, this is called 
+\emph on
+hypoexponential, 
+\emph default
+and should have the pdf 
+\begin_inset Formula $\frac{\mu_{b}}{\mu_{b}-\lambda_{b}}\lambda_{b}\exp(-\lambda_{b}t)+\frac{\lambda_{b}}{\lambda_{b}-\mu_{b}}\mu_{b}\exp(-\mu_{b}t)$
+\end_inset
+
+ ...
+ but that makes it look nontrivial to compute 
+\begin_inset Formula $P(A_{\text{stay}}>B_{\text{arrival}}+B_{\text{stay}})$
+\end_inset
+
+; I don't feel like this problem should call for integrating the pdf of
+ a hypoexponential ...
+\end_layout
+
+\begin_layout Standard
+Reluctantly consulting OpenAI o1-preview for help (I feel bad about how
+ much AI assistance I'm using on this assignment), it suggests that we can
+ make use of the exponential's cdf: 
+\begin_inset Formula $P(A_{\text{stay}}>z)=\exp(-\mu_{a}z)$
+\end_inset
+
+, then we can take the expectation over possible values of 
+\begin_inset Formula $z:=B_{\text{arrival}}+B_{\text{stay}}$
+\end_inset
+
+: 
+\begin_inset Formula $E[\exp(-\mu_{a}\left(B_{\text{arrival}}+B_{\text{stay}}\right))]=E[\exp(-\mu_{a}B_{\text{arrival}})]\cdot E[\exp(-\mu_{a}B_{\text{stay}})]$
+\end_inset
+
+ ...
+ 
+\end_layout
+
+\begin_layout Standard
+(Out of time; I may need to further review this material 
+\emph on
+e.g.
+
+\emph default
+ at office hours next week.)
+\end_layout
+
+\end_body
+\end_document

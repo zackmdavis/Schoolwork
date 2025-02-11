@@ -4,8 +4,6 @@ use rand_distr::Binomial;
 
 use rand_distr::Uniform;
 
-use rand_distr::Pareto;
-
 // homework #10
 
 fn hw_integral_1a(n: usize) -> f64 {
@@ -14,10 +12,40 @@ fn hw_integral_1a(n: usize) -> f64 {
     (0..n).map(|_| integrand(rng.gen())).sum::<f64>() / n as f64
 }
 
+use rand_distr::Pareto;
+
 fn hw_integral_1b(n: usize) -> f64 {
     let mut rng = rand::thread_rng();
     let proposal_distribution = Pareto::new(1., 2.).expect("valid Pareto distribution");
-    let importance_weight = |x: f64| -> f64 { 0.5 * x.powi(4) * (1. + x.powi(2)).powi(-2) };
+    let importance_weight =
+        |y: f64| -> f64 { 0.5 * y.powi(3) * (y - 1.) * (1. + (y - 1.).powi(2)).powi(-2) };
+    (0..n)
+        .map(|_| importance_weight(proposal_distribution.sample(&mut rng)))
+        .sum::<f64>()
+        / n as f64
+}
+
+use rand_distr::StandardNormal;
+
+fn hw_integral_1c(n: usize) -> f64 {
+    let mut rng = rand::thread_rng();
+    let importance_weight = |x: f64| -> f64 {
+        (2. * std::f64::consts::PI).sqrt() * (-x.powi(4) + 0.5 * x.powi(2) + 2.).exp()
+    };
+    (0..n)
+        .map(|_| importance_weight(rng.sample(StandardNormal)))
+        .sum::<f64>()
+        / n as f64
+}
+
+use rand_distr::Exp;
+use statrs::function::gamma::gamma;
+
+fn hw_integral_2(n: usize) -> f64 {
+    let mut rng = rand::thread_rng();
+    let proposal_distribution = Exp::new(0.5).expect("valid exponential distribution");
+    let importance_weight =
+        |x: f64| -> f64 { (-12.5_f64).exp() * (x + 25.).sqrt() / (2_f64.sqrt() * gamma(1.5)) };
     (0..n)
         .map(|_| importance_weight(proposal_distribution.sample(&mut rng)))
         .sum::<f64>()
@@ -31,6 +59,31 @@ fn integral_1a(n: usize) -> f64 {
     let integrand = |x: f64| -> f64 { (3. - x.powi(7)).powf(1.5) };
     (0..n).map(|_| integrand(rng.gen())).sum::<f64>() / n as f64
 }
+
+fn integral_1b(n: usize) -> f64 {
+    let mut rng = rand::thread_rng();
+    let proposal_distribution = Pareto::new(1., 5.).expect("valid Pareto distribution");
+    let importance_weight =
+        |y: f64| -> f64 { 0.2 * y.powi(6) * (y - 1.) * (2. + (y - 1.).powi(5)).powi(-4) };
+    (0..n)
+        .map(|_| importance_weight(proposal_distribution.sample(&mut rng)))
+        .sum::<f64>()
+        / n as f64
+}
+
+
+fn integral_1c(n: usize) -> f64 {
+    let mut rng = rand::thread_rng();
+    let proposal_distribution = Pareto::new(0.5, 5.).expect("valid Pareto distribution");
+    let importance_weight = |x: f64| -> f64 {
+        (128./5.) * x.powi(7) * (2. + 2. * x.powi(3)).powi(-4)
+    };
+    (0..n)
+        .map(|_| importance_weight(proposal_distribution.sample(&mut rng)))
+        .sum::<f64>()
+        / n as f64
+}
+
 
 fn question_2b() -> (Vec<u64>, Vec<u64>) {
     let mut rng = rand::thread_rng();
@@ -79,9 +132,9 @@ fn question_2d() -> f64 {
 fn main() {
     println!("Hello, world!");
 
-    println!("{}", hw_integral_1b(100));
-    println!("{}", hw_integral_1b(1000));
-    println!("{}", hw_integral_1b(10000));
+    println!("{}", integral_1c(100));
+    println!("{}", integral_1c(1000));
+    println!("{}", integral_1c(10000));
 
     // println!("{:?}", question_2b());
     // println!("{:?}", question_2c());

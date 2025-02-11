@@ -560,7 +560,26 @@ So it checks out!
 72
 \series default
 .
- 
+ In equilibrium, the rate of i–j–k transitions is 
+\begin_inset Formula $\pi_{i}P_{ij}P_{jk}$
+\end_inset
+
+, and the rate of k-j-i transitions is 
+\begin_inset Formula $\pi_{k}P_{kj}P_{ji}.$
+\end_inset
+
+ But applying the time reversibility condition to each, we see that the
+ former is also 
+\begin_inset Formula $\pi_{j}P_{ji}P_{jk}$
+\end_inset
+
+ and the latter is 
+\begin_inset Formula $\pi_{j}P_{jk}P_{ji}$
+\end_inset
+
+, which is the same thing with the transition factors written in the other
+ order.
+ But multiplication is commutative.
 \end_layout
 
 \begin_layout Standard
@@ -574,6 +593,44 @@ So it checks out!
 a
 \series default
 .
+ We're in state 
+\begin_inset Formula $i$
+\end_inset
+
+ if player 
+\begin_inset Formula $i$
+\end_inset
+
+ just won.
+ Each possible challenger has a probability of 
+\begin_inset Formula $\frac{1}{k-1}$
+\end_inset
+
+ of being selected.
+ If the uniformly randomly chosen challenger 
+\begin_inset Formula $j$
+\end_inset
+
+ loses, we transition to that state, but if they lose, we stay in state
+ 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ So for 
+\begin_inset Formula $j\neq i$
+\end_inset
+
+, 
+\begin_inset Formula $P_{i,j}=\frac{v_{j}}{(k-1)(v_{i}+v_{j})}$
+\end_inset
+
+ but 
+\begin_inset Formula $P_{i,i}=\frac{1}{k-1}\sum_{j\neq i}\frac{v_{i}}{v_{i}+v_{j}}$
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -582,6 +639,34 @@ a
 b
 \series default
 .
+ Our usual famous formula 
+\begin_inset Formula $\vec{\pi}=(P^{\intercal}-I)\vec{\pi}$
+\end_inset
+
+ in this case amounts to: 
+\begin_inset Formula 
+\[
+\begin{cases}
+\left(P_{i,i}-1\right)\pi_{i}+\sum_{j=1}^{k}P_{j,i}\pi_{j}=0 & i\in\{1,...,k\}\\
+\sum_{j}\pi_{j}=1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $P_{i,j}$
+\end_inset
+
+ and 
+\begin_inset Formula $P_{i,i}$
+\end_inset
+
+ are defined as in (a) above.
 \end_layout
 
 \begin_layout Standard
@@ -589,6 +674,20 @@ b
 \series bold
 c
 \series default
+.
+ Time-reversibility canoncially means that 
+\begin_inset Formula $\pi_{i}P_{i,j}=\pi_{j}P_{j,i}$
+\end_inset
+
+.
+ Here, that would expand to 
+\begin_inset Formula $\pi_{i}\frac{v_{j}}{(k-1)(v_{i}+v_{j})}=\pi_{j}\frac{v_{i}}{(k-1)(v_{i}+v_{j})}$
+\end_inset
+
+, which simplifies to 
+\begin_inset Formula $\pi_{i}v_{j}=\pi_{j}v_{i}$
+\end_inset
+
 .
 \end_layout
 
@@ -598,6 +697,141 @@ c
 d
 \series default
 .
+ The proportion of games won by player 
+\begin_inset Formula $j$
+\end_inset
+
+ is 
+\begin_inset Formula $\pi_{j}$
+\end_inset
+
+, so it would seem that we need to solve for our stationary distribution—generic
+ally in terms of 
+\begin_inset Formula $v_{i}$
+\end_inset
+
+, rather than just having the computer crunch 
+\begin_inset Formula $\vec{\pi}=(P^{\intercal}-I)\vec{\pi}$
+\end_inset
+
+ with specific numbers.
+ Let's try ...
+ considering the 
+\begin_inset Formula $k:=3$
+\end_inset
+
+ case and hope it becomes clear how to generalize? We have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P^{\intercal}-I=\left[\begin{array}{ccc}
+\frac{1}{2}\left(\frac{v_{1}}{v_{1}+v_{2}}+\frac{v_{1}}{v_{1}+v_{3}}\right)-1 & \frac{v_{1}}{2(v_{1}+v_{2})} & \frac{v_{1}}{2(v_{1}+v_{3})}\\
+\frac{v_{2}}{2(v_{1}+v_{2})} & \frac{1}{2}\left(\frac{v_{2}}{v_{1}+v_{2}}+\frac{v_{2}}{v_{2}+v_{3}}\right)-1 & \frac{v_{2}}{2(v_{2}+v_{3})}\\
+\frac{v_{3}}{2(v_{1}+v_{3})} & \frac{v_{3}}{2(v_{2}+v_{3})} & \frac{1}{2}\left(\frac{v_{3}}{v_{1}+v_{3}}+\frac{v_{3}}{v_{2}+v_{3}}\right)-1
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solving this by hand would be annoying, so I'm going to turn to SymPy, which
+ can do the algebra on
+\end_layout
+
+\begin_layout LyX-Code
+PT_minus_I = Matrix([
+\end_layout
+
+\begin_layout LyX-Code
+    [
+\end_layout
+
+\begin_layout LyX-Code
+        (v1/(v1+v2) + v1/(v1+v3))/2 - 1,
+\end_layout
+
+\begin_layout LyX-Code
+        v1/(2*(v1+v2)),
+\end_layout
+
+\begin_layout LyX-Code
+        v1/(2*(v1+v3))
+\end_layout
+
+\begin_layout LyX-Code
+    ],
+\end_layout
+
+\begin_layout LyX-Code
+    [
+\end_layout
+
+\begin_layout LyX-Code
+        v2/(2*(v1+v2)),
+\end_layout
+
+\begin_layout LyX-Code
+        (v2/(v1+v2) + v2/(v2+v3))/2 - 1,
+\end_layout
+
+\begin_layout LyX-Code
+        v2/(2*(v2+v3))
+\end_layout
+
+\begin_layout LyX-Code
+    ],
+\end_layout
+
+\begin_layout LyX-Code
+    [
+\end_layout
+
+\begin_layout LyX-Code
+        v3/(2*(v1+v3)),
+\end_layout
+
+\begin_layout LyX-Code
+        v3/(2*(v2+v3)),
+\end_layout
+
+\begin_layout LyX-Code
+        (v3/(v1+v3) + v3/(v2+v3))/2 - 1
+\end_layout
+
+\begin_layout LyX-Code
+    ]
+\end_layout
+
+\begin_layout LyX-Code
+]) 
+\end_layout
+
+\begin_layout Standard
+Running our usual stationary-distribution-finding function, SymPy says it's
+ 
+\end_layout
+
+\begin_layout LyX-Code
+v1/(v1 + v2 + v3), v2/(v1 + v2 + v3), v3/(v1 + v2 + v3)
+\end_layout
+
+\begin_layout Standard
+which is clearly suggestive of the true, general answer being 
+\color teal
+
+\begin_inset Formula 
+\[
+\pi_{i}=\frac{v_{i}}{\sum_{j}v_{j}}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -606,6 +840,31 @@ d
 e
 \series default
 .
+ The proportion of games that involve player 
+\begin_inset Formula $j$
+\end_inset
+
+ has to be greater than the proportion of games won by 
+\begin_inset Formula $j$
+\end_inset
+
+: intuitively, I would expect this to be 
+\begin_inset Formula $\pi_{j}+\frac{1}{k-1}(1-\pi_{j})$
+\end_inset
+
+.
+ The idea being, if you're in a game, it's either because you won the last
+ game, or you were randomly selected as the next contestant after one of
+ the games that you didn't win.
+ (I had initially written 
+\begin_inset Formula $\frac{1}{k}$
+\end_inset
+
+, but OpenAI o1-preview pointed out it's 
+\begin_inset Formula $\frac{1}{k-1}$
+\end_inset
+
+.)
 \end_layout
 
 \end_body
