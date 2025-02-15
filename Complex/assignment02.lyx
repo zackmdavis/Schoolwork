@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-8 February 2025
+12 February 2025
 \end_layout
 
 \begin_layout Abstract
@@ -270,6 +270,10 @@ And
 
  (linear) is continuously differentiable, so we conclude (by Theorem 2.4)
  that the function is holomorphic on the given domain.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -332,6 +336,10 @@ And
 
 \begin_layout Standard
 as expected.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -429,6 +437,42 @@ Proof
 
 .
  (Thanks to Claude Sonnet 3.5 for a hint to get me unstuck.)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dudx}{\frac{\partial u}{\partial x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dudy}{\frac{\partial u}{\partial y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dvdx}{\frac{\partial v}{\partial x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dvdy}{\frac{\partial v}{\partial y}}
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -438,6 +482,73 @@ Proof
  1 #12)
 \series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $f(x+iy)=\sqrt{|x||y|}$
+\end_inset
+
+ satisfies the Cauchy–Reimann equations at the origin, but is not holomorphic.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ For 
+\begin_inset Formula $f(x+iy)=\underbrace{\left(|x||y|\right)^{\nicefrac{1}{2}}}_{u}+\underbrace{i0}_{iv}$
+\end_inset
+
+, we compute 
+\begin_inset Formula $\dudx=\frac{1}{2}|y|\left(|x||y|\right)^{-\nicefrac{1}{2}}$
+\end_inset
+
+, and then 
+\begin_inset Formula $\dudx$
+\end_inset
+
+ is 0 at 
+\begin_inset Formula $x=y=0$
+\end_inset
+
+, and 
+\begin_inset Formula $\dvdy=0$
+\end_inset
+
+ regardless, and similarly 
+\begin_inset Formula $\dudy=\frac{1}{2}|x|\left(|x||y|\right)^{-\nicefrac{1}{2}}$
+\end_inset
+
+ will be 
+\begin_inset Formula $0$
+\end_inset
+
+ and 
+\begin_inset Formula $\dvdx=0$
+\end_inset
+
+, so the C–R equations are satisfied by all the partials being zero.
+ (At first I was worried that the partial derivatives didn't even exist,
+ analogously to how 
+\begin_inset Formula $y=|x|$
+\end_inset
+
+ isn't differentiable at the origin, but at office hours on 12 February,
+ Prof.
+ Lai pointed out that both coördinates being zero averts this.) Because 
+\begin_inset Formula $\{0\}$
+\end_inset
+
+ is not open, the C–R equations being satisfied doesn't imply holomorphicity.
+\begin_inset Newline newline
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -447,6 +558,264 @@ Proof
  1 #13)
 \series default
 .
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is holomorphic and 
+\begin_inset Formula $\text{Re}(f)$
+\end_inset
+
+ is constant, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is constant.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ If 
+\begin_inset Formula $f=u(x,y)+iv(x,y)$
+\end_inset
+
+ and 
+\begin_inset Formula $u$
+\end_inset
+
+ is constant, then 
+\begin_inset Formula $\dudx=\dudy=0$
+\end_inset
+
+.
+ The Cauchy–Reimann equations imply that 
+\begin_inset Formula $\dvdy=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\dvdx=-0=0$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $v$
+\end_inset
+
+ is also constant.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is holomorphic and 
+\begin_inset Formula $\text{Im}(f)$
+\end_inset
+
+ is constant, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is constant.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Just as above: 
+\begin_inset Formula $v$
+\end_inset
+
+ being constant implies 
+\begin_inset Formula $\dvdx=\dvdy=0$
+\end_inset
+
+, 
+\emph on
+&c
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is holomorphic and 
+\begin_inset Formula $|f|$
+\end_inset
+
+ is constant, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is constant.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $|f|=\sqrt{u^{2}+v^{2}}=c\Rightarrow|f|^{2}=u^{2}+v^{2}=c$
+\end_inset
+
+.
+ Differentiating by 
+\begin_inset Formula $x$
+\end_inset
+
+, we get 
+\begin_inset Formula $2u\dudx+2v\dvdx=0\Rightarrow u\dudx=-v\dvdx$
+\end_inset
+
+ and similarly differentiating by 
+\begin_inset Formula $y$
+\end_inset
+
+, we get 
+\begin_inset Formula $2u\dudy+2v\dvdy=0\Rightarrow u\dudy=-v\dvdy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Switching to subscript notation to reduce Leibnizian clutter and cognitive
+ overload, that's 
+\begin_inset Formula $uu_{x}=-vv_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $uu_{y}=-vv_{y}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Invoking the C–R equations on the latter, we get 
+\begin_inset Formula $u(-v_{x})=-vu_{x}$
+\end_inset
+
+, which is 
+\begin_inset Formula $uv_{x}=vu_{x}$
+\end_inset
+
+.
+ Supposing that 
+\begin_inset Formula $u\ne0$
+\end_inset
+
+, that's 
+\begin_inset Formula $v_{x}=\frac{v}{u}u_{x}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Substituting into the previous, we have 
+\begin_inset Formula $uu_{x}=-v\frac{v}{u}u_{x}\Rightarrow uu_{x}+v\frac{v}{u}u_{x}=0\Rightarrow\frac{u^{2}+v^{2}}{u}u_{x}=0$
+\end_inset
+
+.
+ We've supposed that 
+\begin_inset Formula $u\ne0$
+\end_inset
+
+, so if 
+\begin_inset Formula $c\ne0$
+\end_inset
+
+, we have 
+\begin_inset Formula $u_{x}=0$
+\end_inset
+
+.
+ But then our earlier 
+\begin_inset Formula $vu_{x}=uv_{x}$
+\end_inset
+
+, in conjunction with 
+\begin_inset Formula $u\ne0$
+\end_inset
+
+, implies 
+\begin_inset Formula $v_{x}=0$
+\end_inset
+
+.
+ But one of the C–R equations says 
+\begin_inset Formula $u_{x}=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $v_{y}=0$
+\end_inset
+
+ and the other says that 
+\begin_inset Formula $v_{x}=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $u_{y}=0$
+\end_inset
+
+.
+ If all the partials are zero, the function is constant.
+ (Thanks to Prof.
+ Lai at office hours on 12 February for a hint and, with deep embarrassment,
+ Claude Sonnet 3.5 and ChatGPT o3-mini-high for extensive further tutoring.)
+ 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -455,13 +824,312 @@ Proof
 6
 \series default
 .
+ 
+\emph on
+Theorem
+\emph default
+.
+ For a holomorphic function 
+\begin_inset Formula $f=u(x,y)+iv(x,y)$
+\end_inset
+
+ with nonvanishing derivative, the tangent lines to the level curves 
+\begin_inset Formula $u(x,y)=c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $v(x,y)=c_{2}$
+\end_inset
+
+ are perpendicular.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Following the hint, we have 
+\begin_inset Formula $\frac{dy}{dx}=\frac{-u_{x}}{u_{y}}$
+\end_inset
+
+ (for the 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ level set) and 
+\begin_inset Formula $\frac{dy}{dx}=\frac{-v_{x}}{v_{y}}$
+\end_inset
+
+ (for the other).
+ By the C–R equations, the latter is 
+\begin_inset Formula $\frac{u_{y}}{u_{x}}$
+\end_inset
+
+.
+ The product of the two slopes 
+\begin_inset Formula $\frac{-u_{x}}{u_{y}}\cdot\frac{u_{y}}{u_{x}}=-1$
+\end_inset
+
+ implies that they are perpendicular.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
 
 \series bold
 7 (Ch.
- 1 #19).
+ 1 #19)
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\sum nz^{n}$
+\end_inset
+
+ does not converge at any point of the unit circle.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Use polar coördinates: 
+\begin_inset Formula $\sum n(r\exp(\theta i))^{n}=\sum nr^{n}\exp(n\theta i)$
+\end_inset
+
+.
+ On the unit cricle, 
+\begin_inset Formula $r=1$
+\end_inset
+
+, so 
+\begin_inset Formula $r^{n}=1$
+\end_inset
+
+ for any 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+, so the terms don't go to zero, so the series diverges by the divergence
+ test.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\sum\frac{z^{n}}{n^{2}}$
+\end_inset
+
+ converges at every point of the unit circle.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ The partial sums converge because 
+\begin_inset Formula $|\sum_{k=m}^{n}\frac{z^{n}}{n^{2}}|<\sum_{k=m}^{n}\left|\frac{z^{n}}{n^{2}}\right|$
+\end_inset
+
+
+\series bold
+ 
+\series default
+by the triangle inequality, and we're on the 
+\begin_inset Formula $|z|=1$
+\end_inset
+
+ unit circle: 
+\begin_inset Formula $\sum\frac{1}{n^{2}}$
+\end_inset
+
+ is known to converge.
+ (I had originally gotten confused and was trying to show something about
+ the sequence of terms rather than the series; this was clarified at office
+ hours on 12 February.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\sum\frac{z^{n}}{n}$
+\end_inset
+
+ converges at every point of the unit circle except 
+\begin_inset Formula $z=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ If 
+\begin_inset Formula $z=1$
+\end_inset
+
+, we have the harmonic series 
+\begin_inset Formula $\sum\frac{1}{n}$
+\end_inset
+
+, which is known to diverge.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $z\ne1$
+\end_inset
+
+, following a hint from office hours on 12 February, we imitate the proof
+ of Dirichlet's test in Thomas W.
+ Wade's 
+\emph on
+An Introduction to Analysis
+\emph default
+.
+ We rely on the following
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Lemma
+\emph default
+.
+ 
+\begin_inset Formula $\sum_{k}\exp(\theta ki)$
+\end_inset
+
+ is bounded for 
+\begin_inset Formula $\theta\ne0$
+\end_inset
+
+.
+ (This should be plausible.
+ If, say, 
+\begin_inset Formula $\theta=\frac{\pi}{4}$
+\end_inset
+
+, then terms of the form, say, 
+\begin_inset Formula $\frac{\pi}{2}+2\pi n$
+\end_inset
+
+ for 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+ will get 
+\begin_inset Quotes eld
+\end_inset
+
+cancelled out
+\begin_inset Quotes erd
+\end_inset
+
+ by terms of the form 
+\begin_inset Formula $\frac{3\pi}{2}+2\pi n$
+\end_inset
+
+, such that the sum stays bounded even if it never converges.
+ No matter what 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is, if we keep taking multiples 
+\begin_inset Formula $k\theta$
+\end_inset
+
+, the average direction is zero.)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $M$
+\end_inset
+
+ be a bound on 
+\begin_inset Formula $\sum_{k}|\exp(\theta ki)|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Choose 
+\begin_inset Formula $N\in\mathbb{N}$
+\end_inset
+
+ such that 
+\begin_inset Formula $k\ge N$
+\end_inset
+
+ implies that 
+\begin_inset Formula $\frac{1}{k}<\frac{\varepsilon}{M}$
+\end_inset
+
+.
+ Then for all 
+\begin_inset Formula $n,m\ge N$
+\end_inset
+
+, we can sum by parts:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\sum_{k=m}^{n}\frac{\exp(\theta ki)}{k}\right|\le\left|\sum_{k=m}^{n}\exp(\theta ki)\right|\left|\frac{1}{n}\right|+\sum_{k=m}^{n-1}\left|\sum_{j=k}^{m}\exp(\theta ji)\right|\left(\frac{1}{k}-\frac{1}{k+1}\right)\le M\frac{1}{n}+M\left(\frac{1}{m}-\frac{1}{n}\right)=M\frac{1}{m}<\varepsilon
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
