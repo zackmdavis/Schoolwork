@@ -397,23 +397,203 @@ Theorem
 Proof
 \emph default
 .
- (Addition.)
+ (Addition.) 
+\begin_inset Formula $\varphi(\sum_{\alpha\in\mathbb{N}^{n}}a_{\alpha}\prod_{j=1}^{n}x_{j}^{\alpha_{j}}+\sum_{\alpha\in\mathbb{N}^{n}}b_{\alpha}\prod_{j=1}^{n}x_{j}^{\alpha_{j}})=\varphi(\sum_{\alpha\in\mathbb{N}^{n}}(a_{\alpha}+b_{\alpha})\prod_{j=1}^{n}x_{j}^{\alpha_{j}})$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-(Multiplication.)
+\begin_inset Formula $=\sum_{d\ge0}\left(\sum_{\alpha\in\mathbb{N}^{n},\alpha_{n}=d}(a_{\alpha}+b_{\alpha})\prod_{j=1}^{n-1}x^{\alpha_{j}}\right)x_{n}^{d}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-(Unity.)
+\begin_inset Formula $=\sum_{d\ge0}\left(\sum_{\alpha\in\mathbb{N}^{n},\alpha_{n}=d}a_{\alpha}\prod_{j=1}^{n-1}x^{\alpha_{j}}\right)x_{n}^{d}+\sum_{d\ge0}\left(\sum_{\alpha\in\mathbb{N}^{n},\alpha_{n}=d}b_{\alpha}\prod_{j=1}^{n-1}x^{\alpha_{j}}\right)x_{n}^{d}$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-(Injectivity.)
+(Multiplication.) 
+\begin_inset Formula $\varphi\left(\left(\sum_{\alpha\in\mathbb{N}^{n}}a_{\alpha}\prod_{j=1}^{n}x_{j}^{\alpha_{j}}\right)\left(\sum_{\alpha\in\mathbb{N}^{n}}b_{\alpha}\prod_{j=1}^{n}x_{j}^{\alpha_{j}}\right)\right)=\varphi\left(\sum_{\alpha}\left(\sum_{\alpha_{1}+\alpha_{2}=\alpha}a_{\alpha_{1}}b_{\alpha_{2}}\right)x^{\alpha}\right)$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-(Surjectivity.)
+\begin_inset Formula 
+\begin{equation}
+=\sum_{d\ge0}\left(\sum_{\alpha\in\mathbb{N}^{n},\alpha_{n}=d}\left(\sum_{\alpha_{1}+\alpha_{2}=\alpha}a_{\alpha_{1}}b_{\alpha_{2}}\right)\prod_{j=1}^{n-1}x^{\alpha_{j}}\right)x_{n}^{d}
+\end{equation}
+
+\end_inset
+
+whereas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\sum_{d\ge0}\left(\sum_{\alpha\in\mathbb{N}^{n},\alpha_{n}=d}a_{\alpha}\prod_{j=1}^{n-1}x^{\alpha_{j}}\right)x_{n}^{d}\right)\left(\sum_{d\ge0}\left(\sum_{\alpha\in\mathbb{N}^{n},\alpha_{n}=d}b_{\alpha}\prod_{j=1}^{n-1}x^{\alpha_{j}}\right)x_{n}^{d}\right)$
+\end_inset
+
+ ...
+ um, this is where it gets tricky: we can't trivially mechanically apply
+ our formal definition of multiplication using multiïndex notation to a
+ product not written in multiïndex form.
+ But 
+\begin_inset Formula $R[x_{j}]_{j=1}^{n-1}[x_{n}]$
+\end_inset
+
+ is a space of single-variable polynomials (albeit with funny-looking coëfficien
+ts); this shouldn't actually be hard.
+ It's 
+\begin_inset Formula $\left(\sum_{k}a_{k}x^{k}\right)\left(\sum_{k}b_{k}x^{k}\right)=\sum_{j}\left(\sum_{k_{1}+k_{2}=j}a_{k_{1}}b_{k_{2}}\right)x^{j}$
+\end_inset
+
+.
+ In this case, that's 
+\begin_inset Formula 
+\begin{equation}
+\sum_{j}\left(\sum_{k_{1}+k_{2}=j}\left(\sum_{\alpha\in\mathbb{N}^{n},\alpha_{n}=k_{1}}a_{\alpha}\prod_{j=1}^{n-1}x^{\alpha_{j}}\right)\left(\sum_{\alpha\in\mathbb{N}^{n},\alpha_{n}=k_{2}}b_{\alpha}\prod_{j=1}^{n-1}x^{\alpha_{j}}\right)\right)x^{j}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is 
+\emph on
+plausibly
+\emph default
+ the same thing as 
+\begin_inset Formula $(1)$
+\end_inset
+
+, but the last few steps of showing the equivalency are not entirely trivial.
+ I don't think you can 
+\begin_inset Quotes eld
+\end_inset
+
+just factor out
+\begin_inset Quotes erd
+\end_inset
+
+ the 
+\begin_inset Formula $\prod_{j=1}^{n-1}x^{\alpha_{j}}$
+\end_inset
+
+ from both inner factors, because the product over 
+\begin_inset Formula $\alpha\in\mathbb{N}^{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\alpha_{n}=k_{1}$
+\end_inset
+
+ is not obviously the same as the one over 
+\begin_inset Formula $\alpha\in\mathbb{N}^{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\alpha_{n}=k_{2}$
+\end_inset
+
+ ...
+ or is it?
+\end_layout
+
+\begin_layout Standard
+In (1), we're looping through 
+\begin_inset Formula $\alpha\in\mathbb{N}^{n}$
+\end_inset
+
+ filtered for 
+\begin_inset Formula $\alpha_{n}=d$
+\end_inset
+
+ (the power for the last variable being 
+\begin_inset Formula $d$
+\end_inset
+
+), and inside that, looping through all ways two 
+\begin_inset Formula $n$
+\end_inset
+
+-tuples 
+\begin_inset Formula $\alpha_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{2}$
+\end_inset
+
+ can add up to 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, and inside that, taking the product of the coëfficients 
+\begin_inset Formula $a_{\alpha_{1}}b_{\alpha_{2}}$
+\end_inset
+
+ times the product of the first 
+\begin_inset Formula $n-1$
+\end_inset
+
+ variable powers.
+\end_layout
+
+\begin_layout Standard
+In (2), we're looping through all ways 
+\begin_inset Formula $k_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{2}$
+\end_inset
+
+ can add up to 
+\begin_inset Formula $d$
+\end_inset
+
+, and inside that ...
+ um, I don't think verbal restatement is helping here.
+\end_layout
+
+\begin_layout Standard
+ChatGPT o3-mini-high is suggesting that we can rewrite the multiïndex to
+ split off the last coördinate ...
+ [TODO]
+\end_layout
+
+\begin_layout Standard
+(Unity.) 
+\begin_inset Formula $\varphi(1x^{0})=1x^{0}$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Injectivity.) [TODO]
+\end_layout
+
+\begin_layout Standard
+(Surjectivity.) [TODO]
 \end_layout
 
 \end_body

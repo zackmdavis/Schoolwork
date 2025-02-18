@@ -82,7 +82,9 @@
 \begin_body
 
 \begin_layout Title
-Assignment #2
+Assignment #2 
+\color blue
+(revised)
 \end_layout
 
 \begin_layout Author
@@ -91,7 +93,11 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-12 February 2025
+1
+\color blue
+7
+\color inherit
+ February 2025
 \end_layout
 
 \begin_layout Abstract
@@ -104,7 +110,11 @@ Theory of Functions of a Complex Variable.
 \begin_inset Quotes erd
 \end_inset
 
-
+ 
+\color blue
+Revisions in blue
+\color inherit
+.
 \end_layout
 
 \begin_layout Standard
@@ -545,6 +555,34 @@ Proof
 \end_inset
 
  is not open, the C–R equations being satisfied doesn't imply holomorphicity.
+ 
+\color blue
+Indeed, the function is not holomorphic because the value of the directional
+ limit taken along 
+\emph on
+e.g
+\emph default
+.
+ 
+\begin_inset Formula $y=x$
+\end_inset
+
+ depends on which direction we approach.
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset Formula $\lim_{r\rightarrow0}\frac{f(0+r\exp(\frac{\pi}{4}i))-f(0)}{r\exp(\frac{\pi}{4}i)}=\lim_{r\rightarrow0}\frac{f(r\cos(\frac{\pi}{4})+r\sin(\frac{\pi}{4}))-f(0)}{r\exp(\frac{\pi}{4}i)}=\lim_{r\rightarrow0}\frac{\sqrt{|r\cos(\frac{\pi}{4})||r\sin(\frac{\pi}{4})|}-\sqrt{|0||0|}}{r\exp(\frac{\pi}{4}i)}=\lim_{r\rightarrow0}\frac{\frac{1}{2}r}{(\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}i)r}=\frac{\sqrt{2}}{4}-\frac{\sqrt{2}i}{4}$
+\end_inset
+
+ but 
+\begin_inset Formula $\lim_{r\rightarrow0}\frac{f(0+r\exp(\frac{5\pi}{4}i))-f(0)}{r\exp(\frac{5\pi}{4}i)}=\lim_{r\rightarrow0}\frac{\frac{1}{2}r}{(-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}i)r}=-\frac{\sqrt{2}}{4}+\frac{\sqrt{2}i}{4}\ne\frac{\sqrt{2}}{4}-\frac{\sqrt{2}i}{4}$
+\end_inset
+
+.
+\color inherit
+
 \begin_inset Newline newline
 \end_inset
 
@@ -955,26 +993,17 @@ Proposition
 Proof
 \emph default
 .
- The partial sums converge because 
-\begin_inset Formula $|\sum_{k=m}^{n}\frac{z^{n}}{n^{2}}|<\sum_{k=m}^{n}\left|\frac{z^{n}}{n^{2}}\right|$
-\end_inset
-
-
-\series bold
  
-\series default
-by the triangle inequality, and we're on the 
+\color blue
+On the 
 \begin_inset Formula $|z|=1$
 \end_inset
 
- unit circle: 
-\begin_inset Formula $\sum\frac{1}{n^{2}}$
+ unit circle, 
+\begin_inset Formula $\sum_{k=1}^{\infty}\left|\frac{z^{n}}{n^{2}}\right|=\sum_{k=1}^{\infty}\frac{1}{n^{2}}$
 \end_inset
 
- is known to converge.
- (I had originally gotten confused and was trying to show something about
- the sequence of terms rather than the series; this was clarified at office
- hours on 12 February.)
+, which converges, and absolutely convergent series are convergent.
 \end_layout
 
 \begin_layout Standard
@@ -1084,7 +1113,63 @@ cancelled out
 \end_layout
 
 \begin_layout Standard
-Let 
+
+\emph on
+\color blue
+Proof (lemma)
+\emph default
+.
+ Consider the partial sum 
+\begin_inset Formula $S_{n}=\sum_{k=1}^{n}\exp(k\theta i)$
+\end_inset
+
+.
+ We multiply both sides by 
+\begin_inset Formula $(\exp(\theta i)-1)$
+\end_inset
+
+ to engineer a 
+\begin_inset Quotes eld
+\end_inset
+
+telescoping
+\begin_inset Quotes erd
+\end_inset
+
+ effect: 
+\begin_inset Formula $(\exp(\theta i)-1)S_{n}=(\exp(\theta i)-1)\sum_{k=1}^{n}\exp(k\theta i)=\sum_{k=1}^{n}\exp((k+1)\theta i)-\exp(k\theta i)=\exp((n+1)\theta i)-\exp(\theta i)$
+\end_inset
+
+, so 
+\begin_inset Formula $S_{n}=\frac{\exp((n+1)\theta i)-\exp(\theta i)}{\exp(\theta i)-1}$
+\end_inset
+
+.
+ Both terms in the numerator are bounded by 1, so the magnitude of their
+ difference can't be greater than 2, and the denominator only depends on
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+ (not 
+\begin_inset Formula $n$
+\end_inset
+
+), so 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ is bounded.
+ (Thanks to Claude Sonnet 3.5 for tutoring.)
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof (theorem)
+\emph default
+.
+ Let 
 \begin_inset Formula $M$
 \end_inset
 
