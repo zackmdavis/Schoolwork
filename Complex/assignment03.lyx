@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-15 February 2025
+18 February 2025
 \end_layout
 
 \begin_layout Abstract
@@ -119,11 +119,33 @@ Theory of Functions of a Complex Variable.
 a
 \series default
 .
- 
-\begin_inset Formula $|w-z|^{2}-|1-\overline{w}z|^{2}=(w-z)\overline{(w-z)}-(1-\overline{w}z)\overline{(1-\overline{w}z)}$
+ We compute 
+\begin_inset Formula $\left|\frac{w-z}{1-\overline{w}z}\right|^{2}=\frac{\left|w-z\right|^{2}}{\left|1-\overline{w}z\right|^{2}}=\frac{(w-z)\overline{(w-z)}}{(1-\overline{w}z)\overline{(1-\overline{w}z)}}=\frac{(w-z)(\overline{w}-\overline{z})}{(1-\overline{w}z)(1-w\overline{z})}=\frac{|w|^{2}+|z|^{2}-\overline{w}z-w\overline{z}}{|w|^{2}|z|^{2}-\overline{w}z-w\overline{z}+1}$
 \end_inset
 
+, which is less than 1 when 
+\begin_inset Formula $|w|^{2}+|z|^{2}$
+\end_inset
 
+ is less than 
+\begin_inset Formula $|w|^{2}|z|^{2}+1$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $w:=1$
+\end_inset
+
+, then the comparison is 
+\begin_inset Formula $|z|^{2}+1=|z|^{2}+1$
+\end_inset
+
+ (and the same for 
+\begin_inset Formula $z:=1$
+\end_inset
+
+ without loss of generality).
+ 
 \end_layout
 
 \begin_layout Standard
@@ -137,6 +159,16 @@ b
 i
 \series default
 .
+ The disc mapping property is implied by part a (
+\begin_inset Formula $|z|<1$
+\end_inset
+
+ is the open unit disc; 
+\begin_inset Formula $|z|=1$
+\end_inset
+
+ is its boundary).
+ For holomorphicity, we need to check the Cauchy–Reimann equations.
  [TODO]
 \end_layout
 
@@ -163,7 +195,11 @@ ii
 iii
 \series default
 .
- [TODO]
+ 
+\begin_inset Formula $|z|=1\rightarrow F(z)=1$
+\end_inset
+
+ was established in part a.
 \end_layout
 
 \begin_layout Standard
@@ -279,29 +315,47 @@ Proof
 \end_inset
 
  such that 
-\begin_inset Formula $j\ge N$
+\begin_inset Formula $i\ge N$
 \end_inset
 
  implies 
-\begin_inset Formula $\left|\frac{\left|a_{j+1}\right|}{\left|a_{j}\right|}-L\right|<\varepsilon$
+\begin_inset Formula $\left|\frac{\left|a_{i+1}\right|}{\left|a_{i}\right|}-L\right|<\varepsilon$
 \end_inset
 
 .
- Suppose that 
-\begin_inset Formula $\frac{\left|a_{j+1}\right|}{\left|a_{j}\right|}>L$
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose that 
+\begin_inset Formula $\frac{\left|a_{i+1}\right|}{\left|a_{i}\right|}>L$
 \end_inset
 
 .
  Then we have 
-\begin_inset Formula $\frac{\left|a_{j+1}\right|}{\left|a_{j}\right|}<L+\varepsilon$
+\begin_inset Formula $\frac{\left|a_{i+1}\right|}{\left|a_{i}\right|}<L+\varepsilon$
 \end_inset
 
 , which implies 
-\begin_inset Formula $\left|a_{j+1}\right|<\left|a_{j}\right|\left(L+\varepsilon\right)$
+\begin_inset Formula $\left|a_{i+1}\right|<\left|a_{i}\right|\left(L+\varepsilon\right)$
 \end_inset
 
 , which we can iterate to get 
-\begin_inset Formula $\left|a_{j+k}\right|<\left|a_{j}\right|\left(L+\varepsilon\right)^{k}$
+\begin_inset Formula $\left|a_{i+j}\right|<\left|a_{i}\right|\left(L+\varepsilon\right)^{j}$
+\end_inset
+
+.
+ In particular, choose 
+\begin_inset Formula $i:=N$
+\end_inset
+
+ and let 
+\begin_inset Formula $k:=N+j$
+\end_inset
+
+.
+ Then we have 
+\begin_inset Formula $\left|a_{k}\right|<\left|a_{N}\right|\left(L+\varepsilon\right)^{k-N}$
 \end_inset
 
 .
@@ -309,37 +363,49 @@ Proof
 \begin_inset Formula $k$
 \end_inset
 
-th root of both sides gives us 
-\begin_inset Formula $\left|a_{j+k}\right|^{\nicefrac{1}{k}}<\left|a_{j}\right|^{\nicefrac{1}{k}}\left(L+\varepsilon\right)$
+th root, we get 
+\begin_inset Formula $\left|a_{k}\right|^{\frac{1}{k}}<\left|a_{N}\right|^{\frac{1}{k}}\left(L+\varepsilon\right)^{1-\frac{N}{k}}=(L+\varepsilon)\cancelto{\text{const.}^{\frac{1}{k}}=1}{\left|a_{N}\right|^{\frac{1}{k}}}\cancelto{1}{\left(\left(L+\varepsilon\right)^{N}\right)^{\frac{1}{k}}}$
 \end_inset
 
 .
- [TODO finish]
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Prof.
+ Lai for elucidating this step at Prof.
+ Schuster's office hours on 18 February.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula $\left|a_{k}\right|^{\nicefrac{1}{k}}-L<\varepsilon$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\left|a_{k}\right|<\left(L+\varepsilon\right)^{k}$
+ Thus 
+\begin_inset Formula $\left|a_{k}\right|^{\frac{1}{k}}-L<\varepsilon$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\frac{\left|a_{k+1}\right|}{\left|a_{k}\right|}<\frac{\left(L+\varepsilon\right)^{k+1}}{\left(L+\varepsilon\right)^{k}}=L+\varepsilon$
+Now suppose that 
+\begin_inset Formula $\frac{\left|a_{i+1}\right|}{\left|a_{i}\right|}<L$
 \end_inset
 
+, which implies 
+\begin_inset Formula $\frac{\left|a_{i+1}\right|}{\left|a_{i}\right|}>L-\varepsilon$
+\end_inset
 
-\end_layout
+ and 
+\begin_inset Formula $\left|a_{i+1}\right|>\left|a_{i}\right|(L-\varepsilon)$
+\end_inset
 
-\begin_layout Standard
-\begin_inset Formula $=\frac{\left(L+\varepsilon\right)^{k+1}}{\left(L+\varepsilon\right)^{k}}$
+, which we can iterate to get 
+\begin_inset Formula $\left|a_{i+j}\right|>\left|a_{i}\right|(L-\varepsilon)^{j}$
+\end_inset
+
+ ...
+ and the same argument as above applies without loss of generality.
+\begin_inset Newline newline
 \end_inset
 
 
@@ -407,6 +473,10 @@ Proof
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -482,6 +552,10 @@ Proof
 \end_inset
 
 ).
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -522,6 +596,10 @@ Proof
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -545,7 +623,7 @@ Theorem
 \end_inset
 
  cannot be partitioned into finitely many distinct arithmetic progressions
- with distinct distinct step sizes.
+ with distinct step sizes.
 \end_layout
 
 \begin_layout Standard
@@ -600,6 +678,17 @@ Suppose
 \end_inset
 
  such that 
+\begin_inset Formula $\frac{z}{1-z}=\sum_{i=1}^{n}\frac{z^{a_{i}}}{1-z^{d_{i}}}$
+\end_inset
+
+.
+ But the left-hand side has a single pole at 1, whereas the right-hand side
+ has poles at the 
+\begin_inset Formula $d_{i}$
+\end_inset
+
+th roots of unity, so they can't be the same function.
+ Contradiction!
 \end_layout
 
 \end_body
