@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-18 February 2025
+19 February 2025
 \end_layout
 
 \begin_layout Abstract
@@ -102,6 +102,38 @@ Homework exercises for Prof.
 
 Theory of Functions of a Complex Variable.
 \begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dudx}{\frac{\partial u}{\partial x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dudy}{\frac{\partial u}{\partial y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dvdx}{\frac{\partial v}{\partial x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dvdy}{\frac{\partial v}{\partial y}}
 \end_inset
 
 
@@ -131,8 +163,39 @@ a
 \begin_inset Formula $|w|^{2}|z|^{2}+1$
 \end_inset
 
+, or equivalently, when 
+\begin_inset Formula $|w|^{2}+|z|^{2}-|w|^{2}|z|^{2}<1$
+\end_inset
+
 .
- If 
+ 
+\end_layout
+
+\begin_layout Standard
+This holds if 
+\begin_inset Formula $|w|<1$
+\end_inset
+
+ and 
+\begin_inset Formula $|z|<1$
+\end_inset
+
+, because 
+\begin_inset Formula $|w|^{2}+|z|^{2}-|w|^{2}|z|^{2}=(1-1)+|w|^{2}+|z|^{2}-|w|^{2}|z|^{2}=1-(1-|w|^{2}-|z|^{2}+|w|^{2}|z|^{2})=1-\underbrace{(1-|w|^{2})(1-|z|^{2})}_{<1}$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude Sonnet 3.5 for this algebraic manipulation, which I found
+ nonobvious.
+\end_layout
+
+\end_inset
+
+If 
 \begin_inset Formula $w:=1$
 \end_inset
 
@@ -168,8 +231,28 @@ i
 \end_inset
 
  is its boundary).
- For holomorphicity, we need to check the Cauchy–Reimann equations.
- [TODO]
+ It's holomorphic because the linear 
+\begin_inset Formula $w-z$
+\end_inset
+
+ is holomorphic and the linear 
+\begin_inset Formula $1-\overline{w}z$
+\end_inset
+
+ is holomorphic, and the quotient of holomorphic functions is holomorphic
+ where the denominator is nonzero.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude Sonnet 3.5 for pointing out that we don't actually need
+ to grind through the full Cauchy–Reimann equations here to establish holomorphi
+city.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -196,7 +279,7 @@ iii
 \series default
 .
  
-\begin_inset Formula $|z|=1\rightarrow F(z)=1$
+\begin_inset Formula $|z|=1\rightarrow|F(z)|=1$
 \end_inset
 
  was established in part a.
@@ -208,11 +291,15 @@ iii
 iv
 \series default
 .
- 
-\begin_inset Formula $F\circ F(z)=\frac{w-\frac{w-z}{1-\overline{w}z}}{1-\overline{w}\frac{w-z}{1-\overline{w}z}}$
+ Calculation shows that the function is its own inverse and is thus a bijection:
+\begin_inset Formula 
+\[
+F\circ F(z)=\frac{w-\frac{w-z}{1-\overline{w}z}}{1-\overline{w}\frac{w-z}{1-\overline{w}z}}=\frac{\frac{w(1-\overline{w}z)-(w-z)}{1-\overline{w}z}}{\frac{(1-\overline{w}z)-\overline{w}(w-z)}{1-\overline{w}z}}=\frac{w(1-\overline{w}z)-(w-z)}{(1-\overline{w}z)-\overline{w}(w-z)}=\frac{\cancel{w}-\overline{w}wz\cancel{-w}+z}{1\cancel{-\overline{w}z}-\overline{w}w\cancel{+\overline{w}z}}=\frac{z(-\overline{w}w+1)}{1-\overline{w}w}=z
+\]
+
 \end_inset
 
- [TODO]
+ 
 \begin_inset Newline newline
 \end_inset
 
