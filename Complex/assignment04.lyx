@@ -173,18 +173,40 @@ Proof
 \emph default
 .
  Following the hint and the methodology of Ch.
- 2 §3, if we integrate 
+ 2 §3, we integrate 
 \begin_inset Formula $\exp(-z^{2})$
 \end_inset
 
- along the indicated wedge-shaped path, Goursat's theorem says we should
- get zero:
+ along the indicated wedge-shaped path.
+ Goursat's theorem says we should get zero.
+ The wedge-shaped path is really nice because along each segment, only one
+ of 
+\begin_inset Formula $r$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is changing, obviating the need for further parametrization—but we do need
+ to be careful to include the proper change-of-variable factors.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to ChatGPT o3-mini-high for extensive calculation tutoring for this
+ exercise.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\int_{0}^{R}\exp(-z^{2})\ dz+\int_{0}^{\nicefrac{\pi}{4}}\exp(-R^{2}\exp(i\theta)^{2})\ d\theta+\int_{R(\frac{\sqrt{2}}{2}+i\frac{\sqrt{2}}{2})}^{0}\exp(-z^{2})\ dz=0
+\lim_{R\rightarrow\infty}\int_{0}^{R}\exp(-r^{2})dr+\int_{0}^{\frac{\pi}{4}}\exp(-R^{2}\exp(2i\theta))\underbrace{i\exp(i\theta)\,d\theta}_{dz}+\int_{R}^{0}\exp(-r^{2}\exp(\frac{\pi}{2}i))\ \underbrace{\exp(i\frac{\pi}{4})\,dr}_{dz}=0
 \]
 
 \end_inset
@@ -193,7 +215,124 @@ Proof
 \end_layout
 
 \begin_layout Standard
-[TODO]
+\begin_inset Formula 
+\[
+\lim_{R\rightarrow0}\int_{0}^{R}\exp(-r^{2})dr+\int_{0}^{\frac{\pi}{4}}\cancelto{\lim_{R\rightarrow\infty}\exp(-R^{2})=0}{\exp(-R^{2}\exp(2i\theta))i\exp(i\theta)}\,d\theta+\int_{R}^{0}\exp(-r^{2}\cancelto{\exp(\frac{\pi}{2}i)=\cancelto{0}{\cos(\frac{\pi}{2})}+i\cdot\cancelto{1}{\sin(\frac{\pi}{2})}}{\exp(\frac{\pi}{2}i)})\exp(i\frac{\pi}{4})\,dr=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{R\rightarrow0}\int_{0}^{R}\exp(-r^{2})dr+\int_{R}^{0}\exp(-ir^{2})\exp(i\frac{\pi}{4})\,dr=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{R\rightarrow0}\int_{0}^{R}\exp(-r^{2})dr+\int_{R}^{0}\cos(\frac{\pi}{4}-r^{2})+i\int_{R}^{0}\sin(\frac{\pi}{4}-r^{2})\,dr=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The real and imaginary parts need to vanish separately.
+\begin_inset Formula 
+\[
+\begin{cases}
+\lim_{R\rightarrow0}\int_{0}^{R}\exp(-r^{2})dr+\int_{R}^{0}\cos(\frac{\pi}{4}-r^{2})\,dr=0\\
+\int_{R}^{0}\sin(\frac{\pi}{4}-r^{2})\,dr=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\lim_{R\rightarrow0}\int_{0}^{R}\exp(-r^{2})dr=\lim_{R\rightarrow0}\int_{0}^{R}\cos(\frac{\pi}{4}-r^{2})\,dr\\
+\int_{R}^{0}\sin(\frac{\pi}{4}-r^{2})\,dr=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can recall (well, look up) trigonometric subtraction formulas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\lim_{R\rightarrow0}\int_{0}^{R}\exp(-r^{2})dr=\lim_{R\rightarrow0}\int_{0}^{R}\cancelto{\frac{\sqrt{2}}{2}}{\cos(\frac{\pi}{4})}\cos(r^{2})+\cancelto{\frac{\sqrt{2}}{2}}{\sin(\frac{\pi}{4})}\sin(r^{2})\,dr\\
+\int_{R}^{0}\cancelto{\frac{\sqrt{2}}{2}}{\sin(\frac{\pi}{4})}\cos(r^{2})-\cancelto{\frac{\sqrt{2}}{2}}{\cos(\frac{\pi}{4})}\sin(r^{2})\,dr=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\lim_{R\rightarrow0}\int_{0}^{R}\exp(-r^{2})dr=\frac{\sqrt{2}}{2}\lim_{R\rightarrow0}\int_{0}^{R}\cos(r^{2})+\sin(r^{2})\,dr\\
+\frac{\sqrt{2}}{2}\int_{R}^{0}\cos(r^{2})-\sin(r^{2})\,dr=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And thus (with 
+\begin_inset Formula $\int_{0}^{\infty}\cos(r^{2})\,dr=\int_{0}^{\infty}\sin(r^{2})\,dr$
+\end_inset
+
+ from the second equation):
+\begin_inset Formula 
+\[
+\frac{\sqrt{\pi}}{2}=\frac{\sqrt{2}}{2}2\int_{0}^{\infty}\cos(r^{2})\,dr
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}\cos(r^{2})\,dr=\frac{\sqrt{\pi}}{2\sqrt{2}}=\frac{\sqrt{2\pi}}{4}
+\]
+
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -372,7 +511,313 @@ Proof
 \end_inset
 
 .
- Applying the de Moivre identity, we have
+ Applying the de Moivre identity, we have 
+\begin_inset Formula 
+\[
+\int_{-\pi}^{\pi}\exp(-it)\exp(a\cos(t)+ai\sin(t))\ dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\int_{-\pi}^{\pi}\exp(a\cos(t)+ai\sin(t)-it)\ dt=\int_{-\pi}^{\pi}\exp(a\cos(t))\exp(i(a\sin(t)-t))\ dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\int_{-\pi}^{\pi}\exp(a\cos(t))(\cos(a\sin(t))+i\sin(a\sin(t)-t))\ dt
+\]
+
+\end_inset
+
+ ...
+ (Out of time, with regrets.)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For the Legendre polynomial 
+\begin_inset Formula $P_{n}(z)=\frac{1}{2^{n}n!}\frac{d^{n}}{dz^{n}}(z^{2}-1)^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $P_{n}(-1)=(-1)^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Cauchy's integral formula (in 
+\begin_inset Quotes eld
+\end_inset
+
+inductive
+\begin_inset Quotes erd
+\end_inset
+
+ form) tells us that 
+\begin_inset Formula $\frac{d^{n}f}{dz^{n}}(z)=\frac{n!}{2\pi i}\int_{C}\frac{f(Z)}{(Z-z)^{n+1}}dZ$
+\end_inset
+
+.
+ Invoking this with 
+\begin_inset Formula $f:=(z^{2}-1)^{n}$
+\end_inset
+
+ yields 
+\begin_inset Formula $\frac{d^{n}}{dz^{n}}(z^{2}-1)^{n}=\frac{n!}{2\pi i}\int_{C}\frac{(Z^{2}-1)^{n}}{(Z-z)^{n+1}}dZ$
+\end_inset
+
+.
+ So 
+\begin_inset Formula 
+\[
+P_{n}(-1)=\frac{1}{2^{n}\cancel{n!}}\frac{\cancel{n!}}{2\pi i}\int_{C}\frac{(Z^{2}-1)^{n}}{(Z-z)^{n+1}}dZ=\frac{1}{2^{n+1}\pi i}\int_{C}\frac{(Z^{2}-1)^{n}}{(Z+1)^{n+1}}dZ
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{1}{2^{n+1}\pi i}\int_{C}\frac{\left(Z-1\right)^{n}\left(Z+1\right)^{n}}{(Z+1)^{n+1}}dZ=\frac{1}{2^{n+1}\pi i}\int_{C}\frac{\left(Z-1\right)^{n}}{(Z+1)}dZ
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At 
+\begin_inset Formula $Z=-1$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{\left(Z-1\right)^{n}}{(Z+1)}$
+\end_inset
+
+ would be the singularity 
+\begin_inset Formula $\frac{\left(-2\right)^{n}}{0}$
+\end_inset
+
+, and the residue theorem says that the integral around such a singularity
+ is 
+\begin_inset Formula $2\pi i$
+\end_inset
+
+ times the coefficient on the 
+\begin_inset Formula $z^{-1}$
+\end_inset
+
+ term of the Laurent series (and in the case of this function with 
+\begin_inset Formula $Z+1$
+\end_inset
+
+ in the denominator, the whole function is just that term).
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude Sonnet 3.7 for reminding me about the residue theorem, which
+ I don't think we've covered in this class yet.
+\end_layout
+
+\end_inset
+
+ Putting it together, we have 
+\begin_inset Formula $\frac{2\pi i\left(-2\right)^{n}}{2^{n+1}\pi i}=\frac{\cancel{2^{n+1}\pi i}\left(-1\right)^{n}}{\cancel{2^{n+1}\pi i}}=\left(-1\right)^{n}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+ 
+\series bold
+(Ch.
+ 2, #6)
+\series default
+.
+ We can deform the contour in a 
+\begin_inset Quotes eld
+\end_inset
+
+keyhole
+\begin_inset Quotes erd
+\end_inset
+
+ (as described in Stein and Shakarchi Ch.
+ 2) around 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Prof.
+ Lai at office hours on 26 February for clarifying that this is the right
+ way to go.
+\end_layout
+
+\end_inset
+
+ As usual, the traversal in opposite directions of the sides of the keyhole
+ 
+\begin_inset Quotes eld
+\end_inset
+
+corridor
+\begin_inset Quotes erd
+\end_inset
+
+ to 
+\begin_inset Formula $w$
+\end_inset
+
+ cancel each other out, and the rest of the contour around 
+\begin_inset Formula $T$
+\end_inset
+
+ is 
+\begin_inset Formula $0$
+\end_inset
+
+ by Goursat's theorem, so we are left integrating an arbitrarily small contour
+ around our potentially non-holomorphic point—but precisely because 
+\begin_inset Formula $f$
+\end_inset
+
+ is bounded near 
+\begin_inset Formula $w$
+\end_inset
+
+, the integral goes to zero as the contour does! (If the function doesn't
+ blow up in a singularity at the non-differentiable point, then the bigness
+ of the function can't 
+\begin_inset Quotes eld
+\end_inset
+
+cancel out
+\begin_inset Quotes erd
+\end_inset
+
+ the smallness of the contour.) So we have the following
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $C_{\delta}$
+\end_inset
+
+ be the circular contour around 
+\begin_inset Formula $w$
+\end_inset
+
+ with radius 
+\begin_inset Formula $\delta$
+\end_inset
+
+, and let 
+\begin_inset Formula $B$
+\end_inset
+
+ be a bound on 
+\begin_inset Formula $|f(z)|$
+\end_inset
+
+ near 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ The length of 
+\begin_inset Formula $C_{\delta}$
+\end_inset
+
+ is 
+\begin_inset Formula $2\pi\delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Then we can choose 
+\begin_inset Formula $\delta:=\frac{\varepsilon}{2\pi B}$
+\end_inset
+
+.
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{C_{\delta}}f(z)\,dz\le2\pi\delta\sup_{z\in C_{\delta}}|f(z)|\le\cancel{2\pi B}\frac{\varepsilon}{\cancel{2\pi B}}=\varepsilon
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body

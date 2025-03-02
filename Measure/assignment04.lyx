@@ -1,0 +1,996 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #4
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+28 February 2025
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Measure and Integration
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Standard
+.
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Q}{\mathbb{Q}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There exists a bounded set 
+\begin_inset Formula $A\subseteq\mathbb{R}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|F\right|\le\left|A\right|-1$
+\end_inset
+
+ for every closed set 
+\begin_inset Formula $F\subseteq A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This was discussed at office hours on 25 February.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $B$
+\end_inset
+
+ be a bounded set which is not Lebesgue measurable.
+ Then there exists an 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ such that for every closed 
+\begin_inset Formula $F\subseteq B$
+\end_inset
+
+, 
+\begin_inset Formula $|B\backslash F|\ge\varepsilon$
+\end_inset
+
+.
+ Then every closed subset 
+\begin_inset Formula $F$
+\end_inset
+
+ of the set 
+\begin_inset Formula $A:=\frac{1}{\varepsilon}B=\{\frac{1}{\varepsilon}x:x\in B\}$
+\end_inset
+
+ will fulfill 
+\begin_inset Formula $\left|F\right|\le\left|A\right|-\frac{\varepsilon}{\varepsilon}=\left|A\right|-1$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There exists 
+\begin_inset Formula $A\subseteq\R$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|G\backslash A\right|=\infty$
+\end_inset
+
+ for every open set 
+\begin_inset Formula $G$
+\end_inset
+
+ that contains 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Tile
+\begin_inset Quotes erd
+\end_inset
+
+ the Vitali set for every 
+\begin_inset Formula $[n,n+1]$
+\end_inset
+
+ for 
+\begin_inset Formula $n\in\mathbb{Z}$
+\end_inset
+
+.
+ (Thanks to OpenAI o3-mini-high for pointing out where I went wrong with
+ a previous draft that claimed 
+\begin_inset Formula $A:=\mathbb{Q}$
+\end_inset
+
+ worked.)
+\begin_inset Newline newline
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For measurable 
+\begin_inset Formula $A\subseteq\R$
+\end_inset
+
+, there exists an increasing sequence of closed sets 
+\begin_inset Formula $F_{k}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|A\backslash\bigcup_{k}F_{k}\right|=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ This resembles the 
+\begin_inset Formula $(b)\Rightarrow(c)$
+\end_inset
+
+ equivalency in Axler's 2.71.
+ We know that for any 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there is a closed set that 
+\begin_inset Formula $F\subseteq A$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|A\backslash F\right|<\varepsilon$
+\end_inset
+
+.
+ Take 
+\begin_inset Formula $G_{j}$
+\end_inset
+
+ to be such a set that 
+\begin_inset Formula $\left|A\backslash G_{j}\right|<\frac{1}{j}$
+\end_inset
+
+, then define 
+\begin_inset Formula $F_{k}:=\bigcup_{j=1}^{k}G_{j}$
+\end_inset
+
+.
+ Then the sequence 
+\begin_inset Formula $(F_{k})$
+\end_inset
+
+ is increasing because 
+\begin_inset Formula $\bigcup_{j=1}^{k-1}G_{j}\subseteq F_{k-1}\subseteq F_{k}$
+\end_inset
+
+, and 
+\begin_inset Formula $\left|A\backslash\bigcup_{k}F_{k}\right|=0$
+\end_inset
+
+ because for any 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, 
+\begin_inset Formula $n\ge\left\lceil \frac{1}{\varepsilon}\right\rceil $
+\end_inset
+
+ implies that 
+\begin_inset Formula $\left|A\backslash\bigcup_{k=1}^{n}F_{k}\right|<\varepsilon$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+6
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ (with 
+\begin_inset Formula $\left|A\right|<\infty$
+\end_inset
+
+) is Lebesgue measurable iff for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists 
+\begin_inset Formula $G$
+\end_inset
+
+ the union of finitely many disjoint bounded open intervals such that 
+\begin_inset Formula $\left|A\backslash G\right|+\left|G\backslash A\right|<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Thanks to Claude Sonnet 3.7 for discussion and hints.)
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Suppose 
+\begin_inset Formula $A$
+\end_inset
+
+ is Lebesgue.
+ Then there exists 
+\begin_inset Formula $U\supseteq A$
+\end_inset
+
+ such that 
+\begin_inset Formula $|U\backslash A|<\varepsilon$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $|U\backslash A|$
+\end_inset
+
+ can be covered by a countable union of open intervals, which we can call
+ 
+\begin_inset Formula $I_{i}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\sum_{i=1}^{\infty}\ell(I_{i})$
+\end_inset
+
+ must be a convergent series: there exists an 
+\begin_inset Formula $N$
+\end_inset
+
+ such that 
+\begin_inset Formula $\sum_{i=N}^{\infty}\ell(I_{i})<\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ Then we can set 
+\begin_inset Formula $G:=\bigcup_{i=1}^{N-1}I_{i}$
+\end_inset
+
+ and have 
+\begin_inset Formula $|A\backslash G|+|G\backslash A|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Suppose we have 
+\begin_inset Formula $\{I_{j}\}_{j=1}^{n}$
+\end_inset
+
+ with 
+\begin_inset Formula $|\bigcup_{j}I_{j}\backslash A|+|A\backslash\bigcup_{j}I_{j}|<\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ Then we cover 
+\begin_inset Formula $A\backslash\bigcup_{j}I_{j}$
+\end_inset
+
+ with open intervals 
+\begin_inset Formula $\{J_{k}\}_{k=1}^{m}$
+\end_inset
+
+ such that 
+\begin_inset Formula $|\bigcup_{k}J_{k}|<|A\backslash\bigcup_{j}I_{j}|+\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $A\subset\bigcup_{j}I_{j}\cup\bigcup_{k}J_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(\bigcup_{j}I_{j}\cup\bigcup_{k}J_{k}\right)\backslash A<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For measurable 
+\begin_inset Formula $A\subseteq\R$
+\end_inset
+
+, there exists a decreasing sequence of open sets 
+\begin_inset Formula $G_{k}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|\left(\bigcap_{k}G_{k}\right)\backslash A\right|=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ This is just the 
+\begin_inset Quotes eld
+\end_inset
+
+complement
+\begin_inset Quotes erd
+\end_inset
+
+ of #5 above (and correspondingly resembles the 
+\begin_inset Formula $(e)\Rightarrow(f)$
+\end_inset
+
+ equivalency in Axler's 2.71).
+ We know that for any 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists an open 
+\begin_inset Formula $G\supseteq A$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|G\backslash A\right|<\varepsilon$
+\end_inset
+
+.
+ Take 
+\begin_inset Formula $E_{j}$
+\end_inset
+
+ to be such that 
+\begin_inset Formula $\left|E_{j}\backslash A\right|<\frac{1}{j}$
+\end_inset
+
+, then 
+\begin_inset Formula $G_{k}:=\bigcap_{j=1}^{k}E_{j}$
+\end_inset
+
+.
+ Then the sequence 
+\begin_inset Formula $(G_{k})$
+\end_inset
+
+ is decreasing because 
+\begin_inset Formula $\bigcap_{j=1}^{k-1}E_{j}\supseteq G_{k-1}\supseteq G_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left|\bigcap G_{k}\backslash A\right|=0$
+\end_inset
+
+ because for any 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, 
+\begin_inset Formula $n\ge\left\lceil \frac{1}{\varepsilon}\right\rceil $
+\end_inset
+
+ implies that 
+\begin_inset Formula $\left|\left(\bigcap_{k=1}^{n}F_{k}\right)\backslash A\right|<\varepsilon$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+8
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $A$
+\end_inset
+
+ is Lebesgue, then 
+\begin_inset Formula $t+A:=\{x+t:x\in A\}$
+\end_inset
+
+ is Lebesgue.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose 
+\begin_inset Formula $A$
+\end_inset
+
+ is Lebesgue.
+ Then for every 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists a closed set 
+\begin_inset Formula $F\subseteq A$
+\end_inset
+
+ such that 
+\begin_inset Formula $|A\backslash F|<\varepsilon$
+\end_inset
+
+.
+ But then for every 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, 
+\begin_inset Formula $F+t\subseteq A+t$
+\end_inset
+
+ is such that 
+\begin_inset Formula $|A+t\backslash F+t|<\varepsilon$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $A+t$
+\end_inset
+
+ is Lebesgue.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $B$
+\end_inset
+
+ is Lebesgue measurable and disjoint from 
+\begin_inset Formula $A$
+\end_inset
+
+, then 
+\begin_inset Formula $\left|A\cup B\right|=\left|A\right|+\left|B\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $|A\cup B|\le|A|+|B|$
+\end_inset
+
+ by subadditivity; it remains to be shown that 
+\begin_inset Formula $|A\cup B|\ge|A|+|B|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $B$
+\end_inset
+
+ is Lebesgue measurable, it can be approximated from below by a closed set:
+ some 
+\begin_inset Formula $F\subseteq B$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|B\backslash F\right|<\varepsilon$
+\end_inset
+
+.
+ Then we can use the same proof strategy as Axler's 2.66: 
+\begin_inset Formula $|A\cup B|\ge|A\cup F|=|A|+|F|$
+\end_inset
+
+ (because we know that additivity holds when one of the sets is closed by
+ Axler's 2.63) Then 
+\begin_inset Formula $|A|+|F|=|A|+|B|-|B\backslash F|\ge|A|+|B|-\varepsilon$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+12
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $A\subseteq(b,c)$
+\end_inset
+
+, 
+\begin_inset Formula $A$
+\end_inset
+
+ is Lebesgue measurable iff 
+\begin_inset Formula $|A|+|(b,c)\backslash A|=c-b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This is a special case of Carathéodory's criterion, and was discussed at
+ office hours on 25 and 27 February.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $A$
+\end_inset
+
+ is Lebesgue.
+ Then 
+\begin_inset Formula $|A|+|(b,c)\backslash A|=|A\cup(b,c)\backslash A|=|(b,c)|=c-b$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Consider 
+\begin_inset Formula $U_{1}\supset A$
+\end_inset
+
+ and 
+\begin_inset Formula $U_{2}\supset(b,c)\backslash A$
+\end_inset
+
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ From the nature of outer measure, we know that for any 
+\begin_inset Formula $|U_{1}|<|A|+\frac{\varepsilon}{3}$
+\end_inset
+
+, 
+\begin_inset Formula $|U_{2}|<|(b,c)\backslash A|+\frac{\varepsilon}{3}$
+\end_inset
+
+.
+ Because 
+\begin_inset Formula $U_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $U_{2}$
+\end_inset
+
+ cover 
+\begin_inset Formula $(b,c)$
+\end_inset
+
+, we have 
+\begin_inset Formula $|(b,c)|-|U_{1}\cup U_{2}|<\frac{\varepsilon}{3}$
+\end_inset
+
+.
+ We know that 
+\begin_inset Formula $|U_{1}\backslash A|<|U_{1}\cap U_{2}|$
+\end_inset
+
+.
+ (
+\begin_inset Formula $U_{1}\backslash A$
+\end_inset
+
+ is the 
+\begin_inset Quotes eld
+\end_inset
+
+extra margin
+\begin_inset Quotes erd
+\end_inset
+
+ by which 
+\begin_inset Formula $U_{1}$
+\end_inset
+
+ extends beyond 
+\begin_inset Formula $A$
+\end_inset
+
+ into 
+\begin_inset Formula $(b,c)\backslash A$
+\end_inset
+
+, but 
+\begin_inset Formula $U_{2}$
+\end_inset
+
+ openly covers all of 
+\begin_inset Formula $(b,c)\backslash A$
+\end_inset
+
+.) By the inclusion–exclusion principle, we have 
+\begin_inset Formula $|U_{1}\cap U_{2}|=|U_{1}|+|U_{2}|-|U_{1}\cup U_{2}|<|A|+\frac{\varepsilon}{3}+|(b,c)\backslash A|+\frac{\varepsilon}{3}-|U_{1}\cup U_{2}|<\frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\varepsilon$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+13
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ is Lebesgue measurable iff, for every 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+, 
+\begin_inset Formula $|A\cap(-n,n)|+|(-n,n)\backslash A|=2n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $A$
+\end_inset
+
+ is Lebesgue.
+ Then 
+\begin_inset Formula $|A\cap(-n,n)|+|(-n,n)\backslash A|=|(A\cap(-n,n))\cup(-n,n)\backslash A|=|(-n,n)|=2n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose for every 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $|A\cap(-n,n)|+|(-n,n)\backslash A|=2n$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $|A|<\infty$
+\end_inset
+
+, then there exists some 
+\begin_inset Formula $n$
+\end_inset
+
+ such that 
+\begin_inset Formula $A\subset(-n,n)$
+\end_inset
+
+, and 
+\begin_inset Formula $A$
+\end_inset
+
+ is Lebesgue by the result of the previous exercise.
+ For the 
+\begin_inset Formula $|A|=\infty$
+\end_inset
+
+ case, we observe that 
+\begin_inset Formula $A=\text{\ensuremath{\bigcup_{n}A\cap(-n,n)}}$
+\end_inset
+
+, and the countable union of measurable sets is measurable.
+ (This was mentioned at office hours on 25 February and in conversation
+ with Claude Sonnet 3.7.)
+\end_layout
+
+\end_body
+\end_document

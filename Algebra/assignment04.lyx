@@ -1,0 +1,621 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #4
+\end_layout
+
+\begin_layout Date
+14 February 2025
+\end_layout
+
+\begin_layout Abstract
+Homework exercises for Prof.
+ Dusty Ross's 
+\begin_inset Quotes eld
+\end_inset
+
+Modern Algebra I
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+\series bold
+a
+\series default
+.
+ Manually tracing back the cycles for 
+\begin_inset Formula $(1\ 2\ 3\ 5)(4\ 1\ 3)$
+\end_inset
+
+, we observe 
+\begin_inset Formula $4\rightarrow1\rightarrow2$
+\end_inset
+
+, 
+\begin_inset Formula $1\rightarrow3\rightarrow5$
+\end_inset
+
+, 
+\begin_inset Formula $3\rightarrow4$
+\end_inset
+
+, 
+\begin_inset Formula $2\rightarrow3$
+\end_inset
+
+, and 
+\begin_inset Formula $5\rightarrow1$
+\end_inset
+
+.
+ That's
+\series bold
+ 
+\series default
+\color blue
+
+\begin_inset Formula $(1\ 5)(2\ 3\ 4)$
+\end_inset
+
+
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\begin_inset Formula $(1\ 3\ 2\ 5\ 6)(2\ 3)(4\ 6\ 5\ 1\ 2)$
+\end_inset
+
+ gives us 
+\begin_inset Formula $1\rightarrow2\rightarrow3\rightarrow2$
+\end_inset
+
+, 
+\begin_inset Formula $2\rightarrow4$
+\end_inset
+
+, 
+\begin_inset Formula $3\rightarrow2\rightarrow5$
+\end_inset
+
+, 
+\begin_inset Formula $4\rightarrow6\rightarrow1$
+\end_inset
+
+, 
+\begin_inset Formula $5\rightarrow1\rightarrow3$
+\end_inset
+
+, and 
+\begin_inset Formula $6\rightarrow5\rightarrow6$
+\end_inset
+
+, which is 
+\color blue
+
+\begin_inset Formula $(1\ 2\ 4)(3\ 5)$
+\end_inset
+
+
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\begin_inset Formula $(1\ 2)(1\ 3)(2\ 3)(1\ 4\ 2)$
+\end_inset
+
+ yields 
+\begin_inset Formula $\text{1\rightarrow4}$
+\end_inset
+
+, 
+\begin_inset Formula $4\rightarrow2\rightarrow3\rightarrow1\rightarrow2$
+\end_inset
+
+, 
+\begin_inset Formula $2\rightarrow1\rightarrow3$
+\end_inset
+
+, and 
+\begin_inset Formula $3\rightarrow2\rightarrow1$
+\end_inset
+
+, which is 
+\color blue
+
+\begin_inset Formula $(1\ 4\ 2\ 3)$
+\end_inset
+
+
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\begin_inset Formula $(1\ 2\ 3\ 4)(3\ 1\ 5\ 7)(4\ 6\ 1\ 3)(5\ 2\ 3\ 6)$
+\end_inset
+
+ yields 
+\begin_inset Formula $5\rightarrow2\rightarrow3$
+\end_inset
+
+, 
+\begin_inset Formula $2\rightarrow3\rightarrow4\rightarrow1$
+\end_inset
+
+, 
+\begin_inset Formula $3\rightarrow6\rightarrow1\rightarrow5$
+\end_inset
+
+, 
+\begin_inset Formula $6\rightarrow5\rightarrow7$
+\end_inset
+
+, 
+\begin_inset Formula $1\rightarrow3\rightarrow1\rightarrow2$
+\end_inset
+
+, 
+\begin_inset Formula $4\rightarrow6$
+\end_inset
+
+, 
+\begin_inset Formula $7\rightarrow3\rightarrow4$
+\end_inset
+
+, which is 
+\color blue
+
+\begin_inset Formula $(1\ 2)(3\ 5)(6\ 7\ 4)$
+\end_inset
+
+
+\color inherit
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $(3\ 4\ 5)(2\ 4\ 5)$
+\end_inset
+
+ yields 
+\begin_inset Formula $2\rightarrow4\rightarrow5$
+\end_inset
+
+, 
+\begin_inset Formula $4\rightarrow5\rightarrow3$
+\end_inset
+
+, 
+\begin_inset Formula $5\rightarrow2$
+\end_inset
+
+, and 
+\begin_inset Formula $3\rightarrow4$
+\end_inset
+
+, which is 
+\begin_inset Formula $(2\ 5)(3\ 4)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\text{l.c.m.}(2,2)=2$
+\end_inset
+
+, so the order is 2.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ In the quoted explanation, ChatGPT is not consistenly applying the cycles
+ in right-to-left order: it erroneously applies the left cycle first for
+ 3, 4, and 5.
+\end_layout
+
+\begin_layout Standard
+(As a comparison to other popular LLM products, Anthropic's Claude Sonnet
+ 3.5 also gets it wrong, but ChatGPT o3-mini-high and DeepSeek R1 both get
+ it right.)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ (1 3 5 6) 
+\begin_inset Formula $=(1\ 6)(1\ 5)(1\ 3)$
+\end_inset
+
+ is odd.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ (1 3 5 6 7) 
+\begin_inset Formula $=(1\ 7)(1\ 6)(1\ 5)(1\ 3)$
+\end_inset
+
+ is even.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ (1 2)(1 3 4)(1 5 2) 
+\begin_inset Formula $=(1\ 2)(1\ 4)(1\ 3)(1\ 2)(1\ 5)$
+\end_inset
+
+ is odd.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ (1 2 4 3)(3 5 2 1) 
+\begin_inset Formula $=(1\ 3)(1\ 4)(1\ 2)(3\ 1)(3\ 2)(3\ 5)$
+\end_inset
+
+ is even.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $S_{7}$
+\end_inset
+
+ contains 504 elements of order 5.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ The order of a permutation is the l.c.m.
+ of its cycle lengths.
+ Since 5 is prime, an element of order 5 must contain a cycle of length
+ 5.
+ The two set members not in the cycle of length 5 must be fixed, because
+ if they were together in a cycle of length 2, then the order of the permutation
+ would be 
+\begin_inset Formula $\text{l.c.m.}(2,5)=10$
+\end_inset
+
+, not 5.
+ 
+\end_layout
+
+\begin_layout Standard
+So an element of order 5 amounts to choosing 5 members of a set of 7 (to
+ participate in the 5 cycle), and an order in which to 
+\begin_inset Quotes eld
+\end_inset
+
+rotate
+\begin_inset Quotes erd
+\end_inset
+
+ them.
+ That's 
+\begin_inset Formula $\binom{7}{5}=\frac{7!}{5!2!}$
+\end_inset
+
+ ways to choose 5 members times 
+\begin_inset Formula $5!$
+\end_inset
+
+ ways to permute those 5 elements, 
+\emph on
+divided
+\emph default
+ by 5 to avoid double-counting different ways of writing the same cycle.
+ (For 
+\begin_inset Formula $(1\ 2\ 3\ 4\ 5)$
+\end_inset
+
+ can also be written as any of 
+\begin_inset Formula $(2\ 3\ 4\ 5\ 1)$
+\end_inset
+
+, 
+\begin_inset Formula $(3\ 4\ 5\ 1\ 2)$
+\end_inset
+
+, 
+\emph on
+&c
+\emph default
+.) 
+\begin_inset Formula $\frac{7!}{\cancel{5!}2!}\cdot\cancel{5!}\cdot\frac{1}{5}=\frac{7!}{10}=504$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ The set of even permutations is a subgroup of 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ are even permutations.
+ 
+\begin_inset Formula $y^{-1}$
+\end_inset
+
+ is an even permutation, because 
+\begin_inset Formula $y$
+\end_inset
+
+ can be written as a product of an even number of 2-cycles, so 
+\begin_inset Formula $y^{-1}$
+\end_inset
+
+ can be written as the same even number of 2-cycles (with the numbers in
+ each cycle reversed).
+ Then 
+\begin_inset Formula $xy^{-1}$
+\end_inset
+
+ can be written as an even number of 2-cycles by simply collecting the 2-cycles
+ for 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y^{-1}$
+\end_inset
+
+, because 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y^{-1}$
+\end_inset
+
+ can both be written as evenly many 2-cycles, and the sum of even numbers
+ is even.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The set of odd permuations is not a subgroup of 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose it were.
+ Then it would have an identity.
+ But the identity permutation is even (the product of zero 2-cycles).
+ Contradiction!
+\end_layout
+
+\begin_layout Standard
+Alternatively, suppose it were.
+ Then it would be closed under composition.
+ But the composition of an even number of odd permutations is odd (because
+ a composition can be written by collecting the cycles, and the sum of two
+ odd numbers is an even number).
+ Contradiction!
+\end_layout
+
+\end_body
+\end_document
