@@ -1,0 +1,762 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #5
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+2 March 2025
+\end_layout
+
+\begin_layout Abstract
+Homework exercises for Prof.
+ Lai's 
+\begin_inset Quotes eld
+\end_inset
+
+Theory of Functions of a Complex Variable.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dudx}{\frac{\partial u}{\partial x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dudy}{\frac{\partial u}{\partial y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dvdx}{\frac{\partial v}{\partial x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dvdy}{\frac{\partial v}{\partial y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+.
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\C}{\mathbb{C}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+ 
+\series bold
+(Ch.
+ 2 #9)
+\series default
+.
+ [TODO]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+ 
+\series bold
+(Ch.
+ 2 #13)
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is analytic, and that for all 
+\begin_inset Formula $z_{0}\in\C$
+\end_inset
+
+, there exists at least one 
+\begin_inset Formula $n$
+\end_inset
+
+ such that 
+\begin_inset Formula $c_{n}=0$
+\end_inset
+
+ in the power series 
+\begin_inset Formula $f(z)=\sum_{n=0}^{\infty}c_{n}(z-z_{0})^{n}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $f$
+\end_inset
+
+ is a polynomial.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By the nature of power series, 
+\begin_inset Formula $c_{n}=\frac{f^{(n)}(z_{0})}{n!}$
+\end_inset
+
+ implies 
+\begin_inset Formula $c_{n}n!=f^{(n)}(z_{0})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Being a polynomial means that there exists 
+\begin_inset Formula $N\in\N$
+\end_inset
+
+ (the degree) such that for all 
+\begin_inset Formula $n>N$
+\end_inset
+
+, 
+\begin_inset Formula $c_{n}=0$
+\end_inset
+
+, which is to say 
+\begin_inset Formula $f^{(n)}(z_{0})=0$
+\end_inset
+
+.
+ Not-being-a-polynomial means that there are arbitrarily large 
+\begin_inset Formula $n$
+\end_inset
+
+ such that 
+\begin_inset Formula $c_{n}\ne0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A power series is not a polynomial if [TODO]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is entire.
+ if there exists 
+\begin_inset Formula $A\in\C$
+\end_inset
+
+ such that 
+\begin_inset Formula $|f(z)|\le A(1+|z|^{n})$
+\end_inset
+
+, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is a polynomial of degree 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We contemplate the Cauchy inequalities 
+\begin_inset Formula $|f^{(k)}(z_{0})|\le\frac{k!\sup_{z\in C}|f(z)|}{R^{k}}$
+\end_inset
+
+ (for a circle 
+\begin_inset Formula $C$
+\end_inset
+
+ of radius 
+\begin_inset Formula $R$
+\end_inset
+
+ centered at 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+).
+ For all 
+\begin_inset Formula $k$
+\end_inset
+
+, we have 
+\begin_inset Formula $|f^{(k)}(z_{0})|\le\frac{k!A(1+|z|^{n})}{|z-z_{0}|^{k}}$
+\end_inset
+
+.
+ We consider 
+\begin_inset Formula $k:=n+1$
+\end_inset
+
+, for which 
+\begin_inset Formula $|f^{(n+1)}(z_{0})|\le\frac{(n+1)!A(1+|z|^{n})}{|z-z_{0}|^{n+1}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+[TODO: the basic idea here is clearly that the 
+\begin_inset Formula $f^{(n+1)}$
+\end_inset
+
+ and higher coefficients in the power series are going to have to be zero;
+ the challenge is, how do I rigorously infer that from this inequality?
+ Yeah, the 
+\begin_inset Formula $n+1$
+\end_inset
+
+ power in the denominator dominates the 
+\begin_inset Formula $n$
+\end_inset
+
+ power in the numerator, but that's only 
+\begin_inset Quotes eld
+\end_inset
+
+for large 
+\begin_inset Formula $|z|$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+; we're missing an extra step to show that the derivative really does vanish.]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\series bold
+i
+\series default
+.
+ 
+\begin_inset Formula $f=\sin(2\pi z)$
+\end_inset
+
+ or 
+\begin_inset Formula $f=\cos(2\pi z)$
+\end_inset
+
+ suffice.
+ We know that 
+\begin_inset Formula $\sin(az)$
+\end_inset
+
+ and 
+\begin_inset Formula $\cos(az)$
+\end_inset
+
+ are periodic with period 
+\begin_inset Formula $\frac{2\pi}{a}$
+\end_inset
+
+ on 
+\begin_inset Formula $\R$
+\end_inset
+
+ (
+\emph on
+i.e
+\emph default
+., 
+\begin_inset Formula $\sin(2\pi x)=\sin(2\pi x+1)$
+\end_inset
+
+ and similarly for cosine).
+\end_layout
+
+\begin_layout Standard
+We need to show that this property still holds for 
+\begin_inset Formula $z\notin\R$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We appeal to the identities 
+\begin_inset Formula $\cos z=\frac{\exp(iz)+\exp(-iz)}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sin z=\frac{\exp(iz)-\exp(-iz)}{2i}$
+\end_inset
+
+, composed with the de Moivre identity 
+\begin_inset Formula $\exp(iz)=\cos z+i\sin z$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then (for cosine):
+\begin_inset Formula 
+\[
+\cos(2\pi(z+1))=\frac{\exp(2\pi i(z+1))+\exp(-2\pi i(z+1))}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But then we can invoke periodicity:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{\cos\left(2\pi z\cancel{+2\pi}\right)+i\sin(2\pi z\cancel{+2\pi})+\cos(-(2\pi z\cancel{+2\pi}))+i\sin(-(2\pi z+\cancel{2\pi}))}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And the fact that sine is odd and cosine is even:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{2\cos\left(2\pi z\right)\cancel{+i\sin(2\pi z)-i\sin(2\pi z)}}{2}=\cos(2\pi z)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And similarly for sine:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sin(2\pi(z+1))=\frac{\exp(2\pi i(z+1))-\exp(-2\pi i(z+1))}{2i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{\cos(2\pi z\cancel{+2\pi}))+i\sin(2\pi z\cancel{+2\pi}))-\cos(-2\pi z\cancel{+2\pi})-i\sin(-2\pi z\cancel{+2\pi}))}{2i}=\frac{\cancel{\cos(2\pi z)-\cos(2\pi z)}+\cancel{2i}\sin(2\pi z)}{\cancel{2i}}=\sin(2\pi z)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+ii
+\series default
+.
+ 
+\begin_inset Formula $f=\sinh(2\pi z)$
+\end_inset
+
+ and 
+\begin_inset Formula $f=\cosh(2\pi z)$
+\end_inset
+
+ suffice, by a simpler but spiritually similar calculation as part i.
+ For hyperbolic cosine:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cosh(2\pi(z+i))=\frac{\exp(2\pi(z+i))+\exp(2\pi(z+i)}{2}=\frac{\exp(2\pi z+2\pi i)+\exp(2\pi z+2\pi i)}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\exp(2\pi z)\cancelto{1}{\exp(2\pi i)}+\exp(2\pi z)\cancelto{1}{\exp(2\pi i)}}{2}=\cosh(2\pi z)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And for hyperbolic sine, it's the same thing but with a different sign on
+ the second term in the numerator: 
+\begin_inset Formula $\sinh(2\pi(z+i))=\frac{\exp(2\pi(z+i))-\exp(2\pi(z+i)}{2}=\frac{\exp(2\pi z+2\pi i)-\exp(2\pi z+2\pi i)}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{\exp(2\pi z)\cancelto{1}{\exp(2\pi i)}-\exp(2\pi z)\cancelto{1}{\exp(2\pi i)}}{2}=\sinh(2\pi z)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+iii
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is an entire function such that 
+\begin_inset Formula $f(z)=f(z+1)=f(z+i)$
+\end_inset
+
+, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is constant.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [TODO: the key idea here is probably going to be that double-periodicity
+ implies being bounded on the square, therefore constant by Liouville's
+ theorem?]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ 
+\series bold
+i
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If the real part of an entire function 
+\begin_inset Formula $f$
+\end_inset
+
+ is bounded, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is constant.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose 
+\begin_inset Formula $f:=u(x,y)+iv(x,y)$
+\end_inset
+
+ is entire, and there exists 
+\begin_inset Formula $M$
+\end_inset
+
+ such that 
+\begin_inset Formula $|u(x,y)|\le M$
+\end_inset
+
+.
+ We contemplate that 
+\begin_inset Formula $\exp(f)=\exp(u(x,y)+iv(x,y))=\exp(u(x,y))\exp(iv(x,y))$
+\end_inset
+
+.
+ But because 
+\begin_inset Formula $|\exp(iv)|=1$
+\end_inset
+
+, this implies that 
+\begin_inset Formula $|\exp(f)|=|\exp(u)|\le\exp(M)$
+\end_inset
+
+.
+ The composition of entire functions is entire, so 
+\begin_inset Formula $\exp(f)$
+\end_inset
+
+ is entire.
+ But if 
+\begin_inset Formula $\exp(f)$
+\end_inset
+
+ is both entire and bounded, then by Liouville's theorem, 
+\begin_inset Formula $\exp(f(x,y))$
+\end_inset
+
+ is constant, which implies that 
+\begin_inset Formula $f$
+\end_inset
+
+ itself is constant.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+ii
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If the imaginary part of an entire function 
+\begin_inset Formula $f$
+\end_inset
+
+ is bounded, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is constant.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose 
+\begin_inset Formula $f:=u(x,y)+iv(x,y)$
+\end_inset
+
+ is entire, and there exists 
+\begin_inset Formula $M$
+\end_inset
+
+ such that 
+\begin_inset Formula $|v(x,y)|\le M$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
