@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-2 March 2025
+5 March 2025
 \end_layout
 
 \begin_layout Abstract
@@ -175,7 +175,170 @@ Theory of Functions of a Complex Variable.
  2 #9)
 \series default
 .
- [TODO]
+ 
+\emph on
+Proposition
+\emph default
+.
+ Let 
+\begin_inset Formula $\Omega\subseteq\C$
+\end_inset
+
+ be open and bounded, and 
+\begin_inset Formula $\varphi:\Omega\rightarrow\Omega$
+\end_inset
+
+ a holomorphic function.
+ If there exists a 
+\begin_inset Formula $z_{0}\in\Omega$
+\end_inset
+
+ such that 
+\begin_inset Formula $\varphi(z_{0})=z_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\varphi'(z_{0})=1$
+\end_inset
+
+, then 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is linear.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose without loss of generality that 
+\begin_inset Formula $z_{0}=0$
+\end_inset
+
+.
+ (That's OK because we could define 
+\begin_inset Formula $\psi(z):=\varphi(z-z_{0})$
+\end_inset
+
+, so that 
+\begin_inset Formula $\varphi(z_{0})=\psi(0)$
+\end_inset
+
+; if 
+\begin_inset Formula $\psi$
+\end_inset
+
+ were linear, 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ would be, too.)
+\end_layout
+
+\begin_layout Standard
+Approximate 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ near 0 as 
+\begin_inset Formula $\varphi(z)=z+a_{n}z^{n}+O(z^{n+1})$
+\end_inset
+
+.
+ (Where the coëfficient on the linear term is 1 because 
+\begin_inset Formula $\frac{\varphi'(z_{0})}{1!}=\frac{1}{1}=1$
+\end_inset
+
+, and 
+\begin_inset Formula $n$
+\end_inset
+
+ is the next-highest power with a nonzero coëfficient.)
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula 
+\[
+\varphi^{2}(z):=\varphi(\varphi(z))=z+a_{n}z^{n}+O(z^{n+1})+a_{n}\left(z+a_{n}z^{n}+O(z^{n+1})\right)^{n}+O(z^{n+1})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=z+a_{n}z^{n}+O(z^{n+1})+a_{n}\left(z^{n}+\underbrace{O(z^{n+1})}_{\text{higher-order terms }}\right)+O(z^{n+1})=z+2a_{n}z^{n}+O(z^{n+1})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It follows inductively that 
+\begin_inset Formula $\varphi^{k}(z)=z+ka_{n}z^{n}+O(z^{n+1})$
+\end_inset
+
+.
+ Note that our codomain 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is bounded; let 
+\begin_inset Formula $R$
+\end_inset
+
+ be a bound on 
+\begin_inset Formula $|z|$
+\end_inset
+
+ for 
+\begin_inset Formula $z\in\Omega$
+\end_inset
+
+.
+ By the Cauchy inequalities, 
+\begin_inset Formula $ka_{n}=\frac{|\left(\varphi^{k}\right)^{(n)}(z_{0})|}{n!}\le\frac{\sup_{z\in\Omega}|\varphi^{k}(z)|}{R^{n}}$
+\end_inset
+
+, but we had assumed that 
+\begin_inset Formula $a_{n}\ne0$
+\end_inset
+
+, which would make the left side diverge as 
+\begin_inset Formula $k\rightarrow\infty$
+\end_inset
+
+.
+ Contradiction!
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude Sonnet 3.7 for explaining the intent of the 
+\begin_inset Formula $\varphi(z)=z+a_{n}z^{n}+O(z^{n+1})$
+\end_inset
+
+ approximation, stressing the boundedness of the codomain, and explaining
+ the role of the Cauchy inequalities.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -228,49 +391,53 @@ Theorem
 Proof
 \emph default
 .
- By the nature of power series, 
-\begin_inset Formula $c_{n}=\frac{f^{(n)}(z_{0})}{n!}$
+ Let 
+\begin_inset Formula $A_{k}:=\{z\in\C:f^{(k)}(z)=0\}$
 \end_inset
 
- implies 
-\begin_inset Formula $c_{n}n!=f^{(n)}(z_{0})$
+, the set of points for which the 
+\emph on
+k
+\emph default
+th derivative is zero.
+ Now 
+\begin_inset Formula $\C=\bigcup_{k}A_{k}$
 \end_inset
 
-.
- 
-\end_layout
-
-\begin_layout Standard
-Being a polynomial means that there exists 
-\begin_inset Formula $N\in\N$
-\end_inset
-
- (the degree) such that for all 
-\begin_inset Formula $n>N$
-\end_inset
-
-, 
-\begin_inset Formula $c_{n}=0$
-\end_inset
-
-, which is to say 
-\begin_inset Formula $f^{(n)}(z_{0})=0$
-\end_inset
-
-.
- Not-being-a-polynomial means that there are arbitrarily large 
+, so there exists some 
 \begin_inset Formula $n$
 \end_inset
 
- such that 
-\begin_inset Formula $c_{n}\ne0$
+ for which 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ must have uncountably many points, and therefore a limit point.
+ But by the identity theorem, a function which is zero on a sequence of
+ points and their limit is the zero function.
+ If 
+\begin_inset Formula $f^{(n)}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is a polynomial of degree at most 
+\begin_inset Formula $n-1$
 \end_inset
 
 .
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Thanks to Claude Sonnet 3.7 for walking me through the countability argument.
 \end_layout
 
-\begin_layout Standard
-A power series is not a polynomial if [TODO]
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -293,7 +460,7 @@ Theorem
 \end_inset
 
  is entire.
- if there exists 
+ If there exists 
 \begin_inset Formula $A\in\C$
 \end_inset
 
@@ -335,8 +502,16 @@ Proof
 \end_inset
 
 ).
- For all 
+ 
+\end_layout
+
+\begin_layout Standard
+For all 
 \begin_inset Formula $k$
+\end_inset
+
+ and any 
+\begin_inset Formula $z$
 \end_inset
 
 , we have 
@@ -353,24 +528,35 @@ Proof
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-[TODO: the basic idea here is clearly that the 
-\begin_inset Formula $f^{(n+1)}$
+ But 
+\begin_inset Formula $\lim_{|z|\rightarrow\infty}\frac{(n+1)!A(1+|z|^{n})}{|z-z_{0}|^{n+1}}=0$
 \end_inset
 
- and higher coefficients in the power series are going to have to be zero;
- the challenge is, how do I rigorously infer that from this inequality?
- Yeah, the 
+, because the degree 
 \begin_inset Formula $n+1$
 \end_inset
 
- power in the denominator dominates the 
+ of the denominator dominates the degree 
 \begin_inset Formula $n$
 \end_inset
 
- power in the numerator, but that's only 
+ of the numerator.
+ Because the inequality holds for any 
+\begin_inset Formula $z$
+\end_inset
+
+, it follows that 
+\begin_inset Formula $|f^{(n+1)}(z_{0})|$
+\end_inset
+
+ must be zero
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Dr.
+ Jonah Sinick for discussion; it had initially not been obvious to me that
+ the inequality 
 \begin_inset Quotes eld
 \end_inset
 
@@ -382,7 +568,54 @@ for large
 \begin_inset Quotes erd
 \end_inset
 
-; we're missing an extra step to show that the derivative really does vanish.]
+ sufficed to establish the result.
+\end_layout
+
+\end_inset
+
+ —which implies that the coefficients 
+\begin_inset Formula $\frac{f^{(k)}(z_{0})}{k!}$
+\end_inset
+
+ for 
+\begin_inset Formula $k\ge n+1$
+\end_inset
+
+ in the power series expansion of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+ are zero.
+ Because holomorphic functions are analytic, 
+\begin_inset Formula $f$
+\end_inset
+
+ is equal to its power series expansion, which we've just shown has no term
+ of power 
+\begin_inset Formula $n+1$
+\end_inset
+
+ or greater; 
+\emph on
+i.e
+\emph default
+., that 
+\begin_inset Formula $f$
+\end_inset
+
+ is a polynomial of degree 
+\begin_inset Formula $n$
+\end_inset
+
+, which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -622,9 +855,49 @@ Proposition
 Proof
 \emph default
 .
- [TODO: the key idea here is probably going to be that double-periodicity
- implies being bounded on the square, therefore constant by Liouville's
- theorem?]
+ 
+\begin_inset Formula $f(z)$
+\end_inset
+
+ is bounded on the closed unit square 
+\begin_inset Formula $x+iy$
+\end_inset
+
+ for 
+\begin_inset Formula $x,y\in[0,1]$
+\end_inset
+
+.
+ The fact that 
+\begin_inset Formula $f$
+\end_inset
+
+ is entire implies that 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous.
+ By the extreme value theorem, a continuous function on a compact domain
+ is bounded.
+ The behavior of 
+\begin_inset Formula $f$
+\end_inset
+
+ is wholly determined its behavior on the unit square: 
+\begin_inset Formula $f(x+iy)=f(x-\left\lfloor x\right\rfloor +i(y-\left\lfloor y\right\rfloor ))$
+\end_inset
+
+.
+ In particular, 
+\begin_inset Formula $f$
+\end_inset
+
+ being bounded on the unit square implies that 
+\begin_inset Formula $f$
+\end_inset
+
+ is bounded everywhere.
+ But by Liouville's theorem, a bounded entire function is constant.
 \begin_inset Newline newline
 \end_inset
 
@@ -756,6 +1029,35 @@ Proof
 \end_inset
 
 .
+ Consider 
+\begin_inset Formula $if=iu(x,y)+i^{2}v(x,y)=-v(x,y)+iu(x,y)$
+\end_inset
+
+.
+ Then the same argument as above applies, so 
+\begin_inset Formula $if$
+\end_inset
+
+ is constant.
+ But if 
+\begin_inset Formula $if=c$
+\end_inset
+
+, then 
+\begin_inset Formula $f=\frac{c}{i}$
+\end_inset
+
+ and is also constant.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+With embarrassment, thanks to Claude Sonnet 3.7 for a hint.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
