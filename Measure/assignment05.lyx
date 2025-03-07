@@ -432,6 +432,10 @@ Calculation
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -727,7 +731,7 @@ nk & n>k\\
 \end_inset
 
  converges pointwise to 
-\begin_inset Formula $c$
+\begin_inset Formula $\frac{1}{2}$
 \end_inset
 
  but not uniformly.
@@ -850,9 +854,9 @@ infinitely high
 \begin_layout Standard
 So I carefully engineered 
 \begin_inset Formula $f_{k}(x):[0,1]\rightarrow\R=\begin{cases}
-0 & [0,\,\frac{1}{2}-\frac{1}{k})\\
-k^{2}(x-\left(\frac{1}{2}-\frac{1}{k}\right)) & [\frac{1}{2}-\frac{1}{k},\frac{1}{2}]\\
-\frac{1}{x-(\frac{1}{2}-\frac{1}{k})} & (\frac{1}{2},\,1]
+0 & x\in[0,\,\frac{1}{2}-\frac{1}{k})\\
+k^{2}(x-\left(\frac{1}{2}-\frac{1}{k}\right)) & x\in[\frac{1}{2}-\frac{1}{k},\frac{1}{2}]\\
+\frac{1}{x-(\frac{1}{2}-\frac{1}{k})} & x\in(\frac{1}{2},\,1]
 \end{cases}$
 \end_inset
 
@@ -910,6 +914,34 @@ coming down
 \end_inset
 
 , which doesn't converge.
+\end_layout
+
+\begin_layout Standard
+Later, Jack Hou sketched the correct approach over Discord, stated in the
+ following
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $f_{k}(x):[0,1]\rightarrow\R=\begin{cases}
+k^{2}x & x\in[0,\frac{1}{k}]\\
+\frac{1}{x} & x\in(\frac{1}{k},1]
+\end{cases}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $f(x)=\begin{cases}
+0 & x=0\\
+\frac{1}{x} & \text{else}
+\end{cases}$
+\end_inset
+
+.
 \end_layout
 
 \end_body
