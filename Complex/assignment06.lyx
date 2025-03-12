@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-9 March 2025
+11 March 2025
 \end_layout
 
 \begin_layout Abstract
@@ -102,6 +102,30 @@ Homework exercises for Prof.
 
 Theory of Functions of a Complex Variable.
 \begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ddx}{\frac{\partial}{\partial x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ddy}{\frac{\partial}{\partial y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ddz}{\frac{\partial}{\partial z}}
 \end_inset
 
 
@@ -172,7 +196,7 @@ Theory of Functions of a Complex Variable.
  
 \series bold
 (Ch.
- 2 #7)
+ 2 Exercise 7)
 \series default
 .
  
@@ -202,17 +226,84 @@ Proposition
 Proof
 \emph default
 .
- By the Cauchy inequalities, 
-\begin_inset Formula $|f'(0)|\le\sup_{z\in\overline{B_{1}}(0)}|f(z)|$
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Ophir Horovitz for pointing out that the Stein and Shakarchi text
+ had a hint which I had overlooked, and guidance on how to apply it, and
+ Claude Sonnet 3.5 for further guidance on how to related the Cauchy integral
+ formula integral to the desired result.
+\end_layout
+
 \end_inset
 
-.
+ By Cauchy's integral formula, 
+\begin_inset Formula $f'(z)=\frac{1}{2\pi i}\oint\frac{f(Z)}{(Z-z)^{2}}dZ$
+\end_inset
+
+, so 
+\begin_inset Formula $f'(0)=\frac{1}{2\pi i}\oint\frac{f(Z)}{Z^{2}}dZ$
+\end_inset
+
  
 \end_layout
 
 \begin_layout Standard
-By the reverse triangle inequality, 
-\begin_inset Formula $\sup_{z,w\in\overline{B_{1}}(0)}|f(z)-f(w)|\ge\sup_{z,w\in\overline{B_{1}}(0)}|f(z)|-|f(w)|$
+Let 
+\begin_inset Formula $g(z):=f(-z)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $g'(z)=-f'(-z)$
+\end_inset
+
+.
+ Also, 
+\begin_inset Formula $g'(z)=\frac{1}{2\pi i}\oint\frac{g(Z)}{(Z-z)^{2}}dZ=\frac{1}{2\pi i}\oint\frac{f(-Z)}{(Z-z)^{2}}dZ$
+\end_inset
+
+.
+ So we also have 
+\begin_inset Formula $g'(0)=-f'(-0)=\frac{1}{2\pi i}\oint\frac{f(-Z)}{Z^{2}}dZ$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Thus 
+\begin_inset Formula $2f'(0)=\frac{1}{2\pi i}\oint\frac{f(Z)-f(-Z)}{Z^{2}}dZ$
+\end_inset
+
+.
+ Applying the estimation lemma around a unit-circle contour, we get 
+\begin_inset Formula 
+\[
+2|f'(0)|\le\left|\frac{1}{2\pi i}\right|\sup_{|Z|=1}\left|\frac{f(Z)-f(-Z)}{Z^{2}}\right|\cdot2\pi=\sup_{|Z|=1}\left|f(Z)-f(-Z)\right|\le\sup_{z,w\in\overline{B_{1}}(0)}|f(z)-f(w)|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Formula $f$
+\end_inset
+
+ is linear,
+\begin_inset Formula 
+\[
+\sup_{z,w\in\overline{B_{1}}(0)}|f(z)-f(w)|=\sup_{z,w\in\overline{B_{1}}(0)}|az\cancel{+b}-aw\cancel{-b}|=\sup_{z,w\in\overline{B_{1}}(0)}a|z-w|=2a=2|f'(0)|
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
 \end_inset
 
 
@@ -226,7 +317,7 @@ By the reverse triangle inequality,
  
 \series bold
 (Ch.
- 2 #12a)
+ 2 Exercise 12a)
 \series default
 .
  
@@ -256,15 +347,32 @@ Proposition
 Proof
 \emph default
 .
- The C–R equations, 
-\begin_inset Formula $\dudx=\dvdy$
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude Sonnet 3.5 for guidance.
+\end_layout
+
 \end_inset
 
- and 
-\begin_inset Formula $\dudy=-\dvdx$
+ 
+\begin_inset Formula 
+\[
+2\ddz u=2\cdot\frac{1}{2}\left(\ddx u-i\ddy u\right)=\dudx--i\dvdx=\dudx+i\dvdx=f'
+\]
+
 \end_inset
 
-.
+
+\end_layout
+
+\begin_layout Standard
+[
+\series bold
+TODO
+\series default
+: finish]
 \end_layout
 
 \begin_layout Standard
@@ -272,7 +380,119 @@ Proof
 \series bold
 3
 \series default
+ 
+\series bold
+(Ch.
+ 2 Problem 1b diluted)
+\series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $f(z)=\sum_{j=1}^{\infty}2^{-\alpha j}z^{2^{j}}$
+\end_inset
+
+ defines a continuous function on the unit disk, but cannot be analytically
+ continued outside of the unit disk.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to OpenAI o3-mini-high for hints: pointing out that 
+\begin_inset Formula $2^{-\alpha j}$
+\end_inset
+
+ is a bounding geometric series, and suggesting to look at a point on the
+ circle and separate real and imaginary parts.
+\end_layout
+
+\end_inset
+
+ Inside the unit disk, 
+\begin_inset Formula $|2^{-\alpha j}z^{2^{j}}|<2^{-\alpha j}$
+\end_inset
+
+ (because for 
+\begin_inset Formula $|z|<1$
+\end_inset
+
+ and all 
+\begin_inset Formula $m$
+\end_inset
+
+, 
+\begin_inset Formula $|z|^{m}<1$
+\end_inset
+
+).
+ But 
+\begin_inset Formula $\sum_{j=1}^{\infty}2^{-\alpha j}$
+\end_inset
+
+ is a convergent geometric series (with ratio 
+\begin_inset Formula $\frac{1}{2^{\alpha}}$
+\end_inset
+
+), so we can invoke the Weierstrass 
+\begin_inset Formula $M$
+\end_inset
+
+-test with 
+\begin_inset Formula $M_{j}:=2^{-\alpha j}$
+\end_inset
+
+ to conclude that 
+\begin_inset Formula $\sum_{j=1}^{\infty}2^{-\alpha j}z^{2^{j}}$
+\end_inset
+
+ is uniformly and absolutely convergent inside the unit disk.
+ As a power series, it is continuous.
+\end_layout
+
+\begin_layout Standard
+On the unit circle, we have 
+\begin_inset Formula $f(z)=\sum2^{-\alpha n}\exp(2^{n}i\theta)$
+\end_inset
+
+.
+ Applying the de Moivre identity, those terms are 
+\begin_inset Formula $\underbrace{2^{-\alpha n}\cos(2^{n}\theta)}_{u}+i\underbrace{2^{-\alpha n}\sin(2^{n}\theta)}_{v}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+ are known to be non-differentiable, so the (polar) Cauchy–Reimann equations
+ 
+\begin_inset Formula $\frac{\partial u}{\partial r}=\frac{1}{r}\frac{\partial v}{\partial\theta}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{\partial v}{\partial r}=-\frac{1}{r}\frac{\partial u}{\partial\theta}$
+\end_inset
+
+ cannot be satisfied.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -286,6 +506,303 @@ Proof
  2 Problem 2 diluted)
 \series default
 .
+ 
+\series bold
+a
+\series default
+\emph on
+.
+ Proposition
+\emph default
+.
+ The radius of convergence of 
+\begin_inset Formula $F(z)=\sum_{k=1}^{\infty}d(k)z^{k}$
+\end_inset
+
+ (where 
+\begin_inset Formula $d(k)$
+\end_inset
+
+ is the number of divisors of 
+\begin_inset Formula $k$
+\end_inset
+
+) is 1.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We apply the root test: 
+\begin_inset Formula 
+\[
+\limsup_{k\rightarrow\infty}|d(k)|^{\frac{1}{k}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $1\le d(k)\le k$
+\end_inset
+
+, we can apply the squeeze theorem
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Ophir Horovitz for this insight.
+\end_layout
+
+\end_inset
+
+: 
+\begin_inset Formula $\limsup|1|^{\frac{1}{k}}\le\limsup_{k\rightarrow\infty}|d(k)|^{\frac{1}{k}}\le\limsup_{k\rightarrow\infty}|k|^{\frac{1}{k}}$
+\end_inset
+
+ implying that the limit is 1.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula 
+\[
+\sum_{n=1}^{\infty}d(n)z^{n}=\sum_{n=1}^{\infty}\frac{z^{n}}{1-z^{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude Sonnet 3.7 for guidance.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\sum_{n=1}^{\infty}\frac{z^{n}}{1-z^{n}}=\sum_{n=1}^{\infty}\underbrace{\frac{1}{1-z^{n}}}_{\text{geo. series w/ratio }z^{n}}z^{n}=\sum_{n=1}^{\infty}\sum_{k=0}^{\infty}z^{kn}z^{n}=\sum_{n=1}^{\infty}\sum_{k=0}^{\infty}z^{n(k+1)}=\sum_{n=1}^{\infty}\sum_{k=1}^{\infty}z^{nk}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But then for every 
+\begin_inset Formula $m\in\N$
+\end_inset
+
+, 
+\begin_inset Formula $z^{m}$
+\end_inset
+
+ appears in the double sum once for every 
+\begin_inset Formula $(n,k)$
+\end_inset
+
+ pair such that 
+\begin_inset Formula $nk=m$
+\end_inset
+
+, so we indeed have 
+\begin_inset Formula $\sum_{n=1}^{\infty}d(n)z^{n}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $|z|<1$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+-\log(1-z)=\sum_{n=1}^{\infty}\frac{z^{n}}{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We can expand a power series for the logarithm at 
+\begin_inset Formula $z=1$
+\end_inset
+
+ (it's awkward to do at 
+\begin_inset Formula $z=0$
+\end_inset
+
+ because of the branch cut):
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This is pointed out in Tristan Needham's 
+\emph on
+Visual Complex Analysis
+\emph default
+, p.
+ 100–101,113.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\log(1+z)=\sum_{k=1}^{\infty}(-1)^{k+1}\frac{z^{k}}{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then multiplying by 
+\begin_inset Formula $-1$
+\end_inset
+
+ shifts the negative signs onto the odd terms:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-\log(1+z)=\sum_{k=1}^{\infty}(-1)^{k+2}\frac{z^{k}}{k}=\sum_{k=1}^{\infty}(-1)^{k}\frac{z^{k}}{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then substituting 
+\begin_inset Formula $-z$
+\end_inset
+
+ for 
+\begin_inset Formula $z$
+\end_inset
+
+ makes them go away: 
+\begin_inset Formula 
+\[
+-\log(1-z)=\sum_{k=1}^{\infty}(-1)^{k}\frac{(-z)^{k}}{k}=\sum_{k=1}^{\infty}\cancel{(-1)^{k}(-1)^{k}}\frac{z^{k}}{k}=\sum_{k=1}^{\infty}\frac{z^{k}}{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $r\in(0,1)$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+|F(r)|\ge\frac{1}{1-r}\log\left(\frac{1}{1-r}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+: finish]
 \end_layout
 
 \end_body

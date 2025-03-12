@@ -86,7 +86,7 @@ Assignment #6
 \end_layout
 
 \begin_layout Date
-6 March 2025
+10 March 2025
 \end_layout
 
 \begin_layout Abstract
@@ -120,7 +120,7 @@ Modern Algebra I
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\ZnZx}[1]{\left(\Z/#1\Z\right)^{\times}}
+\newcommand{\ZnZx}[1]{\left(\mathbb{Z}/#1\mathbb{Z}\right)^{\times}}
 \end_inset
 
 
@@ -132,6 +132,58 @@ Modern Algebra I
 1
 \series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ The left cosets of 
+\begin_inset Formula $\left\langle 11\right\rangle $
+\end_inset
+
+ in 
+\begin_inset Formula $\ZnZx{30}$
+\end_inset
+
+ are 
+\begin_inset Formula $\{\{1,11\},\,\{7,17\},\,\{13,23\},\,\{19,29\}\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $11^{2}=121\cong1\mod30$
+\end_inset
+
+, so 
+\begin_inset Formula $\left\langle 11\right\rangle =\{1,11\}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $7\cdot11\mod30\cong17$
+\end_inset
+
+, 
+\begin_inset Formula $13\cdot11\mod30\cong23$
+\end_inset
+
+, and 
+\begin_inset Formula $19\cdot11\cong29\mod30$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -140,6 +192,52 @@ Modern Algebra I
 2
 \series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ In a group of order 15, the left cosets of 
+\begin_inset Formula $a^{5}$
+\end_inset
+
+ are
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{\{a,a^{6},a^{11}\},\{a^{2},a^{7},a^{12}\},\{a^{3},a^{8},a^{13}\},\{a^{4},a^{9},a^{14}\},\{1,a^{5},\,a^{10}\}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\left\langle a^{5}\right\rangle =\{1,a^{5},\,a^{10}\}$
+\end_inset
+
+, then we compute 
+\begin_inset Formula $a$
+\end_inset
+
+ times each of those things and collect them as a coset, then 
+\begin_inset Formula $a^{2},$
+\end_inset
+
+
+\emph on
+&c
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -322,6 +420,15 @@ Proof (lemma)
 \begin_layout Standard
 
 \emph on
+Comment on Lemma
+\emph default
+.
+ Gallian also calls this Corollary 3 to Lagrange's theorem.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
 Proof
 \emph default
  
@@ -329,7 +436,7 @@ Proof
 (proposition)
 \emph default
 .
- By Lagrange's theorem, any subgroup must have order 
+ By Lagrange's theorem, any proper subgroup must have order 
 \begin_inset Formula $p$
 \end_inset
 
@@ -338,7 +445,7 @@ Proof
 \end_inset
 
 .
- [TODO ...]
+ By the lemma, those would be cyclic.
 \begin_inset Newline newline
 \end_inset
 
@@ -350,6 +457,66 @@ Proof
 \series bold
 5
 \series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Every group of order 16 contains an element of order 2.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By Lagrange's theorem, the elements of a group of order 16 must have order
+ 1, 2, 4, 8, or 16.
+ Only the identity has order 1.
+ For non-identity element 
+\begin_inset Formula $a$
+\end_inset
+
+, if 
+\begin_inset Formula $|a|=2$
+\end_inset
+
+, that's 
+\emph on
+quod erat demonstrandum
+\emph default
+.
+ But if 
+\begin_inset Formula $|a|=n$
+\end_inset
+
+ for 
+\begin_inset Formula $n\in\{4,\,8,\,16\}$
+\end_inset
+
+, that means 
+\begin_inset Formula $a^{n}=1$
+\end_inset
+
+, which implies 
+\begin_inset Formula $a^{\frac{n}{2}}\cdot a^{\frac{n}{2}}=1$
+\end_inset
+
+ (where 
+\begin_inset Formula $\frac{n}{2}$
+\end_inset
+
+ always makes sense because 4, 8, and 16 are even), which is to say that
+ 
+\begin_inset Formula $|a^{\frac{n}{2}}|=2$
+\end_inset
+
+, which is 
+\emph on
+quod erat demonstrandum
+\emph default
 .
 \end_layout
 
