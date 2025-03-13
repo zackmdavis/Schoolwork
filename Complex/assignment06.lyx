@@ -347,32 +347,7 @@ Proposition
 Proof
 \emph default
 .
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Thanks to Claude Sonnet 3.5 for guidance.
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Formula 
-\[
-2\ddz u=2\cdot\frac{1}{2}\left(\ddx u-i\ddy u\right)=\dudx--i\dvdx=\dudx+i\dvdx=f'
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-[
-\series bold
-TODO
-\series default
-: finish]
+ [TODO]
 \end_layout
 
 \begin_layout Standard
@@ -798,11 +773,65 @@ Proposition
 Proof
 \emph default
 .
- [
-\series bold
-TODO
-\series default
-: finish]
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to OpenAI o3-mini-high for detailed guidance.
+\end_layout
+
+\end_inset
+
+ It turns out that we can bound each term in 
+\begin_inset Formula $F(r)=\sum_{n=1}^{\infty}\frac{r^{n}}{1-r^{n}}$
+\end_inset
+
+ as follows.
+\end_layout
+
+\begin_layout Standard
+A standard result for finite geometric series states that:
+\begin_inset Formula 
+\[
+\frac{1-r^{n}}{1-r}=\sum_{k=0}^{n-1}r^{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $r\in(0,1)$
+\end_inset
+
+, 
+\begin_inset Formula $\sum_{k=0}^{n-1}r^{k}<n$
+\end_inset
+
+, so we have 
+\begin_inset Formula $1-r^{n}<n(1-r)$
+\end_inset
+
+ and (taking the reciprocal) 
+\begin_inset Formula $\frac{1}{1-r^{n}}>\frac{1}{n(1-r)}$
+\end_inset
+
+ and (multiplying by 
+\begin_inset Formula $r^{n}$
+\end_inset
+
+) 
+\begin_inset Formula $\frac{r^{n}}{1-r^{n}}>\frac{r^{n}}{n(1-r)}$
+\end_inset
+
+.
+ But the left hand side is an individual term of 
+\begin_inset Formula $F(r)$
+\end_inset
+
+, what luck!
 \end_layout
 
 \end_body
