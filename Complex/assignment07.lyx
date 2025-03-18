@@ -1,0 +1,419 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #7
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+20 March 2025
+\end_layout
+
+\begin_layout Abstract
+Homework exercises for Prof.
+ Lai's 
+\begin_inset Quotes eld
+\end_inset
+
+Theory of Functions of a Complex Variable.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ddx}{\frac{\partial}{\partial x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ddy}{\frac{\partial}{\partial y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ddz}{\frac{\partial}{\partial z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dudx}{\frac{\partial u}{\partial x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dudy}{\frac{\partial u}{\partial y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dvdx}{\frac{\partial v}{\partial x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dvdy}{\frac{\partial v}{\partial y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+.
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\C}{\mathbb{C}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+\begin_inset Formula $\int_{0}^{\infty}\frac{1}{1+x^{3}}\ dx=\frac{2\pi}{3\sqrt{3}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\frac{1}{1+z^{3}}$
+\end_inset
+
+ has poles where 
+\begin_inset Formula $z^{3}+1=0$
+\end_inset
+
+, thus, where 
+\begin_inset Formula $z^{3}=-1$
+\end_inset
+
+.
+ That would be 
+\begin_inset Formula $\exp(\frac{1}{3}\pi i)$
+\end_inset
+
+, 
+\begin_inset Formula $-1$
+\end_inset
+
+, and 
+\begin_inset Formula $\exp(\frac{5}{3}\pi i)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We can integrate along a wedge-shaped region: from 
+\begin_inset Formula $0$
+\end_inset
+
+ to 
+\begin_inset Formula $R$
+\end_inset
+
+ along the real axis, counterclockwise along a circular arc of angle 
+\begin_inset Formula $\frac{2\pi}{3}$
+\end_inset
+
+, and back to the origin.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude Sonnet 3.7 for pointing out the special properties of this
+ contour, that it lets us algebraically manipulate 
+\begin_inset Formula $\int\frac{1}{1+t^{3}}dt$
+\end_inset
+
+ (and for reminding me about the change-of-variables factor when we parametrize).
+ I had originally tried to use a quarter-disk contour involving a segment
+ of the imaginary axis, and got stuck when I didn't see how to evaluate
+ 
+\begin_inset Formula $\int_{iR}^{0}\frac{1}{1+z^{3}}\,dz$
+\end_inset
+
+.
+ (WolframAlpha computes the antiderivative as 
+\begin_inset Formula $\int\frac{1}{1+x^{3}}\,dx=\frac{1}{6}(-\log(x^{2}-x+1)+2\log(x+1)+2\sqrt{3}\arctan(\frac{2x-1}{\sqrt{3}}))+C$
+\end_inset
+
+, which does not look tidy enough to work with.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The integral on the segment of the real line is 
+\begin_inset Formula $\int_{0}^{R}\frac{1}{1+r^{3}}\,dr$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We can bound the integral on the arc using the estimation lemma, and see
+ that it vanishes for large 
+\begin_inset Formula $R$
+\end_inset
+
+: 
+\begin_inset Formula $|\int\frac{1}{1+x^{3}}|\le\frac{1}{1+R^{3}}\cdot\frac{1}{2}\pi R=\frac{\pi R}{2(R^{3}+1)}$
+\end_inset
+
+ but 
+\begin_inset Formula $\lim_{R\rightarrow\infty}\frac{\pi R}{2(R^{3}+1)}=0$
+\end_inset
+
+, because the cubic denominator dominates the linear numerator.
+\end_layout
+
+\begin_layout Standard
+The integral from the arc to the origin is 
+\begin_inset Formula $\int_{R\exp(\frac{2\pi}{3}i)}^{0}\frac{1}{1+z^{3}}dz=\int_{R}^{0}\frac{1}{1+\left(t\exp(\frac{2}{3}\pi i)\right)^{3}}\underbrace{\exp(\frac{2\pi i}{3})dt}_{dz}=\int_{R}^{0}\frac{1}{1+t^{3}\cdot\cancel{\exp(\frac{2\cdot3}{3}\pi i)}}\exp(\frac{2\pi i}{3})dt=-\exp(\frac{2\pi i}{3})\int_{0}^{R}\frac{1}{1+t^{3}}dt$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The only pole inside the loop is the one at 
+\begin_inset Formula $\exp(\frac{1}{3}\pi i)$
+\end_inset
+
+.
+ The residue there is 
+\begin_inset Formula $\lim_{z\rightarrow\exp(\frac{1}{3}\pi i)}(z-\exp(\frac{1}{3}\pi i))\frac{1}{1+x^{3}}=\lim_{z\rightarrow\exp(\frac{1}{3}\pi i)}\cancel{(z-\exp(\frac{1}{3}\pi i))}\frac{1}{\cancel{(z-\exp(\frac{1}{3}\pi i))}(z+1)(z-\exp(\frac{5}{3}\pi i))}$
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{(\exp(\frac{1}{3}\pi i)+1)(\exp(\frac{1}{3}\pi i)-\exp(\frac{5}{3}\pi i))}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $r:=\exp(\frac{1}{3}\pi i)$
+\end_inset
+
+.
+ The denominator is 
+\begin_inset Formula $(r+1)(r-\overline{r})=(r+1)\cdot2i\Im(r)=\left(\frac{3}{2}+\frac{\sqrt{3}}{2}i\right)\cdot2i\frac{\sqrt{3}}{2}=\frac{3\sqrt{3}}{2}i+\frac{3}{2}i^{2}=-\frac{3}{2}+\frac{3\sqrt{3}}{2}i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So we ultimately have 
+\begin_inset Formula $-\exp(\frac{2\pi i}{3})\int_{0}^{R}\frac{1}{1+t^{3}}dt+\int_{0}^{R}\frac{1}{1+t^{3}}dt=\frac{2\pi i}{-\frac{3}{2}+\frac{3\sqrt{3}}{2}i}$
+\end_inset
+
+, which implies
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{R}\frac{1}{1+t^{3}}dt=\frac{2\pi i}{\left(1-\exp(\frac{2\pi i}{3})\right)\left(-\frac{3}{2}+\frac{3\sqrt{3}}{2}i\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It was temping to 
+\begin_inset Quotes eld
+\end_inset
+
+call it a day
+\begin_inset Quotes erd
+\end_inset
+
+ there, but if we persist in simplying, we get: 
+\begin_inset Formula $\frac{2\pi i}{\left(1-\left(-\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)\right)\left(-\frac{3}{2}+\frac{3\sqrt{3}}{2}i\right)}=\frac{2\pi i}{\left(\frac{3}{2}-\frac{\sqrt{3}}{2}i\right)\left(-\frac{3}{2}+\frac{3\sqrt{3}}{2}i\right)}=\frac{2\pi i}{-\frac{9}{4}+\frac{3\sqrt{3}}{4}i+\frac{9\sqrt{3}}{4}i\cancel{-}\frac{9}{4}\cancel{i^{2}}}=\frac{2\pi i}{\cancel{-\frac{9}{4}}+\frac{3\sqrt{3}}{4}i+\frac{9\sqrt{3}}{4}i\cancel{+\frac{9}{4}}}$
+\end_inset
+
+, and thus:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{2\pi i}{\frac{12\sqrt{3}}{4}i}=\frac{2\pi\cancel{i}}{3\sqrt{3}\cancel{i}}=\frac{2\pi}{3\sqrt{3}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+\end_layout
+
+\end_body
+\end_document
