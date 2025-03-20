@@ -396,7 +396,46 @@ call it a day
 \series bold
 2
 \series default
+ 
+\series bold
+(Ch.
+ 3 #3)
+\series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}\frac{\cos x}{x^{2}+a^{2}}dx=\pi\frac{\exp-a}{a}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [TODO] We compute the residue
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{Res}(f,ia)=\lim_{z\rightarrow ia}(z-ia)\frac{\cos z}{x^{2}+a^{2}}=\lim_{z\rightarrow ia}\cancel{(z-ia)}\frac{\cos z}{\cancel{(z-ia)}(z+ia)}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -404,7 +443,187 @@ call it a day
 \series bold
 3
 \series default
+ 
+\series bold
+(Ch.
+ 3 #6)
+\series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $n\ge1$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}\frac{1}{(1+x^{2})^{n+1}}dx=\frac{\prod_{j=1}^{n}2n-1}{\prod_{j=1}^{n}2n}\pi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Initial comment
+\emph default
+.
+ Just looking at the integrand, one imagines this is going to go down similarly
+ to 
+\begin_inset Formula $\int_{-\infty}^{\infty}\frac{1}{1+x^{2}}$
+\end_inset
+
+, but with the poles being of higher order?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We find the poles, which are of order 
+\begin_inset Formula $n+1$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+f(z):=\frac{1}{(1+z^{2})^{n+1}}=\frac{1}{((z-i)(z+i))^{n+1}}=\frac{1}{(z-i)^{n+1}(z+i)^{n+1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we integrate in a upper-half-plane semi-circular arc of radius 
+\begin_inset Formula $R$
+\end_inset
+
+, the integral of the arc will go to zero as 
+\begin_inset Formula $R\rightarrow\infty$
+\end_inset
+
+: 
+\begin_inset Formula $f(z)$
+\end_inset
+
+ asymptotically behaves like 
+\begin_inset Formula $\frac{1}{z^{2n+2}}$
+\end_inset
+
+ and the estimation lemma says that 
+\begin_inset Formula $|\int f(z)\,dz|\le\frac{\pi R}{R^{2n+2}}=\frac{\pi}{R^{2n+1}}$
+\end_inset
+
+, which goes to 0 as 
+\begin_inset Formula $R\rightarrow\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We calculate the residue:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{Res}(f,i)=\frac{1}{n!}\lim_{z\rightarrow i}\frac{d^{n}}{dz^{n}}\left(\cancel{(z-i)^{n+1}}\frac{1}{\cancel{(z-i)^{n+1}}(z+i)^{n+1}}\right)=\frac{1}{n!}\lim_{z\rightarrow i}\frac{d^{n}}{dz^{n}}\left((z+i)^{-n-1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{1}{n!}\lim_{z\rightarrow i}(-1)^{n}\frac{\left(2n\right)!}{n!}\left((z+i)^{-n-1-n}\right)=(-1)^{n}\frac{\left(2n\right)!}{n!^{2}}(2i)^{-2n-1}=(-1)^{n}\frac{\left(2n\right)!}{n!^{2}}\cdot\frac{1}{2^{2n+1}}\cdot i^{-2n-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And apparently there's a 
+\begin_inset Quotes eld
+\end_inset
+
+double
+\begin_inset Quotes erd
+\end_inset
+
+ or skip factorial identity to apply here: 
+\begin_inset Formula $(2n)!=2^{n}n!\prod_{k=1}^{n}(2k-1),$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to OpenAI o3-mini-high for pointing this out; I had never worked
+ with double factorial before in my life.
+\end_layout
+
+\end_inset
+
+ so we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(-1)^{n}\frac{\cancel{2^{n}}\cancel{n!}\prod_{k=1}^{n}(2k-1)}{n!^{\cancel{2}}2\cdot2^{n}\cdot\cancel{2^{n}}}\cdot i^{-2n-1}=(-1)^{n}\frac{\prod_{k=1}^{n}(2k-1)}{2\cdot2^{n}n!}\cdot i^{-2n-1}=(-1)^{n}\frac{\prod_{k=1}^{n}(2k-1)}{2\cdot\prod_{k=1}^{n}2k}\cdot i^{-2n-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And the value of the loop integral is 
+\begin_inset Formula $2\pi i$
+\end_inset
+
+ times the residue, so that's
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cancel{2}\pi\cancel{(-1)^{n}}\frac{\prod_{k=1}^{n}(2k-1)}{\cancel{2\cdot}\prod_{k=1}^{n}2k}\cdot\cancelto{\cancel{\frac{1}{(-1)^{n}}}}{i^{-2n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{\prod_{k=1}^{n}(2k-1)}{\prod_{k=1}^{n}2k}\pi
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -412,7 +631,143 @@ call it a day
 \series bold
 4
 \series default
+ 
+\series bold
+(Ch.
+ 3 #12)
+\series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula 
+\[
+\sum_{n=-\infty}^{\infty}\frac{1}{(u+n)^{2}}=\frac{\pi^{2}}{(\sin\pi u)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $f(z)=\frac{\pi}{(u+z)^{2}}\frac{\cos\pi z}{\sin\pi z}$
+\end_inset
+
+ for non-integer 
+\begin_inset Formula $u$
+\end_inset
+
+ has poles at integers (where 
+\begin_inset Formula $\sin\pi z$
+\end_inset
+
+ is zero) and at 
+\begin_inset Formula $-u$
+\end_inset
+
+ (where 
+\begin_inset Formula $(u+z)^{2}$
+\end_inset
+
+ is zero).
+ 
+\end_layout
+
+\begin_layout Standard
+The pole at 
+\begin_inset Formula $z:=-u$
+\end_inset
+
+ has degree two.
+ Looking up that 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\frac{d}{dt}\cot t=-\csc^{2}t$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ (the present author not often having occasion to think of cotangent or
+ cosecant) and recalling that sine is an odd function, we compute
+\begin_inset Formula 
+\[
+\text{Res}(f,-u)=\lim_{z\rightarrow-u}\frac{d}{dz}\cancel{(z+u)^{2}}\frac{\pi}{\cancel{(u+z)^{2}}}\frac{\cos\pi z}{\sin\pi z}=\lim_{z\rightarrow-u}\frac{-\pi}{\sin^{2}\pi z}\pi=\frac{-\pi^{2}}{\sin^{2}(-\pi u)}=\frac{-\pi^{2}}{\left(-\sin\pi u\right)^{2}}=\frac{-\pi^{2}}{\sin^{2}\pi u}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The integer poles are simple.
+ We calculate
+\begin_inset Formula 
+\[
+\text{Res}(f,k)=\lim_{z\rightarrow k}(z-k)\frac{\pi}{(u+z)^{2}}\frac{\cos\pi z}{\sin\pi z}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the local linear approximations for the trig functions near 
+\begin_inset Formula $k$
+\end_inset
+
+:
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude Sonnet 3.7 for pointing out that this works; I had initally
+ tried to apply L'Hôpital's rule and made a mess with no trustworthy conclusion.
+ (Trying to apply the product rule still left me with terms with 
+\begin_inset Formula $\sin\pi k$
+\end_inset
+
+ in the denominator, as in 
+\begin_inset Formula $\pi\lim_{z\rightarrow k}\frac{-\pi\sin\pi z}{(u+z)^{2}\sin\pi z}-\frac{2(u+z)\sin\pi z+\pi(u+z)^{2}\cos\pi z}{\left((u+z)^{2}\sin\pi z\right)^{2}}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\approx\cancel{(z-k)}\frac{\cancel{\pi}}{(u+z)^{2}}\cdot\frac{\cancel{(-1)^{k}}}{\cancel{\pi}\cancel{(z-k)}\cancel{(-1)^{k}}}=\frac{1}{(u+k)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+[TODO: show that the integral is zero and therefore that the u pole cancels
+ out the integer poles]
 \end_layout
 
 \end_body
