@@ -424,13 +424,62 @@ Proposition
 Proof
 \emph default
 .
- [TODO] We compute the residue
+ We consider that 
+\begin_inset Formula $\int_{-\infty}^{\infty}\frac{\cos x}{x^{2}+a^{2}}=\Re\left(\int_{-\infty}^{\infty}\frac{\exp ix}{x^{2}+a^{2}}\,dx\right)$
+\end_inset
+
+, where the right-hand integrand has a pole at 
+\begin_inset Formula $ia$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude Sonnet 3.7 for explaining this approach; I had tried computing
+ the residue of 
+\begin_inset Formula $f(z)=\frac{\cos x}{x^{2}+a^{2}}$
+\end_inset
+
+: 
+\begin_inset Formula $\text{Res}(f,ia)=\lim_{z\rightarrow ia}(z-ia)\frac{\cos z}{z^{2}+a^{2}}=\lim_{z\rightarrow ia}\cancel{(z-ia)}\frac{\cos z}{\cancel{(z-ia)}(z+ia)}=\frac{\cos ia}{2ia}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $\cos ia=\frac{\exp(i^{2}a)+\exp(-i^{2}a)}{2}=\frac{\exp(-a)+\exp(a)}{2}$
+\end_inset
+
+, so 
+\begin_inset Formula $\frac{\cos ia}{2ia}=\frac{\exp(-a)+\exp(a)}{4ia}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $2\pi i$
+\end_inset
+
+ times the residue is 
+\begin_inset Formula $\cancel{2}\pi\cancel{i}\frac{\exp(-a)+\exp(a)}{\cancelto{2}{4}\cancel{i}a}=\pi\frac{\exp(-a)+\exp(a)}{2a}$
+\end_inset
+
+.
+ But then, I'm given to understand, we can't use the semicircular contour
+ technique because the arc doesn't vanish.
+\end_layout
+
+\end_inset
+
+ We integrate in a semicircular arc, in which the arc will contribute zero
+ because [TODO].
+ Then
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\text{Res}(f,ia)=\lim_{z\rightarrow ia}(z-ia)\frac{\cos z}{x^{2}+a^{2}}=\lim_{z\rightarrow ia}\cancel{(z-ia)}\frac{\cos z}{\cancel{(z-ia)}(z+ia)}
+2\pi i\text{Res}(\frac{\exp iz}{z^{2}+a^{2}},ia)=2\pi i\lim_{z\rightarrow ia}\cancel{(z-ia)}\frac{\exp iz}{\cancel{(z-ia)}(z+ia)}=\cancel{2}\pi\cancel{i}\frac{\exp-a}{\cancel{2i}a}
 \]
 
 \end_inset
@@ -727,7 +776,15 @@ The integer poles are simple.
 \end_layout
 
 \begin_layout Standard
-Using the local linear approximations for the trig functions near 
+Using the local linear approximations for the trig functions (
+\begin_inset Formula $\sin\pi z\approx\pi(z-k)(-1)^{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\cos\pi z=(-1)^{k}$
+\end_inset
+
+) near 
 \begin_inset Formula $k$
 \end_inset
 
@@ -737,16 +794,17 @@ status collapsed
 
 \begin_layout Plain Layout
 Thanks to Claude Sonnet 3.7 for pointing out that this works; I had initally
- tried to apply L'Hôpital's rule and made a mess with no trustworthy conclusion.
+ tried to iteratively apply L'Hôpital's rule and made a mess with no trustworthy
+ conclusion.
  (Trying to apply the product rule still left me with terms with 
-\begin_inset Formula $\sin\pi k$
+\begin_inset Formula $\sin\pi k=0$
 \end_inset
 
  in the denominator, as in 
 \begin_inset Formula $\pi\lim_{z\rightarrow k}\frac{-\pi\sin\pi z}{(u+z)^{2}\sin\pi z}-\frac{2(u+z)\sin\pi z+\pi(u+z)^{2}\cos\pi z}{\left((u+z)^{2}\sin\pi z\right)^{2}}$
 \end_inset
 
-)
+; I'm still not entirely sure which step was incorrect.)
 \end_layout
 
 \end_inset
@@ -766,8 +824,60 @@ Thanks to Claude Sonnet 3.7 for pointing out that this works; I had initally
 \end_layout
 
 \begin_layout Standard
-[TODO: show that the integral is zero and therefore that the u pole cancels
- out the integer poles]
+We integrate on a sequence of increasingly large square contours 
+\begin_inset Formula $|x|=|y|=N+\frac{1}{2}$
+\end_inset
+
+.
+ If is 
+\begin_inset Formula $\frac{\cos\pi z}{\sin\pi z}$
+\end_inset
+
+ is bounded on these contours [TODO: justify], then the inverse-quadratic
+ 
+\begin_inset Formula $\frac{1}{(u+z)^{2}}$
+\end_inset
+
+ factor dominates for large 
+\begin_inset Formula $N$
+\end_inset
+
+, such that the value of 
+\begin_inset Formula $f(z)\rightarrow0$
+\end_inset
+
+ for large 
+\begin_inset Formula $N$
+\end_inset
+
+, such that the loop integral 
+\begin_inset Formula $\oint f(z)\,dz$
+\end_inset
+
+ is zero.
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\oint f(z)\,dz=0=2\pi i\text{Res}(f,-u)+2\pi i\sum_{k=-\infty}^{\infty}\text{Res}(f,k)=\frac{-\pi^{2}}{\sin^{2}\pi u}+\frac{1}{(u+k)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=-\infty}^{\infty}\frac{1}{(u+k)^{2}}=\frac{\pi^{2}}{\sin^{2}\pi u}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
