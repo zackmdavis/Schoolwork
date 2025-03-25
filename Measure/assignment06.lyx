@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-9 March 2025
+16 March 2025 (late) 
 \end_layout
 
 \begin_layout Abstract
@@ -188,29 +188,93 @@ too early
 \end_layout
 
 \begin_layout Standard
-
-\emph on
-A Hint
-\emph default
-.
- Claude Sonnet 3.7 says, 
-\begin_inset Quotes eld
+Ultimately, Claude Sonnet 3.7 pointed out that the right idea looks like
+ 
+\begin_inset Formula $f_{n}(x):[0,\infty)\rightarrow\R=\chi_{[n,n+1]}(x)$
 \end_inset
 
-The key insight: In infinite measure spaces, you can have 'escaping' behavior
- where the non-uniformity keeps moving to different regions.
-\begin_inset Quotes erd
-\end_inset
-
-
+, which we now prove in the following
 \end_layout
 
 \begin_layout Standard
-[
-\series bold
-TODO
-\series default
-: find the example]
+
+\emph on
+Proposition
+\emph default
+.
+ There exists 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ such that for every set 
+\begin_inset Formula $E\subset[0,\infty)$
+\end_inset
+
+ with 
+\begin_inset Formula $\mu([0,\infty)\backslash E)=\varepsilon$
+\end_inset
+
+, 
+\begin_inset Formula $f_{n}(x):[0,\infty)\rightarrow\R=\chi_{[n,n+1]}(x)$
+\end_inset
+
+ does not converge uniformly on 
+\begin_inset Formula $E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Such an 
+\begin_inset Formula $E$
+\end_inset
+
+ would have infinite measure and therefore need to be unbounded.
+ Suppose for a contradiction that we did have uniform convergence on 
+\begin_inset Formula $E$
+\end_inset
+
+—to the zero function, which is the pointwise limit: then for every 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there would exist an 
+\begin_inset Formula $N$
+\end_inset
+
+ such that for 
+\begin_inset Formula $k\ge N$
+\end_inset
+
+ and for all 
+\begin_inset Formula $x\in E$
+\end_inset
+
+, 
+\begin_inset Formula $|f(x)-f_{k}(x)|=|0-f_{k}(x)|=|f_{k}(x)|<\varepsilon$
+\end_inset
+
+.
+ But for any 
+\begin_inset Formula $N$
+\end_inset
+
+, 
+\begin_inset Formula $|f_{N}(N)|=1\ge\varepsilon$
+\end_inset
+
+.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -420,6 +484,10 @@ Then we have uniform convergence of the
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -472,36 +540,11 @@ Theorem
 \begin_layout Standard
 
 \emph on
-A Hint
-\emph default
-.
- Claude 3.7 Sonnet says, 
-\begin_inset Quotes eld
-\end_inset
-
-The key insight is using compactness to transition from pointwise to uniform
- convergence when the limit is continuous.
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\emph on
 Proof
 \emph default
 .
- (
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
-) [
-\series bold
-TODO
-\series default
-]
+ (This was discussed extensively at office hours on 13 March and with Claude
+ Sonnet 3.7 on 16 March.)
 \end_layout
 
 \begin_layout Standard
@@ -509,11 +552,115 @@ TODO
 \begin_inset Formula $\Leftarrow$
 \end_inset
 
-) [
-\series bold
-TODO
-\series default
-]
+) The uniform limit of continuous functions is continuous.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Take the contrapositive and suppose that 
+\begin_inset Formula $\{g_{j}\}$
+\end_inset
+
+ is does not converge uniformly on 
+\begin_inset Formula $F$
+\end_inset
+
+.
+ Then there exists an 
+\begin_inset Formula $\varepsilon_{0}$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $N$
+\end_inset
+
+, there exists an 
+\begin_inset Formula $x(N)$
+\end_inset
+
+ such that 
+\begin_inset Formula $g(x(N))-g_{j}(x(N))\ge\varepsilon_{0}$
+\end_inset
+
+.
+ The sequence of 
+\begin_inset Formula $x(N)$
+\end_inset
+
+ for increasing 
+\begin_inset Formula $N$
+\end_inset
+
+ has a convergent subsequence that we can call 
+\begin_inset Formula $\{x_{j}\}$
+\end_inset
+
+ converging to 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Consider some arbtirary 
+\begin_inset Formula $N$
+\end_inset
+
+.
+ For all 
+\begin_inset Formula $j>N$
+\end_inset
+
+, 
+\begin_inset Formula $g_{j}(x_{j})\ge g_{N}(x_{j})$
+\end_inset
+
+ (by monotonicity of the sequence of functions).
+ 
+\end_layout
+
+\begin_layout Standard
+Thus 
+\begin_inset Formula $g(x_{j})-g_{j}(x_{j})\le g(x_{j})-g_{N}(x_{j})$
+\end_inset
+
+.
+ But the left-hand side is 
+\begin_inset Formula $\ge\varepsilon_{0}$
+\end_inset
+
+, so 
+\begin_inset Formula $g(x_{j})-g_{N}(x_{j})\ge\varepsilon_{0}$
+\end_inset
+
+, so as 
+\begin_inset Formula $j\rightarrow\infty$
+\end_inset
+
+, 
+\begin_inset Formula $g(x)-g_{N}(x)\ge\varepsilon_{0}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $N$
+\end_inset
+
+ was arbitrary, and we're supposed to have pointwise convergence to 
+\begin_inset Formula $g$
+\end_inset
+
+.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -555,7 +702,7 @@ Proof
 \emph default
 .
  Note that the space has finite measure 
-\begin_inset Formula $\sum_{k=1}^{\infty}\frac{1}{2^{n}}=1$
+\begin_inset Formula $\sum_{k=1}^{\infty}\frac{1}{2^{k}}=1$
 \end_inset
 
 .
@@ -576,7 +723,7 @@ In more detail, fix
 \end_inset
 
  and let 
-\begin_inset Formula $E:=\{1...\left\lceil \lg\varepsilon\right\rceil \}$
+\begin_inset Formula $E:=\{1...\left\lceil -\lg\varepsilon\right\rceil \}$
 \end_inset
 
 .
@@ -585,7 +732,35 @@ In more detail, fix
 \end_inset
 
 .
- For 
+ 
+\end_layout
+
+\begin_layout Standard
+(For example, if 
+\begin_inset Formula $\varepsilon:=\frac{1}{17}$
+\end_inset
+
+, where we notice that 
+\begin_inset Formula $\frac{1}{2^{5}}<\frac{1}{17}<\frac{1}{2^{4}}$
+\end_inset
+
+, then 
+\begin_inset Formula $\left\lceil -\lg\varepsilon\right\rceil =5$
+\end_inset
+
+, and 
+\begin_inset Formula $\mu(\{1...5\})=\sum_{k=1}^{5}\frac{1}{2^{k}}=\frac{31}{32}$
+\end_inset
+
+, so 
+\begin_inset Formula $\mu(\N^{+}\backslash\{1...5\})=\frac{1}{64}<\varepsilon$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+For 
 \begin_inset Formula $N:=\max_{n}\{\min_{j}\forall k>j\ |f_{k}(n)-f(n)|<\varepsilon\}$
 \end_inset
 

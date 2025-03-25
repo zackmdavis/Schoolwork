@@ -471,9 +471,27 @@ Thanks to Claude Sonnet 3.7 for explaining this approach; I had tried computing
 
 \end_inset
 
- We integrate in a semicircular arc, in which the arc will contribute zero
- because [TODO].
- Then
+ 
+\end_layout
+
+\begin_layout Standard
+We integrate on a region bounded by the real axis from 
+\begin_inset Formula $[-R,R]$
+\end_inset
+
+ and a semicircular arc in the upper-half plane.
+ In the limit of large 
+\begin_inset Formula $R$
+\end_inset
+
+, the integral over the arc vanishes (exponentially decaying numerator,
+ quadratic denominator): 
+\begin_inset Formula $\lim_{|z|\rightarrow\infty}\frac{\exp iz}{z^{2}+a^{2}}=\lim_{|z|\rightarrow\infty}\frac{\exp i(r\cos\theta+ir\sin\theta)}{z^{2}+a^{2}}=\lim_{|z|\rightarrow\infty}\frac{\exp(ri\cos\theta-r\sin\theta)}{z^{2}+a^{2}}=\lim_{|z|\rightarrow\infty}\frac{\exp(-r\sin\theta)\exp(ri\cos\theta)}{z^{2}+a^{2}}=0$
+\end_inset
+
+.
+ So the real integral will be equal to the loop integral, which is determined
+ by the residue:
 \end_layout
 
 \begin_layout Standard
@@ -825,16 +843,24 @@ Thanks to Claude Sonnet 3.7 for pointing out that this works; I had initally
 
 \begin_layout Standard
 We integrate on a sequence of increasingly large square contours 
-\begin_inset Formula $|x|=|y|=N+\frac{1}{2}$
+\begin_inset Formula $|x|=|y|=k+\frac{1}{2}$
 \end_inset
 
 .
- If is 
+ Then 
 \begin_inset Formula $\frac{\cos\pi z}{\sin\pi z}$
 \end_inset
 
- is bounded on these contours [TODO: justify], then the inverse-quadratic
- 
+ is bounded on these contours because 
+\begin_inset Formula $|\cos(x+iy)|=|\frac{\exp(i(x+iy))+\exp(-i(x+iy))}{2}|=|\frac{\exp(-y+ix)+\exp(y-ix)}{2}|$
+\end_inset
+
+ and similarly 
+\begin_inset Formula $|\sin\pi(x+iy)|=|\frac{\exp(-y+ix)-\exp(y-ix)}{2i}|$
+\end_inset
+
+, so their ratio stays bounded.
+ and the inverse-quadratic 
 \begin_inset Formula $\frac{1}{(u+z)^{2}}$
 \end_inset
 

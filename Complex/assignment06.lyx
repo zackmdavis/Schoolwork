@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-11 March 2025
+13 March 2025
 \end_layout
 
 \begin_layout Abstract
@@ -213,11 +213,7 @@ Proposition
 \begin_inset Formula $2|f'(0)|\le\sup_{z,w\in\overline{B_{1}}(0)}|f(z)-f(w)|$
 \end_inset
 
-, with equality when 
-\begin_inset Formula $f$
-\end_inset
-
- is linear.
+.
 \end_layout
 
 \begin_layout Standard
@@ -290,20 +286,33 @@ Thus
 \end_layout
 
 \begin_layout Standard
-When 
+
+\emph on
+Proposition
+\emph default
+.
+ ...
+ with equality if 
 \begin_inset Formula $f$
 \end_inset
 
- is linear,
+ is linear.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
 \sup_{z,w\in\overline{B_{1}}(0)}|f(z)-f(w)|=\sup_{z,w\in\overline{B_{1}}(0)}|az\cancel{+b}-aw\cancel{-b}|=\sup_{z,w\in\overline{B_{1}}(0)}a|z-w|=2a=2|f'(0)|
 \]
 
-\end_inset
-
-
-\begin_inset Newline newline
 \end_inset
 
 
@@ -347,7 +356,88 @@ Proposition
 Proof
 \emph default
 .
- [TODO]
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to the 
+\begin_inset Quotes eld
+\end_inset
+
+Harmonic Conjugate
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\emph on
+Wikipedia 
+\emph default
+article (
+\emph on
+https://en.wikipedia.org/wiki/Harmonic_conjugate
+\emph default
+) for finally providing a clear explanation after much confusion.
+\end_layout
+
+\end_inset
+
+ For a function 
+\begin_inset Formula $u(x,y)$
+\end_inset
+
+, consider whether the function 
+\begin_inset Formula $\dudx-i\dudy$
+\end_inset
+
+ might be holomorphic.
+ The Cauchy–Riemann equations (with the 
+\begin_inset Quotes eld
+\end_inset
+
+roles
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $u:=\dudx$
+\end_inset
+
+ and 
+\begin_inset Formula $v:=\dudy$
+\end_inset
+
+) become 
+\begin_inset Formula $\frac{\partial^{2}u}{\partial x^{2}}=-\frac{\partial u}{\partial y^{2}}$
+\end_inset
+
+ (which amounts to stating that 
+\begin_inset Formula $u$
+\end_inset
+
+ is harmonic) and 
+\begin_inset Formula $\frac{\partial u}{\partial x\partial y}=\frac{\partial u}{\partial y\partial x}$
+\end_inset
+
+ (which amounts to the equality of mixed partials).
+ So given that 
+\begin_inset Formula $u$
+\end_inset
+
+ is in fact harmonic and twice differentiable, those C–R equations are fulfilled
+, such that 
+\begin_inset Formula $\text{Im}(\int\dudx-i\dudy)$
+\end_inset
+
+ (with an arbitrary additive constant of integration) will the imaginary
+ part of a holomorphic function whose real part is 
+\begin_inset Formula $u$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -831,7 +921,23 @@ For
 \begin_inset Formula $F(r)$
 \end_inset
 
-, what luck!
+, what 
+\begin_inset Quotes eld
+\end_inset
+
+luck
+\begin_inset Quotes erd
+\end_inset
+
+! Then
+\begin_inset Formula 
+\[
+\sum_{n=1}^{\infty}\frac{r^{n}}{1-r^{n}}>\sum_{n=1}^{\infty}\frac{r^{n}}{n(1-r)}=\frac{1}{1-r}\sum_{n=1}^{\infty}\frac{r^{n}}{n}=\frac{1}{1-r}\cdot-\log(1-r)=\frac{1}{1-r}\log(\frac{1}{1-r})
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
