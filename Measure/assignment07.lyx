@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-21 March 2025
+28 March 2025 (late)
 \end_layout
 
 \begin_layout Abstract
@@ -225,6 +225,84 @@ And there would exist a partition with
 2
 \series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable, 
+\begin_inset Formula $\int f\,d\delta_{c}=f(c)$
+\end_inset
+
+ where 
+\begin_inset Formula $\delta_{c}=\begin{cases}
+1 & c\in E\\
+0 & c\notin E
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By definition, 
+\begin_inset Formula 
+\[
+\int fd\mu=\sup\left\{ \sum_{j=1}^{m}\delta_{c}(A_{j})\inf_{A_{j}}f:\{A_{j}\}\text{ a \ensuremath{\Sigma}-partition}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Any part 
+\begin_inset Formula $A_{j}$
+\end_inset
+
+ that does not contain 
+\begin_inset Formula $c$
+\end_inset
+
+ contributes nothing to the sum because 
+\begin_inset Formula $\delta_{c}(A_{j})=0$
+\end_inset
+
+, and for any partition, 
+\begin_inset Formula $c$
+\end_inset
+
+ only belongs to one part.
+ So we really have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int fd\mu=\sup\left\{ \delta_{c}(A)\inf_{A}f:c\in A\right\} =\sup\left\{ \inf_{x\in A}f(x):c\in A\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -264,16 +342,28 @@ Proof
 \end_inset
 
 .
- Then there exists a partition that includes 
-\begin_inset Formula $A:=\{x\in X:f(x)>0\}$
+ Consider a partition that includes 
+\begin_inset Formula $A_{n}:=\{x\in X:\frac{1}{n}\ge f(x)>\frac{1}{n}\}$
 \end_inset
 
 .
- [TODO: this needs refinement; 
-\begin_inset Formula $\inf A$
+ Then 
+\begin_inset Formula $\sum_{j=1}^{m}\mu(A_{j})\inf_{A_{j}}f$
 \end_inset
 
- could be 0, so I need to take a subset?]
+ is positive, because all of the measure in 
+\begin_inset Formula $\mu(\{x\in X:f(x)>0\})$
+\end_inset
+
+ has to belong to some 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+, and every 
+\begin_inset Formula $\inf_{A_{j}}f$
+\end_inset
+
+ is positive.
 \end_layout
 
 \begin_layout Standard
@@ -324,6 +414,10 @@ Proof
 
 .
  
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -332,6 +426,140 @@ Proof
 5
 \series default
 .
+ 
+\emph on
+Theorem
+\emph default
+.
+ For 
+\begin_inset Formula $\mu$
+\end_inset
+
+ the counting measure on 
+\begin_inset Formula $\N^{+}$
+\end_inset
+
+ and sequence 
+\begin_inset Formula $\{b_{j}\}$
+\end_inset
+
+ (or equivalently the function 
+\begin_inset Formula $b(k):\N^{+}\rightarrow[0,\infty)=b_{k}$
+\end_inset
+
+), 
+\begin_inset Formula 
+\[
+\int b\,d\mu=\sum_{j}b_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By definition,
+\begin_inset Formula 
+\[
+\int b\,d\mu:=\sup\left\{ \sum_{j=1}^{m}\mu(A_{j})\inf_{A_{j}}b:\{A_{j}\}\ \text{partition of }\N^{+}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We need to show that 
+\begin_inset Formula $\sup\left\{ \sum_{j=1}^{m}\mu(A_{j})\inf_{A_{j}}b:\{A_{j}\}\ \text{partition of }\N^{+}\right\} \ge\sum_{j=1}^{\infty}b_{j}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula $\sup\left\{ \sum_{j=1}^{m}\mu(A_{j})\inf_{A_{j}}b:\{A_{j}\}\ \text{partition of }\N^{+}\right\} \le\sum_{j=1}^{\infty}b_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\le$
+\end_inset
+
+) Notice that the infinite partition 
+\begin_inset Formula $A_{j}=\{j\}$
+\end_inset
+
+ that puts each integer in its own part yields 
+\begin_inset Formula $\sum_{j=1}^{\infty}\mu(\{j\})\inf_{\{j\}}b(j)=\sum_{j=1}^{\infty}1\cdot b(j)=\sum_{j=1}^{\infty}b_{j}$
+\end_inset
+
+.
+ Our supremum is over finite partitions, none of which can be greater than
+ the integer-per-part infinite partition, because 
+\begin_inset Formula $\mu(\{i,j\})\inf_{\{i,j\}}b\le\mu(\{i\})b(i)+\mu(\{j\})b(j)$
+\end_inset
+
+: packing more than one integer into the same part can't make the lower
+ Lebesgue sum bigger.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\ge$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $\sum_{j=1}^{\infty}b_{j}$
+\end_inset
+
+ converges, say, to 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ There exists an 
+\begin_inset Formula $N$
+\end_inset
+
+ such that for 
+\begin_inset Formula $k\ge N$
+\end_inset
+
+, 
+\begin_inset Formula $B-\sum_{j=1}^{k}b_{j}<\varepsilon$
+\end_inset
+
+.
+ Consider the partition 
+\begin_inset Formula $\{\{1\},...,\{N\},\{N+1,...,\infty\}\}$
+\end_inset
+
+.
+ (Thanks to OpenAI o3-mini-high for clarifying this last part—) Then 
+\begin_inset Formula $\sum_{j=1}^{N}\mu(\{j\})\inf_{\{j\}}b+\mu(\{N+1,...\})\inf_{\{N+1,...\}}b=\sum_{j=1}^{N}1\cdot b(j)+\cancel{\infty\cdot0}=\sum_{j=1}^{N}b_{j}>B-\varepsilon$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -340,6 +568,52 @@ Proof
 8
 \series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ There exists a sequence of Borel measurable 
+\begin_inset Formula $f_{j}:\R\rightarrow[0,\infty)$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x\in\R$
+\end_inset
+
+, 
+\begin_inset Formula $\lim_{j\rightarrow\infty}f_{j}(x)=0$
+\end_inset
+
+, but 
+\begin_inset Formula $\lim_{j\rightarrow\infty}\int f_{j}d\lambda=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Example
+\emph default
+.
+ 
+\begin_inset Formula $f_{j}=\begin{cases}
+1 & x\in[j,j+1]\\
+0 & \text{else}
+\end{cases}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -348,6 +622,87 @@ Proof
 9
 \series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ For measure space 
+\begin_inset Formula $(X,\Sigma,\mu)$
+\end_inset
+
+ and 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable function 
+\begin_inset Formula $f$
+\end_inset
+
+, 
+\begin_inset Formula $v(A):=\int\chi_{A}f\,d\mu$
+\end_inset
+
+ is a measure.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Empty set.) 
+\begin_inset Formula $v(\varnothing)=\int\chi_{\varnothing}f\,d\mu=\int0\,d\mu=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Countable additivity.) Suppose we have a countable disjoint collection of
+ sets in 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ we call 
+\begin_inset Formula $\{E_{j}\}_{j}$
+\end_inset
+
+.
+ We need to show that the measure of the union is the sum of the measures.
+ That is
+\begin_inset Formula 
+\[
+\int\chi_{\bigcup_{j=1}^{\infty}E_{j}}f\,d\mu=\sum_{j=1}^{\infty}\int\chi_{E_{j}}f\,d\mu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+That is to say 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sup\left\{ \sum_{k=1}^{m}\mu(A_{j})\inf\chi_{\bigcup_{k=1}^{\infty}E_{k}}f\right\} =\sum_{j=1}^{\infty}\sup\left\{ \sum_{k=1}^{m}\mu(A_{j})\inf\chi_{E_{k}}f\right\} \int\chi_{E_{j}}f\,d\mu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+[TODO: how do I go about this?]
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -356,6 +711,53 @@ Proof
 10
 \series default
 .
+ 
+\emph on
+Theorem
+\emph default
+.
+ For 
+\begin_inset Formula $\{f_{j}\}$
+\end_inset
+
+ a series of nonnegative functions and 
+\begin_inset Formula $f:=\sum_{j}f_{j}$
+\end_inset
+
+, 
+\begin_inset Formula $\int f\,d\mu=\sum_{j}\int f_{j}\,d\mu$
+\end_inset
+
+ (
+\emph on
+i.e
+\emph default
+., the integral of the sum equals the sum of the integrals).
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Define the 
+\begin_inset Quotes eld
+\end_inset
+
+partial sum
+\begin_inset Quotes erd
+\end_inset
+
+ functions 
+\begin_inset Formula $g_{j}:=\sum_{k=1}^{j}f_{j}$
+\end_inset
+
+ and apply the monotone convergence theorem? [TODO: does this actually work??]
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -364,6 +766,126 @@ Proof
 11
 \series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $(X,\Sigma,\mu)$
+\end_inset
+
+ a measure space, and 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable functions 
+\begin_inset Formula $\{f_{j}\}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\sum_{j}\int|f_{j}|d\mu<\infty$
+\end_inset
+
+, there exists 
+\begin_inset Formula $E\in\Sigma$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mu(X\backslash E)=0$
+\end_inset
+
+ and for all 
+\begin_inset Formula $x\in E$
+\end_inset
+
+, 
+\begin_inset Formula $\lim_{k\rightarrow\infty}f_{k}(x)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\begin_inset Quotes eld
+\end_inset
+
+Proof
+\begin_inset Quotes erd
+\end_inset
+
+
+\emph default
+ 
+\emph on
+(first attempt)
+\emph default
+.
+ Suppose not.
+ Then there does not exist 
+\begin_inset Formula $E$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x\in E$
+\end_inset
+
+, 
+\begin_inset Formula $\lim_{k\rightarrow\infty}f_{k}(x)=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu(X\backslash E)=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+That is to say, for all 
+\begin_inset Formula $E$
+\end_inset
+
+, either 
+\begin_inset Formula $\mu(X\backslash E)\ne0$
+\end_inset
+
+ or there exists 
+\begin_inset Formula $x\in E$
+\end_inset
+
+ such that 
+\begin_inset Formula $\lim_{k\rightarrow\infty}f_{k}(x)\ne0$
+\end_inset
+
+.
+ Consider an 
+\begin_inset Formula $E$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mu(X\backslash E)=0$
+\end_inset
+
+.
+ Then there exists 
+\begin_inset Formula $x\in E$
+\end_inset
+
+ such that 
+\begin_inset Formula $\lim_{k\rightarrow\infty}f_{k}(x)\ne0$
+\end_inset
+
+.
+ Then the integral won't converge at 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Contradiction?
 \end_layout
 
 \end_body
