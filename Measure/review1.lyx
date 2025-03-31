@@ -1,0 +1,925 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Notes and Exercises in Measure Theory
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+30 March 2025
+\end_layout
+
+\begin_layout Abstract
+Reviewing Axler, as it happens, before the midterm for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Measure and Integration
+\begin_inset Quotes erd
+\end_inset
+
+ at San Francisco State University, but not studying 
+\begin_inset Quotes eld
+\end_inset
+
+for the midterm
+\begin_inset Quotes erd
+\end_inset
+
+, because studying 
+\begin_inset Quotes eld
+\end_inset
+
+for a test
+\begin_inset Quotes erd
+\end_inset
+
+ is contrary to the moral law.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Q}{\mathbb{Q}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Notes on §2A
+\end_layout
+
+\begin_layout Standard
+Outer measure!
+\end_layout
+
+\begin_layout Standard
+We define the length of an open interval 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+ as 
+\begin_inset Formula $b-a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We define outer measure as 
+\begin_inset Formula $|A|:=\inf\left\{ \sum_{k=1}^{\infty}\ell(I_{k}):A\subseteq\bigcup_{k=1}^{\infty}I_{k}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Finite sets have outer measure 0 because you can stick an 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+-interval around each point.
+ 
+\end_layout
+
+\begin_layout Standard
+Countable sets have outer measure 0 because you can stick a 
+\begin_inset Formula $\frac{\varepsilon}{2^{k}}$
+\end_inset
+
+-interval around each point.
+\end_layout
+
+\begin_layout Standard
+Outer measure preserves order: 
+\begin_inset Formula $A\subseteq B$
+\end_inset
+
+ implies 
+\begin_inset Formula $|A|\le|B|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Outer measure is translation-invariant: 
+\begin_inset Formula $|t+A|=|A|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Outer measure is countably subadditive: 
+\begin_inset Formula $|\bigcup_{k=1}^{\infty}A_{k}|\le\sum_{k=1}^{\infty}|A_{k}|$
+\end_inset
+
+, because we can cover each 
+\begin_inset Formula $A_{k}$
+\end_inset
+
+ with intervals of excess length 
+\begin_inset Formula $\frac{\varepsilon}{2^{k}}$
+\end_inset
+
+ so that 
+\begin_inset Formula $|\bigcup_{k=1}^{\infty}A_{k}|\le\sum_{k=1}^{\infty}|A_{k}|+\varepsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The outer measure of a closed interval is also 
+\begin_inset Formula $b-a$
+\end_inset
+
+: 
+\begin_inset Formula $|[a,b]|\le b-a$
+\end_inset
+
+ because you can cover it with an open interval with excess 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, but 
+\begin_inset Formula $|[a,b]|\ge b-a$
+\end_inset
+
+ because of a confusing compactness argument.
+\end_layout
+
+\begin_layout Standard
+Outer measure is not additive! 
+\begin_inset Formula $|A\cup B|\ne|A|+|B|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Our standard counterexample is the Vitali set.
+ Partition 
+\begin_inset Formula $[-1,1]$
+\end_inset
+
+ into equivalence classes where two numbers are in the same class if they
+ differ by a rational, and (invoking the rite of Choice) take one representative
+ from each to form 
+\begin_inset Formula $V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Notes on §2B
+\end_layout
+
+\begin_layout Standard
+We can't definite a measure that has all the properties you would intuitively
+ want (works on all subsets, open interval length, countable additivity,
+ translation invariance).
+ The solution is to ditch 
+\begin_inset Quotes eld
+\end_inset
+
+works on all subsets
+\begin_inset Quotes erd
+\end_inset
+
+ and only work with nice subsets that are countably additive.
+\end_layout
+
+\begin_layout Standard
+So we introduce the notion of a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra, which contains the empty set and is closed under complements and
+ countable unions (equivalently, countable intersections).
+\end_layout
+
+\begin_layout Standard
+A set 
+\begin_inset Formula $X$
+\end_inset
+
+ and a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ make a 
+\emph on
+measurable space
+\emph default
+ 
+\begin_inset Formula $(X,\Sigma)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The Borel sets are generated by the open sets, equivalently, the intersection
+ of all 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebras containing the open sets.
+\end_layout
+
+\begin_layout Standard
+We know about the 
+\emph on
+inverse image 
+\begin_inset Formula $f^{-1}(V):=\{x\in X:f(x)\in V\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A function is 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable if the inverse image of a Borel set is in 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A measurability criterion: just check the inverse image of an arbitrary
+ positive ray: 
+\begin_inset Formula $f^{-1}((a,\infty))\in\Sigma$
+\end_inset
+
+, which is to say 
+\begin_inset Formula $\{x\in X:f(x)>a\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Notes on §2C
+\end_layout
+
+\begin_layout Standard
+A measure on 
+\begin_inset Formula $(X,\Sigma)$
+\end_inset
+
+ is a function 
+\begin_inset Formula $\mu:\Sigma\rightarrow[0,\infty]$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mu(\varnothing)=0$
+\end_inset
+
+ and which is countably additive: for disjoint 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu\left(\bigcup_{k}E_{k}\right)=\sum_{k}\mu(E_{k})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The measure of an increasing union 
+\begin_inset Formula $E_{1}\subseteq E_{2}\subseteq$
+\end_inset
+
+...
+ is the limit: 
+\begin_inset Formula $\mu(\bigcup_{k=1}^{\infty}E_{k})=\lim_{k\rightarrow\infty}\mu(E_{k})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Similarly the measure of a decreasing intersection (with 
+\begin_inset Formula $\mu(E_{1})<\infty$
+\end_inset
+
+) is the limit.
+\end_layout
+
+\begin_layout Standard
+We have an inclusion–exclusion principle: 
+\begin_inset Formula $\mu(A\cup B)=\mu(A)+\mu(B)-\mu(A\cap B)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Notes on §2D
+\end_layout
+
+\begin_layout Standard
+Outer measure is additive if one of the sets is open, or one of the sets
+ is closed.
+ 
+\end_layout
+
+\begin_layout Standard
+Basically, outer measure is a measure (the Lebesgue measure) on Borel sets,
+ and all the sets that matter are Borel.
+\end_layout
+
+\begin_layout Standard
+A set 
+\begin_inset Formula $A$
+\end_inset
+
+ is Lebesgue measurable if there exists a Borel set 
+\begin_inset Formula $B\subseteq A$
+\end_inset
+
+ such that 
+\begin_inset Formula $|A\backslash B|=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Lebesgue measurable sets can be approximated by closed sets from below (for
+ all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists closed 
+\begin_inset Formula $F\subseteq A$
+\end_inset
+
+ such that 
+\begin_inset Formula $|A\backslash F|<\varepsilon$
+\end_inset
+
+ ) or open sets from above (for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists open 
+\begin_inset Formula $G\supseteq A$
+\end_inset
+
+ such that 
+\begin_inset Formula $|G\backslash A|<\varepsilon$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection*
+Exercises!!
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§2A#1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $A,B\subseteq\R$
+\end_inset
+
+ and 
+\begin_inset Formula $|B|=0$
+\end_inset
+
+, 
+\begin_inset Formula $|A\cup B|=|A|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\le$
+\end_inset
+
+) For any 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists a countable cover 
+\begin_inset Formula $\{I_{k}\}_{k}$
+\end_inset
+
+ of 
+\begin_inset Formula $A$
+\end_inset
+
+ such that 
+\begin_inset Formula $\sum_{k}\ell(I_{k})<|A|+\frac{\varepsilon}{2}$
+\end_inset
+
+ and a countable cover 
+\begin_inset Formula $\{J_{k}\}_{k}$
+\end_inset
+
+ of 
+\begin_inset Formula $B$
+\end_inset
+
+ such that 
+\begin_inset Formula $\sum_{k}\ell(J_{k})<\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\{I_{k}\}\cup\{J_{k}\}$
+\end_inset
+
+ is a countable cover of 
+\begin_inset Formula $A\cup B$
+\end_inset
+
+ of length 
+\begin_inset Formula $|A|+\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=|A|+\varepsilon$
+\end_inset
+
+.
+ This shows that 
+\begin_inset Formula $|A\cup B|\le|A|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\ge$
+\end_inset
+
+) 
+\begin_inset Formula $A\subseteq A\cup B$
+\end_inset
+
+ implies 
+\begin_inset Formula $|A|\le|A\cup B|$
+\end_inset
+
+ by the monotonicity of outer measure.
+ Writing the inequality in the other order, this shows 
+\begin_inset Formula $|A\cup B|\ge|A|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Coda.) 
+\begin_inset Formula $|A\cup B|\le|A|$
+\end_inset
+
+ and 
+\begin_inset Formula $|A\cup B|\ge|A|$
+\end_inset
+
+ implies 
+\begin_inset Formula $|A\cup B|=|A|$
+\end_inset
+
+, which is 
+\emph on
+quod era demonstrandum
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§2A#7
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Suppose 
+\begin_inset Formula $a<b$
+\end_inset
+
+ and 
+\begin_inset Formula $c<d$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $|(a,b)\cup(c,d)|=b-a+c-d$
+\end_inset
+
+ iff 
+\begin_inset Formula $(a,b)\cap(c,d)=\varnothing$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+, 
+\begin_inset Formula $\le$
+\end_inset
+
+) For any 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists a countable cover of 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+ of length 
+\begin_inset Formula $b-a+\frac{\varepsilon}{2}$
+\end_inset
+
+, and a countable cover of 
+\begin_inset Formula $(c,d)$
+\end_inset
+
+ of length 
+\begin_inset Formula $d-c+\frac{\varepsilon}{2}$
+\end_inset
+
+; the union of the covers has length 
+\begin_inset Formula $b-a+c-d+\varepsilon$
+\end_inset
+
+, which establishes that if 
+\begin_inset Formula $(a,b)\cap(c,d)=\varnothing$
+\end_inset
+
+, then 
+\begin_inset Formula $|(a,b)\cup(c,d)|\le b-a+c-d$
+\end_inset
+
+.
+ (This also follows from countable subadditivity of outer measure.)
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+, 
+\begin_inset Formula $\ge$
+\end_inset
+
+) If 
+\begin_inset Formula $(a,b)\cap(c,d)=\varnothing$
+\end_inset
+
+, 
+\begin_inset Formula $|(a,b)\cup(c,d)|$
+\end_inset
+
+ needs to cover 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+ and 
+\begin_inset Formula $(c,d)$
+\end_inset
+
+ separately, so 
+\begin_inset Formula $|(a,b)\cup(c,d)|\ge|(a,b)|+|(c,d)|=(b-a)+(c-d)$
+\end_inset
+
+ by the monotonicity of outer measure.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) [omitted]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§2A#9
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $|A|=\lim_{t\rightarrow\infty}|A\cap(-t,t)|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\lim_{t\rightarrow\infty}|A\cap(-t,t)|=L$
+\end_inset
+
+ means that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists a 
+\begin_inset Formula $T$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $t>T$
+\end_inset
+
+, 
+\begin_inset Formula $|L-\left|A\cap(-t,t)\right||<\varepsilon$
+\end_inset
+
+ (where the outer bars are absolute value and the inner bars are outer measure).
+ As it turns out, 
+\begin_inset Formula $T$
+\end_inset
+
+ doesn't really need to depend on 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Rather, let 
+\begin_inset Formula $T:=\max(|\sup A|,|\inf A|)$
+\end_inset
+
+.
+ Then for 
+\begin_inset Formula $t>T$
+\end_inset
+
+, 
+\begin_inset Formula $A\cap(-t,t)=A$
+\end_inset
+
+, so of course 
+\begin_inset Formula $|A\cap(-t,t)|=|A|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+[Claude Sonnet 3.7 points out that this only works when 
+\begin_inset Formula $A$
+\end_inset
+
+ is bounded.]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§2B#2``a
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $X$
+\end_inset
+
+ is a set and 
+\begin_inset Formula $A\subseteq\mathcal{P}(X)=\{\{x\}:x\in X\}$
+\end_inset
+
+ is the set of singleton subsets of 
+\begin_inset Formula $X$
+\end_inset
+
+, then the smallest 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra containing 
+\begin_inset Formula $A$
+\end_inset
+
+ consists of subsets 
+\begin_inset Formula $E\subseteq X$
+\end_inset
+
+ such that 
+\begin_inset Formula $E$
+\end_inset
+
+ or 
+\begin_inset Formula $E^{\complement}=X\backslash E$
+\end_inset
+
+ are countable.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebras are closed under complements and countable unions.
+ If 
+\begin_inset Formula $E$
+\end_inset
+
+ is countable, it's a countable union of singletons, so it's in the 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra.
+ If 
+\begin_inset Formula $E^{\complement}$
+\end_inset
+
+ is countable, then 
+\begin_inset Formula $\left(E^{\complement}\right)^{\complement}=E$
+\end_inset
+
+ is the complement of a countable union of singletons.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
