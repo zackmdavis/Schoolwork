@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-30 March 2025
+30 March–2 April 2025
 \end_layout
 
 \begin_layout Abstract
@@ -360,7 +360,7 @@ A function is
 \end_layout
 
 \begin_layout Standard
-A measurability criterion: just check the inverse image of an arbitrary
+A measurability criterion: just check the inverse image of the arbitrary
  positive ray: 
 \begin_inset Formula $f^{-1}((a,\infty))\in\Sigma$
 \end_inset
@@ -491,8 +491,297 @@ Lebesgue measurable sets can be approximated by closed sets from below (for
 ).
 \end_layout
 
+\begin_layout Subsubsection*
+Cantor set interlude?!
+\end_layout
+
+\begin_layout Standard
+Recursively deleting the middle third—equivalent to there existing a base
+ 3 representation containing only 0s and 2s (taking in mind that rationals
+ have two representations: 
+\begin_inset Formula $0.1=0.0\overline{2}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Closed, measure zero, contains no intervals.
+\end_layout
+
+\begin_layout Standard
+Cantor function is onto 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ but constant almost everywhere: if 
+\begin_inset Formula $x\in C$
+\end_inset
+
+, replace 2s with 1s and interpret as base 2, else truncate after the first
+ 1, replace every preceding 2 by 1, and interpret as base 2.
+\end_layout
+
 \begin_layout Subsection*
-Exercises!!
+Notes on §2E
+\end_layout
+
+\begin_layout Standard
+Pointwise vs.
+ uniform convergence, the usual dance (uniform means 
+\begin_inset Formula $N$
+\end_inset
+
+/
+\begin_inset Formula $\delta$
+\end_inset
+
+ doesn't depend on 
+\begin_inset Formula $x$
+\end_inset
+
+)—
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Pointwise
+\emph default
+: 
+\begin_inset Formula $\forall x\ \forall\varepsilon\ \exists N\ \forall k\ge N\ |f_{k}(x)-f(x)|<\varepsilon$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Uniform
+\emph default
+: 
+\begin_inset Formula $\forall\varepsilon\ \exists N\ \forall x\ \forall k\ge N\ |f_{k}(x)-f(x)|<\varepsilon$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uniform limit of continuous functions is continuous.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Egorov's theorem
+\emph default
+.
+ Consider a measure space 
+\begin_inset Formula $(X,\Sigma,\mu)$
+\end_inset
+
+ with 
+\begin_inset Formula $\mu(X)<\infty$
+\end_inset
+
+ and sequence of 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable functions 
+\begin_inset Formula $\{f_{k}\}_{k=1}^{\infty}$
+\end_inset
+
+ that converge pointwise to 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ For every 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists an 
+\begin_inset Formula $E\in\Sigma$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mu(E^{\complement})=\mu(X\backslash E)<\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $\{f_{k}\}_{k=1}^{\infty}$
+\end_inset
+
+ converge uniformly on 
+\begin_inset Formula $E$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Simple functions have finitely many values.
+\end_layout
+
+\begin_layout Standard
+We can approximate measurable functions with a uniformly convergent series
+ of simple functions.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Luszin's theorem
+\emph default
+.
+ Consider a Borel measurable function 
+\begin_inset Formula $g:\R\rightarrow\R$
+\end_inset
+
+.
+ For every 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists a closed set 
+\begin_inset Formula $F\subseteq\R$
+\end_inset
+
+ such that 
+\begin_inset Formula $|\R\backslash F|<\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $g|_{F}$
+\end_inset
+
+ is continuous on 
+\begin_inset Formula $F$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A function is Lebesgue measurable if the inverse image of a Borel set is
+ a Lebesgue measurable set.
+\end_layout
+
+\begin_layout Standard
+Every Lebesgue measurable function is almost Borel measurable: if 
+\begin_inset Formula $f$
+\end_inset
+
+ is Lebesgue, there exists 
+\begin_inset Formula $g$
+\end_inset
+
+ Borel such that
+\begin_inset Formula $\left|\left\{ x\in\R:g(x)\ne f(x)\right\} \right|=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Notes on §3A
+\end_layout
+
+\begin_layout Standard
+We have the lower Lebesgue sum with respect to a finite partition of our
+ sigma algebra 
+\begin_inset Formula $\mathcal{L}(f,P):=\sum_{k=1}^{m}\mu(A_{j})\inf_{A_{j}}f$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then the Lebesgue integral is the supremum over partitions: 
+\begin_inset Formula $\int f\,d\mu=\sup\left\{ \mathcal{L}(f,\{A_{j}\}_{j=1}^{m}):\ \{A_{j}\}\ \text{a finite partition of }\Sigma\right\} =\sup\left\{ \sum_{k=1}^{m}\mu(A_{j})\inf_{A_{j}}f:\{A_{j}\}\ \text{partition}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The integral of an indicator function is the measure: 
+\begin_inset Formula $\int\boldsymbol{1}_{E}\,d\mu=\mu(E)$
+\end_inset
+
+, which has implications for the integral of a simple function, 
+\begin_inset Formula $\int\left(\sum_{k=1}^{n}c_{k}\boldsymbol{1}_{E_{k}}\right)d\mu=\sum_{k=1}^{n}c_{k}\mu(E_{k})$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have a 
+\emph on
+monotone convergence theorem 
+\emph default
+which says that for an increasing sequence of functions, you can swap the
+ limit and integral sign.
+\end_layout
+
+\begin_layout Standard
+Integration is order-preserving, obviously: 
+\begin_inset Formula $f\le g$
+\end_inset
+
+ implies 
+\begin_inset Formula $\int f\le\int g$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Only slightly less obviously, there's a 
+\begin_inset Quotes eld
+\end_inset
+
+triangle inequality
+\begin_inset Quotes erd
+\end_inset
+
+ for integrals: 
+\begin_inset Formula $\left|\int f\,d\mu\right|\le\int|f|\,d\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Exercises!! (from Axler)
 \end_layout
 
 \begin_layout Standard
@@ -915,6 +1204,713 @@ Proof
 \end_inset
 
  is the complement of a countable union of singletons.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§2B#4
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The smallest 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra containing 
+\begin_inset Formula $\{(r,n]:r\in\Q,n\in\mathbb{Z}\}$
+\end_inset
+
+ is the collection of Borel sets.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $S$
+\end_inset
+
+ be the 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra generated by 
+\begin_inset Formula $\{(r,n]:r\in\Q,n\in\mathbb{Z}\}$
+\end_inset
+
+, and let 
+\begin_inset Formula $B$
+\end_inset
+
+ be the Borel sets.
+ 
+\end_layout
+
+\begin_layout Standard
+We need to show that we can build an arbitrary 
+\begin_inset Formula $(r,n]$
+\end_inset
+
+ generator out of open intervals using 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra closure operations, and that we can build an arbitrary open interval
+ out of 
+\begin_inset Formula $(r,n]$
+\end_inset
+
+ generators.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $S\subseteq B$
+\end_inset
+
+) 
+\begin_inset Formula $(r,n]$
+\end_inset
+
+ is the intersection of the open set 
+\begin_inset Formula $(r,n+\varepsilon)$
+\end_inset
+
+ (which is open, thus Borel) with 
+\begin_inset Formula $\R\backslash\left(\bigcap_{k}(n+\frac{1}{k},n+1)\right)$
+\end_inset
+
+ (which is Borel because the countable intersection of open sets is Borel,
+ and the complement of a Borel set is Borel).
+ 
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $B\subseteq S$
+\end_inset
+
+) If we can build an arbitrary open interval with rational endpoints, we
+ can build an arbitrary open interval (because an arbitrary real number
+ is the limit of a sequence of rationals.
+\end_layout
+
+\begin_layout Standard
+We notice that the countable union 
+\begin_inset Formula $\bigcup_{k=1}^{\infty}(r,n+k]$
+\end_inset
+
+ is equal to the open ray 
+\begin_inset Formula $(r,\infty)$
+\end_inset
+
+.
+ Then we notice that 
+\begin_inset Formula $(r,n]^{\complement}=(-\infty,r]\cup(n,\infty)$
+\end_inset
+
+.
+ And that 
+\begin_inset Formula $\left((-\infty,r]\cup(n,\infty)\right)\cap(r,\infty)^{\complement}=(-\infty,r]$
+\end_inset
+
+, and that ...
+\end_layout
+
+\begin_layout Standard
+[Embarassingly having trouble generating an open rational right endpoint
+ using these operations?!]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§2C3
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There exists a measure 
+\begin_inset Formula $\mu$
+\end_inset
+
+ on 
+\begin_inset Formula $(\text{\N}^{+},2^{\N+})$
+\end_inset
+
+ such that 
+\begin_inset Formula $\{\mu(E)\subseteq\N^{+}\}=[0,1]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Consider 
+\begin_inset Formula $\mu(E)=\sum_{n\in E}2^{-n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Empty set.) 
+\begin_inset Formula $\mu(\varnothing)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Countable additivity.) 
+\begin_inset Formula $\mu(\bigcup_{n\in E}n)=\sum_{n\in E}2^{-n}=\sum_{n\in E}\mu(n)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+[Claude Sonnet 3.7 complains that I didn't verify that any value of the measure
+ in 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ has a corresponding set of integers, which is fair enough, but it's straightfor
+ward: binary expansion]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§2D9
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $A\subseteq\R$
+\end_inset
+
+ is Lebesgue measurable, then 
+\begin_inset Formula $tA:=\{ta:a\in A\}$
+\end_inset
+
+ is Lesbesgue measurable.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Because Lebesgue measurable sets can be approximated by closed sets from
+ below, there exists 
+\begin_inset Formula $F\subseteq A$
+\end_inset
+
+ such that 
+\begin_inset Formula $|A\backslash F|<\frac{\varepsilon}{t}$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $|tA\backslash tF|<t\frac{\varepsilon}{t}=\varepsilon$
+\end_inset
+
+, and 
+\begin_inset Formula $tA$
+\end_inset
+
+ is Lebesgue measurable, too.
+\end_layout
+
+\begin_layout Standard
+[Claude Sonnet 3.7 complains that I'm assuming 
+\begin_inset Formula $t>0$
+\end_inset
+
+ and that the scaling property hasn't been justified.]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§3A6
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Suppose 
+\begin_inset Formula $(X,\Sigma,\mu)$
+\end_inset
+
+ is a measure space, 
+\begin_inset Formula $f:X\rightarrow[0,\infty]$
+\end_inset
+
+ is 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable, and 
+\begin_inset Formula $P$
+\end_inset
+
+ and 
+\begin_inset Formula $P'$
+\end_inset
+
+ are 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-partitions of 
+\begin_inset Formula $X$
+\end_inset
+
+ such that each set in 
+\begin_inset Formula $P'$
+\end_inset
+
+ is contained in a set of 
+\begin_inset Formula $P$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\mathcal{L}(f,P)\le\mathcal{\mathcal{L}}(f,P')$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $P:=\{A_{i}\}_{i=1}^{m}$
+\end_inset
+
+ and 
+\begin_inset Formula $P':=\{B_{i,j}\}$
+\end_inset
+
+, where for all 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $B_{i,j}\subseteq A_{i}$
+\end_inset
+
+.
+ (As a partition, the sets in 
+\begin_inset Formula $P$
+\end_inset
+
+ are mutually disjoint, so if every set in 
+\begin_inset Formula $P'$
+\end_inset
+
+ is contained in a set of 
+\begin_inset Formula $P$
+\end_inset
+
+, then the sets in 
+\begin_inset Formula $P'$
+\end_inset
+
+ are also mutually disjoint and each belong to exactly one set of 
+\begin_inset Formula $P$
+\end_inset
+
+.) For a given 
+\begin_inset Formula $i$
+\end_inset
+
+ and for all 
+\begin_inset Formula $j$
+\end_inset
+
+, we have 
+\begin_inset Formula $\sum_{j}\mu(B_{i,j})=\mu(A_{i})$
+\end_inset
+
+ and 
+\begin_inset Formula $\inf_{x\in A_{i}}f(x)\le\inf_{x\in B_{i,j}}f(x)$
+\end_inset
+
+.
+ So we have 
+\begin_inset Formula 
+\[
+\sum_{i=1}^{m}\mu(A_{i})\inf_{x\in A_{i}}f(x)\le\sum_{i=1}^{m}\sum_{j}\mu(B_{i,j})\inf_{x\in B_{i,j}}f(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is to say 
+\begin_inset Formula $\mathcal{L}(f,P)\le\mathcal{\mathcal{L}}(f,P')$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§3A7
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For set 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $\Sigma=\mathcal{P}(X)$
+\end_inset
+
+, and 
+\begin_inset Formula $w:X\rightarrow[0,\infty]$
+\end_inset
+
+, we have the measure 
+\begin_inset Formula $\mu(E)=\sum_{x\in E}w(x)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $f:X\rightarrow[0,\infty]$
+\end_inset
+
+ is a function, 
+\begin_inset Formula $\int f\,d\mu=\sum_{x\in X}w(x)f(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula 
+\[
+\int f\,d\mu=\sup\left\{ \sum_{k}\mu(A_{k})\inf_{A_{k}}f:\{A_{k}\}\ \text{partition}\right\} =\sup\left\{ \sum_{k}\left(\sum_{x\in A_{k}}w(x)\right)\cdot\inf_{A_{k}}f:\{A_{k}\}\ \text{partition}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The equivalency would be clear if we could take an 
+\begin_inset Quotes eld
+\end_inset
+
+uncountable sum
+\begin_inset Quotes erd
+\end_inset
+
+, but we're actually taking a limit over finite partitions.
+\end_layout
+
+\begin_layout Standard
+When we bucketing some values into the same part, the inf is less (it's
+ a 
+\emph on
+lower
+\emph default
+ Lebesgue sum), which gives us 
+\begin_inset Formula $\int f\,d\mu\le\sum_{x\in X}w(x)f(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We still need to prove 
+\begin_inset Formula $\int f\,d\mu\ge\sum_{x\in X}w(x)f(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+[Claude Sonnet 3.7 is suggesting we construct a countable partition such
+ that the integral is greater than the sum minus epsilon ...]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Exercises!! (from Schröder)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+9-5
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Let 
+\begin_inset Formula $\{A_{n}\}_{n=1}^{\infty}$
+\end_inset
+
+ be a sequence of Lebesgue measurable sets.
+ Then 
+\begin_inset Formula $\bigcap_{n=1}^{\infty}A_{n}$
+\end_inset
+
+ is Lebesgue measurable and for all 
+\begin_inset Formula $k\in\N$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda(\bigcap_{n=1}^{\infty}A_{n})\le\lambda(A_{k})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ For all 
+\begin_inset Formula $k$
+\end_inset
+
+, there exists a closed set 
+\begin_inset Formula $F_{k}\subseteq A_{k}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\lambda(A_{k}\backslash F_{k})<\frac{\varepsilon}{2^{k}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Now 
+\begin_inset Formula $\bigcap_{k=1}^{\infty}F_{k}$
+\end_inset
+
+ is closed (because the intersection of closed sets is closed), thus Borel,
+ thus Lebesgue measurable.
+\end_layout
+
+\begin_layout Standard
+And 
+\begin_inset Formula $\bigcap_{k=1}^{\infty}F_{k}\subseteq\bigcap_{k=1}^{\infty}A_{k}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Any 
+\begin_inset Formula $x\in\bigcap_{k}A_{k}\backslash\bigcap_{k}F_{k}$
+\end_inset
+
+ needs to be in all of the 
+\begin_inset Formula $A_{k}$
+\end_inset
+
+ but not all (
+\emph on
+i.e
+\emph default
+., some) of the 
+\begin_inset Formula $F_{k}$
+\end_inset
+
+, therefore there exists 
+\begin_inset Formula $k_{0}$
+\end_inset
+
+ for which 
+\begin_inset Formula $x\in A_{k_{0}}\backslash F_{k_{0}}$
+\end_inset
+
+, so 
+\begin_inset Formula $\lambda\left(\bigcap_{k}A_{k}\backslash\bigcap_{k}F_{k}\right)\le\sum_{k}\frac{\varepsilon}{2^{k}}=\varepsilon$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\bigcap_{k=1}^{\infty}A_{k}$
+\end_inset
+
+ can be approximated from below by a closed set and is therefore Lebesgue
+ measurable.
+\end_layout
+
+\begin_layout Standard
+Separately, for any set 
+\begin_inset Formula $S$
+\end_inset
+
+, 
+\begin_inset Formula $A_{k}\cap S\subseteq A_{k}$
+\end_inset
+
+, so 
+\begin_inset Formula $\bigcap_{n=1}^{\infty}A_{n}\subseteq A_{k}$
+\end_inset
+
+, and the monotonicity of the Lebesgue measure guarantees 
+\begin_inset Formula $\lambda(\bigcap_{n=1}^{\infty}A_{n})\le\lambda(A_{k})$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+9-10
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Let 
+\begin_inset Formula $f:\R\rightarrow[-\infty,\infty]$
+\end_inset
+
+ be a Lebesgue measurable function.
+ 
+\begin_inset Formula $\{x\in\R:f(x)=\infty\}$
+\end_inset
+
+ is Lebesgue measurable.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ For any 
+\begin_inset Formula $a\in\R$
+\end_inset
+
+, 
+\begin_inset Formula $E_{a}:=\{x\in\R:f(x)>a\}$
+\end_inset
+
+ (also written as 
+\begin_inset Formula $f^{-1}((a,\infty))$
+\end_inset
+
+) is Lebesgue measurable.
+ Moreover, if 
+\begin_inset Formula $a<b$
+\end_inset
+
+, then 
+\begin_inset Formula $E_{b}\subseteq E_{a}$
+\end_inset
+
+.
+ So for 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+, we have a decreasing intersection of Lebesgue measurable sets, and 
+\begin_inset Formula $\mu(E_{n})=\lim_{n\rightarrow\infty}\mu(E_{n})$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
