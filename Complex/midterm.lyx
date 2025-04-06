@@ -428,6 +428,11 @@ Comment
 \emph default
 .
  Perhaps the intent of the prompt was to ask about non-constant functions?!
+\end_layout
+
+\begin_layout Standard
+[TODO: assume the intent was non-constant and solve ...
+ oh, now I get it; this is going to be the identity theorem!]
 \begin_inset Newline newline
 \end_inset
 
@@ -490,39 +495,7 @@ a
  Proof
 \emph default
  (Cauchy).
- Cauchy's integral formula states that
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-f^{(n)}(z)=\frac{n!}{2\pi i}\oint\frac{f(Z)}{(Z-z)^{n+1}}dZ
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In this case, that would be 
-\begin_inset Formula 
-\[
-f^{(n)}(z_{0})=\frac{n!}{2\pi i}\oint\frac{Z^{n}+\sum_{k=0}^{n-1}a_{k}Z^{k}}{(Z-z_{0})^{n+1}}dZ=\frac{n!}{2\pi i}\oint Z^{n}(Z-z_{0})^{-n-1}+\sum_{k=0}^{n-1}a_{k}Z^{k}(Z-z_{0})^{-n-1}dZ
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-This will have a residue of 1 at 
-\begin_inset Formula $z_{0}$
-\end_inset
-
-.
- [TODO: but this formula is for the nth derivative?]
+ [TODO]
 \end_layout
 
 \begin_layout Standard
@@ -536,6 +509,7 @@ b
 Proof 
 \emph default
 (Rouché).
+ [TODO]
 \end_layout
 
 \begin_layout Standard
@@ -544,6 +518,7 @@ Proof
 c
 \series default
 .
+ [TODO]
 \begin_inset Newline newline
 \end_inset
 
@@ -570,6 +545,14 @@ Theorem
 \end_inset
 
  iff 
+\begin_inset Formula $f$
+\end_inset
+
+ is a Möbius transformation, 
+\emph on
+i.e
+\emph default
+., 
 \begin_inset Formula $f(z)=\frac{az+b}{cz+d}$
 \end_inset
 
@@ -655,7 +638,430 @@ adz-bcz=adw-bcw
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
-)
+) We know that meromorphic functions 
+\begin_inset Formula $f:\C_{\infty}\rightarrow\C_{\infty}$
+\end_inset
+
+ are rational functions 
+\begin_inset Formula $\frac{P(z)}{Q(z)}=\frac{\sum_{j=0}^{m}a_{j}z^{j}}{\sum_{k=0}^{m}b_{k}z^{k}}$
+\end_inset
+
+.
+ We need to show that if 
+\begin_inset Formula $f$
+\end_inset
+
+ is injective, then 
+\begin_inset Formula $m,n\le1$
+\end_inset
+
+—or to take the contrapositive, that if 
+\begin_inset Formula $m>1$
+\end_inset
+
+ or 
+\begin_inset Formula $n>1$
+\end_inset
+
+, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is not injective, i.e., that there exist 
+\begin_inset Formula $z\ne w$
+\end_inset
+
+ such that 
+\begin_inset Formula $f(z)=f(w)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $m>1$
+\end_inset
+
+, which is to say that 
+\begin_inset Formula $\deg(P(z))>1$
+\end_inset
+
+.
+ By the fundamental theorem of algebra, 
+\begin_inset Formula $P(z)$
+\end_inset
+
+ has 
+\begin_inset Formula $\deg(P(z))$
+\end_inset
+
+ zeros, which are also zeros of 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ If any two of those zeros 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ are distinct, then we have 
+\begin_inset Formula $z_{1}\ne z_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $f(z_{1})=f(z_{2})=0$
+\end_inset
+
+, and 
+\begin_inset Formula $f$
+\end_inset
+
+ is not injective.
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $n>1$
+\end_inset
+
+, which is to say that 
+\begin_inset Formula $\deg(Q(z))>1$
+\end_inset
+
+.
+ Again by the fundamental theorem of algebra, 
+\begin_inset Formula $Q(z)$
+\end_inset
+
+ has 
+\begin_inset Formula $\deg(Q(z))$
+\end_inset
+
+ zeros—which are poles of 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ If any two of those poles 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{2}$
+\end_inset
+
+ are distinct, then we have 
+\begin_inset Formula $w_{1}\ne w_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $f(w_{1})=f(w_{2})=\infty$
+\end_inset
+
+, and 
+\begin_inset Formula $f$
+\end_inset
+
+ is not injective.
+\end_layout
+
+\begin_layout Standard
+Thus, it only remains to deal with the case where the zeros or poles of
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ are not distinct.
+\end_layout
+
+\begin_layout Standard
+[TODO: Isn't this just going to be, non-distinct poles amount to 
+\begin_inset Formula $(z-a)^{n}$
+\end_inset
+
+, which you can just check?]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be entire with 
+\begin_inset Formula $f(z)=f(z+1)$
+\end_inset
+
+ and 
+\begin_inset Formula $|f(z)|\le\exp|z|$
+\end_inset
+
+, and 
+\begin_inset Formula $g(z):=\frac{f(z)-f(0)}{\sin(\pi z)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $n\in\mathbb{Z},$
+\end_inset
+
+ 
+\begin_inset Formula $g(n)$
+\end_inset
+
+ is a removable singularity.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ For 
+\begin_inset Formula $n\in\mathbb{Z},$
+\end_inset
+
+ we know that 
+\begin_inset Formula $g(n)$
+\end_inset
+
+ is a singularity because of the denominator 
+\begin_inset Formula $\sin(\pi n)=0$
+\end_inset
+
+.
+ According to one form of Riemann's theorem on removable singularities,
+ the singularity is removable if 
+\begin_inset Formula $\lim_{z\rightarrow n}(z-n)g(z)=\lim_{z\rightarrow n}(z-n)\frac{f(z)-f(0)}{\sin(\pi z)}=0$
+\end_inset
+
+.
+ In the vicinity of 
+\begin_inset Formula $n$
+\end_inset
+
+, we can use the local linear approximation 
+\begin_inset Formula $\sin\pi z\approx\pi(z-n)(-1)^{n}$
+\end_inset
+
+ and the fact that 
+\begin_inset Formula $(-1)^{-n}=(-1)^{n}$
+\end_inset
+
+ and the fact that 
+\begin_inset Formula $f(n)=f(0)$
+\end_inset
+
+ (because 
+\begin_inset Formula $f(z)=f(z+1)$
+\end_inset
+
+ implies that 
+\begin_inset Formula $f(n)=f(n-1)=f(n-2)=...=f(0)$
+\end_inset
+
+) to get:
+\begin_inset Formula 
+\[
+\lim_{z\rightarrow n}\cancel{(z-n)}\frac{f(z)-f(0)}{\pi\cancel{(z-n)}(-1)^{n}}=\frac{1}{\pi}(-1)^{n}\cancelto{0}{(f(n)-f(0))}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ is bounded on 
+\begin_inset Formula $0\le\Re(z)<1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We already know that 
+\begin_inset Formula $f$
+\end_inset
+
+ is bounded (by 
+\begin_inset Formula $\exp|z|$
+\end_inset
+
+), so the only place where 
+\begin_inset Formula $g(z)=\frac{f(z)-f(0)}{\sin(\pi z)}$
+\end_inset
+
+ could unboundedly 
+\begin_inset Quotes eld
+\end_inset
+
+shoot off to infinity
+\begin_inset Quotes erd
+\end_inset
+
+ is when the denominator is zero at 
+\begin_inset Formula $z=1$
+\end_inset
+
+.
+ But we established in the previous proposition that those are removable
+ singularities.
+ Again by Reimann's theorem on removable singularities, 
+\begin_inset Formula $g$
+\end_inset
+
+ is bounded in a neighborhood of 1.
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ is constant.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ The fact that 
+\begin_inset Formula $f(z)=f(z+1)$
+\end_inset
+
+ implies that for any fixed 
+\begin_inset Formula $y$
+\end_inset
+
+, 
+\begin_inset Formula $h_{1}(x):=f(x+iy)$
+\end_inset
+
+ is periodic, and is therefore bounded by the extreme value theorem.
+ (The function can't shoot off to infinity in between periods and still
+ be continuous, but it has to be continuous because 
+\begin_inset Formula $f$
+\end_inset
+
+ is entire.) But for any fixed 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $h_{2}(y):=f(x+iy)$
+\end_inset
+
+ is bounded because 
+\begin_inset Formula $|f(x+iy)|\le\exp|x+iy|\le\exp(|x|+|iy|)=\exp|x|\exp|iy|\le\exp|x|$
+\end_inset
+
+.
+ It follows that 
+\begin_inset Formula $f$
+\end_inset
+
+ is bounded, and therefore constant by Liouville's theorem.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+6
+\series default
+.
+ 
+\begin_inset Formula $f(z)=\frac{1}{z^{2k}(e^{z}-1)}$
+\end_inset
+
+ has a pole of order 
+\begin_inset Formula $2k+1$
+\end_inset
+
+ at 
+\begin_inset Formula $z=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We begin calculate the residue as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{Res}(f,0)=\frac{1}{\left(2k\right)!}\lim_{z\rightarrow0}\frac{d^{2k}}{dz^{2k}}\left(\frac{z^{\cancel{2k}+1}}{\cancel{z^{2k}}(e^{z}-1)}\right)=\frac{1}{\left(2k\right)!}\lim_{z\rightarrow0}\frac{d^{2k}}{dz^{2k}}\left(\frac{z}{e^{z}-1}\right)
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
