@@ -9,7 +9,7 @@
 \maintain_unincluded_children false
 \language english
 \language_package default
-\inputencoding auto
+\inputencoding utf8
 \fontencoding global
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -389,7 +389,7 @@ Comment
 Proposition
 \emph default
 .
- There exists a holomorphic function 
+ There does not exist a holomorphic function 
 \begin_inset Formula $f:\mathbb{D}\rightarrow\C$
 \end_inset
 
@@ -407,32 +407,105 @@ Proposition
 \begin_layout Standard
 
 \emph on
-Proof
+Comment
 \emph default
 .
- The constant functions 
-\begin_inset Formula $f(z)=c$
+ If we knew that 
+\begin_inset Formula $f(z)=f(-z)$
 \end_inset
 
- for 
-\begin_inset Formula $c\in\C$
+ in general (not just for 
+\begin_inset Formula $\frac{1}{n}$
 \end_inset
 
- are holomorphic.
+, 
+\begin_inset Formula $n\in\N^{+}\backslash\{1\}$
+\end_inset
+
+), then 
+\begin_inset Formula $f$
+\end_inset
+
+ would be an even function, which doesn't seem like it would play well with
+ the power of 3 (which is odd) in the denominator of the output: 
+\emph on
+e.g
+\emph default
+., 
+\begin_inset Formula $f$
+\end_inset
+
+ can't be 
+\begin_inset Formula $z^{3}$
+\end_inset
+
+ because while 
+\begin_inset Formula $\left(\frac{1}{n}\right)^{3}=\frac{1}{n^{3}}$
+\end_inset
+
+, 
+\begin_inset Formula $\left(-\frac{1}{n}\right)^{3}=-\frac{1}{n^{3}}\ne\frac{1}{n^{3}}$
+\end_inset
+
+.
+ But this isn't yet a proof: we don't know that 
+\begin_inset Formula $f$
+\end_inset
+
+ is even, only that it behaves like an even function on 
+\begin_inset Formula $\frac{1}{n}$
+\end_inset
+
+ ...
+ but that's a convegent sequence, so we can probably invoke the identity
+ theorem!
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-Comment
+Proof
 \emph default
 .
- Perhaps the intent of the prompt was to ask about non-constant functions?!
-\end_layout
+ 
+\begin_inset Formula $x_{n}:=\{\frac{1}{n}\}_{n=2}^{\infty}$
+\end_inset
 
-\begin_layout Standard
-[TODO: assume the intent was non-constant and solve ...
- oh, now I get it; this is going to be the identity theorem!]
+ is a convergent sequence with a limit in 
+\begin_inset Formula $\mathbb{D}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $g(x):=x^{3}$
+\end_inset
+
+ takes on the values 
+\begin_inset Formula $\{\frac{1}{n^{3}}\}$
+\end_inset
+
+ on 
+\begin_inset Formula $x_{n}$
+\end_inset
+
+.
+ By the identity theorem, the values of a function on the sequence uniquely
+ determine the function, so if the proposition were true, we would have
+ 
+\begin_inset Formula $f=g$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $g(-\frac{1}{n})=-\frac{1}{n^{3}}\ne\frac{1}{n^{3}}=g(\frac{1}{n})$
+\end_inset
+
+, so 
+\begin_inset Formula $f\ne g$
+\end_inset
+
+.
+ Contradiction! 
 \begin_inset Newline newline
 \end_inset
 
@@ -494,8 +567,98 @@ a
 .
  Proof
 \emph default
- (Cauchy).
- [TODO]
+ (Cauchy, with thanks to a math.SE question by Don Fanucci (
+\emph on
+https://math.stackexchange.com/q/2777129
+\emph default
+) and an answer by Daniel (
+\emph on
+https://math.stackexchange.com/a/276347
+\emph default
+) on similar problems for guidance and inspiration).
+ 
+\end_layout
+
+\begin_layout Standard
+From the power rule, 
+\begin_inset Formula $f^{(n)}(z)=n!$
+\end_inset
+
+.
+ But by Cauchy's integral formula, we have 
+\begin_inset Formula 
+\[
+f^{(n)}(0)=\frac{n!}{2\pi i}\oint_{|Z|=1}\frac{Z^{n}+\sum_{k=0}^{n-1}a_{k}Z^{k}}{Z^{n+1}}dZ
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Equating the two, we get
+\begin_inset Formula 
+\[
+\cancel{n!}=\frac{\cancel{n!}}{2\pi i}\oint_{|Z|=1}\frac{Z^{n}+\sum_{k=0}^{n-1}a_{k}Z^{k}}{Z^{n+1}}dZ=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But I 
+\emph on
+think
+\emph default
+ we can reärrange to reïnterpret the integral as the average value on the
+ 
+\begin_inset Formula $|z|=1$
+\end_inset
+
+ circle?!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{2\pi}\oint_{|Z|=1}\frac{Z^{n}+\sum_{k=0}^{n-1}a_{k}Z^{k}}{Z^{n}}\underbrace{\frac{1}{Zi}dZ}_{dt}=\frac{1}{2\pi}\int_{0}^{2\pi}\frac{f(\exp(it))}{\exp(nit)}dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But if the average value on the 
+\begin_inset Formula $|z|=1$
+\end_inset
+
+ circle is 1, then there must exist a 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+ with 
+\begin_inset Formula $|z_{0}|=1$
+\end_inset
+
+ and 
+\begin_inset Formula $|f(z_{0})|\ge1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+I think the general idea here is right, but I don't think I've properly
+ understood the details.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -509,7 +672,25 @@ b
 Proof 
 \emph default
 (Rouché).
- [TODO]
+ With regrets, I'm confused about how to use Rouché's theorem, which states
+ that if 
+\begin_inset Formula $|f(z)|>|g(z)|$
+\end_inset
+
+ on a circle, then 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $f+g$
+\end_inset
+
+ have the same number of zeros inside the circle.
+ How does the number of zeros give me information about 
+\begin_inset Formula $|f(z_{0})|\ge1$
+\end_inset
+
+?
 \end_layout
 
 \begin_layout Standard
@@ -518,7 +699,27 @@ Proof
 c
 \series default
 .
- [TODO]
+ 
+\begin_inset Quotes eld
+\end_inset
+
+There exists 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+ with 
+\begin_inset Formula $|z_{0}|=1$
+\end_inset
+
+ and 
+\begin_inset Formula $|f(z_{0})|\ge|a_{0}|$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -667,7 +868,11 @@ adz-bcz=adw-bcw
 \begin_inset Formula $f$
 \end_inset
 
- is not injective, i.e., that there exist 
+ is not injective, 
+\emph on
+i.e
+\emph default
+., that there exist 
 \begin_inset Formula $z\ne w$
 \end_inset
 
@@ -734,8 +939,8 @@ Suppose
 \begin_inset Formula $\deg(Q(z))>1$
 \end_inset
 
-.
- Again by the fundamental theorem of algebra, 
+, the same argument goes through with loss of generality but poles instead
+ of zeros: by the fundamental theorem of algebra, 
 \begin_inset Formula $Q(z)$
 \end_inset
 
@@ -777,15 +982,61 @@ Thus, it only remains to deal with the case where the zeros or poles of
 \begin_inset Formula $f$
 \end_inset
 
- are not distinct.
-\end_layout
-
-\begin_layout Standard
-[TODO: Isn't this just going to be, non-distinct poles amount to 
-\begin_inset Formula $(z-a)^{n}$
+ are not distinct, where 
+\begin_inset Formula $f:=\frac{(z-r)^{m}}{(z-s)^{n}}$
 \end_inset
 
-, which you can just check?]
+ for root 
+\begin_inset Formula $r$
+\end_inset
+
+, pole 
+\begin_inset Formula $s$
+\end_inset
+
+, and 
+\begin_inset Formula $m\ge2$
+\end_inset
+
+ or 
+\begin_inset Formula $n\ge2$
+\end_inset
+
+.
+ But that's not injective either, because any complex number has 
+\begin_inset Formula $m$
+\end_inset
+
+ 
+\begin_inset Formula $m$
+\end_inset
+
+th roots and 
+\begin_inset Formula $n$
+\end_inset
+
+ 
+\begin_inset Formula $n$
+\end_inset
+
+th roots.
+ That is, if 
+\begin_inset Formula $f(z_{0})=\frac{(z-a)^{m}}{(z-a)^{n}}=\frac{C}{D}$
+\end_inset
+
+, then we could find a different 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ by taking some 
+\begin_inset Formula $\frac{C^{\frac{1}{m}}+a}{D^{\frac{1}{n}}+a}\ne z_{0}$
+\end_inset
+
+ (which has to exist, because there are 
+\begin_inset Formula $(n-1)(m-1)$
+\end_inset
+
+ other choices for the fractional powers).
 \begin_inset Newline newline
 \end_inset
 
@@ -1050,7 +1301,7 @@ Proof
 \end_layout
 
 \begin_layout Standard
-We begin calculate the residue as
+We begin by calculating the residue as
 \end_layout
 
 \begin_layout Standard
