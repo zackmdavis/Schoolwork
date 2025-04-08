@@ -567,7 +567,8 @@ a
 .
  Proof
 \emph default
- (Cauchy, with thanks to a math.SE question by Don Fanucci (
+ (Cauchy).
+ Based on a math.SE question by Don Fanucci (
 \emph on
 https://math.stackexchange.com/q/2777129
 \emph default
@@ -575,65 +576,14 @@ https://math.stackexchange.com/q/2777129
 \emph on
 https://math.stackexchange.com/a/276347
 \emph default
-) on similar problems for guidance and inspiration).
- 
-\end_layout
-
-\begin_layout Standard
-From the power rule, 
-\begin_inset Formula $f^{(n)}(z)=n!$
+) on similar problems, I think the idea here is going to be to relate the
+ Cauchy integral formula to the average value of a function on the unit
+ circle 
+\begin_inset Formula $\frac{1}{2\pi}\int_{0}^{2\pi}f(\exp(it))\,dt$
 \end_inset
 
 .
- But by Cauchy's integral formula, we have 
-\begin_inset Formula 
-\[
-f^{(n)}(0)=\frac{n!}{2\pi i}\oint_{|Z|=1}\frac{Z^{n}+\sum_{k=0}^{n-1}a_{k}Z^{k}}{Z^{n+1}}dZ
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Equating the two, we get
-\begin_inset Formula 
-\[
-\cancel{n!}=\frac{\cancel{n!}}{2\pi i}\oint_{|Z|=1}\frac{Z^{n}+\sum_{k=0}^{n-1}a_{k}Z^{k}}{Z^{n+1}}dZ=1
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-But I 
-\emph on
-think
-\emph default
- we can reärrange to reïnterpret the integral as the average value on the
- 
-\begin_inset Formula $|z|=1$
-\end_inset
-
- circle?!
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{1}{2\pi}\oint_{|Z|=1}\frac{Z^{n}+\sum_{k=0}^{n-1}a_{k}Z^{k}}{Z^{n}}\underbrace{\frac{1}{Zi}dZ}_{dt}=\frac{1}{2\pi}\int_{0}^{2\pi}\frac{f(\exp(it))}{\exp(nit)}dt
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-But if the average value on the 
+ If the average value on the 
 \begin_inset Formula $|z|=1$
 \end_inset
 
@@ -653,12 +603,86 @@ But if the average value on the
 \end_layout
 
 \begin_layout Standard
-I think the general idea here is right, but I don't think I've properly
- understood the details.
-\begin_inset Newline newline
+From the power rule, 
+\begin_inset Formula $f^{(n)}(z)=n!$
+\end_inset
+
+.
+ But by Cauchy's integral formula, we have 
+\begin_inset Formula 
+\[
+f^{(n)}(0)=\frac{n!}{2\pi i}\oint_{|z|=1}\frac{z^{n}+\sum_{k=0}^{n-1}a_{k}z^{k}}{z^{n+1}}dz
+\]
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Equating the two, we get
+\begin_inset Formula 
+\[
+\cancel{n!}=\frac{\cancel{n!}}{2\pi i}\oint_{|z|=1}\frac{z^{n}+\sum_{k=0}^{n-1}a_{k}z^{k}}{z^{n+1}}dz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And then we reformulate in terms of the parametrized path 
+\begin_inset Formula $C=\exp(it)$
+\end_inset
+
+ for 
+\begin_inset Formula $t\in[0,2\pi]$
+\end_inset
+
+.
+ (With the change-of-variables factor 
+\begin_inset Formula $dz=C'(t)\,dt=i\exp(it)\,dt$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1=\frac{1}{2\pi\cancel{i}}\int_{0}^{2\pi}\frac{\exp(it)^{n}+\sum_{k=0}^{n-1}a_{k}\exp(it)^{k}}{\exp(it)^{n\cancel{+1}}}\underbrace{\cancel{i}\cancel{\exp(it)}\,dt}_{dz}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1=\frac{1}{2\pi}\int_{0}^{2\pi}\frac{\exp(it)^{n}+\sum_{k=0}^{n-1}a_{k}\exp(it)^{k}}{\exp(it)^{n}}\,dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1=\frac{1}{2\pi}\int_{0}^{2\pi}1+\sum_{k=0}^{n-1}a_{k}\exp(it)^{k-n}\,dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+...?
 \end_layout
 
 \begin_layout Standard
@@ -719,7 +743,7 @@ There exists
 \begin_inset Quotes erd
 \end_inset
 
-
+?
 \begin_inset Newline newline
 \end_inset
 
@@ -939,8 +963,8 @@ Suppose
 \begin_inset Formula $\deg(Q(z))>1$
 \end_inset
 
-, the same argument goes through with loss of generality but poles instead
- of zeros: by the fundamental theorem of algebra, 
+, the same argument goes through with loss of generality but with poles
+ instead of zeros: by the fundamental theorem of algebra, 
 \begin_inset Formula $Q(z)$
 \end_inset
 
@@ -1285,8 +1309,8 @@ Proof
 6
 \series default
 .
- 
-\begin_inset Formula $f(z)=\frac{1}{z^{2k}(e^{z}-1)}$
+ My initial thoughts: 
+\begin_inset Formula $f(z)=\frac{1}{z^{2k}(\exp z-1)}$
 \end_inset
 
  has a pole of order 
@@ -1297,7 +1321,23 @@ Proof
 \begin_inset Formula $z=0$
 \end_inset
 
-.
+ (because that's 
+\begin_inset Quotes eld
+\end_inset
+
+how many times
+\begin_inset Quotes erd
+\end_inset
+
+ the denominator gets zeroed out between 
+\begin_inset Formula $0^{2k}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\exp0-1=0$
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -1307,12 +1347,301 @@ We begin by calculating the residue as
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\text{Res}(f,0)=\frac{1}{\left(2k\right)!}\lim_{z\rightarrow0}\frac{d^{2k}}{dz^{2k}}\left(\frac{z^{\cancel{2k}+1}}{\cancel{z^{2k}}(e^{z}-1)}\right)=\frac{1}{\left(2k\right)!}\lim_{z\rightarrow0}\frac{d^{2k}}{dz^{2k}}\left(\frac{z}{e^{z}-1}\right)
+\text{Res}(f,0)=\frac{1}{\left(2k\right)!}\lim_{z\rightarrow0}\frac{d^{2k}}{dz^{2k}}\left(\frac{z^{\cancel{2k}+1}}{\cancel{z^{2k}}(e^{z}-1)}\right)=\frac{1}{\left(2k\right)!}\lim_{z\rightarrow0}\frac{d^{2k}}{dz^{2k}}\left(\frac{z}{\exp z-1}\right)
 \]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+We know that 
+\begin_inset Formula $\frac{z}{e^{z}-1}$
+\end_inset
+
+ has the power series 
+\begin_inset Formula $\sum_{k=0}^{\infty}\frac{B_{k}}{k!}z^{k}$
+\end_inset
+
+, which is to say that 
+\begin_inset Formula $B_{k}$
+\end_inset
+
+ is the 
+\begin_inset Formula $k$
+\end_inset
+
+th derivative of 
+\begin_inset Formula $\frac{z}{\exp z-1}$
+\end_inset
+
+ at 0.
+ Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{\left(2k\right)!}\lim_{z\rightarrow0}\frac{d^{2k}}{dz^{2k}}\left(\frac{z}{\exp z-1}\right)=\frac{B_{2k}}{\left(2k\right)!}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We are instructed to consider this residue in relation to a square contour
+ of integration 
+\begin_inset Formula $\gamma_{m}:=\pm(2m+1)\pi\pm(2m+1)\pi i$
+\end_inset
+
+, and to deduce the value of 
+\begin_inset Formula $\zeta(2k)=\sum_{n=1}^{\infty}\frac{1}{n^{2k}}$
+\end_inset
+
+, but to achieve this, we must grapple with the yet unexplained mystery
+ of what this integral 
+\begin_inset Formula $\oint_{\gamma_{m}}\frac{1}{z^{2k}(e^{z}-1)}$
+\end_inset
+
+ has to do with the zeta function ...
+\end_layout
+
+\begin_layout Standard
+Sources online refer to George B.
+ Arfken's 
+\emph on
+Mathematical Methods for Physicists
+\emph default
+ as a resource on this, and indeed, Afkin's example 7.2.6 concerns itself
+ with residue methods for deriving the relationship between the Bernoulli
+ numbers and the zeta function.
+\end_layout
+
+\begin_layout Standard
+Arfken casts the 
+\begin_inset Formula $\left(\frac{z}{\exp z-1}\right)^{(n)}=B_{n}$
+\end_inset
+
+ relationship in terms of the Cauchy integral formula: 
+\begin_inset Formula $B_{n}=\frac{n!}{2\pi i}\oint\frac{z}{\left(\exp-1\right)}\cdot\frac{1}{z^{n+1}}dz$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+There's some notational infelicities to navigate here, where Arfken is talking
+ about 
+\begin_inset Formula $B_{n}$
+\end_inset
+
+, but our problem statement is about 
+\begin_inset Formula $B_{2n}$
+\end_inset
+
+, and I think we also haven't been totally consistent about the roles of
+ the integers 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ To clarify: I'm saying that 
+\begin_inset Formula $B_{2n}=\frac{(2n)!}{2\pi i}\oint\frac{1}{\left(\exp-1\right)}\cdot\frac{1}{z^{2n}}dz=\frac{(2n)!}{2\pi i}\oint f\,dz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+And it would seem that I overlooked something critical about the pole situation
+ above: in addition to the pole at 0 of order 
+\begin_inset Formula $2n+1$
+\end_inset
+
+ for 
+\begin_inset Formula $B_{2n}$
+\end_inset
+
+, we also have an additional countably many poles at 
+\begin_inset Formula $2\pi ki$
+\end_inset
+
+ for 
+\begin_inset Formula $k\in\mathbb{Z}\backslash\{0\}$
+\end_inset
+
+.
+ That's going to be where the summation in the zeta function comes from.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{Res}\left(\frac{z}{\left(\exp z-1\right)}\cdot\frac{1}{z^{n+1}},2\pi ki\right)=\lim_{z\rightarrow2\pi ki}(z-2\pi ki)\frac{\cancel{z}}{\left(\exp z-1\right)}\cdot\frac{1}{z^{n\cancel{+1}}}\underbrace{=}_{\text{L'Hôpital}}\lim_{z\rightarrow2\pi ki}\frac{1}{\exp z}\cdot\frac{1}{z^{n}}=\cancelto{1}{\frac{1}{\exp2\pi ki}}\cdot\frac{1}{\left(2\pi ki\right)^{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But we actually care about the even Bernoulli numbers 
+\begin_inset Formula $B_{2n}$
+\end_inset
+
+.
+ Arfken notes that the poles at 
+\begin_inset Formula $\pm2\pi ki$
+\end_inset
+
+ cancel for odd Bernoulli numbers, but add for even Bernoulli numbers.
+ That's because 
+\begin_inset Formula $\frac{1}{\left(2\pi ki\right)^{2n}}=\frac{1}{\left(2\pi\right)^{2n}k^{2n}i^{2n}}$
+\end_inset
+
+, where the even power of 
+\begin_inset Formula $k$
+\end_inset
+
+ means that 
+\begin_inset Formula $\text{Res}(f,2\pi ki)=\text{Res}(f,-2\pi ki)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Also note that 
+\begin_inset Formula $i^{2n}=(-1)^{n}$
+\end_inset
+
+.
+ (Even powers of 
+\begin_inset Formula $i$
+\end_inset
+
+, i.e., 
+\begin_inset Formula $i^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $i^{4}$
+\end_inset
+
+, 
+\begin_inset Formula $i^{6}$
+\end_inset
+
+, 
+\emph on
+&c
+\emph default
+.
+ alternate between 
+\begin_inset Formula $-1$
+\end_inset
+
+ and 
+\begin_inset Formula $1$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+It seems like it should be possible to put all the pieces together now ...
+ except that I'm still confused about what contour we should be using (which
+ is kind of an important part of the problem!).
+ The question prompt says to use the square 
+\begin_inset Formula $\gamma_{m}$
+\end_inset
+
+, but Arfken is using a keyhole in which the poles at 
+\begin_inset Formula $0$
+\end_inset
+
+ is encircled with opposite orientation to the poles at 
+\begin_inset Formula $2\pi ki$
+\end_inset
+
+ for 
+\begin_inset Formula $k\in\mathbb{Z}\backslash\{0\}$
+\end_inset
+
+.
+ These don't seem equivalent? Nevertheless we can calculate 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B_{2n}=\frac{(2n)!}{2\pi i}\oint f\,dz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B_{2n}=\frac{(2n)!}{\cancel{2\pi i}}\cdot\cancel{2\pi i}\cdot2\lim_{m\rightarrow\infty}\sum_{k=1}^{m}\text{Res}(f,2\pi ik)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B_{2n}=2(2n)!\lim_{m\rightarrow\infty}\sum_{k=1}^{m}\frac{1}{\left(2\pi ki\right)^{2n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B_{2n}=\frac{2(2n)!}{(2\pi)^{2n}(-1)^{n}}\lim_{m\rightarrow\infty}\sum_{k=1}^{m}\frac{1}{k^{2n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=1}^{\infty}\frac{1}{k^{2n}}=\frac{(2\pi)^{2n}(-1)^{n}B_{2n}}{2(2n)!}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is 
+\emph on
+quod erat demonstrandum?
+\emph default
+!
 \end_layout
 
 \end_body
