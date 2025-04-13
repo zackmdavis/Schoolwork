@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-28 March 2025 (late)
+29 March 2025 (late)
 \end_layout
 
 \begin_layout Abstract
@@ -683,13 +683,20 @@ Proof
 \end_layout
 
 \begin_layout Standard
-That is to say 
+But the characteristic function of a disjoint union is the sum of the characteri
+stic functions.
+ (Thanks to Claude Sonnet 3.7 for pointing this out; I had tried to appeal
+ to the definition 
+\begin_inset Formula $\sup\left\{ \sum_{k=1}^{m}\mu(A_{j})\inf\chi_{\bigcup_{k=1}^{\infty}E_{k}}f\right\} =\sum_{j=1}^{\infty}\sup\left\{ \sum_{k=1}^{m}\mu(A_{j})\inf\chi_{E_{k}}f\right\} \int\chi_{E_{j}}f\,d\mu$
+\end_inset
+
+, and wasn't sure how to proceed.) So we have 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\sup\left\{ \sum_{k=1}^{m}\mu(A_{j})\inf\chi_{\bigcup_{k=1}^{\infty}E_{k}}f\right\} =\sum_{j=1}^{\infty}\sup\left\{ \sum_{k=1}^{m}\mu(A_{j})\inf\chi_{E_{k}}f\right\} \int\chi_{E_{j}}f\,d\mu
+\int\sum_{j=1}^{\infty}\chi_{E_{j}}f\,d\mu=\sum_{j=1}^{\infty}\int\chi_{E_{j}}f\,d\mu
 \]
 
 \end_inset
@@ -698,7 +705,12 @@ That is to say
 \end_layout
 
 \begin_layout Standard
-[TODO: how do I go about this?]
+But 
+\begin_inset Formula $g_{j}:=\text{\ensuremath{\sum_{k=1}^{j}}\ensuremath{\chi_{E_{k}}}}$
+\end_inset
+
+is an increasing sequence of functions, so the monotone convergence theorem
+ applies.
 \begin_inset Newline newline
 \end_inset
 
@@ -717,22 +729,29 @@ Theorem
 \emph default
 .
  For 
+\begin_inset Formula $(X,\Sigma,\mu)$
+\end_inset
+
+ a measure space, and 
 \begin_inset Formula $\{f_{j}\}$
 \end_inset
 
- a series of nonnegative functions and 
-\begin_inset Formula $f:=\sum_{j}f_{j}$
+ a sequence of nonnegative 
+\begin_inset Formula $\Sigma$
 \end_inset
 
-, 
-\begin_inset Formula $\int f\,d\mu=\sum_{j}\int f_{j}\,d\mu$
+-measurable functions,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int\sum_{k=1}^{\infty}f_{k}\,d\mu=\sum_{k=1}^{\infty}\int f_{k}\,d\mu
+\]
+
 \end_inset
 
- (
-\emph on
-i.e
-\emph default
-., the integral of the sum equals the sum of the integrals).
+
 \end_layout
 
 \begin_layout Standard
@@ -741,19 +760,33 @@ i.e
 Proof
 \emph default
 .
- Define the 
-\begin_inset Quotes eld
+ Define the sequence of partial sum functions 
+\begin_inset Formula $g_{k}:=\sum_{j=1}^{k}f_{j}$
 \end_inset
 
-partial sum
-\begin_inset Quotes erd
+, an increasing sequence.
+ Then 
+\begin_inset Formula $\lim_{k\rightarrow\infty}g_{k}=\sum_{k=1}^{\infty}f_{k}\,d\mu$
 \end_inset
 
- functions 
-\begin_inset Formula $g_{j}:=\sum_{k=1}^{j}f_{j}$
+.
+ By the monotone convergence theorem, 
+\begin_inset Formula $\lim_{k\rightarrow\infty}\int g_{k}=\int\lim_{k\rightarrow\infty}g_{k}$
 \end_inset
 
- and apply the monotone convergence theorem? [TODO: does this actually work??]
+, which is to say 
+\begin_inset Formula $\lim_{k\rightarrow\infty}\int\sum_{j=1}^{k}f_{j}=\int\lim_{k\rightarrow\infty}\sum_{j=1}^{k}f_{j}$
+\end_inset
+
+, which is to say 
+\begin_inset Formula $\int\sum_{j=1}^{\infty}f_{j}=\int\sum_{j=1}^{\infty}f_{j}$
+\end_inset
+
+, which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -809,18 +842,7 @@ Proposition
 \begin_layout Standard
 
 \emph on
-\begin_inset Quotes eld
-\end_inset
-
 Proof
-\begin_inset Quotes erd
-\end_inset
-
-
-\emph default
- 
-\emph on
-(first attempt)
 \emph default
 .
  Suppose not.
@@ -828,16 +850,16 @@ Proof
 \begin_inset Formula $E$
 \end_inset
 
- such that for all 
+ such that 
+\begin_inset Formula $\mu(X\backslash E)=0$
+\end_inset
+
+ and for all 
 \begin_inset Formula $x\in E$
 \end_inset
 
 , 
 \begin_inset Formula $\lim_{k\rightarrow\infty}f_{k}(x)=0$
-\end_inset
-
- and 
-\begin_inset Formula $\mu(X\backslash E)=0$
 \end_inset
 
 .
@@ -880,12 +902,12 @@ That is to say, for all
 \end_inset
 
 .
- Then the integral won't converge at 
-\begin_inset Formula $x$
+ Then 
+\begin_inset Formula $\sum_{j}\int|f_{j}|d\mu$
 \end_inset
 
-.
- Contradiction?
+ doesn't converge.
+ Contradiction!
 \end_layout
 
 \end_body
