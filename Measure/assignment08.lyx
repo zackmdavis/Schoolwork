@@ -1,0 +1,708 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #8
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+18 April 2025 
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Measure and Integration
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Q}{\mathbb{Q}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\mint}[1]{\int#1\,d\mu}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+§3B
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There exists a sequence of functions 
+\begin_inset Formula $f_{k}:\N^{+}\rightarrow[0,\infty)$
+\end_inset
+
+ such that 
+\begin_inset Formula $\lim_{k\rightarrow\infty}f_{k}(m)=0$
+\end_inset
+
+ for every 
+\begin_inset Formula $m\in\N^{+}$
+\end_inset
+
+, but 
+\begin_inset Formula $\lim_{k\rightarrow\infty}\int f_{k}\:d\mu=1$
+\end_inset
+
+ for the counting measure 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Consider 
+\begin_inset Formula $f_{k}(n)=\begin{cases}
+\frac{1}{k} & n\in\{1..k\}\\
+0 & \text{else}
+\end{cases}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ For all 
+\begin_inset Formula $k\ge\left\lceil \frac{1}{\varepsilon+1}\right\rceil $
+\end_inset
+
+ and all 
+\begin_inset Formula $m\in\N^{+}$
+\end_inset
+
+ 
+\begin_inset Formula $f_{k}(m)\le\frac{1}{k}\le\frac{1}{\left\lceil \frac{1}{\varepsilon+1}\right\rceil }<\frac{1}{\frac{1}{\varepsilon}}=\varepsilon$
+\end_inset
+
+, so 
+\begin_inset Formula $\lim_{k\rightarrow\infty}f_{k}(m)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+But for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $\mint{f_{k}}=\sum_{j=1}^{k}\frac{1}{k}=k\cdot\frac{1}{k}=1$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $g(x):=\int_{(-\infty,x)}f\,d\mu$
+\end_inset
+
+ is uniformly continuous on 
+\begin_inset Formula $\R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose not.
+ Then there would exist an 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $\delta$
+\end_inset
+
+ there exists an 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ such that 
+\begin_inset Formula $|x-y|<\delta$
+\end_inset
+
+ but 
+\begin_inset Formula $|f(x)-f(y)|\ge\varepsilon$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+ ...]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ If 
+\begin_inset Formula $f\in\mathcal{L}^{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\lim_{k\rightarrow\infty}\int_{[-k,k]}f\,d\lambda=\int f\,d\lambda$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By Definition 3.24 about integrating on a subset, we have 
+\begin_inset Formula 
+\[
+\lim_{k\rightarrow\infty}\int_{[-k,k]}f\,d\lambda=\lim_{k\rightarrow\infty}\int_{\R}\boldsymbol{1}_{[-k,k]}f\,d\lambda
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $\boldsymbol{1}_{[-k,k]}f\le f$
+\end_inset
+
+ and 
+\begin_inset Formula $\int|f|\,d\lambda$
+\end_inset
+
+ is finite, we can invoke the dominated convergence theorem and switch the
+ limit and integration signs to get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{\R}\cancel{\lim_{k\rightarrow\infty}\boldsymbol{1}_{[-k,k]}}f\,d\lambda=\int_{\R}f\,d\lambda
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is 
+\emph on
+quod erat demonstandum
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10
+\series default
+.
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For a measure space 
+\begin_inset Formula $(X,\Sigma,\mu)$
+\end_inset
+
+ with 
+\begin_inset Formula $\mu(X)<\infty$
+\end_inset
+
+, and 
+\begin_inset Formula $0<p<r$
+\end_inset
+
+, if 
+\begin_inset Formula $\mint{f^{r}}<\infty$
+\end_inset
+
+, then 
+\begin_inset Formula $\int f^{p}<\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $E:=\{X:f(x)\ge1\}$
+\end_inset
+
+.
+ On 
+\begin_inset Formula $E$
+\end_inset
+
+, 
+\begin_inset Formula $f(x)^{p}\le f(x)^{r}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\int_{E}f^{p}\le\int_{E}f^{r}<\infty$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+But also, 
+\begin_inset Formula $\int_{X\backslash E}f^{p}\le\mu(X\backslash E)\cdot\cancelto{1}{\sup_{X\backslash E}f^{p}}\le\mu(X)<\infty$
+\end_inset
+
+.
+ And if 
+\begin_inset Formula $\int_{E}f^{p}<\infty$
+\end_inset
+
+ and 
+\begin_inset Formula $\int_{X\backslash E}f^{p}<\infty$
+\end_inset
+
+, then surely 
+\begin_inset Formula $\int f^{p}<\infty$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ Let 
+\begin_inset Formula $X:=[1,\infty)$
+\end_inset
+
+, 
+\begin_inset Formula $f:=\frac{1}{x}$
+\end_inset
+
+, 
+\begin_inset Formula $p:=1$
+\end_inset
+
+, and 
+\begin_inset Formula $r:=2$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\int f^{p}=\int_{1}^{\infty}\frac{1}{x}\,dx$
+\end_inset
+
+ diverges but 
+\begin_inset Formula $\int f{}^{r}=\int_{1}^{\infty}\frac{1}{x^{2}}\,dx$
+\end_inset
+
+ converges.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+11
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For measure space 
+\begin_inset Formula $(X,\Sigma,\mu)$
+\end_inset
+
+ and 
+\begin_inset Formula $f\in\mathcal{L}^{1}(\mu)$
+\end_inset
+
+, 
+\begin_inset Formula $\{x\in X:f(x)\ne0\}$
+\end_inset
+
+ is a countable union of sets with finite 
+\begin_inset Formula $\mu$
+\end_inset
+
+-measure.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Notice that 
+\begin_inset Formula $\{x\in X:f(x)\ne0\}=\bigcup_{k}\{x\in X:f(x)\ge\frac{1}{k}\}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $E_{k}:=\{x\in X:f(x)\ge\frac{1}{k}\}$
+\end_inset
+
+.
+ Suppose for a contradiction that there were some 
+\begin_inset Formula $k$
+\end_inset
+
+ for which 
+\begin_inset Formula $\mu(E_{k})$
+\end_inset
+
+ was not finite.
+ Then 
+\begin_inset Formula $\mint{|f|}\ge\mu(E_{k})\cdot\frac{1}{k}+\mu(E_{k}^{\complement})\cdot\inf_{E_{k}^{\complement}}|f|=\infty$
+\end_inset
+
+, so 
+\begin_inset Formula $f\notin\mathcal{L}^{1}(\mu)$
+\end_inset
+
+.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+12
+\series default
+.
+ 
+\begin_inset Formula $f_{k}=\frac{(1-x)^{k}\cos\frac{k}{x}}{\sqrt{x}}$
+\end_inset
+
+ is bounded above by 
+\begin_inset Formula $1$
+\end_inset
+
+ on 
+\begin_inset Formula $(0,1)$
+\end_inset
+
+, so the bounded convergence theorem implies that 
+\begin_inset Formula $\lim_{k\rightarrow\infty}\int_{0}^{1}f_{k}=\int_{0}^{1}\lim_{k\rightarrow\infty}f_{k}$
+\end_inset
+
+, and 
+\begin_inset Formula $\lim_{k\rightarrow\infty}\frac{(1-x)^{k}\cos\frac{k}{x}}{\sqrt{x}}=0$
+\end_inset
+
+ because 
+\begin_inset Formula $\lim_{k\rightarrow\infty}(1-x)^{k}=0$
+\end_inset
+
+ on 
+\begin_inset Formula $(0,1)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+16
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $f_{t}:=f(x-t)$
+\end_inset
+
+, 
+\begin_inset Formula $\lim_{t\rightarrow0}\left\Vert f-f_{t}\right\Vert _{1}=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\lim_{t\rightarrow0}\int|f(x)-f(x-t)|\,d\mu$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+: obvious after we can switch the limit and integral, but how to we license
+ the use of the dominated convergence theorem?]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $f_{t}:=f(tx)$
+\end_inset
+
+, 
+\begin_inset Formula $\lim_{t\rightarrow1}\left\Vert f-f_{t}\right\Vert _{1}=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\lim_{t\rightarrow0}\int|f(x)-f(tx)|\,d\mu$
+\end_inset
+
+ [
+\series bold
+TODO
+\series default
+: again, obvious after we can switch the limit and integral, but we need
+ to show why that's OK]
+\end_layout
+
+\end_body
+\end_document
