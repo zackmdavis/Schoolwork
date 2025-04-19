@@ -1,0 +1,395 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Arcana of the Generalized Factorial
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+May 2025
+\end_layout
+
+\begin_layout Section
+Prelude: A Historical Accident
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Gamma(x)=(n-1)!$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+[TODO: explain that there's not really a persuasive reason for the traditional
+ definition and I'm just going to match the factorial; this is worse than
+ 
+\begin_inset Formula $\pi$
+\end_inset
+
+ being off by a factor of 2; there's an argument about the pole being at
+ zero, but I don't buy it; there's an argument about Haar measure, but I
+ don't get it
+\end_layout
+
+\begin_layout Standard
+https://mathoverflow.net/questions/20960/why-is-the-gamma-function-shifted-from-t
+he-factorial-by-1
+\end_layout
+
+\begin_layout Standard
+https://www.tauday.com/tau-manifesto
+\end_layout
+
+\begin_layout Standard
+]
+\end_layout
+
+\begin_layout Section
+The Only Reasonable Way To Do It
+\end_layout
+
+\begin_layout Standard
+We want a continuous function 
+\begin_inset Formula $\Pi(x)$
+\end_inset
+
+ that generalizes the factorial: how might we go about engineering such
+ a function?
+\end_layout
+
+\begin_layout Standard
+[TODO: obvious first guess: limit of polynomial interpolations—turns out
+ this doesn't work, explain why]
+\end_layout
+
+\begin_layout Standard
+Brute empiricism has failed us.
+ A more promising approach might be to work with the desideratum 
+\begin_inset Formula 
+\begin{equation}
+\Pi(x)=x\Pi(x-1)
+\end{equation}
+
+\end_inset
+
+But what to do with it? 
+\end_layout
+
+\begin_layout Standard
+As an inspired hack, consider integration by parts—a procedure known to
+ sometimes transform an expression into a ``version of itself
+\begin_inset Quotes erd
+\end_inset
+
+ ``altered
+\begin_inset Quotes erd
+\end_inset
+
+ by a multplicative factor (as in ``rapid repeated integration by parts
+\begin_inset Quotes erd
+\end_inset
+
+).
+ The integration by parts formula is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{a}^{b}u\,dv=\left.uv\right|_{a}^{b}-\int_{a}^{b}v\,du
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The hope here is that there exist choices of 
+\begin_inset Formula $u$
+\end_inset
+
+, 
+\begin_inset Formula $v$
+\end_inset
+
+, 
+\begin_inset Formula $a$
+\end_inset
+
+, and 
+\begin_inset Formula $b$
+\end_inset
+
+ that end up satisfying (1):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\underbrace{\int_{a}^{b}u\,dv}_{\Pi(x)}=\left.uv\right|_{a}^{b}\underbrace{-\int_{a}^{b}v\,du}_{x\Pi(x-1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(We'll worry about the 
+\begin_inset Formula $uv$
+\end_inset
+
+ term in a moment.)
+\end_layout
+
+\begin_layout Standard
+A period of contemplation should convince the reader that it suffices to
+ take 
+\begin_inset Formula $dv=-v$
+\end_inset
+
+ and (construing 
+\begin_inset Formula $u$
+\end_inset
+
+ as taking an argument 
+\begin_inset Formula $x$
+\end_inset
+
+ different from the one that 
+\begin_inset Formula $d$
+\end_inset
+
+ indicates differentiation by) 
+\begin_inset Formula $du(x)=x\cdot u(x-1)$
+\end_inset
+
+.
+ Disciples of the differential and integral calculus who know that the natural
+ exponential is its own derivative and integral can use that fact in conjunction
+ with the chain rule to infer that (taking the variable we 
+\emph on
+are
+\emph default
+ differentiating by as 
+\begin_inset Formula $t$
+\end_inset
+
+) if 
+\begin_inset Formula $v$
+\end_inset
+
+ is not constant, then we must have 
+\begin_inset Formula $v:=\exp-t$
+\end_inset
+
+.
+ Such disciples will probably also successfully pattern-match 
+\begin_inset Formula $du(x)=x\cdot u(x-1)$
+\end_inset
+
+ to the power rule: 
+\begin_inset Formula $\frac{d}{dt}t^{x}=x\cdot t^{x-1}$
+\end_inset
+
+ and conclude that 
+\begin_inset Formula $u:=t^{x}$
+\end_inset
+
+, although it make take some discipline to accept 
+\begin_inset Formula $x$
+\end_inset
+
+ being a constant concerning differentiation with respect to 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+At this juncture, we have:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{a}^{b}t^{x}\exp-t\,dt=\left.t^{x}\exp-t\right|_{t=a}^{b}+\int_{a}^{b}xt^{x-1}\exp-t\,dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where it remains to worry about the 
+\begin_inset Formula $uv$
+\end_inset
+
+ term, and settle on a choice of 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+.
+ These problems solve each other.
+ Instead of 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+, let's use the symbols 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and 
+\begin_inset Formula $R$
+\end_inset
+
+ (respectively), and (predictably) let them approach 
+\begin_inset Formula $0$
+\end_inset
+
+ and 
+\begin_inset Formula $\infty$
+\end_inset
+
+ (respectively):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{\varepsilon\rightarrow0}\lim_{R\rightarrow\infty}\underbrace{\cancelto{0}{R^{x}\exp-R}}_{\exp-R\text{ goes to 0 faster than }R^{x}}-\cancelto{0}{\varepsilon^{x}}\cancelto{1}{\exp-\varepsilon}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So (1) can be satisfied by a function defined by an improper integral:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Pi(x):=\int_{0}^{\infty}t^{x}\exp-t\,dt
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And 
+\begin_inset Formula $\Pi(0)=\int_{0}^{\infty}\cancelto{1}{t^{0}}\exp-t\,dt=\int_{0}^{\infty}\exp-t\,dt=\cancelto{1}{\exp0}-\cancelto{0}{\lim_{R\rightarrow\infty}\exp-R}=1$
+\end_inset
+
+, according with 
+\begin_inset Formula $0!=1$
+\end_inset
+
+.
+ Thus, we find that (2) is truly a generalized factorial function.
+\end_layout
+
+\end_body
+\end_document
