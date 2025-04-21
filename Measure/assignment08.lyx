@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-18 April 2025 
+20 April 2025 (late)
 \end_layout
 
 \begin_layout Abstract
@@ -263,41 +263,85 @@ Proposition
 Proof
 \emph default
 .
- Suppose not.
- Then there would exist an 
+ Recall that 
+\begin_inset Formula $\int_{(-\infty,x)}f\,d\mu$
+\end_inset
+
+ is uniformly continuous iff for all 
 \begin_inset Formula $\varepsilon$
 \end_inset
 
- such that for all 
+ there exists a 
 \begin_inset Formula $\delta$
 \end_inset
 
- there exists an 
-\begin_inset Formula $x$
+ such that if 
+\begin_inset Formula $|z-x|<\delta$
 \end_inset
 
- and 
-\begin_inset Formula $y$
-\end_inset
-
- such that 
-\begin_inset Formula $|x-y|<\delta$
-\end_inset
-
- but 
-\begin_inset Formula $|f(x)-f(y)|\ge\varepsilon$
+, then 
+\begin_inset Formula $|\int_{(-\infty,z)}f\,d\mu-\int_{(-\infty,x)}f\,d\mu|<\varepsilon$
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
- ...]
+\end_layout
+
+\begin_layout Standard
+Notice that 
+\begin_inset Formula $|\int_{(-\infty,z)}f\,d\mu-\int_{(-\infty,x)}f\,d\mu|=|\int_{(z,x)}f\,d\mu|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ According to Axler's 3.28 (
+\begin_inset Quotes eld
+\end_inset
+
+integrals on small sets are small
+\begin_inset Quotes erd
+\end_inset
+
+), there exists a 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $B$
+\end_inset
+
+ with 
+\begin_inset Formula $\mu(B)<\delta$
+\end_inset
+
+, 
+\begin_inset Formula $\int_{B}fd\mu<\varepsilon$
+\end_inset
+
+.
+ So if 
+\begin_inset Formula $|z-x|<\delta$
+\end_inset
+
+, 
+\begin_inset Formula $|\int_{(z,x)}f\,d\mu|<\varepsilon$
+\end_inset
+
+, so 
+\begin_inset Formula $g$
+\end_inset
+
+ is uniformly continuous.
 \begin_inset Newline newline
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -415,7 +459,7 @@ Proof
 \emph default
 .
  Let 
-\begin_inset Formula $E:=\{X:f(x)\ge1\}$
+\begin_inset Formula $E:=\{X:|f(x)|\ge1\}$
 \end_inset
 
 .
@@ -577,7 +621,7 @@ Proof
 12
 \series default
 .
- 
+ My first attempt: 
 \begin_inset Formula $f_{k}=\frac{(1-x)^{k}\cos\frac{k}{x}}{\sqrt{x}}$
 \end_inset
 
@@ -606,6 +650,32 @@ Proof
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+My error: ChatGPT o3 points out that 
+\begin_inset Formula $\frac{(1-x)^{k}\cos\frac{k}{x}}{\sqrt{x}}$
+\end_inset
+
+ is not, in fact, bounded by 1 on 
+\begin_inset Formula $(0,1)$
+\end_inset
+
+.
+ (Was I just looking at the numerator and forgot about the denominator??)
+ But it is bounded by 
+\begin_inset Formula $\frac{1}{\sqrt{x}}$
+\end_inset
+
+, which is 
+\begin_inset Formula $\mathcal{L}^{1}$
+\end_inset
+
+, because 
+\begin_inset Formula $\int_{0}^{1}x^{-\frac{1}{2}}=\left.2x^{\frac{1}{2}}\right|_{0}^{1}=2$
+\end_inset
+
+, so dominated convergence applies.
 \begin_inset Newline newline
 \end_inset
 
@@ -646,17 +716,155 @@ Proposition
 Proof
 \emph default
 .
- 
-\begin_inset Formula $\lim_{t\rightarrow0}\int|f(x)-f(x-t)|\,d\mu$
+ We want to show that 
+\begin_inset Formula $\lim_{t\rightarrow0}\int|f(x)-f(x-t)|\,d\lambda=0$
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
-: obvious after we can switch the limit and integral, but how to we license
- the use of the dominated convergence theorem?]
+ To begin, we'll want to switch that limit and integral sign, but we have
+ to show that that's allowed.
+ Consider 
+\begin_inset Formula $g(x):=\sup_{t\in[0,1]}f(x-t)$
+\end_inset
+
+.
+ Now 
+\begin_inset Formula $\int g(x)\,d\lambda<\infty$
+\end_inset
+
+ (as it has the same supremum as 
+\begin_inset Formula $f$
+\end_inset
+
+), and for all 
+\begin_inset Formula $t\le1$
+\end_inset
+
+, 
+\begin_inset Formula $f_{t}(x)\le g(x)$
+\end_inset
+
+, for we can invoke the dominated convergence theorem to switch the limit
+ and integral sign.
+\end_layout
+
+\begin_layout Standard
+But we're not done yet.
+ (As I initially erroneously thought; this was discussed at office hours
+ on 17 April.)
+\end_layout
+
+\begin_layout Standard
+Notice that if 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous, the limit would be zero.
+ (Because if 
+\begin_inset Formula $f$
+\end_inset
+
+ were continuous, then for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there would exist 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that if 
+\begin_inset Formula $|x-(x-t)|<\delta$
+\end_inset
+
+, then 
+\begin_inset Formula $|f(x)-f(x-t)|<\varepsilon$
+\end_inset
+
+, and so the integral of that would be arbitrarily small, too.) We don't
+ know that 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous, but we do know from Axler's 3.48 
+\begin_inset Quotes eld
+\end_inset
+
+approximation by continuous functions
+\begin_inset Quotes erd
+\end_inset
+
+ that 
+\begin_inset Formula $f$
+\end_inset
+
+ can be approximated arbitrarily closely by a continuous function.
+ Suppose 
+\begin_inset Formula $h$
+\end_inset
+
+ is such a continuous function that 
+\begin_inset Formula $\left\Vert f-h\right\Vert _{1}<\frac{\varepsilon}{3}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Then there exists a sufficiently small 
+\begin_inset Formula $t$
+\end_inset
+
+ that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|f(x)-f(x-t)|=|f(x)-f(x-t)\underbrace{+h(x)-h(x)+h(x-t)-h(x-t)}_{\text{"fancy zero"}}|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\underbrace{=}_{\text{reärrange terms}}|f(x)-h(x)+h(x-t)-f(x-t)+h(x)-h(x-t)|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\underbrace{\le}_{\text{triangle ineq.}}\underbrace{|f(x)-h(x)|}_{h\text{ approximates }f}+\underbrace{|h(x-t)-f(x-t)|}_{h\text{ approximates }f\text{ again}}+\underbrace{|h(x)-h(x-t)|}_{h\text{ is continuous}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+<\frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\varepsilon
+\]
+
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -692,16 +900,101 @@ Proposition
 Proof
 \emph default
 .
- 
-\begin_inset Formula $\lim_{t\rightarrow0}\int|f(x)-f(tx)|\,d\mu$
+ For some 
+\begin_inset Formula $\delta$
 \end_inset
 
- [
-\series bold
-TODO
-\series default
-: again, obvious after we can switch the limit and integral, but we need
- to show why that's OK]
+, consider 
+\begin_inset Formula $g(x):=\sup_{t\in[1-\delta,1+\delta]}f(tx)$
+\end_inset
+
+.
+ As in part (a) above, we have 
+\begin_inset Formula $\int g(x)\,d\lambda<\infty$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{t}(x)\le g(x)$
+\end_inset
+
+ and we can invoke the dominated convergence theorem to consider 
+\begin_inset Formula $\int\lim_{t\rightarrow1}|f(x)-f(tx)|\,d\lambda$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+At this point, I wasn't sure what to do.
+ (In the previous part, the desired inequality was related to continuity,
+ which inspired the invocation of 3.48, but I wasn't seeing a similar 
+\begin_inset Quotes eld
+\end_inset
+
+affordance
+\begin_inset Quotes erd
+\end_inset
+
+ here.) ChatGPT o3 points out that we can consider the dilation as a translation:
+ if we let 
+\begin_inset Formula $t:=1+h$
+\end_inset
+
+, then 
+\begin_inset Formula $\lim_{t\rightarrow1}|f(x)-f(tx)|=\lim_{h\rightarrow0}|f(x)-f((1+h)x)|=\lim_{h\rightarrow0}|f(x)-f(x+hx)|$
+\end_inset
+
+, and that 
+\begin_inset Formula $hx$
+\end_inset
+
+ will go to zero as 
+\begin_inset Formula $h$
+\end_inset
+
+ goes to zero if 
+\begin_inset Formula $x$
+\end_inset
+
+ is bounded.
+\end_layout
+
+\begin_layout Standard
+So in light of Axler's 3.29 
+\begin_inset Quotes eld
+\end_inset
+
+integrable functions live mostly on sets of finite measure
+\begin_inset Quotes erd
+\end_inset
+
+, let 
+\begin_inset Formula $E$
+\end_inset
+
+ be such that 
+\begin_inset Formula $\int_{\R\backslash E}\lim_{t\rightarrow1}|f(x)-f(tx)|d\lambda<\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ Then on 
+\begin_inset Formula $E$
+\end_inset
+
+, 
+\begin_inset Formula $hx$
+\end_inset
+
+ will be bounded, so we can invoke the previous part (a) above to conclude
+ that 
+\begin_inset Formula $\int_{E}\lim_{t\rightarrow1}|f(x)-f(tx)|d\lambda<\frac{\varepsilon}{2}$
+\end_inset
+
+, and thus that 
+\begin_inset Formula $\int_{\R}\lim_{t\rightarrow1}|f(x)-f(tx)|d\lambda<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$
+\end_inset
+
+.
 \end_layout
 
 \end_body
