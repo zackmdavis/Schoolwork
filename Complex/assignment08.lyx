@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-17 April 2025
+21 April 2025 (late)
 \end_layout
 
 \begin_layout Abstract
@@ -193,6 +193,11 @@ Theory of Functions of a Complex Variable.
 \series bold
 1
 \series default
+ 
+\series bold
+(Ch.
+ 3 #14)
+\series default
 .
  
 \emph on
@@ -220,17 +225,137 @@ Theorem
 Proof
 \emph default
 .
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Prof.
+ Lai for discussion at office hours on 17 April.
+\end_layout
+
+\end_inset
+
  Suppose 
 \begin_inset Formula $f$
 \end_inset
 
  is injective and entire.
- Because it's entire, it must equal its power series everywhere.
- [
-\series bold
-TODO
-\series default
-] 
+ Entire functions are everywhere equal to their power series.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose that power series is finite, 
+\emph on
+i.e
+\emph default
+., 
+\begin_inset Formula $f$
+\end_inset
+
+ is a polynomial.
+ The only injective polynomials are constant (
+\begin_inset Formula $f=c)$
+\end_inset
+
+ or linear 
+\begin_inset Formula $(f=az+b)$
+\end_inset
+
+.
+ By the fundamental theorem of algebra, 
+\begin_inset Formula $f$
+\end_inset
+
+ has 
+\begin_inset Formula $\deg(f)$
+\end_inset
+
+ roots.
+ If the roots are distinct, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is not injective.
+ If they aren't distinct, 
+\emph on
+i.e
+\emph default
+., the polynomial has the form 
+\begin_inset Formula $(z-c)^{n}$
+\end_inset
+
+, then it is known that there are 
+\begin_inset Formula $n$
+\end_inset
+
+ 
+\begin_inset Formula $n$
+\end_inset
+
+th roots of a complex number, and again 
+\begin_inset Formula $f$
+\end_inset
+
+ is not injective.
+\end_layout
+
+\begin_layout Standard
+On the other hand, suppose the power series is infinite.
+ Then there is an essential singularity at 
+\begin_inset Formula $\infty$
+\end_inset
+
+, which implies that 
+\begin_inset Formula $f(\frac{1}{z})$
+\end_inset
+
+ would have an essential singularity at 0.
+ By the Casorati–Wierstrass theorem, the image of an open ball around around
+ an essential singularity is dense in 
+\begin_inset Formula $\C$
+\end_inset
+
+.
+ But by the open mapping theorem, the image of an open set must be open.
+ An open dense set in 
+\begin_inset Formula $\C$
+\end_inset
+
+ must be all of 
+\begin_inset Formula $\C$
+\end_inset
+
+.
+ If the image of an open 
+\begin_inset Formula $r$
+\end_inset
+
+-ball around the origin is all of 
+\begin_inset Formula $\C$
+\end_inset
+
+, but the image of an open 
+\begin_inset Formula $r+\varepsilon$
+\end_inset
+
+-ball is also 
+\begin_inset Formula $\C$
+\end_inset
+
+, then 
+\begin_inset Formula $f$
+\end_inset
+
+ cannot be injective, because points 
+\begin_inset Formula $r\le|z|<r+\varepsilon$
+\end_inset
+
+ have to get mapped to points that are already mapped to by a point in 
+\begin_inset Formula $|z|<r$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -248,11 +373,614 @@ TODO
 a
 \series default
 .
- [
+ 
+\emph on
+Theorem
+\emph default
+ (generalized argument principle).
+ For 
+\begin_inset Formula $g$
+\end_inset
+
+ holomorphic on 
+\begin_inset Formula $\overline{\mathbb{D}}$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\frac{1}{2\pi i}\int_{\partial\overline{\mathbb{D}}}\frac{f'(z)}{f(z)}g(z)\,dz=\sum_{\text{zeros }z_{i}\in\partial\overline{\mathbb{D}}}g(z_{i})-\sum_{\text{poles }p_{i}\in\partial\overline{\mathbb{D}}}g(p_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to ChatGPT o3 for guidance.
+\end_layout
+
+\end_inset
+
+ Near a zero 
+\begin_inset Formula $z_{j}$
+\end_inset
+
+ of order 
+\begin_inset Formula $m$
+\end_inset
+
+, 
+\begin_inset Formula $f(z)=(z-z_{j})^{m}h(z)$
+\end_inset
+
+ for some holomorphic 
+\begin_inset Formula $h(z)$
+\end_inset
+
+ nonzero in the neighborhood of 
+\begin_inset Formula $z_{j}$
+\end_inset
+
+.
+ Then, differentiating, 
+\begin_inset Formula $f'(z)=m(z-z_{j})^{m-1}h(z)+(z-z_{j})^{m}h'(z)$
+\end_inset
+
+.
+ Then, dividing by 
+\begin_inset Formula $f$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{f'(z)}{f(z)}=\frac{m(z-z_{0})^{m-1}h(z)+(z-z_{j})^{m}h'(z)}{(z-z_{j})^{m}h(z)}=\frac{m(z-z_{j})^{\cancel{m}-1}\cancel{h(z)}}{\cancel{(z-z_{j})^{m}}\cancel{h(z)}}+\frac{\cancel{(z-z_{j})^{m}}h'(z)}{\cancel{(z-z_{j})^{m}}h(z)}=\frac{m}{z-z_{j}}+\frac{h'(z)}{h(z)}$
+\end_inset
+
+.
+ And multiplying by 
+\begin_inset Formula $g(z)$
+\end_inset
+
+, we get 
+\begin_inset Formula $\frac{f'(z)}{f(z)}g(z)=\frac{mg(z)}{z-z_{j}}+\frac{h'(z)}{h(z)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Similarly, near a pole 
+\begin_inset Formula $p_{j}$
+\end_inset
+
+ of order 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $f(z)=(z-p_{j})^{-n}h(z)$
+\end_inset
+
+ for some nonzero 
+\begin_inset Formula $h(z)$
+\end_inset
+
+, it's the same thing: 
+\begin_inset Formula $f'(z)=-n(z-p_{j})^{-n-1}h(z)+(z-p_{j})^{-n}h'(z)$
+\end_inset
+
+, so 
+\begin_inset Formula $\frac{f'(z)}{f(z)}=\frac{-n(z-p_{j})^{-n-1}h(z)+(z-p_{j})^{-n}h'(z)}{(z-p_{j})^{-n}h(z)}=\frac{-n(z-p_{j})^{\cancel{-n}-1}\cancel{h(z)}}{\cancel{(z-p_{j})^{-n}}\cancel{h(z)}}+\frac{\cancel{(z-p_{j})^{-n}}h'(z)}{\cancel{(z-p_{j})^{-n}}h(z)}=\frac{-n}{z-p_{j}}+\frac{h'(z)}{h(z)}$
+\end_inset
+
+, so 
+\begin_inset Formula $\text{\frac{f'(z)}{f(z)}}g(z)=\frac{-ng(z)}{z-p_{j}}+\frac{h'(z)}{h(z)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then the residues go like:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{Res}(\frac{f'(z)}{f(z)}g(z),\ z_{j})=2\pi i\lim_{z\rightarrow z_{j}}\cancel{(z-z_{j})}\frac{mg(z)}{\cancel{z-z_{j}}}+\cancelto{0}{(z-z_{j})\frac{h'(z)}{h(z)}}=mg(z)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{Res}(\frac{f'(z)}{f(z)}g(z),\ p_{j})=2\pi i\lim_{z\rightarrow p_{j}}\cancel{(z-p_{j})}\frac{-ng(z)}{\cancel{z-p_{j}}}+\cancelto{0}{(z-p_{j})\frac{h'(z)}{h(z)}}=ng(z)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The theorem follows from Cauchy's residue calculus.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
 \series bold
-TODO
+b
 \series default
-]
+ 
+\series bold
+(Ch.
+ 3 #16)
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+ holomorphic in 
+\begin_inset Formula $|z|\le1$
+\end_inset
+
+, 
+\begin_inset Formula $f$
+\end_inset
+
+ having a (simple) zero at 
+\begin_inset Formula $z=0$
+\end_inset
+
+ and nowhere else, and 
+\begin_inset Formula $f_{\varepsilon}(z):=f(z)+\varepsilon g(z),$
+\end_inset
+
+there exists an 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ such that 
+\begin_inset Formula $f_{\varepsilon}(z)$
+\end_inset
+
+ has a unique zero in 
+\begin_inset Formula $|z|\le1$
+\end_inset
+
+ ...
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Choose 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ small enough that 
+\begin_inset Formula $|f|>|\varepsilon g|$
+\end_inset
+
+ on 
+\begin_inset Formula $|z|=1$
+\end_inset
+
+.
+ (Such an 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ must exist because 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+ are holomorphic on the closed unit disk, therefore have no poles on the
+ disk's boundary, therefore are bounded (because any maximum would have
+ to occur on the boundary by the maximum modulus principle), and 
+\begin_inset Formula $f$
+\end_inset
+
+ doesn't vanish on the boundary, either: it's clear that we can scale the
+ bounded 
+\begin_inset Formula $|g|$
+\end_inset
+
+ so that 
+\begin_inset Formula $|\varepsilon g|$
+\end_inset
+
+ is below 
+\begin_inset Formula $|f|$
+\end_inset
+
+.) By Rouché's theorem, 
+\begin_inset Formula $f_{\varepsilon}$
+\end_inset
+
+ has the same number of zeros in 
+\begin_inset Formula $|z|\le1$
+\end_inset
+
+ as 
+\begin_inset Formula $f$
+\end_inset
+
+, 
+\emph on
+viz
+\emph default
+., one.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ ...
+ and the function from 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ to that zero is continuous.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Thanks to ChatGPT o4-mini-high for explaining the significance of 
+\begin_inset Formula $g(z)=z$
+\end_inset
+
+ and providing some guidance on how to finish up the estimate.
+\end_layout
+
+\end_inset
+
+ If we choose 
+\begin_inset Formula $g(z)=z$
+\end_inset
+
+ in the generalized argument principle, then the integral is counting the
+ sum of the values of the zeros rather than the number of the zeros.
+ (Minus the same for poles, but there are no poles here.) The sum of the
+ value of the one zero is the zero itself.
+ So we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z_{\varepsilon}=\frac{1}{2\pi i}\int_{\partial\overline{\mathbb{D}}}z\frac{f'(z)+\varepsilon g'(z)}{f(z)+\varepsilon g(z)}\,dz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What it means for 
+\begin_inset Formula $\varepsilon\mapsto z_{\varepsilon}$
+\end_inset
+
+ to be continuous is that for all 
+\begin_inset Formula $\epsilon_{0}$
+\end_inset
+
+, there exists a 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that if 
+\begin_inset Formula $|\varepsilon_{1}-\varepsilon_{2}|<\delta$
+\end_inset
+
+, then 
+\begin_inset Formula $|z_{\varepsilon_{1}}-z_{\varepsilon_{2}}|<\epsilon_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Fix 
+\begin_inset Formula $\epsilon_{0}$
+\end_inset
+
+.
+ Then consider that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|z_{\varepsilon_{1}}-z_{\varepsilon_{2}}|=\left|\frac{1}{2\pi i}\right|\left|\int_{\partial\overline{\mathbb{D}}}z\frac{f'(z)+\varepsilon_{1}g'(z)}{f(z)+\varepsilon_{1}g(z)}-\int_{\partial\overline{\mathbb{D}}}z\frac{f'(z)+\varepsilon_{2}g'(z)}{f(z)+\varepsilon_{2}g(z)}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{1}{2\pi}\left|\int_{\partial\overline{\mathbb{D}}}z\frac{f'(z)+\varepsilon_{1}g'(z)}{f(z)+\varepsilon_{1}g(z)}\cdot\frac{f(z)+\varepsilon_{2}g(z)}{f(z)+\varepsilon_{2}g(z)}-z\frac{f'(z)+\varepsilon_{2}g'(z)}{f(z)+\varepsilon_{2}g(z)}\cdot\frac{f(z)+\varepsilon_{1}g(z)}{f(z)+\varepsilon_{1}g(z)}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{1}{2\pi}\left|\int_{\partial\overline{\mathbb{D}}}z\frac{\left(f'(z)+\varepsilon_{1}g'(z)\right)\left(f(z)+\varepsilon_{2}g(z)\right)-\left(f'(z)+\varepsilon_{2}g'(z)\right)\left(f(z)+\varepsilon_{1}g(z)\right)}{\left(f(z)+\varepsilon_{1}g(z)\right)\left(f(z)+\varepsilon_{2}g(z)\right)}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{1}{2\pi}\int_{\partial\overline{\mathbb{D}}}\left|z\right|\frac{\left|\cancel{f(z)f'(z)}+\varepsilon_{1}f(z)g'(z)+\varepsilon_{2}f'(z)g(z)+\cancel{\varepsilon_{1}\varepsilon_{2}g(z)'g(z)}\cancel{-f(z)f'(z)}-\varepsilon_{2}f(z)g'(z)-\varepsilon_{1}f'(z)g(z)\cancel{-\varepsilon_{1}\varepsilon_{2}g(z)'g(z)}\right|}{\left|f(z)+\varepsilon_{1}g(z)\right|\left|\,f(z)+\varepsilon_{2}g(z)\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{1}{2\pi}\int_{\partial\overline{\mathbb{D}}}\left|z\right|\frac{\left|\left(\varepsilon_{1}-\varepsilon_{2}\right)f(z)g'(z)+\left(\varepsilon_{2}-\varepsilon_{1}\right)f'(z)g(z)\right|}{\left|f(z)+\varepsilon_{1}g(z)\right|\left|\,f(z)+\varepsilon_{2}g(z)\right|}=\frac{1}{2\pi}\int_{\partial\overline{\mathbb{D}}}\left|z\right|\frac{\left|\varepsilon_{1}-\varepsilon_{2}\right|\left|f(z)g'(z)+f'(z)g(z)\right|}{\left|f(z)+\varepsilon_{1}g(z)\right|\left|\,f(z)+\varepsilon_{2}g(z)\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\cancel{\frac{2\pi}{2\pi}}\left|z\right|\frac{\left|\varepsilon_{1}-\varepsilon_{2}\right|\left|f(z)g'(z)+f'(z)g(z)\right|}{\left|f(z)+\varepsilon_{1}g(z)\right|\left|\,f(z)+\varepsilon_{2}g(z)\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $B:=\sup_{|z|=1}\frac{\left|f(z)g'(z)+f'(z)g(z)\right|}{\left|f(z)+\varepsilon_{1}g(z)\right|\left|\,f(z)+\varepsilon_{2}g(z)\right|}$
+\end_inset
+
+.
+ (Again, we know that this stuff is bounded on the unit disk.) Furthermore
+ let 
+\begin_inset Formula $\delta:=\frac{\varepsilon}{B}$
+\end_inset
+
+.
+ Thus, if 
+\begin_inset Formula $|\varepsilon_{1}-\varepsilon_{2}|<\delta$
+\end_inset
+
+, then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|z_{\varepsilon_{1}}-z_{\varepsilon_{2}}|<B\frac{\varepsilon}{B}=\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is 
+\emph on
+quod erat demonstrandum
+\emph default
+!
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+ 
+\series bold
+(Ch.
+ 3 #17)
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For non-constant holomorphic 
+\begin_inset Formula $f$
+\end_inset
+
+, if 
+\begin_inset Formula $|f(z)|=1$
+\end_inset
+
+ on 
+\begin_inset Formula $|z|=1$
+\end_inset
+
+, then the image of 
+\begin_inset Formula $f$
+\end_inset
+
+ contains the unit disk.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Prof.
+ Lai for discussion at office hours on 17 April, and ChatGPT o4-mini-high
+ for refreshing my memory of what was discussed at office hours.
+\end_layout
+
+\end_inset
+
+ If the image of 
+\begin_inset Formula $f$
+\end_inset
+
+ contains the unit disk, that means that for any 
+\begin_inset Formula $w_{0}\in\mathbb{D}$
+\end_inset
+
+, there exists a 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+ with 
+\begin_inset Formula $f(z_{0})=w_{0}$
+\end_inset
+
+.
+ It suffices to check 
+\begin_inset Formula $f(z_{0})=0$
+\end_inset
+
+, because 
+\begin_inset Formula $f$
+\end_inset
+
+ is a generic non-constant holomorphic function: if we can show that the
+ result is true of 
+\begin_inset Formula $f$
+\end_inset
+
+, then it will also be true of 
+\begin_inset Formula $g(z):=f(z)-w_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If there were no 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+ with 
+\begin_inset Formula $f(z_{0})=0$
+\end_inset
+
+, then 
+\begin_inset Formula $\frac{1}{f(z)}$
+\end_inset
+
+ would be holomorphic in the unit disk.
+ Because 
+\begin_inset Formula $|f(z)|=1$
+\end_inset
+
+ when 
+\begin_inset Formula $|z|=1$
+\end_inset
+
+, then we would also have 
+\begin_inset Formula $|\frac{1}{f(z)}|=1$
+\end_inset
+
+ at the boundary, so by the maximum modulus principle, that would imply
+ 
+\begin_inset Formula $\frac{1}{f(z)}<1$
+\end_inset
+
+ on the interior of the disk: which means 
+\begin_inset Formula $f(z)>1$
+\end_inset
+
+.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -261,24 +989,110 @@ TODO
 b
 \series default
 .
- [
-\series bold
-TODO
-\series default
-]
+ 
+\emph on
+Proposition
+\emph default
+.For non-constant holomorphic 
+\begin_inset Formula $f$
+\end_inset
+
+, if 
+\begin_inset Formula $|f(z)|\ge1$
+\end_inset
+
+ on 
+\begin_inset Formula $|z|=1$
+\end_inset
+
+ and there exists 
+\begin_inset Formula $z_{0}\in\mathbb{D}$
+\end_inset
+
+ such that 
+\begin_inset Formula $|f(z_{0})|<1$
+\end_inset
+
+, then the image of 
+\begin_inset Formula $f$
+\end_inset
+
+ contains the unit disk.
 \end_layout
 
 \begin_layout Standard
 
-\series bold
-3
-\series default
+\emph on
+Proof
+\emph default
 .
- [
-\series bold
-TODO
-\series default
-]
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to ChatGPT o4-mini-high for guidance.
+\end_layout
+
+\end_inset
+
+ Again, if 
+\begin_inset Formula $f$
+\end_inset
+
+ had no zeros, 
+\begin_inset Formula $\frac{1}{f(z)}$
+\end_inset
+
+ would be holomorphic on the disk and 
+\begin_inset Formula $|\frac{1}{f(z)}|\le1$
+\end_inset
+
+ on the 
+\begin_inset Formula $|z|=1$
+\end_inset
+
+ boundary, so for points inside the disk, 
+\begin_inset Formula $|\frac{1}{f(z)}|\le1$
+\end_inset
+
+ implies 
+\begin_inset Formula $|f(z)|>1$
+\end_inset
+
+, which contradicts the existence of a 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+ in the disk with 
+\begin_inset Formula $|f(z_{0})|<1$
+\end_inset
+
+, so there is a zero.
+ But then for any 
+\begin_inset Formula $w_{0}$
+\end_inset
+
+ with 
+\begin_inset Formula $|w_{0}|<1$
+\end_inset
+
+, Rouché's theorem with 
+\begin_inset Formula $f:=f$
+\end_inset
+
+ and 
+\begin_inset Formula $g:=-w_{0}$
+\end_inset
+
+ implies that 
+\begin_inset Formula $f+g=f-w_{0}$
+\end_inset
+
+ has the same number of zeros as 
+\begin_inset Formula $f$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -295,7 +1109,7 @@ TODO
 \emph on
 Theorem
 \emph default
-.
+ (fundamental theorem of algebra).
  
 \begin_inset Formula $\sum_{k=0}^{n}a_{k}z^{k}$
 \end_inset
@@ -313,20 +1127,6 @@ Theorem
 Proof
 \emph default
 .
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-This argument is sketched in 
-\emph on
-Visual Complex Analysis
-\emph default
- by Tristan Needham, Ch.
- 7 §V.2
-\end_layout
-
-\end_inset
-
  Let 
 \begin_inset Formula $f:=a_{n}z^{n}$
 \end_inset
@@ -336,16 +1136,44 @@ Visual Complex Analysis
 \end_inset
 
 .
- Consider the circle 
-\begin_inset Formula $C$
+ On 
+\begin_inset Formula $|z|=$
 \end_inset
 
- 
-\begin_inset Formula $:=\{z\in\C:|z|=1+\sum_{k=0}^{n}a_{k}\}$
+
+\begin_inset Formula $R$
 \end_inset
 
+ for sufficiently large 
+\begin_inset Formula $R$
+\end_inset
+
+, 
+\begin_inset Formula $|f|>|g|$
+\end_inset
+
+ because the higher-order term will eventually dominate.
+ Inside the 
+\begin_inset Formula $|z|=R$
+\end_inset
+
+ circle, 
+\begin_inset Formula $f$
+\end_inset
+
+ has 
+\begin_inset Formula $n$
+\end_inset
+
+ roots, so by Rouché's theorem, so does 
+\begin_inset Formula $f+g$
+\end_inset
+
+, which is 
+\emph on
+quod erat demonstrandum
+\emph default
 .
- 
 \begin_inset Newline newline
 \end_inset
 
@@ -408,7 +1236,7 @@ Let
 \end_inset
 
  have the same number of zeros inside the unit circle.
- But 
+ Now 
 \begin_inset Formula $f$
 \end_inset
 
@@ -420,7 +1248,15 @@ i.e.
 \begin_inset Formula $z=0$
 \end_inset
 
- with multiplicity 5) inside the unit circle.
+ with multiplicity 5) inside the unit circle, so 
+\begin_inset Formula $f+g=z^{8}-5z^{5}+2z+1$
+\end_inset
+
+ does too, which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -471,28 +1307,131 @@ Theorem
 Proof
 \emph default
 .
- Suppose for a contradiction that there exists an 
+ Notice that 
+\begin_inset Formula $\lim_{n\rightarrow\infty}p_{n}=\exp z$
+\end_inset
+
+,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Ophir Horovitz for pointing out the signicance of this.
+\end_layout
+
+\end_inset
+
+ and that 
+\begin_inset Formula $\exp z$
+\end_inset
+
+ has no zeros.
+ 
+\end_layout
+
+\begin_layout Standard
+Fix an arbitrary 
 \begin_inset Formula $R$
 \end_inset
 
- such that 
-\begin_inset Formula $p_{m}(z)$
-\end_inset
+.
+ 
+\end_layout
 
- has a zero in 
-\begin_inset Formula $B(0,R)$
-\end_inset
-
- for arbitrarily large 
-\begin_inset Formula $m$
+\begin_layout Standard
+Let 
+\begin_inset Formula $N:=\left\lceil R+\frac{1}{3}-\frac{1}{50R}\right\rceil $
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
-]
+ For 
+\begin_inset Formula $m\ge N$
+\end_inset
+
+, 
+\begin_inset Formula $|p_{m}(R)|>|\exp z-p_{m}(R)|$
+\end_inset
+
+, because the terms of the exponential power series are a scalar multiple
+ of the values of the Poisson distribution 
+\begin_inset Formula $\frac{\lambda^{k}}{k!}\exp-k$
+\end_inset
+
+, and the median of the Poisson distribution is at 
+\begin_inset Formula $\left\lfloor \lambda+\frac{1}{3}-\frac{1}{50\lambda}\right\rfloor $
+\end_inset
+
+, so by choosing 
+\begin_inset Formula $N$
+\end_inset
+
+ greater than the median, we ensure that the 
+\begin_inset Quotes eld
+\end_inset
+
+head
+\begin_inset Quotes erd
+\end_inset
+
+ of the series 
+\begin_inset Formula $\sum_{k=0}^{N}\frac{z^{k}}{k!}$
+\end_inset
+
+ is greater than the tail 
+\begin_inset Formula $\sum_{k=N}^{\infty}\frac{z^{k}}{k!}$
+\end_inset
+
+, so that we can fulfill the 
+\begin_inset Formula $|f|>|g|$
+\end_inset
+
+ hypothesis of Rouché's theorem.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+My thought process here: I empirically spot-checked in Python the intuitive
+ fact that the terms of the exponential power series have a 
+\begin_inset Quotes eld
+\end_inset
+
+peak
+\begin_inset Quotes erd
+\end_inset
+
+ (where the powers 
+\begin_inset Formula $z^{k}$
+\end_inset
+
+ haven't yet been dominated by the factorial in the denominator), then asked
+ ChatGPT o4-mini-high what was known about the location of the peak, and
+ it pointed out the connection to the Poisson distribution.
+ Before that, I was having trouble seeing how to fulfill the 
+\begin_inset Formula $|f|>|g|$
+\end_inset
+
+ hypothesis.
+\end_layout
+
+\end_inset
+
+ By Rouché's theorem, 
+\begin_inset Formula $p_{m}(z)$
+\end_inset
+
+ and 
+\begin_inset Formula $p_{m}(z)+\exp z-p_{m}(R)=\exp z$
+\end_inset
+
+ have the same number of zeros on 
+\begin_inset Formula $B(0,R)$
+\end_inset
+
+, 
+\emph on
+viz
+\emph default
+., zero.
 \end_layout
 
 \end_body
