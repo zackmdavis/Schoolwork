@@ -1,0 +1,705 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #9
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+27 April 2025 (late)
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Measure and Integration
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Q}{\mathbb{Q}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\mint}[1]{\int#1\,d\mu}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\lone}{\mathcal{L}^{1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+§4B
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For all positive 
+\begin_inset Formula $c$
+\end_inset
+
+ and 
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu(\{x\in X:|h(x)|\ge c\})\le\frac{1}{c^{p}}\int|h|^{p}\,d\mu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula 
+\[
+\mu(\{x\in X:|h(x)|\ge c\})=\int\boldsymbol{1}_{\{x\in X:|h(x)|\ge c\}}\,d\mu=\underbrace{\frac{c^{p}}{c^{p}}}_{\text{fancy one}}\int\boldsymbol{1}_{\{x\in X:|h(x)|\ge c\}}\,d\mu=\frac{1}{c^{p}}\int\boldsymbol{1}_{\{x\in X:|h(x)|\ge c\}}c^{p}\,d\mu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But on the domain where 
+\begin_inset Formula $|h(x)|\ge c$
+\end_inset
+
+, then 
+\begin_inset Formula $|h|^{p}\ge c^{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\le\frac{1}{c^{p}}\int\boldsymbol{1}_{\{x\in X:|h(x)|\ge c\}}|h|^{p}\,d\mu\le\frac{1}{c^{p}}\int|h|^{p}\,d\mu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+ 
+\emph on
+Theorem 
+\emph default
+(Chebyshev's inequality).
+ For a measure space 
+\begin_inset Formula $(X,\Sigma,\mu)$
+\end_inset
+
+ with 
+\begin_inset Formula $\mu(X)=1$
+\end_inset
+
+ and 
+\begin_inset Formula $h\in\mathcal{L}^{1}$
+\end_inset
+
+, then for all 
+\begin_inset Formula $c>0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(\left\{ x\in X:\left|h(x)-\int h\,d\mu\right|\ge c\right\} \right)\le\frac{1}{c^{2}}\left(\int h^{2}\,d\mu-\left(\int h\,d\mu\right)^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(\left\{ x\in X:\left|h(x)-\int h\,d\mu\right|\ge c\right\} \right)=\int\boldsymbol{1}_{\{x\in X:\left|h(x)-\int h\,d\mu\right|\ge c\}}d\mu=\frac{c^{2}}{c^{2}}\int\boldsymbol{1}_{\{x\in X:\left|h(x)-\int h\,d\mu\right|\ge c\}}d\mu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But then if 
+\begin_inset Formula $\left|h(x)-\int h\,d\mu\right|\ge c$
+\end_inset
+
+, then 
+\begin_inset Formula $\left|h(x)-\int h\,d\mu\right|^{2}\ge c^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Also, 
+\begin_inset Formula $\left|h(x)-\int h\,d\mu\right|^{2}=\left(h(x)-\int h\,d\mu\right)^{2}=h^{2}(x)-2h(x)\left(\int h\,d\mu\right)+\left(\int h\,d\mu\right)^{2}$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+: this doesn't look like it's going in the right direction!?]
+\begin_inset Newline linebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For a measure space 
+\begin_inset Formula $(X,\Sigma,\mu)$
+\end_inset
+
+ and 
+\begin_inset Formula $h\in\mathcal{L}^{1}$
+\end_inset
+
+and 
+\begin_inset Formula $\left\Vert h\right\Vert _{1}>0$
+\end_inset
+
+, there is at most one 
+\begin_inset Formula $c>0$
+\end_inset
+
+ such that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mu\left(\left\{ x\in X:|h(x)|\ge c\right\} \right)=\frac{1}{c}\left\Vert h\right\Vert _{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose that 
+\begin_inset Formula $\mu\left(\left\{ x\in X:|h(x)|\ge c\right\} \right)=\frac{1}{c}\left\Vert h\right\Vert _{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu\left(\left\{ x\in X:|h(x)|\ge d\right\} \right)=\frac{1}{d}\left\Vert h\right\Vert _{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $\frac{1}{c}\int\boldsymbol{1}_{\{x\in X:|h(x)|\ge c\}}c\,d\mu=\frac{1}{d}\int\boldsymbol{1}_{\{x\in X:|h(x)|\ge d\}}d\,d\mu$
+\end_inset
+
+ [
+\series bold
+TODO
+\series default
+: nonobvious why we must have 
+\begin_inset Formula $c=d$
+\end_inset
+
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The constant 3 in the Vitali covering lemma is minimal.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ For some 
+\begin_inset Formula $\varepsilon_{1}$
+\end_inset
+
+, consider 
+\begin_inset Formula $I_{1}:=(0,1+\varepsilon_{1})$
+\end_inset
+
+, 
+\begin_inset Formula $I_{2}:=(1,2)$
+\end_inset
+
+, and 
+\begin_inset Formula $I_{3}:=(2-\varepsilon_{1},3)$
+\end_inset
+
+.
+ Notice that 
+\begin_inset Formula $(3-\varepsilon)*I_{2}=(0+\frac{\varepsilon}{2},3-\frac{\varepsilon}{2})$
+\end_inset
+
+ does not suffice to cover 
+\begin_inset Formula $\bigcup_{k=1}^{3}I_{k}=(0,3)$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+: uh, but why doesn't 
+\begin_inset Formula $I_{1}\cup I_{3}$
+\end_inset
+
+ work? There's something subtle here with the two epsilons ...
+ notice that the proof is greedy, but my candidate here is non-greedy?]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+9
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For Lebesgue measurable 
+\begin_inset Formula $h$
+\end_inset
+
+ and 
+\begin_inset Formula $c\in\R$
+\end_inset
+
+, 
+\begin_inset Formula $\{b\in\R:h^{*}(b)>c\}$
+\end_inset
+
+ is open.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Recall that the Hardy–Littlewood maximal function is defined as 
+\begin_inset Formula 
+\[
+h^{*}(b):=\sup_{t>0}\frac{1}{2t}\int_{b-t}^{b+t}|h|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ By Axler's 3.28 (
+\begin_inset Quotes eld
+\end_inset
+
+integrals on small sets are small
+\begin_inset Quotes erd
+\end_inset
+
+), there exists a 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $B$
+\end_inset
+
+ with 
+\begin_inset Formula $\mu(B)<\delta$
+\end_inset
+
+, then 
+\begin_inset Formula $\int_{b-t}^{b+t}|h|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that 
+\begin_inset Formula $\{b\in\R:h^{*}(b)>c\}$
+\end_inset
+
+ is the inverse image 
+\begin_inset Formula $h^{*-1}((c,\infty))$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $h:\R\rightarrow[0,\infty)$
+\end_inset
+
+ is nondecreasing, then so is 
+\begin_inset Formula $h^{*}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ If 
+\begin_inset Formula $h$
+\end_inset
+
+ is nondecreasing, that means that if 
+\begin_inset Formula $a<b$
+\end_inset
+
+, then 
+\begin_inset Formula $h(a)\le h(b)$
+\end_inset
+
+.
+ Suppose 
+\begin_inset Formula $a<b$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+For any given 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{2t}\int_{a-t}^{a+t}|h|\le\frac{1}{2t}\int_{b-t}^{b+t}|h|$
+\end_inset
+
+, because 
+\begin_inset Formula $\int_{a-t}^{b-t}|h|\le$
+\end_inset
+
+[
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+12
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $h\in\lone$
+\end_inset
+
+, then
+\begin_inset Formula $\left|\left\{ b\in\R:h^{*}(b)=\infty\right\} \right|=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ For any 
+\begin_inset Formula $c$
+\end_inset
+
+, 
+\begin_inset Formula $\left\{ b\in\R:h^{*}(b)=\infty\right\} \subseteq\left\{ b\in\R:h^{*}(b)\ge c\right\} $
+\end_inset
+
+.
+ By the monotonicity of outer measure and the Hardy–Littlewood inequality,
+ 
+\begin_inset Formula $\left|\left\{ b\in\R:h^{*}(b)=\infty\right\} \right|\le\left|\left\{ b\in\R:h^{*}(b)\ge c\right\} \right|\le\frac{3}{c}\left\Vert h\right\Vert _{1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $C:=\frac{3\left\Vert h\right\Vert _{1}}{\varepsilon}$
+\end_inset
+
+.
+ Then if 
+\begin_inset Formula $c>C$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{3}{c}\left\Vert h\right\Vert _{1}<\frac{3}{\frac{3\left\Vert h\right\Vert _{1}}{\varepsilon}}\left\Vert h\right\Vert _{1}=\frac{\varepsilon}{\cancel{3\left\Vert h\right\Vert _{1}}}\cancel{3\left\Vert h\right\Vert _{1}}=\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
