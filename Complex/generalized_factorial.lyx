@@ -99,7 +99,62 @@ Prelude: A Historical Accident
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\Gamma(x)=(n-1)!$
+Driven ceaselessly by a compulsion to generalize, students of mathematics
+ often wonder whether there exists an analogue of the factorial function
+ 
+\begin_inset Formula $n!:=\prod_{k=1}^{n}k$
+\end_inset
+
+ that works for non-integers.
+ The question is traditionally answered in the affirmative by presenting
+ a function 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ defined on 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ (and indeed 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+) for which 
+\begin_inset Formula $\Gamma(x)=(x-1)!$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This reply prompts an obvious followup query: 
+\begin_inset Quotes eld
+\end_inset
+
+Thanks, but what's with the shift by one? This function is generalizing
+ the factorial.
+ You should define it such that 
+\begin_inset Formula $\Gamma(x)=x!$
+\end_inset
+
+, right?
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the present author's research, no one seems to have a good answer to
+ this.
+ It seems like Adrien-Marie Legendre chose 
+\begin_inset Formula $\Gamma(n)=(n-1)!$
+\end_inset
+
+ back in the early 19th century and it somehow caught on, even though Carl
+ Friedrich Gauss was contemporaneously working with the same function (up
+ to the shift) as 
+\begin_inset Formula $\Pi(n):=n!$
 \end_inset
 
 .
@@ -107,28 +162,72 @@ Prelude: A Historical Accident
 \end_layout
 
 \begin_layout Standard
-[TODO: explain that there's not really a persuasive reason for the traditional
- definition and I'm just going to match the factorial; this is worse than
- 
-\begin_inset Formula $\pi$
+Some authors try to rationalize Legendre's blunder by arguing that it's
+ better to have the rightmost singularity at 
+\begin_inset Formula $0$
 \end_inset
 
- being off by a factor of 2; there's an argument about the pole being at
- zero, but I don't buy it; there's an argument about Haar measure, but I
- don't get it
-\end_layout
+ than 
+\begin_inset Formula $-1$
+\end_inset
 
-\begin_layout Standard
+, or that we should integrate over the Haar measure.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 https://mathoverflow.net/questions/20960/why-is-the-gamma-function-shifted-from-t
 he-factorial-by-1
 \end_layout
 
-\begin_layout Standard
-https://www.tauday.com/tau-manifesto
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-]
+The present author doesn't buy it.
+ In the spirit of efforts to promote 
+\begin_inset Formula $\tau:=2\pi$
+\end_inset
+
+ rather than 
+\begin_inset Formula $\pi$
+\end_inset
+
+ as the correct circle constant in accordance with logic and in opposition
+ to blind historical inertia,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+https://www.tauday.com/tau-manifesto
+\end_layout
+
+\end_inset
+
+ this report concerns itself with the true generalized factorial 
+\begin_inset Formula $\Pi$
+\end_inset
+
+ rather than the treacherous so-called 
+\begin_inset Quotes eld
+\end_inset
+
+gamma function
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Section
@@ -144,9 +243,170 @@ We want a continuous function
  a function?
 \end_layout
 
+\begin_layout Subsection
+The Obvious First Guess (Which Is Wrong)
+\end_layout
+
 \begin_layout Standard
-[TODO: obvious first guess: limit of polynomial interpolations—turns out
- this doesn't work, explain why]
+We want 
+\begin_inset Formula $\Pi(n)=n!$
+\end_inset
+
+ for 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+, a function that interpolates the factorials.
+ We're used to approximating functions with power series, which are limits
+ of polynomials.
+ There is then a natural temptation to consider polynomial interpolations
+ of 
+\begin_inset Formula $(k,k!)$
+\end_inset
+
+ for 
+\begin_inset Formula $k\in\{0...n\}$
+\end_inset
+
+ and take the limit 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It turns out that this doesn't work.
+ Our standard technique for interpolating points with a polynomial is due
+ to Lagrange.
+ Suppose we want to interpolate the points 
+\begin_inset Formula $(x_{k},y_{k})$
+\end_inset
+
+ for 
+\begin_inset Formula $k\in\{0...n\}$
+\end_inset
+
+.
+ We define the Lagrange basis element
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ell_{k}(x):=\prod_{\substack{0\le j\le n\\
+j\ne k
+}
+}\frac{x-x_{j}}{x_{k}-x_{j}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And then
+\begin_inset Formula 
+\[
+P_{n}(x):=\sum_{k}y_{k}\ell_{k}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The idea is that when 
+\begin_inset Formula $x:=x_{k}$
+\end_inset
+
+, then for all 
+\begin_inset Formula $j\ne k$
+\end_inset
+
+, 
+\begin_inset Formula $\ell_{j}$
+\end_inset
+
+ contains a factor of 
+\begin_inset Formula $x_{j}-x_{j}=0$
+\end_inset
+
+ so that the 
+\begin_inset Formula $y_{j}\ell_{j}(x_{k})$
+\end_inset
+
+ term vanishes, and 
+\begin_inset Formula $\ell_{k}(x_{k})=\prod_{j\ne k}\frac{x_{k}-x_{j}}{x_{k}-x_{j}}=1$
+\end_inset
+
+, engineering the outcome 
+\begin_inset Formula $P_{n}(x_{k})=y_{k}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If we apply this method to 
+\begin_inset Formula $(x_{k},y_{k}):=(k,k!)$
+\end_inset
+
+, we get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+``\Pi"_{n}(x):=\sum_{k=0}^{n}k!\prod_{\substack{0\le j\le n\\
+j\ne k
+}
+}\frac{x-j}{k-j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The naïve hope is that
+\begin_inset Formula 
+\[
+``\Pi"(x):=\lim_{n\rightarrow\infty}\sum_{k=0}^{n}k!\prod_{\substack{0\le j\le n\\
+j\ne k
+}
+}\frac{x-j}{k-j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+would be our generalized factorial.
+ But it doesn't work.
+ Our finite polynomial interpolations depended on the 
+\begin_inset Formula $\ell_{j}(k)$
+\end_inset
+
+ terms vanishing, but when 
+\begin_inset Formula $x\notin\mathbb{N}$
+\end_inset
+
+, none of the terms vanish: with a factor of 
+\begin_inset Formula $k!$
+\end_inset
+
+ on each, the series doesn't come close to converging.
+\end_layout
+
+\begin_layout Subsection
+Using the Recursive Decideratum
 \end_layout
 
 \begin_layout Standard
@@ -154,11 +414,15 @@ Brute empiricism has failed us.
  A more promising approach might be to work with the desideratum 
 \begin_inset Formula 
 \begin{equation}
-\Pi(x)=x\Pi(x-1)
+\Pi(x+1)=(x+1)\Pi(x)
 \end{equation}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 But what to do with it? 
 \end_layout
 
@@ -214,7 +478,7 @@ The hope here is that there exist choices of
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\underbrace{\int_{a}^{b}u\,dv}_{\Pi(x)}=\left.uv\right|_{a}^{b}\underbrace{-\int_{a}^{b}v\,du}_{x\Pi(x-1)}
+\underbrace{\int_{a}^{b}u\,dv}_{\Pi(x+1)}=\left.uv\right|_{a}^{b}\underbrace{-\int_{a}^{b}v\,du}_{(x+1)\Pi(x)}
 \]
 
 \end_inset
@@ -389,6 +653,26 @@ And
 
 .
  Thus, we find that (2) is truly a generalized factorial function.
+\end_layout
+
+\begin_layout Subsection
+Log Convexity and the Bohr–Mollerup Characterization
+\end_layout
+
+\begin_layout Standard
+[TODO: what makes it special: Bohr–Mollerup]
+\end_layout
+
+\begin_layout Subsection
+Analytic Continuation
+\end_layout
+
+\begin_layout Standard
+[TODO: analytic continuation to 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+]
 \end_layout
 
 \end_body
