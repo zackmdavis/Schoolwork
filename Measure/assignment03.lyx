@@ -1,0 +1,653 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #3
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+14 February 2024
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Measure and Integration
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Subsection*
+§2B
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+17
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $f:X\rightarrow\mathbb{R}$
+\end_inset
+
+ has countably many discontinuities, 
+\begin_inset Formula $f$
+\end_inset
+
+ is Borel measurable.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is discontinuous at points of discontinuity 
+\begin_inset Formula $\{d_{j}\}_{j=1}^{\infty}$
+\end_inset
+
+.
+ Consider 
+\begin_inset Formula $f^{-1}((a,\infty])$
+\end_inset
+
+ for arbitrary 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ The points 
+\begin_inset Formula $f(d_{j})$
+\end_inset
+
+ divide 
+\begin_inset Formula $(a,\infty]$
+\end_inset
+
+ into open intervals (
+\emph on
+i.e
+\emph default
+., the interval 
+\begin_inset Formula $(f(d_{i}),f(d_{j}))$
+\end_inset
+
+ is open).
+ So 
+\begin_inset Formula $f^{-1}((a,\infty])$
+\end_inset
+
+ is the countable union of the single-point sets 
+\begin_inset Formula $\{f^{-1}(f(d_{j}))\}$
+\end_inset
+
+ (which are closed, thus Borel) and the 
+\begin_inset Formula $f^{-1}((d_{i},d_{j}))$
+\end_inset
+
+ (which are the inverse image under a continuous function of an open set,
+ thus open, thus Borel), and the countable union of Borel sets is Borel.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+18
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is differentiable everywhere, then 
+\begin_inset Formula $f'$
+\end_inset
+
+ is Borel measurable.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $f':=\lim_{h\rightarrow0}\frac{f(x+h)-f(x)}{h}$
+\end_inset
+
+.
+ For any given value of 
+\begin_inset Formula $h$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{f(x+h)-f(x)}{h}$
+\end_inset
+
+ is Borel measurable as the quotient of the difference of Borel measurable
+ functions (
+\begin_inset Formula $f(x+h)-f(x)$
+\end_inset
+
+) and a constant (thus Borel measurable) function (
+\begin_inset Formula $h$
+\end_inset
+
+).
+ But the limit of Borel measurable functions is Borel measurable.
+\end_layout
+
+\begin_layout Subsection*
+§2C
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There does not exist a measure space 
+\begin_inset Formula $(X,\Sigma,\mu)$
+\end_inset
+
+ such that 
+\begin_inset Formula $\{\mu(E):E\in\Sigma\}=[0,1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose there were.
+ Consider a sequence of sets 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mu(E_{k})=1-\frac{1}{k}$
+\end_inset
+
+.
+ (For all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $1-\frac{1}{k}\in[0,1)$
+\end_inset
+
+, so for all 
+\begin_inset Formula $k$
+\end_inset
+
+, such an 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+ must exist.) By Axler's theorem 2.59, 
+\begin_inset Formula $\mu\left(\bigcup_{k}E_{k}\right)=\lim_{k\rightarrow\infty}\mu(E_{k})=1$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $\bigcup_{k}E_{k}\in\Sigma$
+\end_inset
+
+ (because 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebras are closed under countable unions) and 
+\begin_inset Formula $1\notin[0,1)$
+\end_inset
+
+.
+ Contradiction! 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is a measure on 
+\begin_inset Formula $(\mathbb{N}^{+},2^{\mathbb{N}^{+}})$
+\end_inset
+
+, then there is a sequence 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $E\subseteq\mathbb{N}^{+}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu(E)=\sum_{k\in E}w_{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $w_{j}:=\mu(\{j\})$
+\end_inset
+
+.
+ Suppose for a contradiction that there exists an 
+\begin_inset Formula $E\subseteq\mathbb{N}^{+}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mu(E)\ne\sum_{k\in E}w_{k}$
+\end_inset
+
+.
+ But by countable additivity, 
+\begin_inset Formula $\mu(E)=\mu(\bigcup_{k\in E}\{k\})=\sum_{k\in E}\mu(\{k\})=\sum_{k\in E}w_{k}$
+\end_inset
+
+.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $(X,\Sigma,\mu)$
+\end_inset
+
+ is a measure space such that 
+\begin_inset Formula $\mu(X)<\infty$
+\end_inset
+
+, and 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ is a set of disjoint sets in 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $A\in\mathcal{A}$
+\end_inset
+
+ 
+\begin_inset Formula $\mu(A)>0$
+\end_inset
+
+, then 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ is countable.
+\end_layout
+
+\begin_layout Standard
+I found this one confusing at first because the alternative to 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ being countable is 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ being uncountable, and I'm not sure how to think about uncountable unions.
+ (Measures are only countably additive; what am I even allowed to say about
+ an uncountable union?) After some extensive back-and-forth question-and-answer
+ tutoring with Claude Sonnet 3.5, I present the following
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $\mathcal{A}_{n}:=\{A\in\mathcal{A}:\mu(A)\ge\frac{1}{n}\}$
+\end_inset
+
+.
+ For any 
+\begin_inset Formula $n\in\mathbb{N}^{+}$
+\end_inset
+
+, we have 
+\begin_inset Formula $\mu(\bigcup_{A\in\mathcal{A}_{n}})=\sum_{A\in\mathcal{A}_{n}}\mu(A)\le\mu(X)$
+\end_inset
+
+, but 
+\begin_inset Formula $\sum_{A\in\mathcal{A}_{n}}\mu(A)\ge\left|\mathcal{A}_{n}\right|\frac{1}{n}$
+\end_inset
+
+, so 
+\begin_inset Formula $\left|\mathcal{A}_{n}\right|\le n\mu(X)$
+\end_inset
+
+.
+ (What that says morally is that a finite amount of measure can only be
+ divided into finitely many disjoint sets.) So 
+\begin_inset Formula $\mathcal{A}=\bigcup_{n=1}^{\infty}\mathcal{A}_{n}$
+\end_inset
+
+ is a countable union of finite sets, and is thus countable.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+9
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ are measures on a measurable space 
+\begin_inset Formula $(X,\Sigma)$
+\end_inset
+
+, then so is 
+\begin_inset Formula $\mu+\lambda$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Empty set.) 
+\begin_inset Formula $\mu(\varnothing)=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda(\varnothing)=0$
+\end_inset
+
+, so 
+\begin_inset Formula $(\mu+\lambda)(\varnothing)=\mu(\varnothing)+\lambda(\varnothing)=0+0=0$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\text{\ensuremath{\checkmark}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Countable additivity.) For disjoint 
+\begin_inset Formula $E_{j}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu\left(\bigcup_{j}E_{j}\right)=\sum_{j}\mu(E_{j})$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda\left(\bigcup_{j}E_{j}\right)=\sum_{j}\lambda(E_{j})$
+\end_inset
+
+, so 
+\begin_inset Formula $(\mu+\lambda)\left(\bigcup_{j}E_{j}\right)=\sum_{j}\mu(E_{j})+\sum_{j}\lambda(E_{j})=\sum_{j}(\mu+\lambda)(E_{j})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There exists a decreasing sequence of sets 
+\begin_inset Formula $E_{1}\supseteq E_{2}\supseteq...$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mu\left(\bigcap_{k}E_{k}\right)\ne\lim_{k\rightarrow\infty}\mu(E_{k})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ I was feeling stuck on this one (
+\begin_inset Formula $E_{1}$
+\end_inset
+
+ being infinite didn't seem to make a difference to the essential 
+\begin_inset Quotes eld
+\end_inset
+
+intersection is the limit of the intersected sets
+\begin_inset Quotes erd
+\end_inset
+
+ property).
+ Prompting Claude Sonnet 3.5 for a hint guided me to consider the counting
+ measure on 
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+.
+ Consider 
+\begin_inset Formula $E_{1}:=\mathbb{N}$
+\end_inset
+
+, 
+\begin_inset Formula $E_{2}:=\{n\in\mathbb{N}:n\not|\ 2\}$
+\end_inset
+
+, 
+\begin_inset Formula $E_{3}:=\{n\in\mathbb{N}:n\not|\ 2,3\}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\lim_{n\rightarrow\infty}\mu(E_{n})=\infty$
+\end_inset
+
+ because there are always more primes whose multiples you haven't filtered
+ out, but the infinite intersection is empty, because every number is divisible
+ by some prime.
+\end_layout
+
+\end_body
+\end_document
