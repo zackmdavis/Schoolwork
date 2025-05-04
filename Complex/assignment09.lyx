@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-1 May 2025
+3 May 2025 (late)
 \end_layout
 
 \begin_layout Abstract
@@ -207,11 +207,169 @@ Theory of Functions of a Complex Variable.
  8 #10)
 \series default
 .
- [
-\series bold
-TODO
-\series default
-]
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f:\mathbb{H}\rightarrow\C$
+\end_inset
+
+ is a holomorphic function with 
+\begin_inset Formula $|f(z)|\le1$
+\end_inset
+
+ and 
+\begin_inset Formula $f(i)=0$
+\end_inset
+
+, then 
+\begin_inset Formula $|f(z)|\le\left|\frac{z-i}{z+i}\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Comment
+\emph default
+.
+ The bound matching the form of our standard map from 
+\begin_inset Formula $\mathbb{H}$
+\end_inset
+
+ to 
+\begin_inset Formula $\D$
+\end_inset
+
+ should be a clue.
+ But it's less trivial than it looks: we need to show that 
+\begin_inset Formula $|f|$
+\end_inset
+
+ never gets bigger than 
+\begin_inset Formula $\left|\frac{z-i}{z+i}\right|$
+\end_inset
+
+ for 
+\emph on
+any
+\emph default
+ 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ (
+\emph on
+E.g
+\emph default
+., if the half-plane map brings a point to 
+\begin_inset Formula $\frac{1}{4}$
+\end_inset
+
+, then we need 
+\begin_inset Formula $|f(z)|\le\frac{1}{4}$
+\end_inset
+
+; 
+\begin_inset Formula $f$
+\end_inset
+
+ can't 
+\begin_inset Quotes eld
+\end_inset
+
+jut out
+\begin_inset Quotes erd
+\end_inset
+
+ further than the half-plane map anywhere.) And the fact that 
+\begin_inset Formula $\frac{z-i}{z+i}$
+\end_inset
+
+ evaluated at 
+\begin_inset Formula $i$
+\end_inset
+
+ is 0 is also a clue that the 
+\begin_inset Formula $f(i)=0$
+\end_inset
+
+ condition is needed to fulfill the conditions of the Schwarz lemma.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $g(z):\D\rightarrow\mathbb{H}:=i\frac{1-z}{1+z}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $f\circ g$
+\end_inset
+
+ is 
+\begin_inset Formula $\D\rightarrow\D$
+\end_inset
+
+ and 
+\begin_inset Formula $f\circ g(0)=f(i\cancel{\frac{1-0}{1+0}})=f(i)=0$
+\end_inset
+
+, so the Schwarz lemma applies: 
+\begin_inset Formula $|f(g(z))|\le|z|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude Sonnet 3.7 for tutoring on this last step.
+\end_layout
+
+\end_inset
+
+ for any 
+\begin_inset Formula $z_{h}\in\mathbb{H}$
+\end_inset
+
+, there exists a 
+\begin_inset Formula $z_{d}\in\D$
+\end_inset
+
+ such that 
+\begin_inset Formula $g(z_{d})=z_{h}$
+\end_inset
+
+, which is to say that 
+\begin_inset Formula $z_{d}=g^{-1}(z_{h})=\frac{z_{h}-i}{z_{h}+i}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $|f(g(z_{d}))|=|f(z_{h})|\le\left|\frac{z_{h}-i}{z_{h}+i}\right|$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -265,7 +423,7 @@ Proof
 \end_layout
 
 \begin_layout Standard
-An expansion by 
+My first thoughts: an expansion by 
 \begin_inset Formula $R$
 \end_inset
 
@@ -290,11 +448,7 @@ An expansion by
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-That makes me think I should define 
+ That makes me think I should define 
 \begin_inset Formula $g(z):=Rz$
 \end_inset
 
@@ -340,11 +494,95 @@ That makes me think I should define
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
-: finish]
+\end_layout
+
+\begin_layout Standard
+The issue is that we don't know that 
+\begin_inset Formula $h\circ f\circ g(0)=0$
+\end_inset
+
+, which is needed to apply the Schwarz lemma.
+ Rather than our ancillary transformations being two scalings, we can think
+ of having one function do both scalings, and another to force the origin
+ to be a fixed point.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude 3.7 Sonnet for clarifying this strategy.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Thus, an improved approach: let 
+\begin_inset Formula $g(z):\D\rightarrow\D:=\frac{f(Rz)}{M}$
+\end_inset
+
+.
+ We notice that 
+\begin_inset Formula $g(0)=\frac{f(0)}{M}$
+\end_inset
+
+, which we need to map to zero in order to be able to apply the Schwarz
+ lemma, so we define 
+\begin_inset Formula $h(z):\D\rightarrow\D:=\frac{\frac{f(0)}{M}-z}{1-\overline{\frac{f(0)}{M}}z}$
+\end_inset
+
+.
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h\circ g(z)=\frac{\frac{f(0)}{M}-\frac{f(Rz)}{M}}{1-\overline{\frac{f(0)}{M}}\frac{f(Rz)}{M}}=\frac{\frac{f(0)-f(Rz)}{M}}{1-\frac{\overline{f(0)}f(Rz)}{M^{2}}}=\frac{f(0)-f(Rz)}{M-\frac{\overline{f(0)}f(Rz)}{M}}=\frac{f(0)-f(Rz)}{\frac{M^{2}-\overline{f(0)}f(Rz)}{M}}=\frac{M(f(0)-f(Rz))}{M^{2}-\overline{f(0)}f(Rz)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then the Schwarz lemma says that 
+\begin_inset Formula $|h\circ g(z)|\le|z|$
+\end_inset
+
+, so we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{M\left|f(0)-f(Rz)\right|}{\left|M^{2}-\overline{f(0)}f(Rz)\right|}\le|z|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\left|f(0)-f(z)\right|}{\left|M^{2}-\overline{f(0)}f(z)\right|}\le\frac{|z|}{MR}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+as desired.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -358,11 +596,231 @@ TODO
  8 #12)
 \series default
 .
- [
+ 
 \series bold
-TODO
+a
 \series default
-]
+\emph on
+.
+ Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f:\D\rightarrow\D$
+\end_inset
+
+ is analytic and has two distinct fixed points, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is the identity.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Prof.
+ Lai for discussion at office hours on 1 May.
+\end_layout
+
+\end_inset
+
+ Suppose 
+\begin_inset Formula $f(z_{1})=z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $f(z_{2})=z_{2}$
+\end_inset
+
+.
+ Consider the Blashke factor 
+\begin_inset Formula $\psi(z):=\frac{z_{1}-z}{1-\overline{z_{1}}z}$
+\end_inset
+
+.
+ Now 
+\begin_inset Formula $\psi$
+\end_inset
+
+ is an automorphism of the disk that swaps 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $0$
+\end_inset
+
+, so 
+\begin_inset Formula $f(z_{1})=z_{1}$
+\end_inset
+
+ implies 
+\begin_inset Formula $f(\psi(0))=\psi(0)$
+\end_inset
+
+, which implies 
+\begin_inset Formula $\psi^{-1}(f(\psi(0))=\psi^{-1}(\psi(0))=0$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\psi^{-1}\circ f\circ\psi$
+\end_inset
+
+—actually we can just write 
+\begin_inset Formula $\psi^{-1}\circ f\circ\psi$
+\end_inset
+
+, because Blashkes are self-inverses.
+ Let 
+\begin_inset Formula $z_{3}:=\psi(z_{2})$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\psi\circ f\circ\psi(z_{3})=\psi\circ f\cancel{\circ\psi\circ\psi}(z_{2})=\psi\circ f(z_{2})=\psi(z_{2})=z_{3}$
+\end_inset
+
+, so 
+\begin_inset Formula $z_{3}$
+\end_inset
+
+ is a fixed point.
+ 
+\end_layout
+
+\begin_layout Standard
+Now 
+\begin_inset Formula $\psi\circ f\circ\psi$
+\end_inset
+
+ is holomorphic 
+\begin_inset Formula $\D\rightarrow\D$
+\end_inset
+
+ and maps 
+\begin_inset Formula $0$
+\end_inset
+
+ to itself, so the Schwarz lemma is applicable: if we have a nonzero point
+ whose image has the same modulus, then the map is a rotation—and in the
+ special case of a nonzero fixed point, that would be the trivial rotation,
+ so 
+\begin_inset Formula $\psi\circ f\circ\psi$
+\end_inset
+
+ is the identity.
+ But then if 
+\begin_inset Formula $\text{id}$
+\end_inset
+
+ is the identity, then 
+\begin_inset Formula $\psi\circ f\circ\psi=\text{id}$
+\end_inset
+
+ implies 
+\begin_inset Formula $\psi\circ\psi\circ f\circ\psi=\psi\circ\text{id}$
+\end_inset
+
+ implies 
+\begin_inset Formula $\cancel{\psi\circ\psi\circ}f\cancel{\circ\psi\circ\psi}=\psi\cancel{\circ\text{id}\circ}\psi=\psi\circ\psi=\text{id}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There exists a holomorphic function 
+\begin_inset Formula $f:\D\rightarrow\D$
+\end_inset
+
+ without a fixed point.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude 3.7 Sonnet for tutoring.
+ I had initially tried manipulating the Möbius fixed point equation into
+ the quadratic 
+\begin_inset Formula $cz^{2}+(d-a)z-b=0$
+\end_inset
+
+, but this approach seems more straightforward.
+\end_layout
+
+\end_inset
+
+ Holomorphic functions on 
+\begin_inset Formula $\D$
+\end_inset
+
+ correspond to Möbius transformations 
+\begin_inset Formula $\frac{az+b}{cz+d}$
+\end_inset
+
+ with real coëfficients in the upper half-plane 
+\begin_inset Formula $\mathbb{H}$
+\end_inset
+
+.
+ Suppose 
+\begin_inset Formula $c=0$
+\end_inset
+
+.
+ Then we have the translation 
+\begin_inset Formula $\frac{a}{d}z+\frac{b}{d}$
+\end_inset
+
+, but translations have no fixed points, and it still won't have a fixed
+ point when we map it into 
+\begin_inset Formula $\D$
+\end_inset
+
+ using 
+\begin_inset Formula $F\circ\frac{a}{d}z+\frac{b}{d}\circ F^{-1}$
+\end_inset
+
+ for 
+\begin_inset Formula $F=\frac{i-z}{i+z}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -412,7 +870,19 @@ Proposition
 Proof
 \emph default
 .
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Wikipedia's sketch of the Schwarz–Pick theorem for guidance.
  
+\emph on
+https://en.wikipedia.org/wiki/Schwarz_lemma#Proof_of_Schwarz%E2%80%93Pick_theorem
+\end_layout
+
+\end_inset
+
+ We know that
 \begin_inset Formula 
 \[
 d(f(z),f(w))=\left|\frac{f(z)-f(w)}{1-\overline{f(w)}f(z)}\right|=\frac{\left|f(z)-f(w)\right|}{\left|1-\overline{f(w)}f(z)\right|}
@@ -429,59 +899,6 @@ d(f(z),f(w))=\left|\frac{f(z)-f(w)}{1-\overline{f(w)}f(z)}\right|=\frac{\left|f(
 d(z,w)=\left|\frac{z-w}{1-\overline{w}z}\right|=\frac{\left|z-w\right|}{\left|1-\overline{w}z\right|}
 \]
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Okay, how do I show that the first fraction is 
-\begin_inset Formula $\le$
-\end_inset
-
- the second one? I know that 
-\begin_inset Formula $|f(z)|\le|z|$
-\end_inset
-
- and that 
-\begin_inset Formula $|f(w)|\le|w|,$
-\end_inset
-
-what does that tell me about 
-\begin_inset Formula $\left|f(z)-f(w)\right|$
-\end_inset
-
- and 
-\begin_inset Formula $\left|z-w\right|$
-\end_inset
-
-? By the reverse triangle inequality, 
-\begin_inset Formula $\left||f(z)|-|f(w)|\right|\le\left|f(z)-f(w)\right|$
-\end_inset
-
-, and 
-\begin_inset Formula $\left||z|-|w|\right|\le\left|z-w\right|$
-\end_inset
-
-.
- Does that help ...? 
-\emph on
-Wikipedia
-\emph default
- has a proof sketch of the Schwarz–Pick lemma,
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-
-\emph on
-https://en.wikipedia.org/wiki/Schwarz_lemma#Proof_of_Schwarz%E2%80%93Pick_theorem
-\end_layout
-
-\end_inset
-
- which we can consult—
-\begin_inset Newline newline
 \end_inset
 
 
@@ -625,6 +1042,16 @@ Proposition
 
 .
  
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Comment
+\emph default
+.
+ You'd expect the equality case to fall out of the equality case in Schwarz's
+ lemma.
 \end_layout
 
 \begin_layout Standard
