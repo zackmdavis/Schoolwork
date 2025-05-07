@@ -1,0 +1,793 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #12
+\end_layout
+
+\begin_layout Date
+28 April 2025
+\end_layout
+
+\begin_layout Abstract
+Homework exercises for Prof.
+ Dusty Ross's 
+\begin_inset Quotes eld
+\end_inset
+
+Modern Algebra I
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+.
+\begin_inset FormulaMacro
+\newcommand{\Z}{\mathbb{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ZnZ}[1]{\mathbb{Z}/#1\mathbb{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ZnZx}[1]{\left(\mathbb{Z}/#1\mathbb{Z}\right)^{\times}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\ZnZx{30}=\left\langle 11\right\rangle \times\left\langle 7\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We compute that 
+\begin_inset Formula $\ZnZx{30}=\{1,7,11,13,17,19,23,29\}$
+\end_inset
+
+, 
+\begin_inset Formula $\left\langle 11\right\rangle =\{1,11\}$
+\end_inset
+
+, and 
+\begin_inset Formula $\left\langle 7\right\rangle =\{1,7,13,19\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We observe that 
+\begin_inset Formula $\left\langle 11\right\rangle \cap\left\langle 7\right\rangle =\{1\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Because the identity is in both subgroups, it's clear that 
+\begin_inset Formula $\left\langle 7\right\rangle \subseteq\left\langle 11\right\rangle \left\langle 7\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left\langle 11\right\rangle \subseteq\left\langle 11\right\rangle \left\langle 7\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It only remains to be shown that 
+\begin_inset Formula $\ZnZx{30}\backslash\left(\left\langle 11\right\rangle \cup\left\langle 7\right\rangle \right)=\{17,23,29\}\subseteq\left\langle 11\right\rangle \left\langle 7\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+But 
+\begin_inset Formula $11\cdot7\mod30\cong17$
+\end_inset
+
+, 
+\begin_inset Formula $11\cdot13\mod30\cong23$
+\end_inset
+
+, and 
+\begin_inset Formula $11\cdot19\mod30\cong29$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+ Let 
+\begin_inset Formula $G$
+\end_inset
+
+ be an abelian group.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\varphi_{n}(a):=a^{n}$
+\end_inset
+
+ is a homomorphism.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\varphi_{n}(a\cdot b)=(ab)^{n}\underbrace{=}_{\text{abelian}}a^{n}b^{n}=\varphi_{n}(a)\cdot\varphi_{n}(b)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $p$
+\end_inset
+
+ is a prime divisor of 
+\begin_inset Formula $|G|$
+\end_inset
+
+, then 
+\begin_inset Formula $|\text{img}\ \varphi_{p}|<|G|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By Cauchy's theorem, 
+\begin_inset Formula $G$
+\end_inset
+
+ has an element of order 
+\begin_inset Formula $p$
+\end_inset
+
+; 
+\emph on
+i.e
+\emph default
+., an element 
+\begin_inset Formula $g$
+\end_inset
+
+ such that 
+\begin_inset Formula $g^{p}=1$
+\end_inset
+
+.
+ Now 
+\begin_inset Formula $g^{p}=1$
+\end_inset
+
+ implies that 
+\begin_inset Formula $g\in\ker\varphi_{p}$
+\end_inset
+
+, so the kernel is bigger than just 
+\begin_inset Formula $\{1\}$
+\end_inset
+
+.
+ By the first isomorphism theorem, 
+\begin_inset Formula $G/\ker\varphi_{n}\cong\text{img}\ \varphi_{n}$
+\end_inset
+
+, so 
+\begin_inset Formula $|G/\ker\varphi_{n}|=|\text{img}\ \varphi_{n}|$
+\end_inset
+
+.
+ But per Lagrange, 
+\begin_inset Formula $|G/\ker\varphi_{n}|=|G|/|\ker\varphi_{n}|$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $|\text{img}\varphi_{n}|=|G|/|\ker\varphi_{n}|$
+\end_inset
+
+ and 
+\begin_inset Formula $|\ker\varphi_{n}|>1$
+\end_inset
+
+ , then 
+\begin_inset Formula $|\text{img}\varphi_{n}|<|G|$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ For 
+\begin_inset Formula $\varphi_{p,m}(a):\ZnZ{p^{m}}\rightarrow\ZnZ{p^{m}}=pa$
+\end_inset
+
+, 
+\begin_inset Formula $|\ZnZ{p^{m}}|\cong p|\text{img}\ \varphi_{p,m}|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Lemma.
+
+\emph default
+ 
+\begin_inset Formula $|\ker\varphi_{p,m}|=p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+ (lemma).
+ By induction.
+ (Thanks to Shreya Chari for suggesting this.)
+\end_layout
+
+\begin_layout Standard
+(Base.) 
+\begin_inset Formula $\ker\ \varphi_{p,1}=\ZnZ p$
+\end_inset
+
+, because for 
+\begin_inset Formula $x\in\{0,1,...p-1\}$
+\end_inset
+
+, 
+\begin_inset Formula $px\cong0\mod p$
+\end_inset
+
+, so 
+\begin_inset Formula $|\ker\varphi_{p,1}|=p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Induction.) Suppose that 
+\begin_inset Formula $|\ker\ \varphi_{p,m}|=p$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $x\in\ker\ \varphi_{p,m}$
+\end_inset
+
+ iff 
+\begin_inset Formula $p^{m}|x$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $p^{m+1}|px$
+\end_inset
+
+, so 
+\begin_inset Formula $|\ker\ \varphi_{p,m+1}|=p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof 
+\emph default
+(theorem).
+ By the first isomorphism theorem, 
+\begin_inset Formula $\left(\ZnZ{p^{m}}\right)/\ker\ \varphi_{p,m}\cong\text{img}\ \varphi_{p,m}$
+\end_inset
+
+, but per Lagrange, 
+\begin_inset Formula $|\ZnZ{p^{m}}|/|\ker\ \varphi_{p,m}|=|\text{img}\ \varphi_{p,m}|$
+\end_inset
+
+, so 
+\begin_inset Formula $|\ZnZ{p^{m}}|/p=|\text{img}\ \varphi_{p,m}|$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The matrix ring 
+\begin_inset Formula $M_{2}(\mathbb{F}_{p})$
+\end_inset
+
+ for prime 
+\begin_inset Formula $p\ge53$
+\end_inset
+
+ is a finite noncommutative ring.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Comment
+\emph default
+.
+ 53 isn't minimal, but is rationalized from the noncommutativity example
+ below.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Another comment
+\emph default
+.
+ I had originally written 
+\begin_inset Formula $GL_{2}(\mathbb{F}_{p})$
+\end_inset
+
+; thanks to Claude Sonnet 3.7 for pointing out that the general linear group
+ is not a ring.
+ (The zero matrix has a zero determinant.)
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $M_{2}(F)$
+\end_inset
+
+ is always a ring for field 
+\begin_inset Formula $F$
+\end_inset
+
+.
+ Noncommutativity is shown by 
+\begin_inset Formula $\left[\begin{array}{cc}
+1 & 2\\
+3 & 4
+\end{array}\right]\left[\begin{array}{cc}
+5 & 6\\
+7 & 8
+\end{array}\right]=\left[\begin{array}{cc}
+19 & 22\\
+43 & 50
+\end{array}\right]$
+\end_inset
+
+ but 
+\begin_inset Formula $\left[\begin{array}{cc}
+5 & 6\\
+7 & 8
+\end{array}\right]\left[\begin{array}{cc}
+1 & 2\\
+3 & 4
+\end{array}\right]=\left[\begin{array}{cc}
+23 & 34\\
+31 & 46
+\end{array}\right]$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The quaternions with even integer coefficients 
+\begin_inset Formula $2\mathbb{Z}+2\mathbb{Z}i+2\mathbb{Z}j+2\mathbb{Z}k$
+\end_inset
+
+ are an infinite noncommutative ring with no unity.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Consider 
+\begin_inset Formula $Q:=a+bi+cj+dk$
+\end_inset
+
+ and 
+\begin_inset Formula $R:=e+fi+gj+hk$
+\end_inset
+
+ for 
+\begin_inset Formula $a,b,c,d,e,f,g\in2\mathbb{Z}$
+\end_inset
+
+.
+ The difference of even integers is even, so 
+\begin_inset Formula $Q-R\in2\mathbb{Z}+2\mathbb{Z}i+2\mathbb{Z}j+2\mathbb{Z}k$
+\end_inset
+
+.
+ The product of even integers is even, so 
+\begin_inset Formula $QR\in2\mathbb{Z}+2\mathbb{Z}i+2\mathbb{Z}j+2\mathbb{Z}k$
+\end_inset
+
+, too.
+ Thus by the subring test, 
+\begin_inset Formula $2\mathbb{Z}+2\mathbb{Z}i+2\mathbb{Z}j+2\mathbb{Z}k$
+\end_inset
+
+ is a subring of 
+\begin_inset Formula $\mathbb{H}$
+\end_inset
+
+.
+ We have non-commutivity because, 
+\emph on
+e.g
+\emph default
+., 
+\begin_inset Formula $2ij=-2ji$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 6 is a multiplicative identity in 
+\begin_inset Formula $\{0,2,4,6,8\}$
+\end_inset
+
+ under addition and multiplication mod 10.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (This is extremely counterintuitive and I was initially convinced I must
+ have made a mistake when I discovered this while dutifly trying to 
+\begin_inset Quotes eld
+\end_inset
+
+confirm
+\begin_inset Quotes erd
+\end_inset
+
+ that there is no unity.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $0\cdot6=0\cong0\mod10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $2\cdot6=12\cong2\mod10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $4\cdot6=24\cong4\mod10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $6\cdot6=36\cong6\mod10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $8\cdot6=48\cong8\mod10$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $4^{2}=16\cong4\mod6$
+\end_inset
+
+, but 
+\begin_inset Formula $4\notin\{0,1\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\begin_inset Formula $2\cdot3\cong0\mod6$
+\end_inset
+
+, but 
+\begin_inset Formula $2,3\notin\{0,1\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\begin_inset Formula $2\cdot3\cong4\cdot3\mod6$
+\end_inset
+
+, but 
+\begin_inset Formula $2\ne4$
+\end_inset
+
+ 
+\end_layout
+
+\end_body
+\end_document

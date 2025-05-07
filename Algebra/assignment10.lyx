@@ -29,9 +29,10 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -44,6 +45,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -55,6 +57,10 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -80,7 +86,7 @@ Assignment #10
 \end_layout
 
 \begin_layout Date
-2 April 2025
+14 April 2025
 \end_layout
 
 \begin_layout Abstract
@@ -292,7 +298,7 @@ b
 \series default
 .
  
-\begin_inset Formula $\text{Im}\varphi=\{1,-1\}$
+\begin_inset Formula $\text{img}\ \varphi=\{1,-1\}$
 \end_inset
 
  and 
@@ -313,6 +319,361 @@ b
 3
 \series default
 .
+
+\series bold
+ a
+\series default
+.
+ We know that 
+\begin_inset Formula $\varphi:\Z_{50}\rightarrow\Z_{15}$
+\end_inset
+
+ is a homomorphism with 
+\begin_inset Formula $\varphi(7)=6.$
+\end_inset
+
+ It follows from operation-preserving that 
+\begin_inset Formula $\varphi(14)=\varphi(7+7)=\varphi(7)+\varphi(7)\cong12\mod15$
+\end_inset
+
+.
+ Similarly, 
+\begin_inset Formula $\varphi(21)=\varphi(14+7)=\varphi(14)+\varphi(7)=6+12=18\cong3\mod15$
+\end_inset
+
+, and 
+\begin_inset Formula $\varphi(28)=\varphi(14+14)=\varphi(14)+\varphi(14)=24\cong9\mod15$
+\end_inset
+
+ ...
+ but that line of thought is only telling us that multiples of 7 in the
+ domain are getting mapped to multiples of 3 in the codomain; it doesn't
+ obviously give us the full mapping.
+ Except 50 isn't even divisible by 7, so maybe we just have to keep going?
+ 
+\begin_inset Formula $\varphi(35)=0$
+\end_inset
+
+; 
+\begin_inset Formula $\varphi(42)=6$
+\end_inset
+
+; 
+\begin_inset Formula $\varphi(49)=12$
+\end_inset
+
+; 
+\begin_inset Formula $\varphi(6)=3$
+\end_inset
+
+; 
+\begin_inset Formula $\varphi(13)=9$
+\end_inset
+
+; 
+\begin_inset Formula $\varphi(20)=0$
+\end_inset
+
+; 
+\begin_inset Formula $\varphi(27)=6$
+\end_inset
+
+; 
+\begin_inset Formula $\varphi(34)=12$
+\end_inset
+
+ ...
+ at this point, I pull out the Python shell 
+\end_layout
+
+\begin_layout LyX-Code
+[((i*7) % 50, (i*6) % 15) for i in range(50)] 
+\end_layout
+
+\begin_layout Standard
+...
+ which makes it much clearer that the rule is 
+\begin_inset Formula $\varphi(m)=3m\mod15$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ The image 
+\begin_inset Formula $\varphi(\Z_{50})$
+\end_inset
+
+ is 
+\begin_inset Formula $\{0,3,6,9,12\}$
+\end_inset
+
+ and the kernel 
+\begin_inset Formula $\ker\varphi$
+\end_inset
+
+ is 
+\begin_inset Formula $\{0,5,10,15,20,25,30,35,40,45\}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\Z\times\Z/\{(am,bn)\}\cong\Z_{a}\times\Z_{b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Consider the mapping 
+\begin_inset Formula $\varphi((x,y)):=(x\mod a,\,y\mod b)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is a homomorphism between 
+\begin_inset Formula $\Z\times\Z$
+\end_inset
+
+ and 
+\begin_inset Formula $\Z_{a}\times\Z_{b}$
+\end_inset
+
+ because 
+\begin_inset Formula $\varphi((x_{1},y_{1})+(x_{2},y_{2}))=(x_{1}+x_{2}\mod a,\,y_{1}+y_{2}\mod b)=\varphi((x_{1},y_{1}))+\varphi((x_{2},y_{2}))$
+\end_inset
+
+.
+ Also, 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is surjective: 
+\begin_inset Formula $\{0...a-1\}\times\{0...b-1\}$
+\end_inset
+
+ is a subset of 
+\begin_inset Formula $\Z\times\Z$
+\end_inset
+
+ which suffices to map onto all of 
+\begin_inset Formula $\Z_{a}\times\Z_{b}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\{(am,bn):m,n\in\Z\}$
+\end_inset
+
+ is the kernel of 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+ (Multiples of 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ get mapped to 0 in 
+\begin_inset Formula $\Z_{a}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Z_{b}$
+\end_inset
+
+, respectively.) The proposition follows from the first isomorphism theorem.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $H\trianglelefteq G$
+\end_inset
+
+ and 
+\begin_inset Formula $K\le G$
+\end_inset
+
+ (without loss of generality 
+\begin_inset Formula $H\le G$
+\end_inset
+
+ and 
+\begin_inset Formula $K\trianglelefteq G$
+\end_inset
+
+), then 
+\begin_inset Formula $HK:=\{hk:h\in H,k\in K\}\le G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Consider arbitrary 
+\begin_inset Formula $h_{1}k_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $h_{2}k_{2}$
+\end_inset
+
+ in 
+\begin_inset Formula $HK$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $(h_{2}k_{2})^{-1}=k_{2}^{-1}h_{2}^{-1}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $(h_{1}k_{1})(h_{2}k_{2})^{-1}=h_{1}k_{1}k_{2}^{-1}h_{2}^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then we can multiply by 
+\begin_inset Quotes eld
+\end_inset
+
+fancy one
+\begin_inset Quotes erd
+\end_inset
+
+ (thanks to ChatGPT o3-mini-high for guidance here): 
+\begin_inset Formula 
+\[
+h_{1}k_{1}k_{2}^{-1}h_{2}^{-1}\cdot\underbrace{k_{2}k_{1}^{-1}k_{1}k_{2}^{-1}}_{=k_{2}\underbrace{k_{1}^{-1}k_{1}}_{1}k_{2}^{-1}=k_{2}1k_{2}^{-1}=1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And apply the conjugation criterion for normality:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\underbrace{h_{1}\underbrace{\left(k_{1}k_{2}^{-1}\right)h_{2}^{-1}\left(k_{1}k_{2}^{-1}\right)^{-1}}_{\in H}}_{\in H}\underbrace{k_{1}k_{2}^{-1}}_{\in K}
+\]
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\left\langle (1\,2)\right\rangle \left\langle (1\,3)\right\rangle \not\le S_{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ The subgroup generated by a 2-cycle 
+\begin_inset Formula $c$
+\end_inset
+
+ is just 
+\begin_inset Formula $\{1,c\}$
+\end_inset
+
+, so 
+\begin_inset Formula $\left\langle (1\,2)\right\rangle \left\langle (1\,3)\right\rangle =\{1,(1\,2),(1\,3),(1\,2)(1\,3),(1\,3)(1\,2)\}$
+\end_inset
+
+, which normalizes to 
+\begin_inset Formula $\{1,(1\,2),(1\,3),(1\ 3\ 2),(1\ 2\ 3)\}$
+\end_inset
+
+, which isn't a subgroup because it's not closed because it contains some
+ but not all 3-cycles.
  
 \end_layout
 

@@ -1,0 +1,818 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #13
+\end_layout
+
+\begin_layout Date
+5 May 2025
+\end_layout
+
+\begin_layout Abstract
+Homework exercises for Prof.
+ Dusty Ross's 
+\begin_inset Quotes eld
+\end_inset
+
+Modern Algebra I
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+.
+\begin_inset FormulaMacro
+\newcommand{\Z}{\mathbb{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ZnZ}[1]{\mathbb{Z}/#1\mathbb{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ZnZx}[1]{\left(\mathbb{Z}/#1\mathbb{Z}\right)^{\times}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ The units in 
+\begin_inset Formula $\Z_{10}$
+\end_inset
+
+ are 
+\begin_inset Formula $\{1,3,7,9\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $1\cdot1=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $3\cdot7\cong1\mod10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $7\cdot3\cong1\mod10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $9\cdot9\cong1\mod10$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ The zero divisors in 
+\begin_inset Formula $\Z_{10}$
+\end_inset
+
+ are 
+\begin_inset Formula $\{2,4,5,6,8\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $2\cdot5\cong0\mod10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $4\cdot5\cong0\mod10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $6\cdot5\cong0\mod10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $8\cdot5\cong0\mod10$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+\emph on
+.
+ 
+\series bold
+\emph default
+a
+\series default
+\emph on
+.
+ Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $\gcd(a,n)=1$
+\end_inset
+
+, then 
+\begin_inset Formula $a$
+\end_inset
+
+ is a unit in 
+\begin_inset Formula $\Z_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We know that 
+\begin_inset Formula $\gcd(a,n)=sa+tn$
+\end_inset
+
+ for some 
+\begin_inset Formula $s,t\in\Z$
+\end_inset
+
+, so if 
+\begin_inset Formula $\gcd(a,n)=1$
+\end_inset
+
+, then we have 
+\begin_inset Formula $sa+tn=1$
+\end_inset
+
+.
+ But we're working in 
+\begin_inset Formula $\Z_{n}$
+\end_inset
+
+, so 
+\begin_inset Formula $tn\cong0$
+\end_inset
+
+, so we really have 
+\begin_inset Formula $sa=1$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $a$
+\end_inset
+
+ is a unit, which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $\gcd(a,n)>1$
+\end_inset
+
+, then 
+\begin_inset Formula $a$
+\end_inset
+
+ is a zero divisor in 
+\begin_inset Formula $\Z_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $d:=\frac{n}{\gcd(a,n)}$
+\end_inset
+
+.
+ (We know that this quotient is an integer less than 
+\begin_inset Formula $n$
+\end_inset
+
+, because 
+\begin_inset Formula $\gcd(a,n)\ |\ n$
+\end_inset
+
+.) Because 
+\begin_inset Formula $\gcd(a,n)\ |\ a$
+\end_inset
+
+, we can write 
+\begin_inset Formula $c:=\frac{a}{\gcd(a,n)}$
+\end_inset
+
+ or 
+\begin_inset Formula $a=\gcd(a,n)\cdot c$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $da=\frac{n}{\cancel{\gcd(a,n)}}\cdot\cancel{\gcd(a,n)}\cdot c=nc\cong0\mod n$
+\end_inset
+
+, so 
+\begin_inset Formula $a$
+\end_inset
+
+ is a zero divisor.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ The units in 
+\begin_inset Formula $\Z\times\mathbb{Q}$
+\end_inset
+
+ take the form 
+\begin_inset Formula $(\pm1,q)$
+\end_inset
+
+ for 
+\begin_inset Formula $q\in\mathbb{Q}\backslash\{0\}$
+\end_inset
+
+.
+ (The operations in the direct product are componentwise, so pairs of units
+ are units in the product.)
+\end_layout
+
+\begin_layout Standard
+Zero divisors take the form 
+\begin_inset Formula $(0,a)$
+\end_inset
+
+ or 
+\begin_inset Formula $(a,0)$
+\end_inset
+
+, because 
+\begin_inset Formula $(0,a)\cdot(b,0)=(0,0)$
+\end_inset
+
+ and 
+\begin_inset Formula $(a,0)\cdot(0,b)=(0,0)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Thanks to ChatGPT o3 for substantive corrections here: I had initially
+ written that the second component of a unit could be in 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+ rather than 
+\begin_inset Formula $\mathbb{Q}\backslash\{0\}$
+\end_inset
+
+, and I erroneously imagined that there were no zero divisors in 
+\begin_inset Formula $\Z\times\mathbb{Q}$
+\end_inset
+
+ based on the lack of zero divisors in 
+\begin_inset Formula $\Z$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+ individually.)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $n\in\N$
+\end_inset
+
+, 
+\begin_inset Formula $\Z[\sqrt{n}]$
+\end_inset
+
+ is a subring of 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Consider the case where 
+\begin_inset Formula $n$
+\end_inset
+
+ is a perfect square.
+ Then 
+\begin_inset Formula $\{a+b\sqrt{n}:a,b\in\Z\}$
+\end_inset
+
+ is just 
+\begin_inset Formula $\Z$
+\end_inset
+
+, which is already known to be a ring and a subring of 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then suppose that 
+\begin_inset Formula $n$
+\end_inset
+
+ is not a perfect square: now we have (a small amount of) work to do.
+\end_layout
+
+\begin_layout Standard
+Consider arbitrary 
+\begin_inset Formula $x:=x_{1}+x_{2}\sqrt{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $y:=y_{1}+y_{2}\sqrt{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(Subtraction closure.) Now 
+\begin_inset Formula $x-y=(x_{1}-y_{1})+(x_{2}-y_{2})\sqrt{n}\in\{a+b\sqrt{n}:a,b\in\Z\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Multiplication closure.) But also 
+\begin_inset Formula $xy=x_{1}y_{1}+nx_{2}y_{2}+(x_{1}y_{2}+x_{2}y_{1})\sqrt{n}\in\{a+b\sqrt{n}:a,b\in\Z\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+That's 
+\emph on
+quod erat demonstrandum
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+\emph on
+.
+ Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $n\in\N$
+\end_inset
+
+, 
+\begin_inset Formula $\Z[\sqrt{n}]$
+\end_inset
+
+ is an integral domain.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Recall that an integral domain is a commutative ring with unity and no
+ zero divisors.
+ 
+\end_layout
+
+\begin_layout Standard
+(Commutative ring.) Multiplication of real numbers is commutative.
+ 
+\begin_inset Formula $\Z[\sqrt{n}]$
+\end_inset
+
+ was established to be a ring in the previous proposition.
+\end_layout
+
+\begin_layout Standard
+(With unity.) For all 
+\begin_inset Formula $x\in\Z[\sqrt{n}]$
+\end_inset
+
+, 
+\begin_inset Formula $1x=x$
+\end_inset
+
+, and 
+\begin_inset Formula $1\in\Z[\sqrt{n}]$
+\end_inset
+
+ because it's 
+\begin_inset Formula $1+0\sqrt{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(No zero divisors.) Suppose 
+\begin_inset Formula $x,y\in\Z[\sqrt{n}]$
+\end_inset
+
+ were such that 
+\begin_inset Formula $xy=0$
+\end_inset
+
+.
+ Then it would have to be the case that 
+\begin_inset Formula $xy=0$
+\end_inset
+
+ in the superring 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+, but we know that 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ has no zero divisors.
+ Contradiction! 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $n\in\N$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbb{Q}[\sqrt{n}]$
+\end_inset
+
+ is a subring of 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Substantively the same as the proof above that 
+\begin_inset Formula $\Z[\sqrt{n}]$
+\end_inset
+
+ is a subring of 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+: if 
+\begin_inset Formula $x:=x_{1}+x_{2}\sqrt{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $y:=y_{1}+y_{2}\sqrt{n}$
+\end_inset
+
+, then 
+\begin_inset Formula $x-y=(x_{1}-y_{1})+(x_{2}-y_{2})\sqrt{n}\in\{a+b\sqrt{n}:a,b\in\mathbb{Q}\}$
+\end_inset
+
+, but also 
+\begin_inset Formula $xy=x_{1}y_{1}+nx_{2}y_{2}+(x_{1}y_{2}+x_{2}y_{1})\sqrt{n}\in\{a+b\sqrt{n}:a,b\in\mathbb{Q}\}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\mathbb{Q}[\sqrt{n}]$
+\end_inset
+
+ is a field.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Recall that a field is a commutative ring with unity in which every nonzero
+ element is a unit.
+\end_layout
+
+\begin_layout Standard
+(Commutative ring.) Multiplication of real numbers is commutative.
+ 
+\begin_inset Formula $\mathbb{Q}[\sqrt{n}]$
+\end_inset
+
+ was established to be a ring in the previous proposition.
+\end_layout
+
+\begin_layout Standard
+(With unity.) For all 
+\begin_inset Formula $x\in\mathbb{Q}[\sqrt{n}]$
+\end_inset
+
+, 
+\begin_inset Formula $1x=x$
+\end_inset
+
+, and 
+\begin_inset Formula $1\in\mathbb{Q}[\sqrt{n}]$
+\end_inset
+
+ because it's 
+\begin_inset Formula $1+0\sqrt{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Nonzero units.) Consider 
+\begin_inset Formula $x:=x_{1}+x_{2}\sqrt{n}$
+\end_inset
+
+ when it is not the case that 
+\begin_inset Formula $x_{1}=x_{2}=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{x_{1}+x_{2}\sqrt{n}}\cdot\frac{x_{1}-x_{2}\sqrt{n}}{x_{1}-x_{2}\sqrt{n}}=\frac{x_{1}-x_{2}\sqrt{n}}{x_{1}^{2}\cancel{-x_{1}x_{2}\sqrt{n}+x_{1}x_{2}\sqrt{n}}-nx_{2}^{2}}=\frac{x_{1}-x_{2}\sqrt{n}}{x_{1}^{2}-nx_{2}^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\underbrace{\frac{x_{1}}{x_{1}^{2}-nx_{2}^{2}}}_{\in\mathbb{Q}}-\underbrace{\frac{x_{2}}{x_{1}^{2}-nx_{2}^{2}}}_{\in\mathbb{Q}}\sqrt{n}\in\mathbb{Q}[\sqrt{n}]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

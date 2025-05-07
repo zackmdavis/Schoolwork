@@ -1,0 +1,534 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #11
+\end_layout
+
+\begin_layout Date
+19 April 2025
+\end_layout
+
+\begin_layout Abstract
+Homework exercises for Prof.
+ Dusty Ross's 
+\begin_inset Quotes eld
+\end_inset
+
+Modern Algebra I
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+.
+\begin_inset FormulaMacro
+\newcommand{\Z}{\mathbb{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ZnZ}[1]{\mathbb{Z}/#1\mathbb{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ZnZx}[1]{\left(\mathbb{Z}/#1\mathbb{Z}\right)^{\times}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There are three abelian groups of order 8.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $8=2^{3}$
+\end_inset
+
+.
+ By the fundamental theorem of abelian groups, the isomorphism types are
+ given by the ways to partition the factors of 2: 
+\begin_inset Formula $\Z_{2}\times\Z_{2}\times\Z_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\Z_{2}\times\Z_{4}$
+\end_inset
+
+, and 
+\begin_inset Formula $\Z_{8}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There is one abelian group of order 10.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $10=2\cdot5$
+\end_inset
+
+.
+ There are no nontrivial prime powers to partition.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There are two abelian groups of order 12.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $12=2\cdot2\cdot3$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $\Z_{2}\times\Z_{2}\times\Z_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Z_{3}\times\Z_{4}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+ The smallest order with 
+\emph on
+exactly
+\emph default
+ four nonisomorphic abelian groups is 
+\begin_inset Formula $36=2^{2}3^{2}$
+\end_inset
+
+: 
+\begin_inset Formula $\Z_{2}\times\Z_{2}\times\Z_{3}\times\Z_{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\Z_{2}\times\Z_{2}\times\Z_{9}$
+\end_inset
+
+, 
+\begin_inset Formula $\Z_{4}\times\Z_{3}\times\Z_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Z_{4}\times\Z_{9}$
+\end_inset
+
+.
+ (Thanks to ChatGPT o3 for a substantive correction here: I had originally
+ written 16, on the grounds that 
+\begin_inset Formula $2^{4}$
+\end_inset
+
+ is the fourth power of the smallest prime, but that actually gives us five
+ partitions, not four, as I originally erroneously thought, having overlooked
+ 
+\begin_inset Formula $\Z_{8}\times\Z_{2}$
+\end_inset
+
+.
+ It turns out that I was right the first time if we construe the question
+ to be asking about the smallest order with (at least) four nonisormophic
+ groups, rather than exactly four, but I think the 
+\begin_inset Quotes eld
+\end_inset
+
+exactly
+\begin_inset Quotes erd
+\end_inset
+
+ reading is more natural.)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\begin_inset Formula $360=2\cdot2\cdot2\cdot3\cdot3\cdot5$
+\end_inset
+
+ is going to have six isomorphism types, because there are three ways to
+ partition 
+\begin_inset Formula $2^{3}$
+\end_inset
+
+ and two ways to partition 
+\begin_inset Formula $3^{2}$
+\end_inset
+
+.
+ To wit:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Z_{2}\times\Z_{2}\times\Z_{2}\times\Z_{3}\times\Z_{3}\times\Z_{5}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Z_{2}\times\Z_{4}\times\Z_{3}\times\Z_{3}\times\Z_{5}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Z_{8}\times\Z_{3}\times\Z_{3}\times\Z_{5}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Z_{2}\times\Z_{2}\times\Z_{2}\times\Z_{9}\times\Z_{5}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Z_{2}\times\Z_{4}\times\Z_{9}\times\Z_{5}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Z_{8}\times\Z_{9}\times\Z_{5}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ If every abelian group of order 
+\begin_inset Formula $n$
+\end_inset
+
+ is cyclic, then 
+\begin_inset Formula $n$
+\end_inset
+
+ is squarefree.
+ (Because 
+\begin_inset Formula $\Z_{n}$
+\end_inset
+
+ is cyclic, and if 
+\begin_inset Formula $n=p^{k}m$
+\end_inset
+
+ for some 
+\begin_inset Formula $m\ne1$
+\end_inset
+
+ and prime 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $k\ge2$
+\end_inset
+
+, then 
+\begin_inset Formula $\Z_{p}\times\Z_{p^{k-1}}\times\Z_{m}$
+\end_inset
+
+ would have a different, non-cyclic isomorphism type from 
+\begin_inset Formula $\Z_{n}$
+\end_inset
+
+.)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ If there are exactly two abelian groups of order 
+\begin_inset Formula $n$
+\end_inset
+
+, then 
+\begin_inset Formula $n$
+\end_inset
+
+'s prime factorization contains exactly one square.
+ (Because we have 
+\begin_inset Formula $\Z_{p}\times\Z_{p}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Z_{p^{2}}$
+\end_inset
+
+; fewer square-or-above powers, and we wouldn't even have two; more, and
+ we would have more.) 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $G$
+\end_inset
+
+ is an abelian group with order divisible by 10, then 
+\begin_inset Formula $G$
+\end_inset
+
+ contains a cyclic subgroup of order 10.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By the fundamental theorem of finite abelian groups, 
+\begin_inset Formula $G$
+\end_inset
+
+ can be expressed as 
+\begin_inset Formula $\Z_{2^{j}}\times\Z_{5^{k}}\times H$
+\end_inset
+
+ for some 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $k$
+\end_inset
+
+, and 
+\begin_inset Formula $H$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $(2^{j-1},5^{k-1},0)\in\Z_{2^{j}}\times\Z_{5^{k}}\times H$
+\end_inset
+
+ is a cyclic group of order 10.
+ 
+\end_layout
+
+\end_body
+\end_document
