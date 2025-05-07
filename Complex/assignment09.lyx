@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-3 May 2025 (late)
+5 May 2025 (late)
 \end_layout
 
 \begin_layout Abstract
@@ -336,10 +336,10 @@ Proof
 \begin_layout Standard
 Then
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Thanks to Claude Sonnet 3.7 for tutoring on this last step.
+Thanks to Claude 3.7 Sonnet for tutoring on this last step.
 \end_layout
 
 \end_inset
@@ -871,11 +871,10 @@ Proof
 \emph default
 .
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Thanks to Wikipedia's sketch of the Schwarz–Pick theorem for guidance.
- 
+Thanks to Wikipedia's sketch of the Schwarz–Pick theorem for guidance: 
 \emph on
 https://en.wikipedia.org/wiki/Schwarz_lemma#Proof_of_Schwarz%E2%80%93Pick_theorem
 \end_layout
@@ -1050,8 +1049,8 @@ Proposition
 Comment
 \emph default
 .
- You'd expect the equality case to fall out of the equality case in Schwarz's
- lemma.
+ Notice that the hyperbolic metric takes the form of a Blashke factor.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1060,12 +1059,244 @@ Comment
 Proof
 \emph default
 .
- [
-\series bold
-TODO
-\series default
-]
-\begin_inset Newline newline
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is an automorphism of 
+\begin_inset Formula $\D$
+\end_inset
+
+, then 
+\begin_inset Formula $f(z)=\exp i\theta\frac{\alpha-z}{1-\overline{\alpha}z}$
+\end_inset
+
+ for some 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta$
+\end_inset
+
+ by Stein and Shakarchi's Ch.
+ 8 Theorem 2.2.
+ So, I naïvely thought, we should just be able to compute 
+\begin_inset Formula $d(f(z),f(w))$
+\end_inset
+
+ and see that we get 
+\begin_inset Formula $\left|\frac{z-w}{1-\overline{w}z}\right|$
+\end_inset
+
+.
+ We begin—
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d(f(z),f(w))=d\left(\exp i\theta\frac{\alpha-z}{1-\overline{\alpha}z},\exp i\theta\frac{\alpha-w}{1-\overline{\alpha}w}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\left|\frac{\exp i\theta\frac{\alpha-z}{1-\overline{\alpha}z}-\exp i\theta\frac{\alpha-w}{1-\overline{\alpha}w}}{1-\overline{\left(\exp i\theta\frac{\alpha-w}{1-\overline{\alpha}w}\right)}\left(\exp i\theta\frac{\alpha-z}{1-\overline{\alpha}z}\right)}\right|=\frac{\left|\exp i\theta\left(\frac{\alpha-z}{1-\overline{\alpha}z}-\frac{\alpha-w}{1-\overline{\alpha}w}\right)\right|}{\left|1-\overline{\left(\exp i\theta\frac{\alpha-w}{1-\overline{\alpha}w}\right)}\left(\exp i\theta\frac{\alpha-z}{1-\overline{\alpha}z}\right)\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sidebar—let's distribute that conjugation in the denominator: 
+\begin_inset Formula $\overline{\left(\exp i\theta\frac{\alpha-w}{1-\overline{\alpha}w}\right)}=\overline{\exp i\theta}\frac{\overline{\alpha}-\overline{w}}{1-\alpha\overline{w}}$
+\end_inset
+
+.
+ Continuing our computation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{\left|\exp i\theta\left(\frac{\alpha-z}{1-\overline{\alpha}z}-\frac{\alpha-w}{1-\overline{\alpha}w}\right)\right|}{\left|1-\cancelto{|\exp i\theta|^{2}}{\overline{\exp i\theta}\exp i\theta}\frac{\overline{\alpha}-\overline{w}}{1-\alpha\overline{w}}\frac{\alpha-z}{1-\overline{\alpha}z}\right|}=\frac{\left|\exp i\theta\right|\left|\frac{\alpha-z}{1-\overline{\alpha}z}-\frac{\alpha-w}{1-\overline{\alpha}w}\right|}{\left|1-|\exp i\theta|^{2}\frac{\overline{\alpha}-\overline{w}}{1-\alpha\overline{w}}\frac{\alpha-z}{1-\overline{\alpha}z}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{\left|\exp i\theta\right|\left|\frac{\alpha-z}{1-\overline{\alpha}z}\cdot\overbrace{\frac{1-\overline{\alpha}w}{1-\overline{\alpha}w}}^{\text{fancy one}}-\frac{\alpha-w}{1-\overline{\alpha}w}\cdot\overbrace{\frac{1-\overline{\alpha}z}{1-\overline{\alpha}z}}^{\text{fancy one}}\right|}{\left|1-|\exp i\theta|^{2}\frac{\overline{\alpha}-\overline{w}}{1-\alpha\overline{w}}\frac{\alpha-z}{1-\overline{\alpha}z}\right|}=\frac{\left|\exp i\theta\right|\left|\frac{\left(\alpha-z\right)\left(1-\overline{\alpha}w\right)-\left(\alpha-w\right)\left(1-\overline{\alpha}z\right)}{\left(1-\overline{\alpha}z\right)\left(1-\overline{\alpha}w\right)}\right|}{\left|1-|\exp i\theta|^{2}\frac{\left(\overline{\alpha}-\overline{w}\right)\left(\alpha-z\right)}{\left(1-\alpha\overline{w}\right)\left(1-\overline{\alpha}z\right)}\right|}=\frac{\left|\exp i\theta\right|\left|\frac{\alpha-z-\alpha\overline{\alpha}w+z\overline{\alpha}w-\alpha+w+\alpha\overline{\alpha}z-\overline{\alpha}wz}{1-\overline{\alpha}z-\overline{\alpha}w+\overline{\alpha}z\overline{\alpha}w}\right|}{\left|1-|\exp i\theta|^{2}\frac{\overline{\alpha}\alpha-\overline{w}\alpha-z\overline{\alpha}+\overline{w}z}{1-\alpha\overline{w}-\overline{\alpha}z+\overline{\alpha}\alpha\overline{w}z}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{\left|\exp i\theta\right|\left|\frac{\cancel{\alpha}-z-|\alpha|^{2}w\cancel{+\overline{\alpha}wz}\cancel{-\alpha}+w+|\alpha|^{2}z\cancel{-\overline{\alpha}wz}}{1-\overline{\alpha}z-\overline{\alpha}w+\left(\overline{\alpha}\right)^{2}wz}\right|}{\left|1-|\exp i\theta|^{2}\frac{\overline{\alpha}\alpha-\overline{w}\alpha-z\overline{\alpha}+\overline{w}z}{1-\alpha\overline{w}-\overline{\alpha}z+\overline{\alpha}\alpha\overline{w}z}\right|}=\frac{\cancelto{1}{\left|\exp i\theta\right|}\left|\frac{w-z+|\alpha|^{2}z-|\alpha|^{2}w}{1-\overline{\alpha}z-\overline{\alpha}w+\left(\overline{\alpha}\right)^{2}wz}\right|}{\left|1-\cancelto{1}{|\exp i\theta|^{2}}\frac{|\alpha|^{2}-\overline{w}\alpha-z\overline{\alpha}+\overline{w}z}{1-\alpha\overline{w}-\overline{\alpha}z+|\alpha|^{2}\overline{w}z}\right|}=\frac{\frac{\left|w-z+|\alpha|^{2}z-|\alpha|^{2}w\right|}{\left|1-\overline{\alpha}z-\overline{\alpha}w+\left(\overline{\alpha}\right)^{2}wz\right|}}{\left|1-\frac{|\alpha|^{2}-\overline{w}\alpha-z\overline{\alpha}+\overline{w}z}{1-\alpha\overline{w}-\overline{\alpha}z+|\alpha|^{2}\overline{w}z}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{\frac{\left|(w-z)(1-|\alpha|^{2})\right|}{\left|\left(1-\overline{\alpha}z\right)\left(1-\overline{\alpha}w\right)\right|}}{\left|1-\frac{|\alpha|^{2}-\overline{w}\alpha-z\overline{\alpha}+\overline{w}z}{1-\alpha\overline{w}-\overline{\alpha}z+|\alpha|^{2}\overline{w}z}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+...
+ and at this point, though one can hazily intuit our destination in the
+ distance, one begins to doubt that just grinding through the algebra was
+ the right way to go on this one, although I did so much work that I can't
+ bring myself to delete the above.
+\end_layout
+
+\begin_layout Standard
+A more standard approach:
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to ChatGPT o3 for tutoring.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\varphi_{a}(z)$
+\end_inset
+
+ be the Blashke factor that sends 
+\begin_inset Formula $a$
+\end_inset
+
+ to 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ Then we can write
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d(f(z),f(w))=\left|\frac{f(z)-f(w)}{1-\overline{f(z)}f(w)}\right|=\left|\varphi_{f(z)}(f(w))\right|=\left|\varphi_{f(z)}\circ f(w)\right|=\left|\varphi_{f(z)}\circ f\underbrace{\circ\varphi_{z}^{-1}\circ\varphi_{z}}_{\text{identity}}(w)\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we consider the nature of 
+\begin_inset Formula $\varphi_{f(z)}\circ f\circ\varphi_{z}^{-1}$
+\end_inset
+
+.
+ As the composition of three automorphisms of 
+\begin_inset Formula $\D$
+\end_inset
+
+, it's an automorphism of 
+\begin_inset Formula $\D$
+\end_inset
+
+.
+ But also consider what it does to 
+\begin_inset Formula $0$
+\end_inset
+
+: 
+\begin_inset Formula $\varphi_{z}^{-1}$
+\end_inset
+
+ sends 0 to 
+\begin_inset Formula $z$
+\end_inset
+
+, 
+\begin_inset Formula $f$
+\end_inset
+
+ sends 
+\begin_inset Formula $z$
+\end_inset
+
+ to 
+\begin_inset Formula $f(z)$
+\end_inset
+
+, and 
+\begin_inset Formula $\varphi_{f(z)}$
+\end_inset
+
+ sends 
+\begin_inset Formula $f(z)$
+\end_inset
+
+ to 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula $\varphi_{f(z)}\circ f\circ\varphi_{z}^{-1}(0)=0$
+\end_inset
+
+.
+ By the Schwarz lemma, an automorphism that fixes zero must be a rotation.
+ (If 
+\begin_inset Formula $A$
+\end_inset
+
+ is an automorphism fixing zero, then 
+\begin_inset Formula $|A(z)|\le|z|$
+\end_inset
+
+, but we also have 
+\begin_inset Formula $|A^{-1}(z)|\le|z|$
+\end_inset
+
+.) So we have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\exp(i\theta)\varphi_{z}(w)\right|=\cancelto{1}{|\exp(i\theta)|}\cdot|\varphi_{z}(w)|=|\varphi_{z}(w)|=d(z,w)
+\]
+
 \end_inset
 
 
@@ -1098,11 +1329,171 @@ Proposition
 \end_layout
 
 \begin_layout Standard
-[
-\series bold
-TODO
-\series default
-]
+
+\emph on
+Proof
+\emph default
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to the treatment of this theorem in Tristan Needham's 
+\emph on
+Visual Complex Analysis
+\emph default
+, Ch.
+ 7 §VII.3; and to ChatGPT o3 pointing out how to reärrange to get the difference
+ quotient.
+\end_layout
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\varphi_{a}:=\frac{a-z}{1-\overline{a}z}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|\varphi_{f(z_{0})}\circ f\circ\varphi_{z_{0}}(z)|\le|z|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then consider 
+\begin_inset Formula $z:=\varphi_{z_{0}}(z_{1})$
+\end_inset
+
+.
+ We get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|\varphi_{f(z_{0})}\circ f\cancel{\circ\varphi_{z_{0}}\circ\varphi_{z_{0}}}(z_{1})|\le|\varphi_{z_{0}}(z_{1})|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|\varphi_{f(z_{0})}\circ f(z_{1})|\le|\varphi_{z_{0}}(z_{1})|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\frac{f(z_{0})-f(z_{1})}{1-\overline{f(z_{0})}f(z_{1})}\right|\le\left|\frac{z_{0}-z_{1}}{1-\overline{z_{0}}z_{1}}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\left|f(z_{0})-f(z_{1})\right|}{\left|1-\overline{f(z_{0})}f(z_{1})\right|}\le\frac{\left|z_{0}-z_{1}\right|}{\left|1-\overline{z_{0}}z_{1}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\left|f(z_{0})-f(z_{1})\right|}{\left|z_{0}-z_{1}\right|\left|1-\overline{f(z_{0})}f(z_{1})\right|}\le\frac{1}{\left|1-\overline{z_{0}}z_{1}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\underbrace{\frac{\left|f(z_{0})-f(z_{1})\right|}{\left|z_{0}-z_{1}\right|}}_{\text{here's our difference quotient!}}\cdot\frac{1}{\left|1-\overline{f(z_{0})}f(z_{1})\right|}\le\frac{1}{\left|1-\overline{z_{0}}z_{1}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{z_{1}\rightarrow z_{0}}\frac{\left|f(z_{0})-f(z_{1})\right|}{\left|z_{0}-z_{1}\right|}\cdot\frac{1}{\left|1-\overline{f(z_{0})}f(z_{1})\right|}\le\lim_{z_{1}\rightarrow z_{0}}\frac{1}{\left|1-\overline{z_{0}}z_{1}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f'(z_{0})\cdot\frac{1}{\left|1-|f(z_{0})|^{2}\right|}\le\frac{1}{\left|1-|z_{0}|^{2}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which (swapping back in a plain 
+\begin_inset Formula $z$
+\end_inset
+
+ for 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+) is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{f'(z)}{\left|1-|f(z)|^{2}\right|}\le\frac{1}{\left|1-|z|^{2}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
 \end_layout
 
 \end_body
