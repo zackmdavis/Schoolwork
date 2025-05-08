@@ -82,7 +82,7 @@
 \begin_body
 
 \begin_layout Title
-Arcana of the Generalized Factorial
+Pinpointing the Generalized Factorial
 \end_layout
 
 \begin_layout Author
@@ -423,6 +423,23 @@ Brute empiricism has failed us.
 \end_layout
 
 \begin_layout Standard
+(Note that this is different from the analogous functional equation for
+ the treacherous so-called 
+\begin_inset Quotes eld
+\end_inset
+
+gamma
+\begin_inset Quotes erd
+\end_inset
+
+ function, 
+\begin_inset Formula $\Gamma(x+1)=x\Gamma(x)$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
 But what to do with it? 
 \end_layout
 
@@ -513,7 +530,7 @@ A period of contemplation should convince the reader that it suffices to
 \end_inset
 
  indicates differentiation by) 
-\begin_inset Formula $du(x)=x\cdot u(x-1)$
+\begin_inset Formula $du(x+1)=(x+1)\cdot u(x)$
 \end_inset
 
 .
@@ -531,21 +548,21 @@ are
 \begin_inset Formula $v$
 \end_inset
 
- is not constant, then we must have 
+ is not zero, then we must have 
 \begin_inset Formula $v:=\exp-t$
 \end_inset
 
 .
  Such disciples will probably also successfully pattern-match 
-\begin_inset Formula $du(x)=x\cdot u(x-1)$
+\begin_inset Formula $du(x+1)=(x+1)\cdot u(x)$
 \end_inset
 
  to the power rule: 
-\begin_inset Formula $\frac{d}{dt}t^{x}=x\cdot t^{x-1}$
+\begin_inset Formula $\frac{d}{dt}t^{x+1}=(x+1)\cdot t^{x}$
 \end_inset
 
  and conclude that 
-\begin_inset Formula $u:=t^{x}$
+\begin_inset Formula $u:=t^{x+1}$
 \end_inset
 
 , although it make take some discipline to accept 
@@ -566,7 +583,7 @@ At this juncture, we have:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\int_{a}^{b}t^{x}\exp-t\,dt=\left.t^{x}\exp-t\right|_{t=a}^{b}+\int_{a}^{b}xt^{x-1}\exp-t\,dt
+\int_{a}^{b}t^{x+1}\exp-t\,dt=\left.t^{x+1}\exp-t\right|_{t=a}^{b}+\int_{a}^{b}(x+1)t^{x}\exp-t\,dt
 \]
 
 \end_inset
@@ -605,21 +622,19 @@ Where it remains to worry about the
 \begin_inset Formula $R$
 \end_inset
 
- (respectively), and (predictably) let them approach 
-\begin_inset Formula $0$
+ (respectively).
+ The perceptive reader can probably tell from the choice of symbols where
+ I'm going with this: the 
+\begin_inset Formula $\left.t^{x+1}\exp-t\right|_{t=\varepsilon}^{R}$
 \end_inset
 
- and 
-\begin_inset Formula $\infty$
-\end_inset
-
- (respectively):
+ terms cancel in the limit:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\lim_{\varepsilon\rightarrow0}\lim_{R\rightarrow\infty}\underbrace{\cancelto{0}{R^{x}\exp-R}}_{\exp-R\text{ goes to 0 faster than }R^{x}}-\cancelto{0}{\varepsilon^{x}}\cancelto{1}{\exp-\varepsilon}=0
+\lim_{\varepsilon\rightarrow0}\lim_{R\rightarrow\infty}R^{x+1}\exp(-R)-\varepsilon^{x+1}\exp(-\varepsilon)
 \]
 
 \end_inset
@@ -628,13 +643,48 @@ Where it remains to worry about the
 \end_layout
 
 \begin_layout Standard
-So (1) can be satisfied by a function defined by an improper integral:
+(Because 
+\begin_inset Formula $\exp(-R)$
+\end_inset
+
+ goes to zero faster than 
+\begin_inset Formula $R^{x+1}$
+\end_inset
+
+ goes to infinity, and 
+\begin_inset Formula $\varepsilon^{x+1}$
+\end_inset
+
+ goes to zero while 
+\begin_inset Formula $\exp(-\varepsilon)$
+\end_inset
+
+ goes to 1.)
+\end_layout
+
+\begin_layout Standard
+To recap, we've just found that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}t^{x+1}\exp(-t)\,dt=(x+1)\int_{0}^{\infty}t^{x}\exp(-t)\,dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+such that (1) can be satisfied by the function defined by an improper integral:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\Pi(x):=\int_{0}^{\infty}t^{x}\exp-t\,dt
+\Pi(x):=\int_{0}^{\infty}t^{x}\exp(-t)\,dt
 \end{equation}
 
 \end_inset
@@ -644,7 +694,7 @@ So (1) can be satisfied by a function defined by an improper integral:
 
 \begin_layout Standard
 And 
-\begin_inset Formula $\Pi(0)=\int_{0}^{\infty}\cancelto{1}{t^{0}}\exp-t\,dt=\int_{0}^{\infty}\exp-t\,dt=\cancelto{1}{\exp0}-\cancelto{0}{\lim_{R\rightarrow\infty}\exp-R}=1$
+\begin_inset Formula $\Pi(0)=\int_{0}^{\infty}t^{0}\exp(-t)\,dt=\int_{0}^{\infty}\exp(-t)\,dt=\lim_{R\rightarrow\infty}\exp0-\exp(-R)=1-0=1$
 \end_inset
 
 , according with 
@@ -660,7 +710,680 @@ Log Convexity and the Bohr–Mollerup Characterization
 \end_layout
 
 \begin_layout Standard
-[TODO: what makes it special: Bohr–Mollerup]
+We've just shown that 
+\begin_inset Formula $\Pi(x):=\int_{0}^{\infty}t^{x}\exp(-t)\,dt$
+\end_inset
+
+ is a generalized factorial function.
+ But is it 
+\emph on
+the
+\emph default
+ generalized factorial? One could answer: No, there are infinitely many
+ other functions that interpolate the points (
+\begin_inset Formula $k,k!)$
+\end_inset
+
+: for example, 
+\begin_inset Formula $\Pi(x)+\sin(\tau x)$
+\end_inset
+
+ will do.
+ (Hidebound reactionaries would say 
+\begin_inset Formula $\Gamma(x)+\sin(2\pi x)$
+\end_inset
+
+.) But that seems like 
+\begin_inset Quotes eld
+\end_inset
+
+cheating.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A bolder answer might be Yes—there might be an infinitude of functions passing
+ through the points (
+\begin_inset Formula $k,k!)$
+\end_inset
+
+, but 
+\begin_inset Formula $\Pi(x)$
+\end_inset
+
+ is the only 
+\begin_inset Quotes eld
+\end_inset
+
+good
+\begin_inset Quotes erd
+\end_inset
+
+ one.
+\end_layout
+
+\begin_layout Standard
+Explaining the sense of 
+\begin_inset Quotes eld
+\end_inset
+
+good
+\begin_inset Quotes erd
+\end_inset
+
+ that uniquely pinpoints 
+\begin_inset Formula $\Pi(x)$
+\end_inset
+
+ will require some preparation and definitions—some doubtlessly familiar
+ to the reader.
+\end_layout
+
+\begin_layout Subsubsection
+(Log) Convexity Facts!
+\end_layout
+
+\begin_layout Standard
+A function 
+\begin_inset Formula $f$
+\end_inset
+
+ is said to be 
+\emph on
+convex
+\emph default
+ iff for all 
+\begin_inset Formula $t\in[0,1]$
+\end_inset
+
+ and for all 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ in the domain, 
+\begin_inset Formula $f(tx_{1}+(1-t)x_{2})\le tf(x_{1})+(1-t)f(x_{2})$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is twice-differentiable, then its second derivative is positive.
+\end_layout
+
+\begin_layout Standard
+A consequence is 
+\emph on
+midpoint convexity
+\emph default
+ (just choose 
+\begin_inset Formula $t=\frac{1}{2}$
+\end_inset
+
+): 
+\begin_inset Formula 
+\[
+f\left(\frac{x_{1}+x_{2}}{2}\right)\le\frac{1}{2}(f(x_{1})+f(x_{2}))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By an induction-like argument, midpoint convexity turns out to generalize
+ to an arbitrary finite number of points:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f\left(\frac{\sum_{k}x_{k}}{n}\right)\le\frac{1}{n}\sum_{k=1}^{n}f(x_{k})
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Functions satisfying (3) are said to be 
+\emph on
+weaky convex
+\emph default
+ by authors such as Artin,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Emil Artin, 
+\emph on
+The Gamma Function
+\emph default
+, Ch.
+ 1, 
+\begin_inset Quotes eld
+\end_inset
+
+Convex Functions
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ although it's really not 
+\emph on
+much
+\emph default
+ weaker.
+ (The only weakly convex but non-convex functions are non–Lebesgue-measurable
+ monstrosities constructed using a Hamel basis for 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+https://math.stackexchange.com/questions/302684/weak-convexity-and-continuity
+\end_layout
+
+\end_inset
+
+ The present author finds it hard to care less.)
+\end_layout
+
+\begin_layout Standard
+A function 
+\begin_inset Formula $f$
+\end_inset
+
+ is said to be 
+\emph on
+logarithmically convex
+\emph default
+ iff 
+\begin_inset Formula $\log f$
+\end_inset
+
+ is convex.
+\end_layout
+
+\begin_layout Standard
+I promise we're going somewhere with this.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is logarithmically convex, then 
+\begin_inset Formula $f\left(\frac{\sum_{k=1}^{n}x_{k}}{n}\right)^{n}\le\prod_{k=1}^{n}f(x_{k})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Weak
+\begin_inset Quotes erd
+\end_inset
+
+ logarithmic convexity and elementary log properties imply 
+\begin_inset Formula $\log f\left(\frac{\sum_{k}x_{k}}{n}\right)\le\frac{1}{n}\sum_{k=1}^{n}\log f(x_{k})=\frac{1}{n}\log\prod_{k=1}^{n}f(x_{k})=\log\left(\prod_{k=1}^{n}f(x_{k})\right)^{\frac{1}{n}}=\log\sqrt[n]{\prod_{k=1}^{n}f(x_{k})}$
+\end_inset
+
+; exponentiating yields 
+\begin_inset Formula $f\left(\frac{\sum_{k}x_{k}}{n}\right)\le\sqrt[n]{\prod_{k=1}^{n}f(x_{k})}$
+\end_inset
+
+ and taking it to the 
+\begin_inset Formula $n$
+\end_inset
+
+th yields 
+\begin_inset Formula $f\left(\frac{\sum_{k}x_{k}}{n}\right)^{n}\le\prod_{k=1}^{n}f(x_{k})$
+\end_inset
+
+, which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ The sum of logarithmically convex functions is logarithmically convex.
+\end_layout
+
+\begin_layout Standard
+(Left as an exercise to the reader.)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Lemma
+\emph default
+.
+ If 
+\begin_inset Formula $f(x,t)$
+\end_inset
+
+ is logarithmically convex in 
+\begin_inset Formula $x$
+\end_inset
+
+, then 
+\begin_inset Formula $\int_{a}^{b}f(t,x)\,dt$
+\end_inset
+
+ is logarithmically convex in 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ For 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+, let 
+\begin_inset Formula $f_{n}:=\frac{b-a}{n}\sum_{k=0}^{n-1}f(x,\,a+k\left(\frac{b-a}{n}\right))$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $f_{n}$
+\end_inset
+
+ is logarithmically convex as the sum of logarithmically convex functions
+ (by the previous theorem).
+ But 
+\begin_inset Formula $\lim_{n\rightarrow\infty}f_{n}$
+\end_inset
+
+ is the Reimann sum for 
+\begin_inset Formula $\int_{a}^{b}f(t,x)\,dt$
+\end_inset
+
+, so that's logarithmically convex, too.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\Pi(x)$
+\end_inset
+
+ is logarithmically convex.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ As a function of 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $t^{x}\exp(-t)$
+\end_inset
+
+ is logarithmically convex, so by the lemma, 
+\begin_inset Formula $\Pi(x):=\int_{0}^{\infty}t^{x}\exp(-t)\,dt$
+\end_inset
+
+ is, too.
+\end_layout
+
+\begin_layout Subsubsection
+Bohr–Mollerup, and a Product Formula
+\end_layout
+
+\begin_layout Standard
+Having intorduced the notion of logarithmic convexity, we are now in a position
+ to present the following
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+ (Bohr and Mollerup via Artin).
+ If a function 
+\begin_inset Formula $f$
+\end_inset
+
+ satisfies the following conditions:
+\end_layout
+
+\begin_layout Enumerate
+(Factorial-like recursion.) 
+\begin_inset Formula $f(x+1)=(x+1)f(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+(Logarithmic convexity.) 
+\begin_inset Formula $f$
+\end_inset
+
+ is logarithmically convex on 
+\begin_inset Formula $x>-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+(Initial condition.) 
+\begin_inset Formula $f(0)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then 
+\begin_inset Formula $f(x)=\Pi(x)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose we have such an 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ From factorial-like recursion and the initial condition, we know that 
+\begin_inset Formula $f(n)=\Pi(n)=n!$
+\end_inset
+
+ for 
+\begin_inset Formula $x\in\mathbb{N}$
+\end_inset
+
+.
+ If we can show that 
+\begin_inset Formula $f(x)=\Pi(x)$
+\end_inset
+
+ in an integer interval (
+\emph on
+e.g
+\emph default
+., 
+\begin_inset Formula $x\in[0,1]$
+\end_inset
+
+), then factorial-like recursion will imply that 
+\begin_inset Formula $f(x)=\Pi(x)$
+\end_inset
+
+ everywhere.
+\end_layout
+
+\begin_layout Standard
+So fix 
+\begin_inset Formula $x\in(0,1]$
+\end_inset
+
+.
+ For a convex function, difference quotients 
+\begin_inset Quotes eld
+\end_inset
+
+get bigger as you go to the right
+\begin_inset Quotes erd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\log f(n-1)-\log f(n)}{(n-1)-n}\le\frac{\log f(n+x)-\log f(n)}{(x+n)-n}\le\frac{\log f(n+1)-\log f(n)}{(n+1)-n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But at 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+, 
+\begin_inset Formula $f(n)=n!$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\log(n-1)!-\log n!}{(n-1)-n}\le\frac{\log f(n+x)-\log n!}{(n+x)-n}\le\frac{\log(n+1)!-\log n!}{(n+1)-n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And then we do some more algebra:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\log\frac{(n-1)!}{n!}}{-1}\le\frac{\log f(x+n)-\log n!}{(x+n)-n}\le\frac{\log\frac{(n+1)!}{n!}}{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\log(n)\le\frac{\log f(x+n)-\log n!}{x}\le\log(n+1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x\log(n)\le\log f(x+n)-\log n!\le x\log(n+1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x\log(n)+\log n!\le\log f(x+n)\cancel{-\log n!+\log n!}\le x\log(n+1)+\log n!
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\log(n)^{x}+\log n!\le\log f(x+n)\le\log(n+1)^{x}+\log n!
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\log n^{x}n!\le\log f(x+n)\le\log(n+1)^{x}n!
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The logarithm is monotonic, so we can drop them and keep the inequality:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+n^{x}n!\le f(x+n)\le(n+1)^{x}n!
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But we know from the factorial-like recursion that 
+\begin_inset Formula $f(x+n)=f(x)\prod_{k=x+1}^{x+n}k$
+\end_inset
+
+, so
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{n^{x}n!}{\prod_{k=x+1}^{x+n}k}\le f(x)\le\frac{(n+1)^{x}n!}{\prod_{k=x+1}^{x+n}k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+[TODO: figure out the last steps of the Bohr–Mollerup derivation]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(x+1)=\lim_{n\rightarrow\infty}\frac{n^{x}n!}{\prod_{k=x+1}^{x+n}k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Logarithmic Convexity on Trial
+\end_layout
+
+\begin_layout Standard
+[TODO: convexity is too weak, but log log &c.
+ convexity is too strong]
 \end_layout
 
 \begin_layout Subsection
