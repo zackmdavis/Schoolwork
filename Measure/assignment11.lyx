@@ -1,0 +1,1464 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Assignment #11
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+10 May 2025 (late)
+\end_layout
+
+\begin_layout Abstract
+Homework submission for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Measure and Integration
+\begin_inset Quotes erd
+\end_inset
+
+ class.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Q}{\mathbb{Q}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\mint}[1]{\int#1\,d\mu}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\lone}{\mathcal{L}^{1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+§6C
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $U$
+\end_inset
+
+ is a subspace of a normed vector space 
+\begin_inset Formula $V$
+\end_inset
+
+ such that an open ball of 
+\begin_inset Formula $V$
+\end_inset
+
+ is contained in 
+\begin_inset Formula $U$
+\end_inset
+
+, then 
+\begin_inset Formula $U=V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Take the contrapositive, which states that if 
+\begin_inset Formula $U\subset V$
+\end_inset
+
+ (strictly), then an open ball of 
+\begin_inset Formula $V$
+\end_inset
+
+ is not contained in 
+\begin_inset Formula $U$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $U\subset V$
+\end_inset
+
+.
+ Consider an open ball 
+\begin_inset Formula $B(x,r)$
+\end_inset
+
+ of radius 
+\begin_inset Formula $r$
+\end_inset
+
+ centered at 
+\begin_inset Formula $x$
+\end_inset
+
+, and consider a basis 
+\begin_inset Formula $\{u_{j}\}_{j}$
+\end_inset
+
+ for 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ Because 
+\begin_inset Formula $U$
+\end_inset
+
+ is a strict subspace, there exists a unit 
+\begin_inset Formula $v$
+\end_inset
+
+ which is not in the span of 
+\begin_inset Formula $\{u_{j}\}_{j}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $x+\frac{r}{2}v$
+\end_inset
+
+ is in 
+\begin_inset Formula $B(x,r)$
+\end_inset
+
+ (because 
+\begin_inset Formula $\left\Vert x-(x+\frac{r}{2}v)\right\Vert =\left\Vert \frac{r}{2}v\right\Vert =\frac{r}{2}<r$
+\end_inset
+
+), but not in 
+\begin_inset Formula $U$
+\end_inset
+
+ (because it has a component not in the span of the basis of 
+\begin_inset Formula $U$
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+11
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The only subsets of a normed vector space 
+\begin_inset Formula $V$
+\end_inset
+
+ that are both open and closed are 
+\begin_inset Formula $\varnothing$
+\end_inset
+
+ and 
+\begin_inset Formula $V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+My first attempt
+\emph default
+.
+ Suppose not, that 
+\begin_inset Formula $C\subset V$
+\end_inset
+
+ is open and closed.
+ Then 
+\begin_inset Formula $C^{\complement}$
+\end_inset
+
+ is also closed, because its complement is open.
+ Any boundary point 
+\begin_inset Formula $x\in\partial C$
+\end_inset
+
+ (
+\emph on
+i.e
+\emph default
+., such that any ball around 
+\begin_inset Formula $x$
+\end_inset
+
+ intersects both 
+\begin_inset Formula $C$
+\end_inset
+
+ and 
+\begin_inset Formula $C^{\complement}$
+\end_inset
+
+) would have to belong to 
+\begin_inset Formula $C$
+\end_inset
+
+ (because 
+\begin_inset Formula $C$
+\end_inset
+
+ is closed and contains its limit points) and 
+\begin_inset Formula $C^{\complement}$
+\end_inset
+
+ (because 
+\begin_inset Formula $C^{\complement}$
+\end_inset
+
+ is also closed and contains its limit points), which would be a contradiction
+ if 
+\begin_inset Formula $\partial C$
+\end_inset
+
+ is nonempty—but 
+\begin_inset Formula $\partial C$
+\end_inset
+
+ does have to be nonempty given that it's not 
+\begin_inset Formula $\varnothing$
+\end_inset
+
+ or 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ Contradiction?!
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+A refinement
+\emph default
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Stephen Lazarus for pointing out the path-connectedness-implies-connec
+tedness tack.
+\end_layout
+
+\end_inset
+
+ A normed vector space 
+\begin_inset Formula $V$
+\end_inset
+
+ is path-connected: a unit path from the origin to vector 
+\begin_inset Formula $v$
+\end_inset
+
+ is parameterized by 
+\begin_inset Formula $tv$
+\end_inset
+
+ with 
+\begin_inset Formula $t\in[0,1]$
+\end_inset
+
+.
+ (And if every point is path-connected to the origin, then any point can
+ be path-connected to any other through the origin.) Path-connectedness implies
+ connectedness.
+ If 
+\begin_inset Formula $C\subset V$
+\end_inset
+
+ is open and closed, then 
+\begin_inset Formula $C$
+\end_inset
+
+ and 
+\begin_inset Formula $C^{\complement}$
+\end_inset
+
+ are disconnected components.
+ Contradiction! 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+12
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The closure of a subspace of 
+\begin_inset Formula $V$
+\end_inset
+
+ is a subspace of 
+\begin_inset Formula $V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $U$
+\end_inset
+
+ be a subspace of 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\overline{U}$
+\end_inset
+
+ is the set of limit points of sequences in 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ We check the conditions for a subspace (Axler's 6.31).
+\end_layout
+
+\begin_layout Standard
+(Additive identity.) 
+\begin_inset Formula $0\in U$
+\end_inset
+
+, so 
+\begin_inset Formula $(0,0,0,0,0,...)$
+\end_inset
+
+ is a sequence in 
+\begin_inset Formula $U$
+\end_inset
+
+ whose limit is 
+\begin_inset Formula $0$
+\end_inset
+
+, so 
+\begin_inset Formula $0\in\overline{U}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Additive closure.) If 
+\begin_inset Formula $x,y\in\overline{U}$
+\end_inset
+
+, that there exists a sequence 
+\begin_inset Formula $\{x_{j}\}$
+\end_inset
+
+ converging to 
+\begin_inset Formula $x$
+\end_inset
+
+ and a sequence 
+\begin_inset Formula $\{y_{j}\}$
+\end_inset
+
+ converging to 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+That is, for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists an 
+\begin_inset Formula $M_{\varepsilon}$
+\end_inset
+
+ such that if 
+\begin_inset Formula $k\ge M_{\varepsilon}$
+\end_inset
+
+, then 
+\begin_inset Formula $\left\Vert x_{k}-x\right\Vert <\varepsilon$
+\end_inset
+
+, and there exists an 
+\begin_inset Formula $N_{\varepsilon}$
+\end_inset
+
+ such that if 
+\begin_inset Formula $k\ge N_{\varepsilon}$
+\end_inset
+
+, then 
+\begin_inset Formula $\left\Vert y_{k}-y\right\Vert <\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Consider the sequence 
+\begin_inset Formula $\{x_{j}+y_{j}\}$
+\end_inset
+
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, and let 
+\begin_inset Formula $k\ge\max\{M_{\frac{\varepsilon}{2}},N_{\frac{\varepsilon}{2}}\}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula 
+\[
+\left\Vert (x_{k}+y_{k})-(x+y)\right\Vert =\left\Vert x_{k}-x+y_{k}-y\right\Vert \le\left\Vert x_{k}-x\right\Vert +\left\Vert y_{k}-y\right\Vert <\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $\{x_{j}+y_{j}\}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $x+y\in\overline{U}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Scalar multiplication closure.) If 
+\begin_inset Formula $x\in\overline{U},$
+\end_inset
+
+ there exists a sequence 
+\begin_inset Formula $\{x_{j}\}$
+\end_inset
+
+ converging to 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, and consider the sequence 
+\begin_inset Formula $\{cx_{j}\}$
+\end_inset
+
+ for 
+\begin_inset Formula $c\in\mathbb{F}$
+\end_inset
+
+.
+ Convergence implies that (not to belabor the point) there exists an 
+\begin_inset Formula $M_{\frac{\varepsilon}{c}}$
+\end_inset
+
+ such that if 
+\begin_inset Formula $k\ge M_{\frac{\varepsilon}{c}}$
+\end_inset
+
+, then 
+\begin_inset Formula $\left\Vert x_{k}-x\right\Vert <\frac{\varepsilon}{c}$
+\end_inset
+
+.
+ Consider 
+\begin_inset Formula $\left\Vert cx_{k}-cx\right\Vert =|c|\left\Vert x_{k}-x\right\Vert <c\cdot\frac{\varepsilon}{c}=\varepsilon$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\{cx_{j}\}\rightarrow cx$
+\end_inset
+
+, and 
+\begin_inset Formula $cx\in\overline{U}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+16
+\series default
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Thanks to Claude 3.7 Sonnet for a hint to get me started and pushing and
+ guiding me to make the 
+\begin_inset Formula $\sup A\ge\sup B$
+\end_inset
+
+ direction more rigorous on part a, and further tutoring on parts c and
+ d.
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\left\Vert T\right\Vert =\sup\left\{ \left\Vert T(v)\right\Vert :v\in V,\ \left\Vert v\right\Vert <1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Comment
+\emph default
+.
+ Our existing definition 
+\begin_inset Formula $\left\Vert T\right\Vert :=\sup\left\{ \left\Vert T(v)\right\Vert :v\in V,\ \left\Vert v\right\Vert \le1\right\} $
+\end_inset
+
+ only differs in the strictness of the inequality.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $A:=\left\{ \left\Vert T(v)\right\Vert :v\in V,\ \left\Vert v\right\Vert <1\right\} $
+\end_inset
+
+ and 
+\begin_inset Formula $B:=\left\{ \left\Vert T(v)\right\Vert :v\in U,\ \left\Vert v\right\Vert \le1\right\} $
+\end_inset
+
+.
+ (I want to give these sets reference names so I don't have to keep pasting
+ the full spec in our proof that they have the same supremum.) Now 
+\begin_inset Formula $A\subseteq B$
+\end_inset
+
+, so 
+\begin_inset Formula $\sup A\le\sup B$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+It remains to show that 
+\begin_inset Formula $\sup A\ge\sup B$
+\end_inset
+
+.
+ By the nature of suprema, for any 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists 
+\begin_inset Formula $v$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left\Vert T(v)\right\Vert >\sup B-\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\left\Vert v\right\Vert <1$
+\end_inset
+
+, we're done, so suppose 
+\begin_inset Formula $\left\Vert v\right\Vert =1$
+\end_inset
+
+.
+ But we know that bounded linear operators are continuous, so there exists
+ a 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that if 
+\begin_inset Formula $\left\Vert w-v\right\Vert <\delta$
+\end_inset
+
+, then 
+\begin_inset Formula $\left\Vert T(w)-T(v)\right\Vert <\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ In fact, we can let 
+\begin_inset Formula $w:=(1-\delta)v$
+\end_inset
+
+.
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|\left\Vert T(w)\right\Vert -\sup B|\le|\left\Vert T(w)\right\Vert -\left\Vert T(v)\right\Vert |+|\left\Vert T(v)\right\Vert -\sup B|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\left\Vert T\right\Vert =\sup\left\{ \left\Vert T(v)\right\Vert :v\in V,\ \left\Vert v\right\Vert =1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $A:=\left\{ \left\Vert T(v)\right\Vert :v\in V,\ \left\Vert v\right\Vert =1\right\} $
+\end_inset
+
+ and 
+\begin_inset Formula $B:=\left\{ \left\Vert T(v)\right\Vert :v\in V,\ \left\Vert v\right\Vert \le1\right\} $
+\end_inset
+
+.
+ Now 
+\begin_inset Formula $A\subset B$
+\end_inset
+
+, so 
+\begin_inset Formula $\sup A\le\sup B$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+It remains to show that 
+\begin_inset Formula $\sup A\ge\sup B$
+\end_inset
+
+.
+ For all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists 
+\begin_inset Formula $\left\Vert v\right\Vert \le1$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left\Vert T(v)\right\Vert >\sup B-\varepsilon$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\left\Vert v\right\Vert =1$
+\end_inset
+
+, we're done, so suppose 
+\begin_inset Formula $\left\Vert v\right\Vert <1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Now let 
+\begin_inset Formula $w:=\frac{v}{\left\Vert v\right\Vert }$
+\end_inset
+
+, and notice that 
+\begin_inset Formula $\left\Vert w\right\Vert =1$
+\end_inset
+
+.
+ Now 
+\begin_inset Formula $\left\Vert T(w)\right\Vert =\left\Vert T\left(\frac{v}{\left\Vert v\right\Vert }\right)\right\Vert =\left\Vert \frac{1}{\left\Vert v\right\Vert }T\left(v\right)\right\Vert =|\frac{1}{\left\Vert v\right\Vert }|\cdot\left\Vert T(v)\right\Vert >\left\Vert T(v)\right\Vert >\sup B-\varepsilon$
+\end_inset
+
+, so 
+\begin_inset Formula $\sup A\ge\sup B$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\left\Vert T\right\Vert =\inf\left\{ c\in[0,\infty):\left\Vert T(v)\right\Vert \le c\left\Vert v\right\Vert ;\ v\in V\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Comment
+\emph default
+.
+ The supremum in the standard definition of the operator norm is the 
+\begin_inset Quotes eld
+\end_inset
+
+least upper bound
+\begin_inset Quotes erd
+\end_inset
+
+; in this alternate definition, the infimum is expressing 
+\begin_inset Quotes eld
+\end_inset
+
+least
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Formula $\left\Vert T(v)\right\Vert \le c\left\Vert v\right\Vert $
+\end_inset
+
+ is expressing an 
+\begin_inset Quotes eld
+\end_inset
+
+upper bound.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $A:=\left\{ c\in[0,\infty):\left\Vert T(v)\right\Vert \le c\left\Vert v\right\Vert ;\ v\in V\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We know that 
+\begin_inset Formula $\left\Vert T(v)\right\Vert \le\left\Vert T\right\Vert \left\Vert v\right\Vert $
+\end_inset
+
+, so 
+\begin_inset Formula $\left\Vert T\right\Vert \in A$
+\end_inset
+
+, so 
+\begin_inset Formula $\left\Vert T\right\Vert \ge\inf A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It remains to show that 
+\begin_inset Formula $\left\Vert T\right\Vert \le\inf A$
+\end_inset
+
+, that 
+\begin_inset Formula $\left\Vert T\right\Vert $
+\end_inset
+
+ is smaller-or-equal to every member of 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Suppose not.
+ Then there exists 
+\begin_inset Formula $c$
+\end_inset
+
+ such that there exists 
+\begin_inset Formula $v$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left\Vert T(v)\right\Vert >c\left\Vert v\right\Vert $
+\end_inset
+
+ and 
+\begin_inset Formula $c>\left\Vert T\right\Vert $
+\end_inset
+
+.
+ But that can't be, because 
+\begin_inset Formula $\left\Vert T\right\Vert $
+\end_inset
+
+ is supposed to be the greatest factor by which 
+\begin_inset Formula $T$
+\end_inset
+
+ can 
+\begin_inset Quotes eld
+\end_inset
+
+stretch
+\begin_inset Quotes erd
+\end_inset
+
+ a vector—contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\left\Vert T\right\Vert =\sup\left\{ \frac{\left\Vert T(v)\right\Vert }{\left\Vert v\right\Vert }:v\in V,v\ne0\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\frac{\left\Vert T\left(v\right)\right\Vert }{\left\Vert v\right\Vert }=\left\Vert T\left(\frac{v}{\left\Vert v\right\Vert }\right)\right\Vert $
+\end_inset
+
+ by linearity, but 
+\begin_inset Formula $\frac{v}{\left\Vert v\right\Vert }$
+\end_inset
+
+ is a unit vector—and conversely, any unit vector can be expressed as 
+\begin_inset Formula $\frac{v}{\left\Vert v\right\Vert }$
+\end_inset
+
+ (for some 
+\begin_inset Formula $v$
+\end_inset
+
+ pointing in the same direction), so the sets 
+\begin_inset Formula $\left\{ \left\Vert T\left(\frac{v}{\left\Vert v\right\Vert }\right)\right\Vert :v\ne0\right\} $
+\end_inset
+
+ and 
+\begin_inset Formula $\left\{ \left\Vert T(u)\right\Vert :\left\Vert u\right\Vert =1\right\} $
+\end_inset
+
+ have the same members and therefore the same suprema.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+17
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For linear 
+\begin_inset Formula $T:U\rightarrow V$
+\end_inset
+
+ and 
+\begin_inset Formula $S:V\rightarrow W$
+\end_inset
+
+, 
+\begin_inset Formula $\left\Vert S\circ T\right\Vert \le\left\Vert S\right\Vert $
+\end_inset
+
+
+\begin_inset Formula $\left\Vert T\right\Vert $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\left\Vert S\circ T\right\Vert =\sup\left\{ \left\Vert S(T(v))\right\Vert :v\in U,\ \left\Vert v\right\Vert \le1\right\} $
+\end_inset
+
+.
+ But 
+\begin_inset Formula $\left\Vert S(T(v))\right\Vert \le\left\Vert S\right\Vert \left\Vert T(v)\right\Vert \le\left\Vert S\right\Vert \left\Vert T\right\Vert \left\Vert v\right\Vert $
+\end_inset
+
+, so if 
+\begin_inset Formula $\left\Vert v\right\Vert \le1$
+\end_inset
+
+, then 
+\begin_inset Formula $\left\Vert S(T(v))\right\Vert \le\left\Vert S\right\Vert \left\Vert T\right\Vert $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+§6D
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ a linear functional on 
+\begin_inset Formula $V$
+\end_inset
+
+, if 
+\begin_inset Formula $U$
+\end_inset
+
+ is a subspace of 
+\begin_inset Formula $V$
+\end_inset
+
+ such that 
+\begin_inset Formula $\ker\varphi\subseteq U$
+\end_inset
+
+, then 
+\begin_inset Formula $U=\ker\varphi$
+\end_inset
+
+ or 
+\begin_inset Formula $U=V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+] 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For linear functionals 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi$
+\end_inset
+
+, 
+\begin_inset Formula $\ker\varphi\subseteq\ker\psi$
+\end_inset
+
+ iff there exists 
+\begin_inset Formula $\alpha\in\mathbb{F}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\psi=\alpha\varphi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $\psi=\alpha\varphi$
+\end_inset
+
+.
+ Recall that 
+\begin_inset Formula $\ker\varphi=\{v:\varphi(v)=0\}$
+\end_inset
+
+, and suppose 
+\begin_inset Formula $x\in\ker\varphi$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\varphi(x)=0$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $\psi(x)=\alpha\varphi(x)=\alpha\cdot0=0$
+\end_inset
+
+, so 
+\begin_inset Formula $x\in\ker\psi$
+\end_inset
+
+, too.
+ 
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $\ker\varphi\subseteq\ker\psi$
+\end_inset
+
+, which means that 
+\begin_inset Formula $\{v:\varphi(v)=0\}\subseteq\{v:\psi(v)=0\}$
+\end_inset
+
+ [
+\series bold
+TODO
+\series default
+: where do I go from here?]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Every linear map from 
+\begin_inset Formula $\mathbb{F}^{n}$
+\end_inset
+
+ to 
+\begin_inset Formula $V$
+\end_inset
+
+ is continuous under the 
+\begin_inset Formula $\left\Vert \cdot\right\Vert _{\infty}$
+\end_inset
+
+ norm.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ Let 
+\begin_inset Formula $T:\mathbb{F}^{n}\rightarrow V$
+\end_inset
+
+ be bijective.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\inf\left\{ \left\Vert T(x)\right\Vert :x\in\mathbb{F}^{n}\&\left\Vert x\right\Vert _{\infty}=1\right\} >0$
+\end_inset
+
+ [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $T^{-1}:V\rightarrow\mathbb{F}^{n}$
+\end_inset
+
+ is a bounded linear map.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Every linear map from a finite-dimensional vector space is continuous.[
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+8
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Every finite-dimensional normed vector space is a Banach space.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\end_body
+\end_document
