@@ -29,9 +29,10 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -44,6 +45,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -55,6 +57,10 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -80,7 +86,7 @@ Assignment #14
 \end_layout
 
 \begin_layout Date
-9 May 2025
+13 May 2025
 \end_layout
 
 \begin_layout Abstract
@@ -236,7 +242,7 @@ Proposition
 Proof
 \emph default
 .
- In 
+ In the sum 
 \begin_inset Formula $\sum r_{k}a_{k}$
 \end_inset
 
@@ -265,11 +271,61 @@ Proof
 c
 \series default
 .
- [
-\series bold
-TODO
-\series default
-]
+ 
+\emph on
+Proposition
+\emph default
+.
+ Let 
+\begin_inset Formula $I$
+\end_inset
+
+ be an ideal containing 
+\begin_inset Formula $\{a_{j}\}_{j=1}^{n}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\left\langle a_{j}\right\rangle _{j=1}^{n}\subseteq I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We know that 
+\begin_inset Formula $\{a_{j}\}_{j=1}^{n}\subseteq I$
+\end_inset
+
+.
+ Because ideals absorb multiplication, then 
+\begin_inset Formula $ra_{j}\in I$
+\end_inset
+
+ for any 
+\begin_inset Formula $r\in R$
+\end_inset
+
+.
+ But then because ideals are closed under addition, 
+\begin_inset Formula $\sum_{j}r_{j}a_{j}\in I$
+\end_inset
+
+ for 
+\begin_inset Formula $r_{j}\in R$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $\left\langle a_{j}\right\rangle _{j=1}^{n}\subseteq I$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -338,11 +394,25 @@ Proof
 b
 \series default
 .
- [
-\series bold
-TODO
-\series default
-]
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\left\langle n\right\rangle =\left\{ rn:r\in\Z\right\} $
+\end_inset
+
+.
+ The smallest positive number in this set occurs when 
+\begin_inset Formula $r=1$
+\end_inset
+
+, i.e., 
+\begin_inset Formula $n$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -355,11 +425,67 @@ TODO
 3
 \series default
 .
- [
-\series bold
-TODO
-\series default
-]
+ 
+\emph on
+Proposition
+\emph default
+.
+ The quotient ring 
+\begin_inset Formula $\Z[i]/\left\langle 3+i\right\rangle $
+\end_inset
+
+ is isomorphic to 
+\begin_inset Formula $\Z_{10}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Quotienting by 
+\begin_inset Formula $\left\langle 3+i\right\rangle $
+\end_inset
+
+ amounts to considering 
+\begin_inset Formula $3+i$
+\end_inset
+
+ to 
+\begin_inset Quotes eld
+\end_inset
+
+be like
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $3+i=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $3=-i$
+\end_inset
+
+, and (squaring) 
+\begin_inset Formula $9=-1$
+\end_inset
+
+, thus 
+\begin_inset Formula $10=0$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -395,24 +521,38 @@ Proposition
 Proof
 \emph default
 .
- Let 
-\begin_inset Formula $p:=c+mx+\sum_{j}a_{j}x^{j}$
-\end_inset
-
- for 
-\begin_inset Formula $c,m\in2\Z$
+ 
+\begin_inset Formula $\left\langle x^{2},2\right\rangle =\left\{ \sum_{j}r_{0}2+r_{1}x^{2}:r_{0},r_{1}\in\Z[x]\right\} $
 \end_inset
 
 .
- Then 
-\begin_inset Formula $p=\frac{c}{2}\cdot2+$
+ Elements formed using a nonzero value of 
+\begin_inset Formula $r_{1}$
 \end_inset
 
- [
-\series bold
-TODO
-\series default
-: finish]
+ must be degree two or higher; i.e., any constant and linear terms must take
+ the form 
+\begin_inset Formula $r_{0}2$
+\end_inset
+
+ for some 
+\begin_inset Formula $r_{0}\in\Z[x]$
+\end_inset
+
+.
+ (A linear term comes about when 
+\begin_inset Formula $r_{0}$
+\end_inset
+
+ itself has a linear term.) But 
+\begin_inset Formula $2r_{0}$
+\end_inset
+
+ is even.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -421,11 +561,68 @@ TODO
 b
 \series default
 .
- [
-\series bold
-TODO
-\series default
-]
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\Z[x]/\left\langle x^{2},2\right\rangle =\left\{ 0,1,x,x+1\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Explanation
+\emph default
+.
+ 
+\begin_inset Formula $x^{2}+2=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $x^{2}=-2$
+\end_inset
+
+.
+ Working 
+\begin_inset Quotes eld
+\end_inset
+
+mod 2
+\begin_inset Quotes erd
+\end_inset
+
+ in the integers means the only constant terms are 0 and 1, and similarly
+ working 
+\begin_inset Quotes eld
+\end_inset
+
+mod 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ means the only (nonzero) linear term is 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ (A term like 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+ would get mapped to 
+\begin_inset Formula $0$
+\end_inset
+
+.)
 \begin_inset Newline newline
 \end_inset
 
@@ -501,11 +698,288 @@ Proof
 b
 \series default
 .
- [
+ Let 
+\begin_inset Formula $I$
+\end_inset
+
+ and 
+\begin_inset Formula $J$
+\end_inset
+
+ be ideals of a ring 
+\begin_inset Formula $R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
 \series bold
-TODO
+i
 \series default
-]
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $I+J:=\{a+b:a\in I,b\in J\}$
+\end_inset
+
+ is an ideal.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Subtraction closure.) Let 
+\begin_inset Formula $x,y\in I+J$
+\end_inset
+
+.
+ For notational clarity, say 
+\begin_inset Formula $x:=a+b$
+\end_inset
+
+ and 
+\begin_inset Formula $y:=c+d$
+\end_inset
+
+.
+ (Where 
+\begin_inset Formula $a,c\in I$
+\end_inset
+
+ and 
+\begin_inset Formula $b,d\in J$
+\end_inset
+
+, natch.) Then 
+\begin_inset Formula $x-y=(a-c)+(b-d)$
+\end_inset
+
+, but 
+\begin_inset Formula $a-c\in I$
+\end_inset
+
+ and 
+\begin_inset Formula $b-d\in J$
+\end_inset
+
+, so 
+\begin_inset Formula $x-y\in I+J$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(Multiplication absorption.) Let 
+\begin_inset Formula $x:a+b\in I+J$
+\end_inset
+
+ and 
+\begin_inset Formula $r\in R$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $rx=ra+rb$
+\end_inset
+
+, but 
+\begin_inset Formula $ra\in I$
+\end_inset
+
+ and 
+\begin_inset Formula $rb\in J$
+\end_inset
+
+ (from multiplication absorption for 
+\begin_inset Formula $I$
+\end_inset
+
+ and 
+\begin_inset Formula $J$
+\end_inset
+
+ separately), so 
+\begin_inset Formula $rx\in I+J$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+ii
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $I,J\subseteq I+J$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Trivial: if 
+\begin_inset Formula $a+b\in I+J$
+\end_inset
+
+ where 
+\begin_inset Formula $a\in I$
+\end_inset
+
+ and 
+\begin_inset Formula $b\in J$
+\end_inset
+
+, just take 
+\begin_inset Formula $b=0$
+\end_inset
+
+ to get 
+\begin_inset Formula $I$
+\end_inset
+
+ and 
+\begin_inset Formula $a=0$
+\end_inset
+
+ to get 
+\begin_inset Formula $J$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+iii
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Any ideal 
+\begin_inset Formula $K$
+\end_inset
+
+ containing 
+\begin_inset Formula $I$
+\end_inset
+
+ and 
+\begin_inset Formula $J$
+\end_inset
+
+ must contain 
+\begin_inset Formula $I+J$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+An idea
+\emph default
+.
+ It's tempting to say, ideals are closed under multiplication, which includes
+ multiplication by 
+\begin_inset Formula $-1$
+\end_inset
+
+, so closure under subtraction implies closure under addition, because 
+\begin_inset Formula $I+J=I-(-J)$
+\end_inset
+
+.
+ But one hesitates before accepting this as a valid proof, because it's
+ not obvious that we have 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $-1$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ in a general ring.
+ (If there's a unity, it has an additive inverse, but we might not even
+ have a unity.) But the general idea seems right, as expressed in the following—
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $x:=a+b\in I\subseteq K$
+\end_inset
+
+ and 
+\begin_inset Formula $y:=c+d\in J\text{\ensuremath{\subseteq K}}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $a-c+b-d\in K$
+\end_inset
+
+.
+ But a generic element of 
+\begin_inset Formula $I$
+\end_inset
+
+ (respectively 
+\begin_inset Formula $J$
+\end_inset
+
+) can be expressed as 
+\begin_inset Formula $a-c$
+\end_inset
+
+ (respectively 
+\begin_inset Formula $b-d$
+\end_inset
+
+) because of subtraction closure.
 \end_layout
 
 \end_body
