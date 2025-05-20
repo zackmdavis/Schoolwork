@@ -210,6 +210,222 @@ Theory of Functions of a Complex Variable.
 \series default
 .
  
+\emph on
+Proposition
+\emph default
+.
+ If an entire function satisfies 
+\begin_inset Formula $f(x+1)=f(x)$
+\end_inset
+
+ for real 
+\begin_inset Formula $x$
+\end_inset
+
+, then 
+\begin_inset Formula $f(z+1)=f(z)$
+\end_inset
+
+ for all complex 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+\emph on
+Discussion
+\emph default
+.
+ Sine and cosine are still periodic 
+\begin_inset Quotes eld
+\end_inset
+
+in the real direction
+\begin_inset Quotes erd
+\end_inset
+
+ even off the real axis (
+\emph on
+i.e
+\emph default
+., 
+\begin_inset Formula $\sin a+bi=\sin a+2\pi+bi$
+\end_inset
+
+, 
+\begin_inset Formula $\cos a+bi=\cos a+2\pi+bi$
+\end_inset
+
+ for nonzero 
+\begin_inset Formula $b$
+\end_inset
+
+), which is suggestive that this might be true for non-constant entire functions
+ in general.
+ One idea for trying to construct a counterexample would be to take 
+\begin_inset Formula $f(z):=\sin z+g(z)$
+\end_inset
+
+ for some entire 
+\begin_inset Formula $g$
+\end_inset
+
+ such that 
+\begin_inset Formula $g(z)$
+\end_inset
+
+ is zero along the real axis (so that 
+\begin_inset Formula $g$
+\end_inset
+
+ will just be sine along the real axis and therefore remain periodic there),
+ but nonperiodic for nonzero imaginary parts—but that doesn't work because
+ the only holomorphic function that's zero on the real line is zero (by
+ the identity theorem).
+ (And the zero function is itself periodic, anyway.) The fact that this counterex
+ample attempt fails is also suggestive, but we still need a proof.
+ Can we do something with translating the real line to get a contradiction?
+ (Translations of 
+\begin_inset Formula $\C$
+\end_inset
+
+ are holomorphic, and the sum of holomorphic functions is holomorphic.) But
+ that doesn't really seem to work—if we suppose for a contradiction that
+ there exists a holomorphic function such that 
+\begin_inset Formula $f(x+1)=f(x)$
+\end_inset
+
+ for 
+\begin_inset Formula $x\in\R$
+\end_inset
+
+, but there exists 
+\begin_inset Formula $z_{0}\in\C$
+\end_inset
+
+ such that 
+\begin_inset Formula $f(z+1)\ne f(z)$
+\end_inset
+
+, and then translate that, we just get a function that's periodic on some
+ horizontal line that's not the real axis; it doesn't show why it's not
+ possible for a holomorphic function to be periodic along one horizontal
+ line but not another ...
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+Conducting a Google search for the query 
+\emph on
+holomorphic periodic only along the real line
+\emph default
+, I come across a Math.StackExchange question asking about this exact problem.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\emph on
+https://math.stackexchange.com/questions/3302250/entire-function-periodic-on-real-
+line-implies-periodic-on-mathbbc
+\end_layout
+
+\end_inset
+
+ The top answer says: 
+\begin_inset Quotes eld
+\end_inset
+
+Hint #1: Examine the function 
+\begin_inset Formula $f(z)=g(z+1)-g(z)$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ (with a mouseover hint #2 that I haven't looked at), and another answer
+ hints to use the identity theorem.
+ OK, I see it.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+Proof
+\series default
+\emph default
+.
+ Suppose for a contradiction that there exists a holomorphic function such
+ that 
+\begin_inset Formula $f(x+1)=f(x)$
+\end_inset
+
+ for 
+\begin_inset Formula $x\in\R$
+\end_inset
+
+, but there exists 
+\begin_inset Formula $z_{0}\in\C$
+\end_inset
+
+ such that 
+\begin_inset Formula $f(z_{0}+1)\ne f(z_{0})$
+\end_inset
+
+.
+ Consider 
+\begin_inset Formula $g(z):=f(z+1)-f(z)$
+\end_inset
+
+.
+ Then for 
+\begin_inset Formula $x\in\R$
+\end_inset
+
+, 
+\begin_inset Formula $g(x)=0$
+\end_inset
+
+.
+ But any point in 
+\begin_inset Formula $\R$
+\end_inset
+
+ is an accumulation point, so by the identity theorem, we must have 
+\begin_inset Formula $g(z)=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $z\in\C$
+\end_inset
+
+.
+ But we also purportedly know that 
+\begin_inset Formula $g(z_{0})=f(z_{0}+1)-f(z_{0})\ne0$
+\end_inset
+
+.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -244,13 +460,118 @@ Proposition
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 
+\size footnotesize
 \emph on
-Proof
+Discussion
 \emph default
+.
+ Obviously, this is going to involve the Schwarz lemma.
+ The parts about 
+\begin_inset Formula $f(z_{1})=z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $|f'(z_{1})|<1$
+\end_inset
+
+ suggest that we want to map 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ to 
+\begin_inset Formula $0$
+\end_inset
+
+ in some way in order for the lemma to apply.
+ I'm thinking—let 
+\begin_inset Formula $g(z):=\frac{z_{1}-z}{1-\overline{z_{1}}z}$
+\end_inset
+
+.
+ Note that by familiar properties of Blashke products, 
+\begin_inset Formula $g(z_{1})=0$
+\end_inset
+
+ (and 
+\begin_inset Formula $g(0)=z_{1}$
+\end_inset
+
+), and 
+\begin_inset Formula $g=g^{-1}$
+\end_inset
+
+.
+ Consider that 
+\begin_inset Formula $g\circ f\circ g(0)=g\circ f(z_{1})=g(z_{1})=0$
+\end_inset
+
+.
+ The fact that 
+\begin_inset Formula $g\circ f\circ g$
+\end_inset
+
+ maps 0 to itself means that the preconditions of the Schwarz lemma apply
+ for 
+\begin_inset Formula $g\circ f\circ g$
+\end_inset
+
+, which lets us infer that 
+\begin_inset Formula $|(g\circ f\circ g)'(z_{1})|<1$
+\end_inset
+
+.
+ Applying the chain rule, 
+\begin_inset Formula $|g'(f(g(z_{1})))\cdot f'(g(z_{1}))\cdot g'(z_{1})|<1$
+\end_inset
+
+ ...
+ and then I was hoping that a bound on 
+\begin_inset Formula $g'$
+\end_inset
+
+ could eliminate the first and third factors, which would leave us with
+ 
+\begin_inset Formula $|f'(g(z_{1}))|=|f'(0)|$
+\end_inset
+
+.
+ But I want to bound 
+\begin_inset Formula $|f'(z_{1})|$
+\end_inset
+
+, not 
+\begin_inset Formula $|f'(0)|$
+\end_inset
+
+.
+ I'm not sure which step here is wrong—I thought the choice of 
+\begin_inset Formula $g\circ f\circ g$
+\end_inset
+
+ was compelling, because we do need to map 0 to 0 to get the Schwarz lemma
+ to apply, but once we've done that, the Schwarz lemma's derivative-bounding
+ conclusion applies at 0, not 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+.
+ How do we get around this? We also haven't used 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ yet, which is a red flag.
+ We know that 
+\begin_inset Formula $g(f(z_{2}))=g(f(z_{1}))=g(z_{1})=0$
+\end_inset
+
 .
  
 \begin_inset Newline newline
@@ -278,12 +599,18 @@ a
 \end_inset
 
  is strictly increasing.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 
+\series bold
 \emph on
 Proof
+\series default
 \emph default
 .
  Let 
@@ -416,12 +743,18 @@ Proposition
 \end_inset
 
  is constant.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 
+\series bold
 \emph on
 Proof
+\series default
 \emph default
 .
  If 
@@ -493,16 +826,34 @@ Proposition
 \begin_inset Formula $\frac{z}{(z-1)(z-2)^{2}}$
 \end_inset
 
+, and there does not exist a holomorphic function on 
+\begin_inset Formula $\{z:|z|>4\}$
+\end_inset
+
+ such that its derivative is equal to 
+\begin_inset Formula $\frac{z^{2}}{(z-1)(z-2)^{2}}$
+\end_inset
+
 .
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 
+\size footnotesize
 \emph on
-Proof
+Discussion
 \emph default
 .
- The argument principle states that 
+ The mention of the derivative and the circle 
+\begin_inset Formula $|z|=4$
+\end_inset
+
+ makes me suspect that this might involve the argument principle, which
+ states that 
 \begin_inset Formula $\oint_{C}\frac{f'(z)}{f(z)}dz=2\pi i(Z-P)$
 \end_inset
 
@@ -518,25 +869,39 @@ Proof
 \begin_inset Formula $C$
 \end_inset
 
-.
+, but I'm not seeing how to apply that.
+ (The intuition was that information about the derivative could tell us
+ about poles, which would tell us that the function can't be holomorphic
+ on a region including the pole.) WolframAlpha (saving me the trouble of
+ doing the partial fraction decomposition myself) says that 
+\begin_inset Formula $\int\frac{z}{(z-1)(z-2)^{2}}=-\frac{2}{z-2}+\log(1-z)+\log(2-z)$
+\end_inset
+
+ and 
+\begin_inset Formula $\int\frac{z}{(z-1)(z-2)^{2}}=-\frac{4}{z-2}+\log(z-1)$
+\end_inset
+
+, which both have singularities at 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $2$
+\end_inset
+
+ ...
+ but those poles would not seem to be an obstacle to being holomorphic on
  
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Proposition
-\emph default
-.
- There does not exist a holomorphic function on 
-\begin_inset Formula $\{z:|z|>4\}$
-\end_inset
-
- such that its derivative is equal to 
-\begin_inset Formula $\frac{z^{2}}{(z-1)(z-2)^{2}}$
+\begin_inset Formula $|z|>4$
 \end_inset
 
 .
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -568,178 +933,219 @@ Proposition
 \end_inset
 
 ) is an entire function.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 
+\size footnotesize
 \emph on
-First attempt
+Discussion
 \emph default
 .
- Maybe evaluating the integral with respect to 
+ My first thought was that maybe evaluating the integral with respect to
+ 
 \begin_inset Formula $x$
 \end_inset
 
- will help us show why this is an entire function with respect to 
+ would help us show why this is an entire function with respect to 
 \begin_inset Formula $z$
 \end_inset
 
-?
-\end_layout
-
-\begin_layout Standard
-We know that 
-\begin_inset Formula $f$
+, so I tried integrating by parts, and after some calculation (omitted)
+ arrived at 
+\begin_inset Formula $\int_{0}^{1}f(x)\exp(-2\pi izx)\ dx=\frac{F(1)\exp(-2\pi iz)-F(0)}{1-2\pi iz}$
 \end_inset
 
- is integrable, so let's try integrating by parts with 
-\begin_inset Formula $u:=\exp(-2\pi izx)$
-\end_inset
-
- and 
-\begin_inset Formula $dv:=f(x)\ dx$
-\end_inset
-
-.
- Then we have 
-\begin_inset Formula $du=-2\pi iz\exp(-2\pi izx)\ dx$
-\end_inset
-
- and 
-\begin_inset Formula $v=F(x)$
-\end_inset
-
-, where 
+ (where 
 \begin_inset Formula $F'(x)=f(x)$
 \end_inset
 
-.
- Applying the integration by parts formula 
-\begin_inset Formula $\int u\ dv=uv-\int v\ du$
+), which isn't entire because it has a pole at 
+\begin_inset Formula $\frac{1}{2\pi i}$
 \end_inset
 
-, we get
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\int_{0}^{1}f(x)\exp(-2\pi izx)\ dx=\left.F(x)\exp(-2\pi izx)\right|_{x=0}^{1}-\int_{0}^{1}-F(x)2\pi iz\exp(-2\pi izx)\ dx
-\]
-
+—so presumably I made a mistake somewhere.
+ Then reading about the Fourier transform online led me to the Paley–Weiner
+ theorem, and that Ch.
+ 4 of Stein and Sharkarchi is specifically about this.
+ The most relevant result (Theorem 3.1) in that chapter appeals to Theorem
+ 5.4 in Chapter 2, whose proof I now adapt to this circumstance.
+\begin_inset Newline newline
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-=F(1)\exp(-2\pi iz)-F(0)\exp(-2\pi iz0)+2\pi iz\int_{0}^{1}F(x)\exp(-2\pi izx)\ dx
-\]
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-=F(1)\exp(-2\pi iz)-F(0)+2\pi iz\int_{0}^{1}F(x)\exp(-2\pi izx)\ dx
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-So, that is
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\int_{0}^{1}f(x)\exp(-2\pi izx)\ dx=F(1)\exp(-2\pi iz)-F(0)+2\pi iz\int_{0}^{1}F(x)\exp(-2\pi izx)\ dx
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-(1-2\pi iz)\int_{0}^{1}f(x)\exp(-2\pi izx)\ dx=F(1)\exp(-2\pi iz)-F(0)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\int_{0}^{1}f(x)\exp(-2\pi izx)\ dx=\frac{F(1)\exp(-2\pi iz)-F(0)}{1-2\pi iz}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-But the denominator 
-\begin_inset Formula $1-2\pi iz$
-\end_inset
-
- is 
-\begin_inset Formula $0$
-\end_inset
-
- when 
-\begin_inset Formula $z=\frac{1}{2\pi i}$
-\end_inset
-
-, which suggests that 
-\begin_inset Formula $\hat{f}(z)$
-\end_inset
-
- is not entire, which unfortunately suggests that I've made a fatal mistake
- somewhere!
-\end_layout
-
-\begin_layout Standard
-
+\series bold
 \emph on
-Further throughts upon consulting references
+Proof
+\series default
 \emph default
 .
- The side note references Fourier transforms; is that a clue? Indeed, the
- integrand 
-\begin_inset Formula $-\exp2\pi izt$
+ Consider 
+\begin_inset Formula $\hat{f}_{n}(z)=\frac{1}{n}\sum_{k=1}^{n}f\left(\frac{k}{n}\right)\exp\left(-2\pi iz\frac{k}{n}\right)$
 \end_inset
 
- here is that of a Fourier transform, although the Fourier transform has
- bounds of integration 
-\begin_inset Formula $(-\infty,\infty)$
+.
+ (Motivation: 
+\begin_inset Formula $\hat{f}_{n}$
 \end_inset
 
- rather than 
-\begin_inset Formula $(0,1)$
+ is a Reimann sum; the big idea here is that we're going to have 
+\begin_inset Formula $\lim_{n\rightarrow\infty}\hat{f}_{n}=$
 \end_inset
 
- as here.
- Reading on Wikipedia leads me to the Paley–Weiner theorem and a post by
- Terrence Tao (
-\emph on
-https://terrytao.wordpress.com/2021/01/23/246b-notes-2-some-connections-with-the-f
-ourier-transform/
-\emph default
-) ...
+ 
+\begin_inset Formula $\hat{f}$
+\end_inset
+
+.) Note that for any given 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{f}_{n}$
+\end_inset
+
+ is holomorphic (as the exponential 
+\begin_inset Formula $\exp\left(-2\pi iz\frac{k}{n}\right)$
+\end_inset
+
+ is holomorphic, and multiplying it by the constant 
+\begin_inset Formula $f\left(\frac{k}{n}\right)$
+\end_inset
+
+ doesn't change that).
+ 
+\end_layout
+
+\begin_layout Standard
+Consider an arbitrary compact disk 
+\begin_inset Formula $D\subset\C$
+\end_inset
+
+.
+ We aim to show that 
+\begin_inset Formula $\hat{f}_{n}$
+\end_inset
+
+ converges uniformly to 
+\begin_inset Formula $\hat{f}$
+\end_inset
+
+ on 
+\begin_inset Formula $D$
+\end_inset
+
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+At the expense of making this proof slightly less general than it could
+ be, let's suppose that 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous, so that 
+\begin_inset Formula $f(x)\exp(-2\pi izx)$
+\end_inset
+
+ is continous (and thus uniformly continuous on a compact disk).
+ Then there exists a 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that when 
+\begin_inset Formula $|x-\frac{k}{n}|<\delta$
+\end_inset
+
+, then 
+\begin_inset Formula $\sup_{z\in D}|f\left(\frac{k}{n}\right)\exp\left(-2\pi iz\frac{k}{n}\right)-f\left(x\right)\exp\left(-2\pi izx\right)|<\varepsilon$
+\end_inset
+
+.
+ Then we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|\hat{f}_{n}(z)-\hat{f}(z)|=\left|\frac{1}{n}\sum_{k=1}^{n}f\left(\frac{k}{n}\right)\exp\left(-2\pi iz\frac{k}{n}\right)-\int_{0}^{1}f(x)\exp(-2\pi izx)\ dx\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which (
+\begin_inset Quotes eld
+\end_inset
+
+slicing up
+\begin_inset Quotes erd
+\end_inset
+
+ the integral to make it compatible with the sum)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\left|\sum_{k=1}^{n}f\left(\frac{k}{n}\right)\exp\left(-2\pi iz\frac{k}{n}\right)-\int_{(k-1)/n}^{k/n}f(x)\exp(-2\pi izx)\ dx\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\le\sum_{k=1}^{n}\int_{(k-1)/n}^{k/n}\left|f\left(\frac{k}{n}\right)\exp\left(-2\pi iz\frac{k}{n}\right)-f(x)\exp(-2\pi izx)\right|\ dx<\sum_{k=1}^{n}\frac{\varepsilon}{n}=\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus, 
+\begin_inset Formula $\hat{f_{n}}$
+\end_inset
+
+ is a sequence of entire functions that converges uniformly to 
+\begin_inset Formula $\hat{f}$
+\end_inset
+
+ on every closed disk in 
+\begin_inset Formula $\C$
+\end_inset
+
+; thus, by Theorem 5.2 of Stein and Shakarchi's Chapter 2, 
+\begin_inset Formula $\hat{f}$
+\end_inset
+
+ itself is entire.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -748,6 +1154,31 @@ ourier-transform/
 b
 \series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\Phi=\left\{ \hat{f}:f\in\mathcal{L}^{1}\right\} $
+\end_inset
+
+ is an equicontinuous family.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+Proof
+\series default
+\emph default
+.
+ 
+\begin_inset Formula $\int_{0}^{1}f(x)\exp(-2\pi izx)\ dx$
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -760,6 +1191,178 @@ b
 6
 \series default
 .
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f_{k}$
+\end_inset
+
+ is a sequence of holomorphic functions defined on an open set containing
+ 
+\begin_inset Formula $\overline{\D}$
+\end_inset
+
+ such that 
+\begin_inset Formula $f_{n}$
+\end_inset
+
+ converge uniformly on 
+\begin_inset Formula $\partial\D$
+\end_inset
+
+, then 
+\begin_inset Formula $f:=\lim_{n\rightarrow\infty}f_{n}$
+\end_inset
+
+ is holomorphic on 
+\begin_inset Formula $\D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+Proof
+\series default
+\emph default
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Thanks to a Math.StackExchange discussion of this question for pointing out
+ the relevance of the maximum modulus principle: 
+\emph on
+https://math.stackexchange.com/questions/4745971/uniform-convergence-of-a-sequence
+-of-holomorphic-functions-on-the-unit-circle-an
+\end_layout
+
+\end_inset
+
+ Let 
+\begin_inset Formula $f_{k}$
+\end_inset
+
+ be a sequence of holomorphic functions converging uniformly on 
+\begin_inset Formula $\partial\D$
+\end_inset
+
+.
+ By the Cauchy criterion for uniform convergence, that means that for all
+ 
+\begin_inset Formula $z\in\partial\D$
+\end_inset
+
+ and for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists 
+\begin_inset Formula $N$
+\end_inset
+
+ such that if 
+\begin_inset Formula $m,n\ge N$
+\end_inset
+
+, then 
+\begin_inset Formula $|f_{m}(z)-f_{n}(z)|<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+By the maximum modulus principle, the point where 
+\begin_inset Formula $|f_{m}(z)-f_{n}(z)|$
+\end_inset
+
+ attains its maximum over 
+\begin_inset Formula $\overline{\D}$
+\end_inset
+
+ is on the boundary 
+\begin_inset Formula $\partial\D$
+\end_inset
+
+; call this point (where the maximum is attained) 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+.
+ Then for any 
+\begin_inset Formula $z\in\D$
+\end_inset
+
+ with 
+\begin_inset Formula $|z|<|z_{0}|$
+\end_inset
+
+, we have 
+\begin_inset Formula $|f_{m}(z)-f_{n}(z)|<|f_{m}(z_{0})-f_{n}(z_{0})|<\varepsilon$
+\end_inset
+
+, so the sequence 
+\begin_inset Formula $\{f_{k}\}$
+\end_inset
+
+ also converges uniformly (with the same 
+\begin_inset Formula $N$
+\end_inset
+
+) on 
+\begin_inset Formula $\D$
+\end_inset
+
+, not just 
+\begin_inset Formula $\partial\D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Theorem 5.2 of Chapter 3 of Stein and Shakarchi states that if a sequence
+ of holomorphic functions converges uniformly in every compact subset of
+ a region 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, then the limit is also holomorphic in 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+ Here we can take 
+\begin_inset Formula $\Omega:=\D$
+\end_inset
+
+ (since 
+\begin_inset Formula $\{f_{k}\}$
+\end_inset
+
+ converges uniformly in all of 
+\begin_inset Formula $\overline{\D}$
+\end_inset
+
+, it certainly also does so in any compact subset thereof) and conclude
+ that 
+\begin_inset Formula $f$
+\end_inset
+
+ is holomorphic.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -769,6 +1372,72 @@ b
 \series default
 .
  
+\emph on
+Proposition
+\emph default
+.
+ Let
+\begin_inset Formula 
+\[
+\mathcal{F}:=\left\{ f:\D\rightarrow\C:f\text{ holomorphic \&}\sup_{r<1}\int_{0}^{2\pi}|f(r\exp i\theta)|\ d\theta\le1\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ is locally bounded and 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ is a normal family.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Discussion
+\emph default
+.
+ The criterion for inclusion in 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ in words: we're looking at functions whose supremum over 
+\begin_inset Formula $\D$
+\end_inset
+
+ (
+\begin_inset Formula $r<1$
+\end_inset
+
+) of the average modulus integrated around the circle is less than or equal
+ to 
+\begin_inset Formula $\frac{1}{2\pi}$
+\end_inset
+
+.
+ (If 
+\begin_inset Formula $|f(r\exp i\theta)|=\frac{1}{2\pi}$
+\end_inset
+
+, then 
+\begin_inset Formula $\int_{0}^{2\pi}|f(r\exp i\theta)|\ d\theta=\int_{0}^{2\pi}\frac{1}{2\pi}\ d\theta=\frac{1}{2\pi}2\pi-0=1$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+Holomorphic functions are continuous, and continuous functions are locally
+ bounded, so it's easy to conclude that the family is locally bounded; the
+ hard part will be showing that it's normal.
 \end_layout
 
 \end_body
