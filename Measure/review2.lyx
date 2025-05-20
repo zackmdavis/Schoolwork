@@ -1,0 +1,1300 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Further Notes and Exercises in Measure Theory
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+May 2025
+\end_layout
+
+\begin_layout Abstract
+Reviewing Axler, as it happens, before the final for Prof.
+ Schuster's 
+\begin_inset Quotes eld
+\end_inset
+
+Measure and Integration
+\begin_inset Quotes erd
+\end_inset
+
+ at San Francisco State University, but not studying 
+\begin_inset Quotes eld
+\end_inset
+
+for the final
+\begin_inset Quotes erd
+\end_inset
+
+, because studying 
+\begin_inset Quotes eld
+\end_inset
+
+for a test
+\begin_inset Quotes erd
+\end_inset
+
+ is contrary to the moral law.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Q}{\mathbb{Q}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dmu}{d\mu}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Notes on §3B
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Integration on a subset
+\series default
+: 
+\begin_inset Formula 
+\[
+\int_{E}f\:d\mu=\int\boldsymbol{1}_{E}f\ d\mu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+The estimation lemma
+\series default
+: 
+\begin_inset Formula 
+\[
+\left|\int_{E}f\ d\mu\right|\le\mu(E)\cdot\sup_{E}|f|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+The bounded convergence theorem
+\series default
+: for 
+\begin_inset Formula $\mu(X)<\infty$
+\end_inset
+
+ and pointwise convergent sequence of 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable functions 
+\begin_inset Formula $\{f_{k}\}_{k=1}^{\infty}$
+\end_inset
+
+, if there exists 
+\begin_inset Formula $c\in(0,\infty)$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x$
+\end_inset
+
+ and all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $|f_{k}(x)|\le c$
+\end_inset
+
+, then 
+\begin_inset Formula 
+\[
+\lim_{k\rightarrow\infty}\int f_{k}\ d\mu=\int\lim_{k\rightarrow\infty}f\ d\mu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Quotes eld
+\end_inset
+
+Almost every
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+: 
+\begin_inset Formula $E$
+\end_inset
+
+ contains almost every element of 
+\begin_inset Formula $X$
+\end_inset
+
+ iff 
+\begin_inset Formula $\mu(X\backslash E)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Integrals on small sets are small
+\series default
+: for 
+\begin_inset Formula $\int f\ d\mu<\infty$
+\end_inset
+
+, then for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ there exists a 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that for every 
+\begin_inset Formula $B$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mu(B)<\delta$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\int_{B}f\ d\mu<\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Integrable functions mostly live on sets of finite measure
+\series default
+: for 
+\begin_inset Formula $\int f\ d\mu<\infty$
+\end_inset
+
+, then for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists 
+\begin_inset Formula $E$
+\end_inset
+
+ such that 
+\begin_inset Formula $\mu(E)<\infty$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+\int_{X\backslash E}f\ d\mu<\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Dominated convergence theorem
+\series default
+: for a pointwise convergent sequence of 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+-measurable functions 
+\begin_inset Formula $\{f_{k}\}_{k=1}^{\infty}$
+\end_inset
+
+, if there exists 
+\begin_inset Formula $g:X\rightarrow[0,\infty]$
+\end_inset
+
+ such that 
+\begin_inset Formula $\int g\ \dmu<\infty$
+\end_inset
+
+ and for all 
+\begin_inset Formula $k$
+\end_inset
+
+ and all 
+\begin_inset Formula $x$
+\end_inset
+
+
+\begin_inset Formula $\left|f_{k}(x)\right|\le g(x)$
+\end_inset
+
+, then 
+\begin_inset Formula 
+\[
+\lim_{k\rightarrow\infty}\int f_{k}\ \dmu=\int\lim_{k\rightarrow\infty}f_{k}\ \dmu
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Reimann-integrable functions are continuous almost everywhere.
+\end_layout
+
+\begin_layout Standard
+We have the 
+\emph on
+
+\begin_inset Formula $\mathcal{L}^{1}$
+\end_inset
+
+ norm
+\emph default
+ 
+\begin_inset Formula $\left\Vert f\right\Vert _{1}:=\int\left|f\right|\ \dmu$
+\end_inset
+
+.
+ The 
+\emph on
+Lebesgue space
+\emph default
+ 
+\begin_inset Formula $\mathcal{L}^{1}$
+\end_inset
+
+ consists of functions with a finite 1-norm.
+\end_layout
+
+\begin_layout Subsection*
+Notes on §6C
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Norms
+\emph default
+ satisfy positive definiteness (
+\begin_inset Formula $\left\Vert f\right\Vert =0\Leftrightarrow f=0$
+\end_inset
+
+), homogeneity (
+\begin_inset Formula $\left\Vert af\right\Vert =|a|\left\Vert f\right\Vert $
+\end_inset
+
+) and the triangle inequality (
+\begin_inset Formula $\left\Vert f+g\right\Vert \le\left\Vert f\right\Vert +\left\Vert g\right\Vert $
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Normed spaces are metric spaces.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Banach
+\begin_inset Quotes erd
+\end_inset
+
+ means 
+\begin_inset Quotes eld
+\end_inset
+
+complete normed.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Banach spaces are characterized by the implication 
+\begin_inset Formula $\sum_{k}\left\Vert g_{k}\right\Vert <\infty\Rightarrow\sum_{k}g_{k}\text{converges}$
+\end_inset
+
+.
+ (It's 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $<\infty$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ in the antecdent and 
+\begin_inset Quotes eld
+\end_inset
+
+converges
+\begin_inset Quotes erd
+\end_inset
+
+ in the consequent because the antecedent lives in 
+\begin_inset Formula $\R$
+\end_inset
+
+ and the consequent doesn't necessarily have a total order for something
+ to be 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $<$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+We know what linear maps are.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left\Vert T\right\Vert :=\sup\{\left\Vert Tf\right\Vert :\left\Vert f\right\Vert \le1\}$
+\end_inset
+
+; if finite, 
+\begin_inset Formula $T$
+\end_inset
+
+ is said to be 
+\begin_inset Quotes eld
+\end_inset
+
+bounded.
+\begin_inset Quotes erd
+\end_inset
+
+ (Awful terminology; it's a bound on the output 
+\emph on
+given the input
+\emph default
+, not an absolute bound.)
+\end_layout
+
+\begin_layout Subsection*
+Notes on §6D
+\end_layout
+
+\begin_layout Standard
+A 
+\emph on
+linear functional
+\emph default
+ is a map from a vector space to its field.
+\end_layout
+
+\begin_layout Standard
+We know that 
+\begin_inset Quotes eld
+\end_inset
+
+continuous
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+`bounded'
+\begin_inset Quotes erd
+\end_inset
+
+ are the same, but there's more: the kernel is closed, and the closure of
+ the kernel is not the whole space.
+\end_layout
+
+\begin_layout Standard
+Our usual linear-algebraic notions: linear indpendence means that 
+\begin_inset Formula $\sum_{j}a_{j}v_{j}=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $\forall j\ a_{j}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Bases supposedly exist due to some Choice nonsense that no sensible person
+ really believes in.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Extension lemma
+\series default
+: a bounded linear functional on a subspace can be extended by one more
+ dimension without changing the norm.
+\end_layout
+
+\begin_layout Standard
+graph(
+\begin_inset Formula $T$
+\end_inset
+
+)
+\begin_inset Formula $=\{(f,Tf)\}$
+\end_inset
+
+ consequences—
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+ is linear if the graph is a subspace.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+ is an extension of 
+\begin_inset Formula $S$
+\end_inset
+
+ iff 
+\begin_inset Formula $\text{graph}(S)\subseteq\text{graph}(T)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Hahn–Banach
+\series default
+: a bounded linear functional can be extended to the whole space without
+ changing the norm.
+\end_layout
+
+\begin_layout Subsection*
+Practice Test Problems!!
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f\in\mathcal{L}^{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{1}\subseteq E_{2}\subseteq...\R$
+\end_inset
+
+ are measurable, then 
+\begin_inset Formula $\lim_{n\rightarrow\infty}\int_{E_{n}}f$
+\end_inset
+
+ exists.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+My proof
+\emph default
+.
+ 
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}\int_{E_{n}}f=\lim_{n\rightarrow\infty}\int_{\R}\boldsymbol{1}_{E_{n}}f
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Choose 
+\begin_inset Formula $g\in\mathcal{L}^{1}$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $g(x)\ge f(x)$
+\end_inset
+
+.
+ Then we can invoke the dominated convergence theorem to exchange the limit
+ and integral signs:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}\int_{\R}\boldsymbol{1}_{E_{n}}f=\int_{\R}\cancel{\lim_{n\rightarrow\infty}\boldsymbol{1}_{E_{n}}}f=\int_{\R}f
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Comment
+\emph default
+.
+ I don't know what I would cite to explicitly justify that 
+\begin_inset Formula $g$
+\end_inset
+
+ such that 
+\begin_inset Formula $g\ge f$
+\end_inset
+
+ must exist; it just seems intuitive.
+ (If 
+\begin_inset Formula $f$
+\end_inset
+
+'s integral converges, then a function "just a little higher" should still
+ converge for the same reason that you can always pick an integer "one higher"
+ without bumping into infinity.) ChatGPT o3 points out that 
+\begin_inset Formula $|f|$
+\end_inset
+
+ suffices (for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $|f|\ge|E_{k}f|$
+\end_inset
+
+ and indeed 
+\begin_inset Formula $|f|\ge f$
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ Let 
+\begin_inset Formula $\{f_{n}\}$
+\end_inset
+
+ be a sequence of measurable, nonnegative functions on 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ such that 
+\begin_inset Formula $f_{k}\rightarrow f$
+\end_inset
+
+ almost everywhere.
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{k\rightarrow\infty}\int_{0}^{1}f_{n}(x)\exp(-f_{n}(x))\ dx=\int_{0}^{1}f(x)\exp(-f(x))\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+My idea
+\emph default
+.
+ Can I just take 
+\begin_inset Formula $g(x):=\sup_{k}f_{k}(x)$
+\end_inset
+
+ and invoke dominated convergence? ChatGPT o3 says No: remember, the supremum
+ might be 
+\begin_inset Formula $\infty$
+\end_inset
+
+, even if every individual 
+\begin_inset Formula $f_{k}$
+\end_inset
+
+ is bounded.
+ Rather, the negative-exponential structure of the integrand automatically
+ gives us a bound.
+ (Obviously that's what that's for, dummy.)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For nonnegative 
+\begin_inset Formula $f$
+\end_inset
+
+, if for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $\int_{-\infty}^{\infty}\frac{k^{2}}{x^{2}+k^{2}}f(x)\ dx\le1$
+\end_inset
+
+, then 
+\begin_inset Formula $f\in\mathcal{L}^{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+My 
+\begin_inset Quotes eld
+\end_inset
+
+proof
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Consider the limit
+\begin_inset Formula 
+\[
+\lim_{k\rightarrow\infty}\int_{-\infty}^{\infty}\frac{k^{2}}{x^{2}+k^{2}}f(x)\ dx\le1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For all 
+\begin_inset Formula $k$
+\end_inset
+
+ and all 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{k^{2}}{x^{2}+k^{2}}\le1$
+\end_inset
+
+, so 
+\begin_inset Formula $\frac{k^{2}}{x^{2}+k^{2}}f(x)\le f(x)$
+\end_inset
+
+, so the dominated convergence theorem says that we can switch the limit
+ and integral sign.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}\cancel{\lim_{k\rightarrow\infty}\frac{k^{2}}{x^{2}+k^{2}}}f(x)\ dx\le1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{-\infty}^{\infty}f(x)\ dx\le1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $f\in\mathcal{L}^{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ ChatGPT o3 points out that this is wrong because I'm assuming that 
+\begin_inset Formula $f$
+\end_inset
+
+ is integrable.
+ We don't know that! This one needs the monotone convergence theorem, not
+ the bounded convergence theorem.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $K(f):C([0,1])\rightarrow C([0,1])=\int_{0}^{x}f$
+\end_inset
+
+ is bounded with norm 1.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Wow, this is surprisingly difficult to wrap my head around.
+ This takes a function and replaces it by its integral from 0—
+\begin_inset Formula $K:f\mapsto\int_{0}^{x}f$
+\end_inset
+
+.
+ So I need to compute 
+\begin_inset Formula $\left\Vert f\right\Vert $
+\end_inset
+
+ and 
+\begin_inset Formula $\left\Vert \int_{0}^{x}f\right\Vert $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Now 
+\begin_inset Formula $\left\Vert f\right\Vert =\sup_{x\in[0,1]}|f(x)|$
+\end_inset
+
+ whereas
+\begin_inset Formula 
+\[
+\left\Vert \int_{0}^{x}f\right\Vert =\sup_{x\in[0,1]}\int_{0}^{x}f(x)\ dx\le\cancel{\mu([0,1])}\cdot\sup_{x\in[0,1]}|f(x)|=\left\Vert f\right\Vert 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Comment
+\emph default
+.
+ ChatGPT o3 points out that I need to exhibit a function that attains the
+ bound—fair cop.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+8
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The right shift operator 
+\begin_inset Formula $T:\ell^{2}\rightarrow\ell^{2}=T(x_{1},x_{2},...)=(0,x_{1},x_{2},...)$
+\end_inset
+
+ is bounded with norm 1.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\left\Vert x\right\Vert =\sum_{j}x_{j}^{2}$
+\end_inset
+
+ but 
+\begin_inset Formula $\left\Vert Tx\right\Vert =0+\sum_{j}x_{j}^{2}$
+\end_inset
+
+ so 
+\begin_inset Formula $\left\Vert Tx\right\Vert =\left\Vert x\right\Vert $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Comment
+\emph default
+.
+ ChatGPT o3 points out that the norm actually has a square root on it.
+ (I was just thinking 
+\begin_inset Quotes eld
+\end_inset
+
+square-summable.
+\begin_inset Quotes erd
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+12
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If there exists 
+\begin_inset Formula $C$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $\left\Vert Tx\right\Vert \ge C\left\Vert x\right\Vert $
+\end_inset
+
+, then the range of 
+\begin_inset Formula $T$
+\end_inset
+
+ is closed and 
+\begin_inset Formula $Tx=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $x=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+My attempt
+\emph default
+.
+ (
+\begin_inset Formula $Tx=0\Rightarrow x=0$
+\end_inset
+
+) Take the contrapositive and suppose that 
+\begin_inset Formula $x\ne0$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\left\Vert Tx\right\Vert \ge C\left\Vert x\right\Vert >C\cdot0=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Closed range.) If 
+\begin_inset Formula $Tx=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $x=0$
+\end_inset
+
+, then the kernel is 
+\begin_inset Formula $\{0\}$
+\end_inset
+
+, which means that the image is the whole space, which is closed.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ I was worried that the second part was too gimmicky to be the real answer;
+ indeed, ChatGPT o3 says it isn't the real answer.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The real answer
+\emph default
+.
+ Consider a convergent sequence 
+\begin_inset Formula $\{Tx_{k}\}$
+\end_inset
+
+, which converges to 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ Now 
+\begin_inset Formula $\left\Vert Tx\right\Vert \ge C\left\Vert x\right\Vert $
+\end_inset
+
+ applies for all 
+\begin_inset Formula $x$
+\end_inset
+
+, including (sneaky choice here) 
+\begin_inset Formula $\left\Vert x_{m}-x_{n}\right\Vert $
+\end_inset
+
+, so 
+\begin_inset Formula $\left\Vert T(x_{m}-x_{n})\right\Vert =\left\Vert Tx_{m}-Tx_{n}\right\Vert \ge C\left\Vert x_{m}-x_{n}\right\Vert $
+\end_inset
+
+ applies a squeeze to force 
+\begin_inset Formula $x_{k}$
+\end_inset
+
+ to be Cauchy.
+ So if 
+\begin_inset Formula $x_{k}\rightarrow x$
+\end_inset
+
+, then (because bounded is continuous which preserves sequence limits) 
+\begin_inset Formula $Tx_{k}\rightarrow Tx$
+\end_inset
+
+.
+ So the limit of our sequence of image points (which we briefly called 
+\begin_inset Formula $L$
+\end_inset
+
+) is in fact in the image.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+More Exercises!! 
+\end_layout
+
+\begin_layout Standard
+(grabbed from Axler)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§3B#5
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $f\in\mathcal{L}^{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\lim_{k\rightarrow\infty}\int_{[-k,k]}f\ d\lambda=\int_{\R}f\ d\lambda$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula 
+\[
+\lim_{k\rightarrow\infty}\int_{[-k,k]}f\ d\lambda=\lim_{k\rightarrow\infty}\int_{[-k,k]}f\ d\lambda=\lim_{k\rightarrow\infty}\int_{\R}\boldsymbol{1}_{[-k,k]}f\ d\lambda
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $|\boldsymbol{1}_{[-k,k]}f|\le|f|$
+\end_inset
+
+, so we can apply the dominated convergence theorem to switch the limit
+ and integral sign.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{\R}\lim_{k\rightarrow\infty}\boldsymbol{1}_{[-k,k]}f\ d\lambda=\int_{\R}f\ d\lambda
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Comment
+\emph default
+.
+ This was 
+\begin_inset Quotes eld
+\end_inset
+
+too similar
+\begin_inset Quotes erd
+\end_inset
+
+ to practice exam problem #3.
+\end_layout
+
+\end_body
+\end_document
