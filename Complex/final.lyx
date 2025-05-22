@@ -583,6 +583,21 @@ Discussion
 \begin_layout Standard
 
 \series bold
+\emph on
+Proof
+\series default
+\emph default
+.
+ ...?
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 3
 \series default
 .
@@ -889,15 +904,30 @@ Discussion
 \begin_inset Formula $2$
 \end_inset
 
- ...
- but those poles would not seem to be an obstacle to being holomorphic on
- 
-\begin_inset Formula $|z|>4$
+.
+ But then I'm getting 
+\begin_inset Formula $\frac{f'}{f}=\frac{\frac{z}{(z-1)(z-2)^{2}}}{-\frac{2}{z-2}+\log(1-z)+\log(2-z)}=\frac{z}{\left(-\frac{2}{z-2}+\log(1-z)+\log(2-z)\right)(z-1)(z-2)^{2}}$
 \end_inset
 
-.
+, which does not appear to be readily integrable (and WolframAlpha doesn't
+ think so, either)?
 \size default
 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+Proof
+\series default
+\emph default
+.
+ ...?
 \begin_inset Newline newline
 \end_inset
 
@@ -1160,10 +1190,62 @@ Proposition
 \emph default
 .
  
-\begin_inset Formula $\Phi=\left\{ \hat{f}:f\in\mathcal{L}^{1}\right\} $
+\begin_inset Formula $\Phi=\left\{ \hat{f}:\int_{0}^{1}|f(x)|\ dx\le M\right\} $
 \end_inset
 
  is an equicontinuous family.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+\emph on
+Discussion
+\emph default
+.
+ We already know that the exponential function is continuous, so we can
+ adapt techniques from the proof that 
+\begin_inset Formula $\exp(x)$
+\end_inset
+
+ is continuous
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\size footnotesize
+I consulted 
+\begin_inset Quotes eld
+\end_inset
+
+Wrath of Math
+\begin_inset Quotes erd
+\end_inset
+
+'s YouTube video on the continuity of the exponential for reference: 
+\emph on
+https://www.youtube.com/watch?v=CPWO8RsIBy8
+\end_layout
+
+\end_inset
+
+ to show that this integral transform is continuous independently of the
+ choice of 
+\begin_inset Formula $f$
+\end_inset
+
+ from the family.
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1174,8 +1256,124 @@ Proof
 \series default
 \emph default
 .
+ We want to show that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and for all 
+\begin_inset Formula $z_{0}\in\C$
+\end_inset
+
+ and for all 
+\begin_inset Formula $f\in\Phi$
+\end_inset
+
+, there exists a 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that if 
+\begin_inset Formula $|z-z_{0}|<\delta$
+\end_inset
+
+, then 
+\begin_inset Formula $\left|\int_{0}^{1}f(x)\exp(-2\pi izx)\ dx-\int_{0}^{1}f(x)\exp(-2\pi iz_{0}x)\ dx\right|<\varepsilon$
+\end_inset
+
+.
  
-\begin_inset Formula $\int_{0}^{1}f(x)\exp(-2\pi izx)\ dx$
+\end_layout
+
+\begin_layout Standard
+Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ We reason as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\int_{0}^{1}f(x)\exp(-2\pi izx)\ dx-\int_{0}^{1}f(x)\exp(-2\pi iz_{0}x)\ dx\right|=\left|\int_{0}^{1}f(x)(\exp(-2\pi izx)-\exp(-2\pi iz_{0}x))\ dx\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\int_{0}^{1}f(x)\exp(-2\pi iz_{0}x)\left(\exp(2\pi ix\left(z_{0}-z\right))-1\right)\ dx\right|\le\int_{0}^{1}|f(x)|\exp(-2\pi iz_{0}x)\left|\exp(2\pi ix\left(z_{0}-z\right))-1\right|\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\int_{0}^{1}|f(x)|\exp(-2\pi iz_{0}x)\left|\exp(2\pi ix\left(z_{0}-z\right))-\exp(z_{0}-z_{0})\right|\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But we already know that the exponential function is continuous, which means
+ there exists a 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that if 
+\begin_inset Formula $|z_{0}-z|<\delta$
+\end_inset
+
+, then 
+\begin_inset Formula $\left|\exp(2\pi ix\left(z_{0}-z\right))-\exp(z_{0}-z_{0})\right|$
+\end_inset
+
+ is arbitrarily small.
+ In particular, let 
+\begin_inset Formula $E:=\frac{-2\pi iz_{0}}{M\left(\exp(-2\pi iz_{0})-1\right)}\varepsilon$
+\end_inset
+
+, and pick 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|\exp(2\pi ix\left(z_{0}-z\right))-\exp(z_{0}-z_{0})\right|<E$
+\end_inset
+
+.
+ Then we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\int_{0}^{1}|f(x)|\exp(-2\pi iz_{0}x)\left|\exp(2\pi ix\left(z_{0}-z\right))-\exp(z_{0}-z_{0})\right|\ dx\le EM\int_{0}^{1}\exp(-2\pi iz_{0}x)\ dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{EM}{-2\pi iz_{0}}\left(\exp(-2\pi iz_{0})-1\right)=\frac{\cancel{M}}{\cancel{-2\pi iz_{0}}}\cancel{\left(\exp(-2\pi iz_{0})-1\right)}\frac{\cancel{-2\pi iz_{0}}}{\cancel{M}\cancel{\left(\exp(-2\pi iz_{0})-1\right)}}\varepsilon=\varepsilon
+\]
+
 \end_inset
 
 
@@ -1222,6 +1420,10 @@ Proposition
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1392,52 +1594,142 @@ Then
 \begin_inset Formula $\mathcal{F}$
 \end_inset
 
- is locally bounded and 
-\begin_inset Formula $\mathcal{F}$
+ is a normal family.
+\begin_inset Newline newline
 \end_inset
 
- is a normal family.
+
 \end_layout
 
 \begin_layout Standard
 
+\size footnotesize
 \emph on
 Discussion
 \emph default
 .
- The criterion for inclusion in 
-\begin_inset Formula $\mathcal{F}$
+ Theorem 3.3 in Chapter 8 of Stein and Shakarchi states that a family of
+ holomorphic functions that is uniformly bounded on compact subsets of its
+ domain is a normal family: 
+\emph on
+i.e
+\emph default
+., if there exists 
+\begin_inset Formula $B$
 \end_inset
 
- in words: we're looking at functions whose supremum over 
-\begin_inset Formula $\D$
+ such that 
+\begin_inset Formula $|f(z)|\le B$
+\end_inset
+
+ for all 
+\begin_inset Formula $z\in K\subset\D$
 \end_inset
 
  (
-\begin_inset Formula $r<1$
+\begin_inset Formula $K$
 \end_inset
 
-) of the average modulus integrated around the circle is less than or equal
- to 
-\begin_inset Formula $\frac{1}{2\pi}$
+ being compact) and 
+\begin_inset Formula $f\in\mathcal{F}$
 \end_inset
 
 .
- (If 
-\begin_inset Formula $|f(r\exp i\theta)|=\frac{1}{2\pi}$
+ Then it's tempting to say that (properly) integrable functions are bounded,
+ so the fact that 
+\begin_inset Formula $\int_{0}^{2\pi}|f(r\exp i\theta)|\ d\theta$
 \end_inset
 
-, then 
-\begin_inset Formula $\int_{0}^{2\pi}|f(r\exp i\theta)|\ d\theta=\int_{0}^{2\pi}\frac{1}{2\pi}\ d\theta=\frac{1}{2\pi}2\pi-0=1$
+ is integrable at all implies that 
+\begin_inset Formula $|f(r\exp i\theta)|$
 \end_inset
 
-.)
+ is bounded for all 
+\begin_inset Formula $r<1$
+\end_inset
+
+.
+ But that doesn't quite work as stated.
+ (
+\begin_inset Quotes eld
+\end_inset
+
+Bounded for any particular 
+\begin_inset Formula $r$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ doesn't mean 
+\begin_inset Quotes eld
+\end_inset
+
+bounded
+\begin_inset Quotes erd
+\end_inset
+
+ if the particular bounds can increase with 
+\begin_inset Formula $r$
+\end_inset
+
+.) You might hope that the integral itself being bounded by 
+\begin_inset Formula $1$
+\end_inset
+
+ would suffice, but I'm not even confident of that, because a pathological
+ mind could imagine that the integrals for increasing values of 
+\begin_inset Formula $r$
+\end_inset
+
+ have an increasingly high 
+\begin_inset Quotes eld
+\end_inset
+
+spike
+\begin_inset Quotes erd
+\end_inset
+
+ on a set of increasingly tiny measure such that the integrals stay bounded
+ but 
+\begin_inset Formula $|f(r\exp i\theta)|$
+\end_inset
+
+ doesn't.
+ I can't even dismiss this scenario as intuitively implausible: a function
+ with a pole at 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+ with 
+\begin_inset Formula $|z_{0}|=1$
+\end_inset
+
+ would seem to have such a spike and is holomorphic on the 
+\emph on
+open
+\emph default
+ unit disk (not including the boundary 
+\begin_inset Formula $\partial\D$
+\end_inset
+
+ on which the pole lies).
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Holomorphic functions are continuous, and continuous functions are locally
- bounded, so it's easy to conclude that the family is locally bounded; the
- hard part will be showing that it's normal.
+
+\series bold
+\emph on
+Proof
+\series default
+\emph default
+.
+ ...?
 \end_layout
 
 \end_body
